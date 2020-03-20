@@ -7,18 +7,26 @@ using System.Threading.Tasks;
 namespace MODEL
 {
     /// <summary>
-    /// 角色表
+    /// 时间段
     /// </summary>
-    public class RoleInfo
+   public class TimeQ
     {
         /// <summary>
-        /// 角色id
+        /// 时间段id
         /// </summary>
-        public int  RoleId     { get; set; }
+        public int TimeQId    { get; set; }
         /// <summary>
-        /// 角色名称
+        /// 秒杀时间名称
         /// </summary>
-        public string RoleName { get; set; }
+        public string TimeQName  { get; set; }
+        /// <summary>
+        /// 每日开始时间
+        /// </summary>
+        public DateTime StartTime  { get; set; }
+        /// <summary>
+        /// 每日结束时间
+        /// </summary>
+        public DateTime EenTime    { get; set; }
         /// <summary>
         /// 创建时间
         /// </summary>

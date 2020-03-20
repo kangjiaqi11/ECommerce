@@ -7,18 +7,30 @@ using System.Threading.Tasks;
 namespace MODEL
 {
     /// <summary>
-    /// 角色表
+    /// 秒杀活动表
     /// </summary>
-    public class RoleInfo
+   public class Activity
     {
         /// <summary>
-        /// 角色id
+        /// 活动id
         /// </summary>
-        public int  RoleId     { get; set; }
+        public int ActivityId     { get; set; }
         /// <summary>
-        /// 角色名称
+        /// 活动标题
         /// </summary>
-        public string RoleName { get; set; }
+        public string ActivityTitle  { get; set; }
+        /// <summary>
+        /// 活动状态
+        /// </summary>
+        public int ActivityStatel { get; set; }
+        /// <summary>
+        /// 时间段id
+        /// </summary>
+        public int TimeQId        { get; set; }
+        /// <summary>
+        /// 商品id
+        /// </summary>
+        public int GoodId { get; set; }
         /// <summary>
         /// 创建时间
         /// </summary>
@@ -35,5 +47,6 @@ namespace MODEL
         /// 修改人
         /// </summary>
         public int UpdateId { get; set; }
+
     }
 }

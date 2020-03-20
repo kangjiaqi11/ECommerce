@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MODEL.KangJiaQi.BUser
+namespace MODEL
 {
     /// <summary>
     /// 菜单表
@@ -27,5 +27,21 @@ namespace MODEL.KangJiaQi.BUser
         /// 父级地址
         /// </summary>
         public string FatherUrl { get; set; }
+        /// <summary>
+        /// 创建时间
+        /// </summary>
+        public DateTime CeateTime { get; set; }
+        /// <summary>
+        /// 修改时间
+        /// </summary>
+        public DateTime UpdateTime { get; set; }
+        /// <summary>
+        /// 创建人
+        /// </summary>
+        public int CreateId { get; set; }
+        /// <summary>
+        /// 修改人
+        /// </summary>
+        public int UpdateId { get; set; }
     }
 }

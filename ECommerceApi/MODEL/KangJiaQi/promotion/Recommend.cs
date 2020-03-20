@@ -7,18 +7,22 @@ using System.Threading.Tasks;
 namespace MODEL
 {
     /// <summary>
-    /// 角色表
+    /// 首页推荐
     /// </summary>
-    public class RoleInfo
+   public class Recommend
     {
         /// <summary>
-        /// 角色id
+        /// 推荐id
         /// </summary>
-        public int  RoleId     { get; set; }
+        public int RecommendId { get; set; }
         /// <summary>
-        /// 角色名称
+        /// 商品id
         /// </summary>
-        public string RoleName { get; set; }
+        public int GoodId      { get; set; }
+        /// <summary>
+        /// 是否推荐
+        /// </summary>
+        public int IsRecommend { get; set; }
         /// <summary>
         /// 创建时间
         /// </summary>
