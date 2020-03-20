@@ -50,5 +50,11 @@
     <Folder Include="XuYaDon\" />
     <Folder Include="ZhangYang\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{76d9cec7-6b07-4544-a083-d5fa152d1a43}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
