@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace SDCKClient
 {
-    class BaseRequest
+    /// <summary>
+    /// 请求的基类消息
+    /// 表示，你要调用的我的接口，你就得吧这些传给我
+    /// </summary>
+    public abstract class BaseRequest
     {
+        /// <summary>
+        /// token参数，做验证用
+        /// </summary>
+        public string Token { get; set; }
+        /// <summary>
+        /// apiurl
+        /// </summary>
+        /// <returns></returns>
+        public abstract string GetApiName();
     }
 }

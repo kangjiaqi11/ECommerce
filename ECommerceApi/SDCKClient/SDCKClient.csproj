@@ -46,8 +46,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Request\" />
-    <Folder Include="Response\" />
+    <Folder Include="KangJiaQi\Request\" />
+    <Folder Include="KangJiaQi\Response\" />
+    <Folder Include="WangZhiHao\Request\" />
+    <Folder Include="WangZhiHao\Response\" />
+    <Folder Include="XuYaDon\Request\" />
+    <Folder Include="XuYaDon\Response\" />
+    <Folder Include="ZhangYang\Request\" />
+    <Folder Include="ZhangYang\Response\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

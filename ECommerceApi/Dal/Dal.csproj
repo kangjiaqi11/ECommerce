@@ -45,10 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Order\" />
-    <Folder Include="Product\" />
-    <Folder Include="Repertory\" />
-    <Folder Include="User\" />
+    <Folder Include="KangJiaQi\" />
+    <Folder Include="WangZhiHao\" />
+    <Folder Include="XuYaDon\" />
+    <Folder Include="ZhangYang\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
