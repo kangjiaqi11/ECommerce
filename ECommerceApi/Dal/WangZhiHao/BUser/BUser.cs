@@ -8,8 +8,9 @@ namespace Dal.WangZhiHao.BUser
 {
    public class BUser
     {
-        public int UserLogin(string Register)
+        public int UserLogin(string Register,string UserPwd)
         {
+            string sql = "";
 
         }
     }
