@@ -44,10 +44,10 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WangZhiHao\BUser\BUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="KangJiaQi\" />
+    <Folder Include="WangZhiHao\" />
     <Folder Include="XuYaDon\" />
     <Folder Include="ZhangYang\" />
   </ItemGroup>
