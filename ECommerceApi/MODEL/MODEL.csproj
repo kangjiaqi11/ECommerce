@@ -43,6 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="KangJiaQi\promotion\Activity.cs" />
+    <Compile Include="KangJiaQi\BUser\Department.cs" />
+    <Compile Include="KangJiaQi\BUser\Jurisdiction.cs" />
+    <Compile Include="KangJiaQi\BUser\MenusInfo.cs" />
+    <Compile Include="KangJiaQi\BUser\RoleInfo.cs" />
+    <Compile Include="KangJiaQi\promotion\TimeQ.cs" />
+    <Compile Include="KangJiaQi\BUser\UserInfo.cs" />
+    <Compile Include="KangJiaQi\promotion\Recommend.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WangZhiHao\BrandModel.cs" />
     <Compile Include="WangZhiHao\CommodityModel.cs" />

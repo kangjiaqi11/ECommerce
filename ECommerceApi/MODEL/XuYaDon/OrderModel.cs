@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Common
+namespace MODEL.XuYaDon
 {
-    public class Class1
+    /// <summary>
+    /// 订单表
+    /// </summary>
+  public  class OrderModel
     {
     }
 }
