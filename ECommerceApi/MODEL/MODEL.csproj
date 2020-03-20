@@ -49,11 +49,11 @@
     <Compile Include="KangJiaQi\BUser\RoleInfo.cs" />
     <Compile Include="KangJiaQi\BUser\UserInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XuYaDon\OrderModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="KangJiaQi\promotion\" />
     <Folder Include="WangZhiHao\" />
-    <Folder Include="XuYaDon\" />
     <Folder Include="ZhangYang\" />
   </ItemGroup>
   <ItemGroup>
