@@ -12,10 +12,9 @@ namespace SDCKClient
         /// 账户，手机号，邮箱
         /// </summary>
         public string Register { get; set; }
-
         /// <summary>
         /// 用户密码
         /// </summary>
-        public string UserPwd { get; set; }
+        public string UserPwd { get; set; }                                                
     }
-}
+}         
