@@ -18,10 +18,18 @@ namespace ECommerceMVC.Controllers.KangJiaQi
             return View();
         }
         /// <summary>
-        /// 登录页面
+        /// 登录页面包含用户注册，邮箱
         /// </summary>
         /// <returns></returns>
         public ActionResult UserLogin()
+        {
+            return View();
+        }
+        /// <summary>
+        /// 用户注册
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UserAdd()
         {
             return View();
         }

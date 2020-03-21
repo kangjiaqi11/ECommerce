@@ -9,35 +9,10 @@ using System.Configuration;
 
 namespace BLL
 {
-
     public static class ApiRequestHelper
     {
-       static string BaseAddress= "http://localhost:53009/";
-        public static string Post11<T>(T t)where T :BaseRequest
-        {
-            var api = t.GetApiName();
-            HttpClient client = new HttpClient();
-            //设置 API的 基地址
-            client.BaseAddress = new Uri(BaseAddress);
-            //设置 默认请求头ACCEPT
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            string token = ConfigurationManager.AppSettings["token"];
-            client.DefaultRequestHeaders.Add("token",token);
-            //设置消息体
-            HttpContent content = new StringContent(JsonConvert.SerializeObject(t));
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            //发送Post请求
-            HttpResponseMessage msg = client.PostAsync(api, content).Result;
-            //判断结果是否成功
-            if (msg.IsSuccessStatusCode)
-            {
-                //返回响应结果
-                return msg.Content.ReadAsStringAsync().Result;
-            }
-            //返回空字符串，表示响应错误
-            return "";
-        }
-        public static TResponse Post<TRequet,TResponse>(TRequet t)  where TRequet : BaseRequest where TResponse : BaseResponse,new() //  彭海涛 约束这个泛型T 必须继承BaseRequest
+       static string BaseAddress= "http://localhost:56593/";
+        public static TResponse Post<TRequet,TResponse>(TRequet t)  where TRequet : BaseRequest where TResponse : BaseResponse,new()//  彭海涛 约束这个泛型T 必须继承BaseRequest
         {
             var api = t.GetApiName();//拿到接口的名称
 
@@ -47,7 +22,7 @@ namespace BLL
             //设置 默认请求头ACCEPT 
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            string token = ConfigurationManager.AppSettings["token"];
+            string token = GetToken();
             client.DefaultRequestHeaders.Add("token", token);
 
             //设置消息体
@@ -75,6 +50,51 @@ namespace BLL
 
             return new TResponse() { Msg="请求失败，请检查网络"};
         }
+       /// <summary>
+       /// 带泛型的Tesponse
+       /// </summary>
+       /// <typeparam name="TRequet"></typeparam>
+       /// <typeparam name="TResponse"></typeparam>
+       /// <param name="t"></param>
+       /// <returns></returns>
+        public static TResponse  Post111<TRequet, TResponse>(TRequet t) where TRequet : BaseRequest where TResponse : BaseResponse, new() //  彭海涛 约束这个泛型T 必须继承BaseRequest
+        {
+            var api = t.GetApiName();//拿到接口的名称
+
+            HttpClient client = new HttpClient();
+            //设置 API的 基地址
+            client.BaseAddress = new Uri(BaseAddress);
+            //设置 默认请求头ACCEPT 
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+            string token = GetToken();
+            client.DefaultRequestHeaders.Add("token", token);
+
+            //设置消息体
+            HttpContent content = new StringContent(JsonConvert.SerializeObject(t));
+            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            //发送Post请求
+            HttpResponseMessage msg = client.PostAsync(api, content).Result;
+            //判断结果是否成功
+            if (msg.IsSuccessStatusCode)
+            {
+                var obj = JsonConvert.DeserializeObject<TResponse>(msg.Content.ReadAsStringAsync().Result);
+                if (obj.IsSuccess)
+                {
+                    //表示请求成功
+                    return obj;
+                }
+                else
+                {
+                    return new TResponse() { Msg = msg.ReasonPhrase };
+                }
+                //返回响应结果
+
+            }
+
+            return new TResponse() { Msg = "请求失败，请检查网络" };
+        }
         /// <summary>
         /// 读取xlm文件
         /// </summary>
@@ -82,12 +102,12 @@ namespace BLL
         public static string GetToken()
         {
             //将XML文件加载进来
-            XDocument document = XDocument.Load("E://每月项目//Electricity Management//Electricity Management//App_Data//token.xml");
+            XDocument document = XDocument.Load("E://实训项目//ECommerce2//ECommerceMVC//ECommerceMVC//App_Data//Token.xml");
             //获取到XML的根元素进行操作
             XElement root = document.Root;
-            XElement ele = root.Element("BOOK");
+            XElement ele = root.Element("Tokne");
             //获取name标签的值
-            XElement shuxing = ele.Element("name2");
+            XElement shuxing = ele.Element("name");
             string Token = shuxing.Value;
             return Token;
         }

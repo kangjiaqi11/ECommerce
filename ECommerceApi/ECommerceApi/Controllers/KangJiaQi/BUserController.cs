@@ -20,5 +20,14 @@ namespace ECommerceApi
         {
             return BUserBll.UserLogin(bUserLoginRequst);
         }
+        /// <summary>
+        /// 用户注册
+        /// </summary>
+        /// <param name="bUserAddRequst"></param>
+        /// <returns></returns>
+        public BUserAddResponse UserAdd(BUserAddRequst bUserAddRequst)
+        {
+            return BUserBll.UserAdd(bUserAddRequst);
+        }
     }
 }

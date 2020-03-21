@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiRequest\ApiRequestHelper.cs" />
+    <Compile Include="ApiRequest\HttpClientHelper.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="KangJiaQi\BUserBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

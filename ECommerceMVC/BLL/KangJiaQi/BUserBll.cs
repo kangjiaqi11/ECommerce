@@ -11,9 +11,15 @@ namespace BLL
     /// </summary>
    public class BUserBll
     {
-        public BUserLoginResponse<int> UserLogin(BUserLoginRequst bUserLoginRequst)
-        {
-            return ApiRequestHelper.Post<BUserLoginRequst, BUserLoginResponse<int>>(bUserLoginRequst);
-        }
+        /// <summary>
+        /// 登录
+        /// 
+        /// </summary>
+        /// <param name="bUserLoginRequst"></param>
+        /// <returns></returns>
+        //public BUserLoginResponse<int> UserLogin(BUserLoginRequst bUserLoginRequst)
+        //{
+        //    return ApiRequestHelper.Post<BUserLoginRequst, BUserLoginResponse<int>>(bUserLoginRequst);
+        //} 
     }
 }
