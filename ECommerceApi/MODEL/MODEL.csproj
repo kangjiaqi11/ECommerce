@@ -56,9 +56,15 @@
     <Compile Include="WangZhiHao\CommodityModel.cs" />
     <Compile Include="WangZhiHao\EstimateModel.cs" />
     <Compile Include="WangZhiHao\GoodsModel.cs" />
+    <Compile Include="XuYaDon\express.cs" />
+    <Compile Include="XuYaDon\invoice.cs" />
+    <Compile Include="XuYaDon\Invoicetype.cs" />
+    <Compile Include="XuYaDon\OrderModel.cs" />
+    <Compile Include="XuYaDon\result.cs" />
+    <Compile Include="XuYaDon\RetutnType.cs" />
+    <Compile Include="XuYaDon\SalesReturn.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="XuYaDon\" />
     <Folder Include="ZhangYang\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
