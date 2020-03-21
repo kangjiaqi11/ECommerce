@@ -44,11 +44,11 @@
   <ItemGroup>
     <Compile Include="BaseRequest.cs" />
     <Compile Include="BaseResponse.cs" />
+    <Compile Include="KangJiaQi\Request\BUserLoginRequst.cs" />
+    <Compile Include="KangJiaQi\Response\BUserLoginResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="KangJiaQi\Request\" />
-    <Folder Include="KangJiaQi\Response\" />
     <Folder Include="WangZhiHao\Request\" />
     <Folder Include="WangZhiHao\Response\" />
     <Folder Include="XuYaDon\Request\" />

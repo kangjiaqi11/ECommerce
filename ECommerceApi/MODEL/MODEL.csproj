@@ -58,7 +58,6 @@
     <Compile Include="WangZhiHao\GoodsModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="KangJiaQi\" />
     <Folder Include="XuYaDon\" />
     <Folder Include="ZhangYang\" />
   </ItemGroup>

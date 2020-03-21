@@ -56,6 +56,14 @@ namespace MODEL
         /// </summary>
         public int CreateId     { get; set; }
         /// <summary>
+        /// 用户邮箱
+        /// </summary>
+      public string UserEmil { get; set; }
+        /// <summary>
+        /// 用户密码
+        /// </summary>
+        public string UserPwd { get; set; }
+        /// <summary>
         /// 修改人
         /// </summary>
         public int UpdateId     { get; set; }
