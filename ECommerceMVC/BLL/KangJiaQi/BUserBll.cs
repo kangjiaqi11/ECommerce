@@ -17,13 +17,18 @@ namespace BLL
         /// </summary>
         /// <param name="bUserLoginRequst"></param>
         /// <returns></returns>
-        //public BUserLoginResponse<int> UserLogin(BUserLoginRequst bUserLoginRequst)
+        //public BUserLoginResponse<int> BUserLogin(BUserLoginRequst bUserLoginRequst)
         //{
-        //    return ApiRequestHelper.Post<BUserLoginRequst, BUserLoginResponse<int>>(bUserLoginRequst);
-        //}
-        public base bUserAddResponse()
-        {
 
+        //}
+        /// <summary>
+        ///用户添加
+        /// </summary>
+        /// <param name="bUserAddRequst"></param>
+        /// <returns></returns>
+        public BUserAddResponse BUseradd(BUserAddRequst bUserAddRequst)
+        {
+            return ApiRequestHelper.Post<BUserAddRequst,BUserAddResponse > (bUserAddRequst);
         }
     }
 }

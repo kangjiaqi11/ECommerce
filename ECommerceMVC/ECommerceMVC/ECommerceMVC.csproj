@@ -4183,7 +4183,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\BUser\Index.cshtml" />
     <Content Include="Views\BUser\UserLogin.cshtml" />
-    <Content Include="Views\BUser\UserAdd.cshtml" />
+    <Content Include="Views\BUser\UserRegist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="IndexStyle\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
