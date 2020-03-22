@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using SDCKClient;
 namespace ECommerceMVC.Controllers.KangJiaQi
 {
     public class BUserController : Controller

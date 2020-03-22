@@ -9,7 +9,7 @@ namespace BLL
     /// <summary>
     /// 用户相关的mvcbll
     /// </summary>
-   public class BUserBll
+    public class BUserBll
     {
         /// <summary>
         /// 登录
@@ -20,6 +20,10 @@ namespace BLL
         //public BUserLoginResponse<int> UserLogin(BUserLoginRequst bUserLoginRequst)
         //{
         //    return ApiRequestHelper.Post<BUserLoginRequst, BUserLoginResponse<int>>(bUserLoginRequst);
-        //} 
+        //}
+        public base bUserAddResponse()
+        {
+
+        }
     }
 }
