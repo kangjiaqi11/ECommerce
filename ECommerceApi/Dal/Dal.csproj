@@ -46,9 +46,9 @@
     <Compile Include="Helper\DBHelper.cs" />
     <Compile Include="KangJiaQi\BUserDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WangZhiHao\GoodsDal.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="WangZhiHao\" />
     <Folder Include="XuYaDon\" />
     <Folder Include="ZhangYang\" />
   </ItemGroup>
