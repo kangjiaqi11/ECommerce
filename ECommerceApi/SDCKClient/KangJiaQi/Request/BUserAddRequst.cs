@@ -67,7 +67,8 @@ namespace SDCKClient
         /// <summary>
         /// 角色id
         /// </summary>
-        public int RoleId { get; set; }
+        public int RoleId { get; set; } 
+       
         /// <summary>
         /// 获取api路径
         /// </summary>

@@ -23,7 +23,6 @@ namespace SDCKClient
         /// api路径
         /// </summary>
         /// <returns></returns>
-
         public override string GetApiName()
         {
             throw new NotImplementedException();

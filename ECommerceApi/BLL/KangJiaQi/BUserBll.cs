@@ -119,5 +119,14 @@ namespace BLL
             }
             return bUserAddResponse;
         }
+        /// <summary>
+        /// 部门表显示
+        /// </summary>
+        /// <returns></returns>
+        public DepartmentResponse DepartmentShow(DepartmentRequst departmentRequst)
+        {
+            string sql = "select * from Department";
+            return DBHelper.GetToList<Department>(sql);
+        }
     }
 }

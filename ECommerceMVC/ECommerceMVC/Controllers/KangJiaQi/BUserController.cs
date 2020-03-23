@@ -56,7 +56,7 @@ namespace ECommerceMVC.Controllers.KangJiaQi
             bUserAddRequst.DepartmentId = Department;
             bUserAddRequst.UserPhoto = UserPhoto;
             bUserAddRequst.UserEmil = UserEmil;
-                var ser = BUserBll.BUseradd(bUserAddRequst);
+                var ser = BUserBll.BUseradd(bUserAddRequst, "api/BUser/UserAdd");
                 if (ser.Status>0)
                 {
                     if (ser.IsSuccess)

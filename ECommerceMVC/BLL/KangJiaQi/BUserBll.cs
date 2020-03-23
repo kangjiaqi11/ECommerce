@@ -26,9 +26,9 @@ namespace BLL
         /// </summary>
         /// <param name="bUserAddRequst"></param>
         /// <returns></returns>
-        public BUserAddResponse BUseradd(BUserAddRequst bUserAddRequst)
+        public BUserAddResponse BUseradd(BUserAddRequst bUserAddRequst,string GetApiName)
         {
-            return ApiRequestHelper.Post<BUserAddRequst,BUserAddResponse > (bUserAddRequst);
+            return ApiRequestHelper.Post<BUserAddRequst,BUserAddResponse > (bUserAddRequst,GetApiName);
         }
         
     }

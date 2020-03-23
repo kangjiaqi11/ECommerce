@@ -43,5 +43,14 @@ namespace Dal
             string sql = $"insert into UserInfo (UserName,UserAccount ,Salt,UserPhoto,DepartmentId,state,CeateTime,UpdateTime,CreateId,UpdateId,UserPwd,UserEmil,RoleId) values('{info.UserName}','{info.UserAccount}','{info.Salt}','{info.UserPhoto}',{info.DepartmentId},{info.state},'{info.CeateTime}','{info.UpdateTime}',{info.CreateId},{info.UpdateId},'{info.UserPwd}','{info.UserEmil}',{info.RoleId})";
             return DBHelper.ExecuteNonQuery(sql);
         }
+        /// <summary>
+        /// 部门表显示
+        /// </summary>
+        /// <returns></returns>
+        public List<Department> DepartmentShow()
+        {
+            string sql = "select * from Department";
+            return DBHelper.GetToList<Department>(sql);
+        }
     }
 }
