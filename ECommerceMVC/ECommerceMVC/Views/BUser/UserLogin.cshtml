@@ -66,7 +66,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- BEGIN LOGIN -->
     <div class="content">
         <!-- BEGIN LOGIN FORM -->
-        <form class="login-form" action="/BUser/UserLogina" method="post">
+        <form class="login-form" action="/BUser/UserLogin" method="post">
             <h3 class="form-title">登录</h3>
             <div class="alert alert-danger display-hide">
                 <button class="close" data-close="alert"></button>
@@ -84,7 +84,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="UserPwd" name="UserPwd"/>
             </div>
             <div class="form-actions">
-                <button type="submit" onclick="Login">登录</button>
+                <a href="/BUser/UserRegist">登录</a>
                 <label class="rememberme check">
                     <input type="checkbox" name="remember" value="1" />记住
                 </label>
@@ -100,7 +100,7 @@ License: You must have a valid license purchased only from themeforest(the above
         </form>
         <!-- END LOGIN FORM -->
         <!-- BEGIN REGISTRATION FORM -->
-        <form class="register-form" action="/BUser/UserLogin" method="post" >
+        <form class="register-form" action="/BUser/UserRegista" method="post" >
             <h3>注册</h3>
             <p class="hint">
                 请输入您的账户信息

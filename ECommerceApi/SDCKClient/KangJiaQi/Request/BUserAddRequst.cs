@@ -74,7 +74,7 @@ namespace SDCKClient
         /// <returns></returns>
         public override string GetApiName()
         {
-            throw new NotImplementedException();
+            return "api/BUser/UserAdd";
         }
     }
 }         

@@ -30,5 +30,6 @@ namespace BLL
         {
             return ApiRequestHelper.Post<BUserAddRequst,BUserAddResponse > (bUserAddRequst);
         }
+        
     }
 }

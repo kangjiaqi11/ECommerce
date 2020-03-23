@@ -18,8 +18,8 @@ namespace ECommerceMVC
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             //调用TokenValues
-            //string token = TokenValues();
-            //SetToken(token);
+            string token = TokenValues();
+            SetToken(token);
         }
         /// <summary>
         /// 获取token值方法

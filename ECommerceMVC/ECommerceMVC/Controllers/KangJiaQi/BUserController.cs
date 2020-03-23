@@ -31,20 +31,21 @@ namespace ECommerceMVC.Controllers.KangJiaQi
         /// 登录方法
         /// </summary>
         /// <returns></returns>
-        //public ActionResult UserLogin(string UserName,String UserPwd)
-        //{
-        //    BUserLoginRequst bUserLoginRequst = new BUserLoginRequst();
-        //    bUserLoginRequst.Register = UserPwd;
-        //    bUserLoginRequst.UserPwd = UserPwd;
-            
-        //    return View();
-        //}
+        [HttpPost]
+        public JsonResult UserLogin(string UserName, String UserPwd)
+        {
+            BUserLoginRequst bUserLoginRequst = new BUserLoginRequst();
+            bUserLoginRequst.Register = UserPwd;
+            bUserLoginRequst.UserPwd = UserPwd;
+            return Json(12);
+
+        }
         /// <summary>
         /// 添加方法
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult UserLogin(string UserName, string UserAccount ,string UsrPwd,string UserConPwd ,int Department,string UserPhoto,string UserEmil)
+        public JsonResult UserRegista(string UserName, string UserAccount ,string UsrPwd,string UserConPwd ,int Department,string UserPhoto,string UserEmil)
         {
             if (UsrPwd==UserConPwd)
             {
@@ -69,23 +70,23 @@ namespace ECommerceMVC.Controllers.KangJiaQi
                 }
                 else
                 {
-
+                    Response.Write("<script>alert('{0}');</script>"+ser.Msg);
                 }
             }
             else
             {
                 Response.Write("<script>alert('验证失败');</script>");
             }
-            
-            return View();
+            return Json(12);
+   
         }
         /// <summary>
         /// 注册页面
         /// </summary>
         /// <returns></returns>
-        public ActionResult UserRegist()
-        {
-            return View();
-        }
+        //public ActionResult UserRegist()
+        //{
+        //    return View();
+        //}
     }
 }
