@@ -18,9 +18,9 @@ namespace BLL
         /// </summary>
         /// <param name="bUserLoginRequst"></param>
         /// <returns></returns>
-        public BUserLoginResponse<int> UserLogin(BUserLoginRequst bUserLoginRequst)
+        public BUserLoginResponse UserLogin(BUserLoginRequst bUserLoginRequst)
         {
-            BUserLoginResponse<int> bUserLoginResponse = new BUserLoginResponse<int>();
+            BUserLoginResponse bUserLoginResponse = new BUserLoginResponse();
             if (string.IsNullOrEmpty( bUserLoginRequst.Register)&& string.IsNullOrEmpty(bUserLoginRequst.Register) && string.IsNullOrEmpty(bUserLoginRequst.Register) && string.IsNullOrEmpty(bUserLoginRequst.UserPwd))
             {
                 bUserLoginResponse.Status = -1;
@@ -125,8 +125,10 @@ namespace BLL
         /// <returns></returns>
         public DepartmentResponse DepartmentShow(DepartmentRequst departmentRequst)
         {
-            string sql = "select * from Department";
-            return DBHelper.GetToList<Department>(sql);
+            DepartmentResponse departmentResponse = new DepartmentResponse();
+            var ser = BUserDal.DepartmentShow();
+            departmentResponse.DateList = ser;
+            return departmentResponse;
         }
     }
 }

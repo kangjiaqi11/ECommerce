@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SDCKClient;
+
 using BLL;
+using SDCKClient;
+
 namespace ECommerceMVC.Controllers.KangJiaQi
 {
     public class BUserController : Controller
@@ -32,20 +34,35 @@ namespace ECommerceMVC.Controllers.KangJiaQi
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult UserLogin(string UserName, String UserPwd)
+        public void UserLogin(string UserName, String UserPwd)
         {
             BUserLoginRequst bUserLoginRequst = new BUserLoginRequst();
-            bUserLoginRequst.Register = UserPwd;
+            bUserLoginRequst.Register = UserName;
             bUserLoginRequst.UserPwd = UserPwd;
-            return Json(12);
-
+            var ser = BUserBll.BUserLogin(bUserLoginRequst, "api/BUser/UserLogin");
+            if (ser.Status > 0)
+            {
+                if (ser.IsSuccess)
+                {
+                    Response.Write("<script>alert('登录成功');location.href='/BUser/Index'</script>");
+                    Session["BUserId"] = ser.Info;
+                }
+                else
+                {
+                    Response.Write("<script>alert('登录失败');</script>");
+                }
+            }
+            else
+            {
+                Response.Write("<script>alert('{0}');</script>" + ser.Msg);
+            }
         }
         /// <summary>
         /// 添加方法
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult UserRegista(string UserName, string UserAccount ,string UsrPwd,string UserConPwd ,int Department,string UserPhoto,string UserEmil)
+        public void UserRegista(string UserName, string UserAccount ,string UsrPwd,string UserConPwd ,int Department,string UserPhoto,string UserEmil)
         {
             if (UsrPwd==UserConPwd)
             {
@@ -53,7 +70,7 @@ namespace ECommerceMVC.Controllers.KangJiaQi
             bUserAddRequst.UserName = UserName;
             bUserAddRequst.UserAccount = UserAccount;
             bUserAddRequst.UserPwd = UsrPwd;
-            bUserAddRequst.DepartmentId = Department;
+            bUserAddRequst.DepartmentId = 1;
             bUserAddRequst.UserPhoto = UserPhoto;
             bUserAddRequst.UserEmil = UserEmil;
                 var ser = BUserBll.BUseradd(bUserAddRequst, "api/BUser/UserAdd");
@@ -61,7 +78,7 @@ namespace ECommerceMVC.Controllers.KangJiaQi
                 {
                     if (ser.IsSuccess)
                     {
-                        Response.Write("<script>alert('注册成功');</script>");
+                        Response.Write("<script>alert('注册成功');location.href='/BUser/UserLogin'</script>");
                     }
                     else
                     {
@@ -77,8 +94,6 @@ namespace ECommerceMVC.Controllers.KangJiaQi
             {
                 Response.Write("<script>alert('验证失败');</script>");
             }
-            return Json(12);
-   
         }
         /// <summary>
         /// 注册页面

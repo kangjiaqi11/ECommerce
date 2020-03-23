@@ -16,7 +16,7 @@ namespace ECommerceApi
         /// </summary>
         /// <param name="bUserLoginRequst"></param>
         /// <returns></returns>
-        public BUserLoginResponse<int> UserLogin(BUserLoginRequst bUserLoginRequst)
+        public BUserLoginResponse UserLogin(BUserLoginRequst bUserLoginRequst)
         {
             return BUserBll.UserLogin(bUserLoginRequst);
         }
@@ -28,6 +28,14 @@ namespace ECommerceApi
         public BUserAddResponse UserAdd(BUserAddRequst bUserAddRequst)
         {
             return BUserBll.UserAdd(bUserAddRequst);
+        }
+        /// <summary>
+        /// 部门表显示
+        /// </summary>
+        /// <returns></returns>
+        public DepartmentResponse DepartmentShow(DepartmentRequst departmentRequst)
+        {
+            return BUserBll.DepartmentShow(departmentRequst);
         }
     }
 }
