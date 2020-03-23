@@ -56,11 +56,14 @@
     <Compile Include="WangZhiHao\CommodityModel.cs" />
     <Compile Include="WangZhiHao\EstimateModel.cs" />
     <Compile Include="WangZhiHao\GoodsModel.cs" />
+    <Compile Include="ZhangYang\FrontUser.cs" />
+    <Compile Include="ZhangYang\Member.cs" />
+    <Compile Include="ZhangYang\Provinces.cs" />
+    <Compile Include="ZhangYang\Shipping.cs" />
+    <Compile Include="ZhangYang\Storeroom.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="KangJiaQi\" />
     <Folder Include="XuYaDon\" />
-    <Folder Include="ZhangYang\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
