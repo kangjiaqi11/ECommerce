@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MODEL.ZhangYang
 {
-    public class Provinces
+    public class Provinces //省市区
     {
         //省市区id
         public int ProvincesId { get; set; }

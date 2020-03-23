@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MODEL.ZhangYang
 {
-    public class Storeroom
+    public class Storeroom  //出库表
     {
         //出库编号
         public int CkId { get; set; }

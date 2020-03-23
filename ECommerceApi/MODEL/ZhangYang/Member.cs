@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MODEL.ZhangYang
 {
-    public class Member
+    public class Member //会员
     {
         //会员id
         public int MembersId  { get; set; }

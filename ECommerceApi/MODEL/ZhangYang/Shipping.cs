@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MODEL.ZhangYang
 {
-    public class Shipping
+    public class Shipping   //收货地址
     {
         //收货地址id
         public int ShippingId { get; set; }
