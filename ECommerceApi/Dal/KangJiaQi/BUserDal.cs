@@ -27,10 +27,10 @@ namespace Dal
         /// </summary>
         /// <param name="Register"></param>
         /// <returns></returns>
-        public int GetState(string Register)
+        public string GetState(string Register)
         {
             string sql = $"select  top 1 Salt from UserInfo where(UserEmil collate Chinese_PRC_CS_AS = '{Register}' or UserPhoto collate Chinese_PRC_CS_AS ='{Register}'  or UserAccount collate Chinese_PRC_CS_AS = '{Register}')";
-            return Convert.ToInt32(DBHelper.ExecuteScalar(sql));
+            return Convert.ToString( DBHelper.ExecuteScalar(sql));
         }
         #endregion
         /// <summary>
