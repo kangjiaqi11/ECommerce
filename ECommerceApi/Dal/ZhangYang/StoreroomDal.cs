@@ -10,7 +10,6 @@ namespace Dal.ZhangYang
 {
     public class StoreroomDal
     {
-        DBHelper db = new DBHelper();
         public Fenye StoreroomFenye(int PageIndex,int PageSize, string ShoopName)
         {
             List<Storeroom> list = new List<Storeroom>();
@@ -50,7 +49,6 @@ namespace Dal.ZhangYang
             f.Storerooms = list;
             f.Count = result;
             return f;
-
         }
     }
 }
