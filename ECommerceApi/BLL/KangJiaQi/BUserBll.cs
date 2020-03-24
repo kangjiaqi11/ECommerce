@@ -134,6 +134,7 @@ namespace BLL
             DepartmentResponse departmentResponse = new DepartmentResponse();
             var ser = BUserDal.DepartmentShow();
             departmentResponse.DateList = ser;
+            departmentResponse.IsSuccess = true;
             return departmentResponse;
         }
     }

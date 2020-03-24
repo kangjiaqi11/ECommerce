@@ -14,7 +14,7 @@ namespace MODEL
         /// <summary>
         /// 活动id
         /// </summary>
-        public int ActivityId     { get; set; }
+        public long ActivityId     { get; set; }
         /// <summary>
         /// 活动标题
         /// </summary>
@@ -26,11 +26,11 @@ namespace MODEL
         /// <summary>
         /// 时间段id
         /// </summary>
-        public int TimeQId        { get; set; }
+        public long TimeQId        { get; set; }
         /// <summary>
         /// 商品id
         /// </summary>
-        public int GoodId { get; set; }
+        public long GoodId { get; set; }
         /// <summary>
         /// 创建时间
         /// </summary>
@@ -42,11 +42,11 @@ namespace MODEL
         /// <summary>
         /// 创建人
         /// </summary>
-        public int CreateId { get; set; }
+        public long CreateId { get; set; }
         /// <summary>
         /// 修改人
         /// </summary>
-        public int UpdateId { get; set; }
+        public long UpdateId { get; set; }
 
     }
 }

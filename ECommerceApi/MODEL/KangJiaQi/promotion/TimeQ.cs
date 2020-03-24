@@ -14,7 +14,7 @@ namespace MODEL
         /// <summary>
         /// 时间段id
         /// </summary>
-        public int TimeQId    { get; set; }
+        public long TimeQId    { get; set; }
         /// <summary>
         /// 秒杀时间名称
         /// </summary>
@@ -38,10 +38,10 @@ namespace MODEL
         /// <summary>
         /// 创建人
         /// </summary>
-        public int CreateId { get; set; }
+        public long CreateId { get; set; }
         /// <summary>
         /// 修改人
         /// </summary>
-        public int UpdateId { get; set; }
+        public long UpdateId { get; set; }
     }
 }

@@ -19,9 +19,8 @@ namespace ECommerceMVC.Controllers.KangJiaQi
         // GET: BUser
         public ActionResult Index()
         {
-            DepartmentRequst departmentRequst = new DepartmentRequst();
-            var list = BUserBll.DepartmentShow(departmentRequst, "api/BUser/DepartmentShow");
-            return View(list);
+           
+            return View();
         }
         /// <summary>
         /// 登录页面包含用户注册，邮箱
@@ -29,7 +28,10 @@ namespace ECommerceMVC.Controllers.KangJiaQi
         /// <returns></returns>
         public ActionResult UserLogin()
         {
-            return View();
+            DepartmentRequst departmentRequst = new DepartmentRequst();
+            var list = BUserBll.DepartmentShow(departmentRequst, "api/BUser/DepartmentShow");
+
+            return View(list.);
         }
         /// <summary>
         /// 登录方法
