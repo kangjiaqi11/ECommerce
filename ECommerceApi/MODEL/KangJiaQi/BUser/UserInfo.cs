@@ -14,7 +14,7 @@ namespace MODEL
         /// <summary>
         /// 后台用户表id
         /// </summary>
-        public int UserId       { get; set; }
+        public long UserId       { get; set; }
         /// <summary>
         /// 用户昵称
         /// </summary>
@@ -38,7 +38,7 @@ namespace MODEL
         /// <summary>
         /// 部门id
         /// </summary>
-        public int DepartmentId { get; set; }
+        public long DepartmentId { get; set; }
         /// <summary>
         /// 数据状态
         /// </summary>
@@ -54,7 +54,7 @@ namespace MODEL
         /// <summary>
         /// 创建人
         /// </summary>
-        public int CreateId     { get; set; }
+        public long CreateId     { get; set; }
         /// <summary>
         /// 用户邮箱
         /// </summary>
@@ -66,10 +66,10 @@ namespace MODEL
         /// <summary>
         /// 修改人
         /// </summary>
-        public int UpdateId     { get; set; }
+        public long UpdateId     { get; set; }
         /// <summary>
         /// 角色id
         /// </summary>
-        public int RoleId       { get; set; }
+        public long RoleId       { get; set; }
     }
 }

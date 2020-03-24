@@ -14,7 +14,7 @@ namespace MODEL
         /// <summary>
         /// 部门id
         /// </summary>
-        public int DepartmentId   { get; set; }
+        public long DepartmentId   { get; set; }
         /// <summary>
         /// 部门名称
         /// </summary>
@@ -34,10 +34,10 @@ namespace MODEL
         /// <summary>
         /// 创建人
         /// </summary>
-        public int CreateId { get; set; }
+        public long CreateId { get; set; }
         /// <summary>
         /// 修改人
         /// </summary>
-        public int UpdateId { get; set; }
+        public long UpdateId { get; set; }
     }
 }

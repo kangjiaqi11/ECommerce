@@ -14,11 +14,11 @@ namespace MODEL
         /// <summary>
         /// 推荐id
         /// </summary>
-        public int RecommendId { get; set; }
+        public long RecommendId { get; set; }
         /// <summary>
         /// 商品id
         /// </summary>
-        public int GoodId      { get; set; }
+        public long GoodId      { get; set; }
         /// <summary>
         /// 是否推荐
         /// </summary>
@@ -34,10 +34,10 @@ namespace MODEL
         /// <summary>
         /// 创建人
         /// </summary>
-        public int CreateId { get; set; }
+        public long CreateId { get; set; }
         /// <summary>
         /// 修改人
         /// </summary>
-        public int UpdateId { get; set; }
+        public long UpdateId { get; set; }
     }
 }
