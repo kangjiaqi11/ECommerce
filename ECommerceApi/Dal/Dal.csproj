@@ -46,11 +46,11 @@
     <Compile Include="Helper\DBHelper.cs" />
     <Compile Include="KangJiaQi\BUserDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WangZhiHao\GoodsDal.cs" />
+    <Compile Include="ZhangYang\StoreroomDal.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="WangZhiHao\" />
     <Folder Include="XuYaDon\" />
-    <Folder Include="ZhangYang\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

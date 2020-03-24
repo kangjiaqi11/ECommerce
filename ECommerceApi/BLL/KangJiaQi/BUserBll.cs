@@ -18,9 +18,9 @@ namespace BLL
         /// </summary>
         /// <param name="bUserLoginRequst"></param>
         /// <returns></returns>
-        public BUserLoginResponse<int> UserLogin(BUserLoginRequst bUserLoginRequst)
+        public BUserLoginResponse UserLogin(BUserLoginRequst bUserLoginRequst)
         {
-            BUserLoginResponse<int> bUserLoginResponse = new BUserLoginResponse<int>();
+            BUserLoginResponse bUserLoginResponse = new BUserLoginResponse();
             if (string.IsNullOrEmpty( bUserLoginRequst.Register)&& string.IsNullOrEmpty(bUserLoginRequst.Register) && string.IsNullOrEmpty(bUserLoginRequst.Register) && string.IsNullOrEmpty(bUserLoginRequst.UserPwd))
             {
                 bUserLoginResponse.Status = -1;
@@ -35,6 +35,12 @@ namespace BLL
             if (ser>0)
             {
                 bUserLoginResponse.Info = ser;
+                bUserLoginResponse.IsSuccess = true;
+            }
+            else
+            {
+                bUserLoginResponse.Status = -1;
+                bUserLoginResponse.Msg = "登录失败";
             }
             return bUserLoginResponse;
         }
@@ -118,6 +124,17 @@ namespace BLL
                 bUserAddResponse.Msg = "注册失败";
             }
             return bUserAddResponse;
+        }
+        /// <summary>
+        /// 部门表显示
+        /// </summary>
+        /// <returns></returns>
+        public DepartmentResponse DepartmentShow(DepartmentRequst departmentRequst)
+        {
+            DepartmentResponse departmentResponse = new DepartmentResponse();
+            var ser = BUserDal.DepartmentShow();
+            departmentResponse.DateList = ser;
+            return departmentResponse;
         }
     }
 }
