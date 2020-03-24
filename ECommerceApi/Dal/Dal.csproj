@@ -47,7 +47,6 @@
     <Compile Include="KangJiaQi\BUserDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WangZhiHao\GoodsDal.cs" />
-    <Compile Include="ZhangYang\DBHelpe.cs" />
     <Compile Include="ZhangYang\StoreroomDal.cs" />
   </ItemGroup>
   <ItemGroup>

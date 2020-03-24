@@ -19,6 +19,8 @@ namespace ECommerceMVC.Controllers.KangJiaQi
         // GET: BUser
         public ActionResult Index()
         {
+            DepartmentRequst departmentRequst = new DepartmentRequst();
+            var list = BUserBll.DepartmentShow(departmentRequst, "");
             return View();
         }
         /// <summary>
@@ -54,7 +56,7 @@ namespace ECommerceMVC.Controllers.KangJiaQi
             }
             else
             {
-                Response.Write("<script>alert('{0}');</script>" + ser.Msg);
+                Response.Write($"<script>alert('{ser.Msg}');</script>");
             }
         }
         /// <summary>

@@ -35,6 +35,12 @@ namespace BLL
             if (ser>0)
             {
                 bUserLoginResponse.Info = ser;
+                bUserLoginResponse.IsSuccess = true;
+            }
+            else
+            {
+                bUserLoginResponse.Status = -1;
+                bUserLoginResponse.Msg = "登录失败";
             }
             return bUserLoginResponse;
         }
