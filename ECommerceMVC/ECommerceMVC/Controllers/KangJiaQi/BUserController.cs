@@ -20,8 +20,8 @@ namespace ECommerceMVC.Controllers.KangJiaQi
         public ActionResult Index()
         {
             DepartmentRequst departmentRequst = new DepartmentRequst();
-            var list = BUserBll.DepartmentShow(departmentRequst, "");
-            return View();
+            var list = BUserBll.DepartmentShow(departmentRequst, "api/BUser/DepartmentShow");
+            return View(list);
         }
         /// <summary>
         /// 登录页面包含用户注册，邮箱
