@@ -44,23 +44,27 @@
   <ItemGroup>
     <Compile Include="BaseRequest.cs" />
     <Compile Include="BaseResponse.cs" />
+    <Compile Include="KangJiaQi\Request\ActivityShowRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserAddRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserLoginRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserUpdateRequst.cs" />
     <Compile Include="KangJiaQi\Request\DepartmentRequst.cs" />
+    <Compile Include="KangJiaQi\Response\ActivityShowRespnse.cs" />
     <Compile Include="KangJiaQi\Response\BUserAddResponse.cs" />
     <Compile Include="KangJiaQi\Response\BUserLoginResponse.cs" />
     <Compile Include="KangJiaQi\Response\BUserUpdateResponse.cs" />
     <Compile Include="KangJiaQi\Response\DepartmentResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZhangYang\Request\StoreroomAddReq.cs" />
+    <Compile Include="ZhangYang\Request\StoreroomShowReq.cs" />
+    <Compile Include="ZhangYang\Response\StoreroomAddResp.cs" />
+    <Compile Include="ZhangYang\Response\StoreroomShowResp.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="WangZhiHao\Request\" />
     <Folder Include="WangZhiHao\Response\" />
     <Folder Include="XuYaDon\Request\" />
     <Folder Include="XuYaDon\Response\" />
-    <Folder Include="ZhangYang\Request\" />
-    <Folder Include="ZhangYang\Response\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MODEL\MODEL.csproj">

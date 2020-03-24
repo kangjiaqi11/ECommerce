@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 using MODEL.ZhangYang;
 using System.Data.SqlClient;
 
-namespace Dal.ZhangYang
+namespace Dal
 {
     public class StoreroomDal
     {
-        DBHelper db = new DBHelper();
         public Fenye StoreroomFenye(int PageIndex,int PageSize, string ShoopName)
         {
             List<Storeroom> list = new List<Storeroom>();
@@ -50,7 +49,6 @@ namespace Dal.ZhangYang
             f.Storerooms = list;
             f.Count = result;
             return f;
-
         }
     }
 }

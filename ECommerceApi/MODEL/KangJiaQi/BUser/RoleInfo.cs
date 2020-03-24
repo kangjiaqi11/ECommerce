@@ -14,11 +14,15 @@ namespace MODEL
         /// <summary>
         /// 角色id
         /// </summary>
-        public int  RoleId     { get; set; }
+        public long RoleId     { get; set; }
         /// <summary>
         /// 角色名称
         /// </summary>
         public string RoleName { get; set; }
+        /// <summary>
+        /// 数据状态
+        /// </summary>
+        public int Statel { get; set; }
         /// <summary>
         /// 创建时间
         /// </summary>
@@ -30,10 +34,10 @@ namespace MODEL
         /// <summary>
         /// 创建人
         /// </summary>
-        public int CreateId { get; set; }
+        public long CreateId { get; set; }
         /// <summary>
         /// 修改人
         /// </summary>
-        public int UpdateId { get; set; }
+        public long UpdateId { get; set; }
     }
 }

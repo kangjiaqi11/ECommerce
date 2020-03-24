@@ -2,135 +2,138 @@
 @{
     Layout = null;
 }
+@using MODEL
+@model List<Department>
+    <!DOCTYPE html>
+    <!--
+    Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.2
+    Version: 3.3.0
+    Author: KeenThemes
+    Website: http://www.keenthemes.com/
+    Contact: support@keenthemes.com
+    Follow: www.twitter.com/keenthemes
+    Like: www.facebook.com/keenthemes
+    Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+    License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+    -->
+    <!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+    <!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+    <!--[if !IE]><!-->
+    <html lang="en">
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+    <head>
+        <meta charset="utf-8" />
+        <title>Metronic | Login Options - Login Form 1</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+        <link href="~/IndexStyle/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="~/IndexStyle/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/IndexStyle/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/IndexStyle/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="~/IndexStyle/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+        <!-- END GLOBAL MANDATORY STYLES -->
+        <!-- BEGIN PAGE LEVEL STYLES -->
+        <link href="~/IndexStyle/admin/pages/css/login.css" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL SCRIPTS -->
+        <!-- BEGIN THEME STYLES -->
+        <link href="~/IndexStyle/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+        <link href="~/IndexStyle/global/css/plugins.css" rel="stylesheet" type="text/css" />
+        <link href="~/IndexStyle/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+        <link href="~/IndexStyle/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="~/IndexStyle/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+        <!-- END THEME STYLES -->
+        <link rel="shortcut icon" href="favicon.ico" />
+    </head>
+    <!-- END HEAD -->
+    <!-- BEGIN BODY -->
+    <body class="login">
+        <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+        <div class="menu-toggler sidebar-toggler">
+        </div>
+        <!-- END SIDEBAR TOGGLER BUTTON -->
+        <!-- BEGIN LOGO -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="~/IndexStyle/admin/layout/img/logo-big.png" alt="" />
+            </a>
+        </div>
+        <!-- END LOGO -->
+        <!-- BEGIN LOGIN -->
+        <div class="content">
+            <!-- BEGIN LOGIN FORM -->
+            <form class="login-form" action="/BUser/UserLogin" method="post">
+                <h3 class="form-title">登录</h3>
+                <div class="alert alert-danger display-hide">
+                    <button class="close" data-close="alert"></button>
+                    <span>
+                        Enter any username and password.
+                    </span>
+                </div>
+                <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">用户名</label>
+                    <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="UserName" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">密码</label>
+                    <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="UserPwd" name="UserPwd" />
+                </div>
+                <div class="form-actions">
+                    <input id="UserLogin" type="submit" value="123" />
+                    <label class="rememberme check">
+                        <input type="checkbox" name="remember" value="1" />记住
+                    </label>
+                </div>
+                <div class="login-options">
 
-
-<!DOCTYPE html>
-<!--
-Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.2
-Version: 3.3.0
-Author: KeenThemes
-Website: http://www.keenthemes.com/
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Like: www.facebook.com/keenthemes
-Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
-License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
--->
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
-<!--[if !IE]><!-->
-<html lang="en">
-<!--<![endif]-->
-<!-- BEGIN HEAD -->
-<head>
-    <meta charset="utf-8" />
-    <title>Metronic | Login Options - Login Form 1</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta content="" name="description" />
-    <meta content="" name="author" />
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
-    <link href="~/IndexStyle/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="~/IndexStyle/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/IndexStyle/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/IndexStyle/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/IndexStyle/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <!-- BEGIN PAGE LEVEL STYLES -->
-    <link href="~/IndexStyle/admin/pages/css/login.css" rel="stylesheet" type="text/css" />
-    <!-- END PAGE LEVEL SCRIPTS -->
-    <!-- BEGIN THEME STYLES -->
-    <link href="~/IndexStyle/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
-    <link href="~/IndexStyle/global/css/plugins.css" rel="stylesheet" type="text/css" />
-    <link href="~/IndexStyle/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
-    <link href="~/IndexStyle/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color" />
-    <link href="~/IndexStyle/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
-    <!-- END THEME STYLES -->
-    <link rel="shortcut icon" href="favicon.ico" />
-</head>
-<!-- END HEAD -->
-<!-- BEGIN BODY -->
-<body class="login">
-    <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-    <div class="menu-toggler sidebar-toggler">
-    </div>
-    <!-- END SIDEBAR TOGGLER BUTTON -->
-    <!-- BEGIN LOGO -->
-    <div class="logo">
-        <a href="index.html">
-            <img src="~/IndexStyle/admin/layout/img/logo-big.png" alt="" />
-        </a>
-    </div>
-    <!-- END LOGO -->
-    <!-- BEGIN LOGIN -->
-    <div class="content">
-        <!-- BEGIN LOGIN FORM -->
-        <form class="login-form" action="/BUser/UserLogin" method="post">
-            <h3 class="form-title">登录</h3>
-            <div class="alert alert-danger display-hide">
-                <button class="close" data-close="alert"></button>
-                <span>
-                    Enter any username and password.
-                </span>
-            </div>
-            <div class="form-group">
-                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-                <label class="control-label visible-ie8 visible-ie9">用户名</label>
-                <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="UserName" />
-            </div>
-            <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">密码</label>
-                <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="UserPwd" name="UserPwd" />
-            </div>
-            <div class="form-actions">
-                <input id="UserLogin" type="submit" value="123" />
-                <label class="rememberme check">
-                    <input type="checkbox" name="remember" value="1" />记住
-                </label>
-            </div>
-            <div class="login-options">
-
-            </div>
-            <div class="create-account">
-                <p>
-                    <a href="javascript:;" id="register-btn" class="uppercase">创建一个账户</a>
+                </div>
+                <div class="create-account">
+                    <p>
+                        <a href="javascript:;" id="register-btn" class="uppercase">创建一个账户</a>
+                    </p>
+                </div>
+            </form>
+            <!-- END LOGIN FORM -->
+            <!-- BEGIN REGISTRATION FORM -->
+            <form class="register-form" action="/BUser/UserRegista" method="post">
+                <h3>注册</h3>
+                <p class="hint">
+                    请输入您的账户信息
                 </p>
-            </div>
-        </form>
-        <!-- END LOGIN FORM -->
-        <!-- BEGIN REGISTRATION FORM -->
-        <form class="register-form" action="/BUser/UserRegista" method="post">
-            <h3>注册</h3>
-            <p class="hint">
-                请输入您的账户信息
-            </p>
-            <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">用户名称</label>
-                <input class="form-control placeholder-no-fix" type="text" placeholder="用户名称" name="UserName" />
-            </div>
-            <div class="form-group">
-                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-                <label class="control-label visible-ie8 visible-ie9">账户</label>
-                <input class="form-control placeholder-no-fix" type="text" placeholder="账户" name="UserAccount" />
-            </div>
-            <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">密码</label>
-                <input class="form-control placeholder-no-fix" type="password" placeholder="密码" name="UsrPwd" />
-            </div>
-            <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">确认密码</label>
-                <input class="form-control placeholder-no-fix" type="password" placeholder="确认密码" name="UserConPwd" />
-            </div>
-            <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">部门</label>
-                <select name="Department" class="form-control">
-                    <option value="0">
-                        请选择 </ option >
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">用户名称</label>
+                    <input class="form-control placeholder-no-fix" type="text" placeholder="用户名称" name="UserName" />
+                </div>
+                <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">账户</label>
+                    <input class="form-control placeholder-no-fix" type="text" placeholder="账户" name="UserAccount" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">密码</label>
+                    <input class="form-control placeholder-no-fix" type="password" placeholder="密码" name="UsrPwd" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">确认密码</label>
+                    <input class="form-control placeholder-no-fix" type="password" placeholder="确认密码" name="UserConPwd" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">部门</label>
+                    <select name="Department" class="form-control">
+                        @foreach (var item in Model)
+                        {
+                            <option value="@item.DepartmentId">@item.DepartmentName</option >
+                        }
+
                 </select>
             </div>
-            < p class="hint">
+            <p class="hint">
             在下面输入您的详细信息
             </p>
             <div class="form-group">
