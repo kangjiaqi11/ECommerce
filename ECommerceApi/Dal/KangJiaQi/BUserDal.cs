@@ -11,7 +11,7 @@ namespace Dal
     {
         DBHelper DBHelper = new DBHelper();
         #region 用户登录
-  /// <summary>
+        /// <summary>
         /// 用户登录
         /// </summary>
         /// <param name="Register"></param>
@@ -30,9 +30,11 @@ namespace Dal
         public string GetState(string Register)
         {
             string sql = $"select  top 1 Salt from UserInfo where(UserEmil collate Chinese_PRC_CS_AS = '{Register}' or UserPhoto collate Chinese_PRC_CS_AS ='{Register}'  or UserAccount collate Chinese_PRC_CS_AS = '{Register}')";
-            return Convert.ToString( DBHelper.ExecuteScalar(sql));
+            return Convert.ToString(DBHelper.ExecuteScalar(sql));
         }
+
         #endregion
+        #region 用户相关的
         /// <summary>
         /// 用户添加
         /// </summary>
@@ -52,5 +54,7 @@ namespace Dal
             string sql = "select * from Department";
             return DBHelper.GetToList<Department>(sql);
         }
+        #endregion
+
     }
 }
