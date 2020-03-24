@@ -11,8 +11,10 @@ namespace BLL.ZhangYang
 {
     public class StoreroomBLL
     {
+        
         public Fenye StoreroomFenye(int PageIndex, int PageSize, string ShoopName)
         {
+            StoreroomDal dal = new StoreroomDal();
             BUserAddResponse sar = new BUserAddResponse();
             return dal.StoreroomFenye(PageIndex, PageSize, ShoopName);
         }
