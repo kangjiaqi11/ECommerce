@@ -14,11 +14,11 @@ namespace MODEL.WangZhiHao
         /// <summary>
         /// 评论编号
         /// </summary>
-        public int EstimateId { get; set; }
+        public long EstimateId { get; set; }
         /// <summary>
         /// 用户编号
         /// </summary>
-        public int FrontUserid { get; set; }
+        public long FrontUserid { get; set; }
         /// <summary>
         /// 商品编号
         /// </summary>
@@ -46,10 +46,10 @@ namespace MODEL.WangZhiHao
         /// <summary>
         /// 创建人
         /// </summary>
-        public int CreaterId { get; set; }
+        public long CreaterId { get; set; }
         /// <summary>
         /// 修改人
         /// </summary>
-        public int UpdaterId { get; set; }
+        public long UpdaterId { get; set; }
     }
 }
