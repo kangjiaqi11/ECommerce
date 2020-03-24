@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MODEL.ZhangYang;
 using System.Data.SqlClient;
 
-namespace Dal.ZhangYang
+namespace Dal
 {
     public class StoreroomDal
     {

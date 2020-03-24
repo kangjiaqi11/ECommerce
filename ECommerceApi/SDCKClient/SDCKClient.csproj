@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\lib\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -47,9 +47,11 @@
     <Compile Include="KangJiaQi\Request\BUserAddRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserLoginRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserUpdateRequst.cs" />
+    <Compile Include="KangJiaQi\Request\DepartmentRequst.cs" />
     <Compile Include="KangJiaQi\Response\BUserAddResponse.cs" />
     <Compile Include="KangJiaQi\Response\BUserLoginResponse.cs" />
     <Compile Include="KangJiaQi\Response\BUserUpdateResponse.cs" />
+    <Compile Include="KangJiaQi\Response\DepartmentResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ZhangYang\Request\StoreroomAddReq.cs" />
     <Compile Include="ZhangYang\Request\StoreroomShowReq.cs" />
@@ -61,6 +63,12 @@
     <Folder Include="WangZhiHao\Response\" />
     <Folder Include="XuYaDon\Request\" />
     <Folder Include="XuYaDon\Response\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MODEL\MODEL.csproj">
+      <Project>{2cd1adc8-95b3-4145-b620-86e5e7f14e3f}</Project>
+      <Name>MODEL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
