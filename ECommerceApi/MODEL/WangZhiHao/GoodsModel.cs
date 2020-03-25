@@ -90,10 +90,10 @@ namespace MODEL.WangZhiHao
         /// <summary>
         /// 创建人
         /// </summary>
-        public int CreaterId { get; set; }
+        public long CreaterId { get; set; }
         /// <summary>
         /// 修改人
         /// </summary>
-        public int UpdaterId { get; set; }
+        public long UpdaterId { get; set; }
     }
 }

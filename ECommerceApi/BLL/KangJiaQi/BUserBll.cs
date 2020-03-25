@@ -18,7 +18,7 @@ namespace BLL
         /// </summary>
         /// <param name="bUserLoginRequst"></param>
         /// <returns></returns>
-        public BUserLoginResponse UserLogin(BUserLoginRequst bUserLoginRequst)
+       public BUserLoginResponse UserLogin(BUserLoginRequst bUserLoginRequst)
         {
             BUserLoginResponse bUserLoginResponse = new BUserLoginResponse();
             if (string.IsNullOrEmpty(bUserLoginRequst.Register) && string.IsNullOrEmpty(bUserLoginRequst.Register) && string.IsNullOrEmpty(bUserLoginRequst.Register) && string.IsNullOrEmpty(bUserLoginRequst.UserPwd))

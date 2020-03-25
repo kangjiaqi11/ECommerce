@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dal;
 using MODEL.ZhangYang;
-using SDCKClient;
+using SDCKClient.ZhangYang.Request;
 using SDCKClient.ZhangYang.Response;
 
 namespace BLL.ZhangYang
@@ -13,11 +13,23 @@ namespace BLL.ZhangYang
     public class StoreroomBLL
     {
         //
-        public Fenye StoreroomFenye(int PageIndex, int PageSize, string ShoopName)
+        public StoreroomShowResp StoreroomFenye(StoreroomShowReq Ssrq)
         {
-            
+            StoreroomDal dal = new StoreroomDal();
             StoreroomShowResp Ssr = new StoreroomShowResp();
-            var ser = StoreroomDal.StoreroomFenye(int PageIndex, int PageSize, string ShoopName);
+            var ser = dal.StoreroomFenye( Ssrq.PageIndex, Ssrq.PageSize, Ssrq.ShoopName);
+
+            if (ser!=null)
+            {
+                Ssr.StoList = ser;
+                Ssr.IsSuccess = true;
+            }
+            else
+            {
+                Ssr.Status = -1;
+                Ssr.Msg = "显示失败";
+            }
+            return Ssr;
         }
     }
 }
