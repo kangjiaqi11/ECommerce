@@ -53,6 +53,7 @@
     <Compile Include="ApiRequest\HttpClientHelper.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="KangJiaQi\BUserBll.cs" />
+    <Compile Include="KangJiaQi\promotionBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
