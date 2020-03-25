@@ -32,6 +32,18 @@ namespace MODEL
         /// </summary>
         public long GoodId { get; set; }
         /// <summary>
+        /// 活动开始时间
+        /// </summary>
+        public DateTime AStartTime	 { get; set; }
+        /// <summary>
+        /// 活动结束时间
+        /// </summary>
+        public DateTime AEenTime { get; set; }
+        /// <summary>
+        /// 数据状态
+        /// </summary>
+        public int Statel { get; set; }
+        /// <summary>
         /// 创建时间
         /// </summary>
         public DateTime CeateTime { get; set; }

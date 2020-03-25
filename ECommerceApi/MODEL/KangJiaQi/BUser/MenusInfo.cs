@@ -28,6 +28,10 @@ namespace MODEL
         /// </summary>
         public string FatherUrl { get; set; }
         /// <summary>
+        /// 数据状态
+        /// </summary>
+        public int Statel { get; set; }
+        /// <summary>
         /// 创建时间
         /// </summary>
         public DateTime CeateTime { get; set; }

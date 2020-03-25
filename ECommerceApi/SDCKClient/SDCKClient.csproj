@@ -44,10 +44,12 @@
   <ItemGroup>
     <Compile Include="BaseRequest.cs" />
     <Compile Include="BaseResponse.cs" />
+    <Compile Include="KangJiaQi\Request\ActivityShowRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserAddRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserLoginRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserUpdateRequst.cs" />
     <Compile Include="KangJiaQi\Request\DepartmentRequst.cs" />
+    <Compile Include="KangJiaQi\Response\ActivityShowRespnse.cs" />
     <Compile Include="KangJiaQi\Response\BUserAddResponse.cs" />
     <Compile Include="KangJiaQi\Response\BUserLoginResponse.cs" />
     <Compile Include="KangJiaQi\Response\BUserUpdateResponse.cs" />

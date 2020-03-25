@@ -10,7 +10,7 @@ using MODEL;
 
 namespace BLL
 {
-   public class BUserBll
+    public class BUserBll
     {
         BUserDal BUserDal = new BUserDal();
         /// <summary>
@@ -21,18 +21,18 @@ namespace BLL
         public BUserLoginResponse UserLogin(BUserLoginRequst bUserLoginRequst)
         {
             BUserLoginResponse bUserLoginResponse = new BUserLoginResponse();
-            if (string.IsNullOrEmpty( bUserLoginRequst.Register)&& string.IsNullOrEmpty(bUserLoginRequst.Register) && string.IsNullOrEmpty(bUserLoginRequst.Register) && string.IsNullOrEmpty(bUserLoginRequst.UserPwd))
+            if (string.IsNullOrEmpty(bUserLoginRequst.Register) && string.IsNullOrEmpty(bUserLoginRequst.Register) && string.IsNullOrEmpty(bUserLoginRequst.Register) && string.IsNullOrEmpty(bUserLoginRequst.UserPwd))
             {
                 bUserLoginResponse.Status = -1;
                 bUserLoginResponse.Msg = "数据又为空项";
-                return bUserLoginResponse; 
-             }
+                return bUserLoginResponse;
+            }
             //获取盐
             var state = BUserDal.GetState(bUserLoginRequst.Register);
             //给密码加密
-            var Pwd= MD5Encrypt.MD5Encrypt32( bUserLoginRequst.UserPwd+state);
+            var Pwd = MD5Encrypt.MD5Encrypt32(bUserLoginRequst.UserPwd + state);
             var ser = BUserDal.UserLogin(bUserLoginRequst.Register, Pwd);
-            if (ser>0)
+            if (ser > 0)
             {
                 bUserLoginResponse.Info = ser;
                 bUserLoginResponse.IsSuccess = true;
@@ -74,7 +74,7 @@ namespace BLL
                 return bUserAddResponse;
             }
             //判断部门
-            if (bUserAddRequst.DepartmentId==0)
+            if (bUserAddRequst.DepartmentId == 0)
             {
                 bUserAddResponse.Status = -1;
                 bUserAddResponse.Msg = "部门不能为空";
@@ -88,14 +88,14 @@ namespace BLL
                 return bUserAddResponse;
             }
             //判断邮箱
-             if (string.IsNullOrEmpty(bUserAddRequst.UserEmil))
+            if (string.IsNullOrEmpty(bUserAddRequst.UserEmil))
             {
                 bUserAddResponse.Status = -1;
                 bUserAddResponse.Msg = "邮箱不能为空";
                 return bUserAddResponse;
             }
-             //密码加密
-             //获取盐
+            //密码加密
+            //获取盐
             var salt = Generate.GenerateSalt();
             //密码加密
             var passwoed = MD5Encrypt.MD5Encrypt32(bUserAddRequst.UserPwd + salt);
@@ -114,7 +114,7 @@ namespace BLL
             userInfo.UserEmil = bUserAddRequst.UserEmil;
             userInfo.RoleId = 1;
             var ser = BUserDal.UserAdd(userInfo);
-            if (ser>0)
+            if (ser > 0)
             {
                 bUserAddResponse.IsSuccess = true;
             }
@@ -133,8 +133,16 @@ namespace BLL
         {
             DepartmentResponse departmentResponse = new DepartmentResponse();
             var ser = BUserDal.DepartmentShow();
-            departmentResponse.DateList = ser;
-            departmentResponse.IsSuccess = true;
+            if (ser != null)
+            {
+                departmentResponse.DateList = ser;
+                departmentResponse.IsSuccess = true;
+            }
+            else
+            {
+                departmentResponse.Status = -1;
+                departmentResponse.Msg = "显示失败";
+            }
             return departmentResponse;
         }
     }
