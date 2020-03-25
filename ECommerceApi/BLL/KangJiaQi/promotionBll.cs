@@ -11,6 +11,11 @@ namespace BLL
    public class promotionBll
     {
         promotionDal promotionDal = new promotionDal();
+        /// <summary>
+        /// 秒杀活动显示
+        /// </summary>
+        /// <param name="activityShowRequst"></param>
+        /// <returns></returns>
         public ActivityShowRespnse ActivityShow(ActivityShowRequst activityShowRequst)
         {
             ActivityShowRespnse activityShowRespnse = new ActivityShowRespnse();

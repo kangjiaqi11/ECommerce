@@ -8,6 +8,10 @@ namespace SDCKClient.ZhangYang.Request
 {
     public class StoreroomShowReq : BaseRequest //出库表
     {
+        //页数
+        public int PageIndex { get; set; }
+        //总页数
+        public int PageSize { get; set; }
         //出库编号
         public int CkId { get; set; }
         //商品名称
