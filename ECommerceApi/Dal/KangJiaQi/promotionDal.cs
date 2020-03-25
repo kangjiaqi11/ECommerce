@@ -19,6 +19,7 @@ namespace Dal
         /// <returns></returns>
         public ActivityPage ActivityShow(string ActivityTitle,int PageIndex,int PageSize)
         {
+            List<Activity> list = new List<Activity>();
             ActivityPage activityPage = new ActivityPage();
             if (SqlConnection!=null)
             {
@@ -49,14 +50,15 @@ namespace Dal
                     info.Statel = Convert.ToInt32(reader["Statel"]);
                     info.AStartTime = Convert.ToDateTime(reader["AStartTime"]);
                     info.AEenTime = Convert.ToDateTime(reader["AEenTime"]);
-                    info.CeateTime = Convert.ToDateTime(reader["CeateTime"]);
+                    info.CreateTime = Convert.ToDateTime(reader["CreateTime"]);
                     info.UpdateTime = Convert.ToDateTime(reader["UpdateTime"]);
                     info.CreateId = Convert.ToInt32(reader["CreateId"]);
                     info.UpdateId = Convert.ToInt32(reader["UpdateId"]);
-                    activityPage.DateList.Add(info);
+                    list.Add(info);
                 }
                 reader.Close();
                 activityPage.TotaCount = Convert.ToInt32(sqlCommand.Parameters["@TotaCount"].Value);
+                activityPage.DateList = list;
                 SqlConnection.Close();
                     }
             return activityPage; 

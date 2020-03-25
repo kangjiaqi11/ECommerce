@@ -30,7 +30,7 @@ namespace ECommerceMVC
             var name = "老头";
             var pwd = "123";
             HttpClientHelper httpClientHelper = new HttpClientHelper("http://localhost:56593/");
-            string json = httpClientHelper.Get($"api/Token?name={name}&pwd={pwd}");
+            string json = httpClientHelper.Get($"api/Token/GetAuthToken?name={name}&pwd={pwd}");
             json = json.Trim('"');
             return json;
 
@@ -46,7 +46,7 @@ namespace ECommerceMVC
             XElement book = new XElement("Tokne");
             book.SetElementValue("name", token);
             root.Add(book);
-            root.Save("E://实训项目//ECommerce2//ECommerceMVC//ECommerceMVC//App_Data//Token.xml");
+            root.Save(Server.MapPath("Token.xml"));
         }
     }
 }

@@ -106,7 +106,7 @@ namespace BLL
             userInfo.UserPhoto = bUserAddRequst.UserPhoto;
             userInfo.DepartmentId = bUserAddRequst.DepartmentId;
             userInfo.state = 1;
-            userInfo.CeateTime = DateTime.Now;
+            userInfo.CreateTime = DateTime.Now;
             userInfo.UpdateTime = DateTime.Now;
             userInfo.CreateId = 0;
             userInfo.UpdateId = 0;
