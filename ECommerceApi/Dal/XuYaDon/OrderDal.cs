@@ -13,9 +13,9 @@ namespace Dal
   public  class OrderDal
     {
         SqlConnection connetion = new SqlConnection("Data Source=.;Initial Catalog=ECommerce1;Integrated Security=True");
-        public List<PageModel> OrderShow(string OrderNumber,string GoodsName,string AddrPhone,int State,string puttime,int pageindex,int pagesize)
+        public PageModel OrderShow(string OrderNumber,string GoodsName,string AddrName, string AddrPhone,int State,string puttime,int pageindex,int pagesize)
         {
-            List<PageModel> Pagelist = new List<PageModel>();
+          
             PageModel page = new PageModel();
             List<OrderModel> list = new List<OrderModel>();
             connetion.Open();
@@ -26,6 +26,7 @@ namespace Dal
             SqlParameter[] Parameters = new SqlParameter[] {
                 new SqlParameter(){ ParameterName="@OrderNumber",SqlDbType=System.Data.SqlDbType.VarChar,SqlValue=OrderNumber},
                 new SqlParameter(){ ParameterName="@GoodsName",SqlDbType=System.Data.SqlDbType.VarChar,SqlValue=GoodsName},
+                 new SqlParameter(){ ParameterName="@AddrName",SqlDbType=System.Data.SqlDbType.VarChar,SqlValue=AddrPhone},
                 new SqlParameter(){ ParameterName="@AddrPhone",SqlDbType=System.Data.SqlDbType.VarChar,SqlValue=AddrPhone},
                 new SqlParameter(){ ParameterName="@State",SqlDbType=System.Data.SqlDbType.Int,SqlValue=State},
                 new SqlParameter(){ ParameterName="@puttime",SqlDbType=System.Data.SqlDbType.VarChar,SqlValue=puttime},
@@ -38,8 +39,8 @@ namespace Dal
             var read = DataReadHelp.DataRead<OrderModel>(res);
             page.totalcount= Convert.ToInt32(cmd.Parameters["@totaCount"].Value);
             page.list = list;
-            Pagelist.Add(page);
-            return Pagelist;
+       
+            return page;
         }
     }
 }

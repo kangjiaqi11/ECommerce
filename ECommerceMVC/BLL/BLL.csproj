@@ -55,6 +55,7 @@
     <Compile Include="KangJiaQi\BUserBll.cs" />
     <Compile Include="KangJiaQi\promotionBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XuYaDon\OrderShowBll.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

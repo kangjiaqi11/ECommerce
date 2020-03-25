@@ -165,6 +165,7 @@
     <Compile Include="Controllers\KangJiaQi\PromotionController.cs" />
     <Compile Include="Controllers\TokenController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\Xuyadong\OrderController.cs" />
     <Compile Include="Controllers\ZhangYang\StoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
