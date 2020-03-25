@@ -161,6 +161,7 @@
     <Compile Include="Auth\ApiAuthorizeAttribute.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KangJiaQi\BUserController.cs" />
+    <Compile Include="Controllers\KangJiaQi\PromotionController.cs" />
     <Compile Include="Controllers\TokenController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\ZhangYang\StoController.cs" />
