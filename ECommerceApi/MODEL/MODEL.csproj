@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="KangJiaQi\promotion\ActivityPage.cs" />
     <Compile Include="KangJiaQi\promotion\Activity.cs" />
     <Compile Include="KangJiaQi\BUser\Department.cs" />
     <Compile Include="KangJiaQi\BUser\Jurisdiction.cs" />

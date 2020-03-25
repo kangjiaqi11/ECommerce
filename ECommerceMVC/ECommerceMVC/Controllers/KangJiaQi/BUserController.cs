@@ -19,9 +19,8 @@ namespace ECommerceMVC.Controllers.KangJiaQi
         // GET: BUser
         public ActionResult Index()
         {
-            DepartmentRequst departmentRequst = new DepartmentRequst();
-            var list = BUserBll.DepartmentShow(departmentRequst, "api/BUser/DepartmentShow");
-            return View(list);
+           
+            return View();
         }
         /// <summary>
         /// 登录页面包含用户注册，邮箱
@@ -29,7 +28,10 @@ namespace ECommerceMVC.Controllers.KangJiaQi
         /// <returns></returns>
         public ActionResult UserLogin()
         {
-            return View();
+            DepartmentRequst departmentRequst = new DepartmentRequst();
+            var list = BUserBll.DepartmentShow(departmentRequst, "api/BUser/DepartmentShow");
+
+            return View(list.DateList);
         }
         /// <summary>
         /// 登录方法
@@ -72,7 +74,7 @@ namespace ECommerceMVC.Controllers.KangJiaQi
             bUserAddRequst.UserName = UserName;
             bUserAddRequst.UserAccount = UserAccount;
             bUserAddRequst.UserPwd = UsrPwd;
-            bUserAddRequst.DepartmentId = 1;
+            bUserAddRequst.DepartmentId = Department;
             bUserAddRequst.UserPhoto = UserPhoto;
             bUserAddRequst.UserEmil = UserEmil;
                 var ser = BUserBll.BUseradd(bUserAddRequst, "api/BUser/UserAdd");
@@ -89,7 +91,7 @@ namespace ECommerceMVC.Controllers.KangJiaQi
                 }
                 else
                 {
-                    Response.Write("<script>alert('{0}');</script>"+ser.Msg);
+                    Response.Write($"<script>alert('{ser.Msg}');</script>");
                 }
             }
             else
