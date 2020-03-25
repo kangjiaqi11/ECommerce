@@ -10,6 +10,6 @@ namespace SDCKClient.ZhangYang.Response
 {
     public class StoreroomShowResp : BaseResponse
     {
-        public List<Storeroom> StoList { get; set; }
+        public Fenye StoList { get; set; }
     }
 }

@@ -11,6 +11,10 @@ namespace ECommerceApi.Controllers.ZhangYang
 {
     public class StoController : ApiController
     {
-         
+        StoreroomBLL bll = new StoreroomBLL();
+        public StoreroomShowResp StoreroomFenye(StoreroomShowReq Ssrq)
+        {
+            return bll.StoreroomFenye(Ssrq);
+        }
     }
 }
