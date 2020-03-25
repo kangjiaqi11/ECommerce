@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using Webdiyer.WebControls.Mvc;
 namespace ECommerceMVC.Controllers.KangJiaQi
 {
     public class promotionController : Controller
