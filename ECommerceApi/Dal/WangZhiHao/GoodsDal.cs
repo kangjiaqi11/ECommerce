@@ -33,6 +33,7 @@ namespace Dal
             return db.GetToList<GoodsModel>(sql);
         }
 
+        
 
     }
 }
