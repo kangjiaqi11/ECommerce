@@ -2,11 +2,14 @@
 @{
     ViewBag.Title = "StoreroomFenye";
 }
-@using MODEL
+@using MODEL.ZhangYang
 @model Fenye
+
 <h2>StoreroomFenye</h2>
 
-<input id="Text1" type="text" /> 搜索
+<input id="ShoopName" type="text" /> 商品名称
+<input id="Submit1" type="submit" value="查询" />
+
 
 <table class="table">
     <tr>
@@ -16,12 +19,30 @@
         <td>订单号</td>
         <td>库存信息</td>
         <td>库存类型</td>
-        <td>操作类型</td>
     </tr>
     @foreach (var item in Model.Storerooms)
     {
-        <tr>
-            <td>@item.</td>
-        </tr>
+<tr>
+    <td>@item.CkId</td>
+    <td>@item.ShoopName</td>
+    <td>@item.Hhsx</td>
+    <td>@item.Ddh</td>
+    <td>@item.Kcsl</td>
+    <td>@item.Kclx</td>
+</tr>
     }
 </table>
+
+<table>
+    <tr>
+        @for (int i = 1; i <= (Model.Count / 2) + (Model.Count % 2 == 0 ? 0 : 1); i++)
+        {
+        <td><input type="button" value="@i" onclick="jump(@i)" /></td>
+        }
+    </tr>
+</table>
+<script>
+    function jump(i) {
+        location.href = "/Sto/StoreroomFenye?PageSize=2&PageIndex=" + i;
+    }
+</script>
