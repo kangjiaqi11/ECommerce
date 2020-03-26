@@ -15,9 +15,19 @@ namespace Dal
             {
                 T t = new T();
                 var res = t.GetType().GetProperties();
+             
                 foreach (var item in res)
                 {
-                    item.SetValue(t, reader[item.Name]);
+                    if (t.GetType().GetProperty(item.Name).CanWrite)
+                    {
+                        item.SetValue(t, reader[item.Name]);
+                    }
+                    else
+                    {
+                        
+                    }
+                    
+                   
                 }
                 list.Add(t);
             }
