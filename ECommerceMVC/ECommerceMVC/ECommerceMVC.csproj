@@ -47,7 +47,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MODEL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="MODEL">
+      <HintPath>..\..\ECommerceApi\MODEL\bin\Debug\MODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="MODEL.1.0.0.0.Fakes">
+      <HintPath>FakesAssemblies\MODEL.1.0.0.0.Fakes.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -128,6 +136,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KangJiaQi\BUserController.cs" />
     <Compile Include="Controllers\KangJiaQi\promotionController.cs" />
+    <Compile Include="Controllers\XuYaDon\OrderController.cs" />
     <Compile Include="Controllers\ZhangYang\StoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -4607,6 +4616,7 @@
     <Content Include="layuistyle\static\admin\lib\ueditor\third-party\video-js\font\vjs.eot" />
     <Content Include="layuistyle\static\admin\lib\ueditor\third-party\video-js\font\vjs.ttf" />
     <Content Include="layuistyle\static\admin\lib\ueditor\third-party\video-js\font\vjs.woff" />
+    <Fakes Include="Fakes\MODEL.fakes" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -4639,6 +4649,7 @@
   <ItemGroup>
     <Folder Include="IndexStyle\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Order\" />
     <Folder Include="Views\Sto\" />
   </ItemGroup>
   <ItemGroup>

@@ -13,6 +13,6 @@ namespace ECommerceMVC.Controllers.KangJiaQi
         {
             return View();
         }
-        public 
+        
     }
 }
