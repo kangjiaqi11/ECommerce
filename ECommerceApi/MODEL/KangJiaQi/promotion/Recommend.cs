@@ -43,5 +43,14 @@ namespace MODEL
         /// 修改人
         /// </summary>
         public long UpdateId { get; set; }
+        /// <summary>
+        /// 商品名称
+        /// </summary>
+        public string GoodsName { get; set; }
+        /// <summary>
+        /// 商品介绍
+        /// 
+        /// </summary>
+        public string GoodsIntro { get; set; }
     }
 }
