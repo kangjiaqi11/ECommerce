@@ -24,8 +24,8 @@ namespace BLL
                 //设置 默认请求头ACCEPT 
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                string token = GetToken();
-                client.DefaultRequestHeaders.Add("token", token);
+                //string token = GetToken();
+               ///* client.DefaultRequestHeaders.Add("token", token)*/;
 
                 //设置消息体
                 HttpContent content = new StringContent(JsonConvert.SerializeObject(t));
