@@ -45,7 +45,6 @@
     <Compile Include="BaseRequest.cs" />
     <Compile Include="BaseResponse.cs" />
     <Compile Include="KangJiaQi\Request\ActivityShowRequst.cs" />
-    <Compile Include="KangJiaQi\Request\Add.cs" />
     <Compile Include="KangJiaQi\Request\BUserAddRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserLoginRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserUpdateRequst.cs" />
@@ -58,7 +57,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XuYaDon\Request\OrderShowrequeset.cs" />
     <Compile Include="XuYaDon\Response\OrderShowResponse.cs" />
-    <Compile Include="XuYaDon\Response\OrderShowRespose.cs" />
     <Compile Include="ZhangYang\Request\StoreroomAddreq.cs" />
     <Compile Include="ZhangYang\Request\StoreroomShowReq.cs" />
     <Compile Include="ZhangYang\Response\StoreroomAddResp.cs" />
