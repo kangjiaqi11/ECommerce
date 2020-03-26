@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MODEL.WangZhiHao
+namespace MODEL
 {
     /// <summary>
     /// 商品信息表
