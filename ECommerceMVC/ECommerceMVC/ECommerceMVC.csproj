@@ -4645,12 +4645,14 @@
     <Content Include="Views\BUser\UserLogin.cshtml" />
     <Content Include="Views\BUser\Index.cshtml" />
     <Content Include="Views\promotion\Show.cshtml" />
-    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Sto\StoreroomFenye.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\" />
     <Folder Include="IndexStyle\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Sto\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Views\Order\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
