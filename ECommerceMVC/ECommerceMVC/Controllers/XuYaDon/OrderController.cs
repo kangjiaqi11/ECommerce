@@ -11,11 +11,18 @@ namespace ECommerceMVC.Controllers.XuYaDon
     {
         OrderShowBll bll = new OrderShowBll();
         // GET: Order
-        public ActionResult Index(OrderShowrequeset order)
+        public ActionResult Index()
         {
-            var res = bll.OrderShow(order, "api/Order/OrderShow");
-            return View(res.Datalist);
+     
+            return View();
              
+        }
+        [HttpPost]
+        public JsonResult Index(OrderShowrequeset order)
+        {
+            var res = bll.OrderShow(order,"api/Order/OrderShow");
+            return Json(res.Datalist);
+
         }
     }
 }

@@ -22,7 +22,7 @@ namespace BLL.XuYaDon
         public OrderShowResponse OrderShow(OrderShowrequeset order)
         {
             OrderShowResponse orderShowResponse = new OrderShowResponse();
-            var res = dal.OrderShow(order.OrderNumber, order.GoodsName, order.AddrName, order.AddrPhone, order.State, order.puttime, order.pageindex, order.pagesize);
+            var res = dal.OrderShow(order.OrderNumber="", order.GoodsName="", order.AddrName="", order.AddrPhone="", order.State, order.puttime="", order.pageindex=1, order.pagesize=8);
             if (res!=null)
             {
                 orderShowResponse.Datalist = res.list;

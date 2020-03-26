@@ -38,7 +38,7 @@ namespace ECommerceMVC
         /// <summary>
         /// 写入xlm文件
         /// </summary>
-        /// <param name="token"></param>
+        /// <param name = "token" ></ param >
         private void SetToken(string token)
         {    //获取根节点对象
             XDocument document = new XDocument();
@@ -46,7 +46,7 @@ namespace ECommerceMVC
             XElement book = new XElement("Tokne");
             book.SetElementValue("name", token);
             root.Add(book);
-            root.Save("E://实训项目//ECommerce2//ECommerceMVC//ECommerceMVC//App_Data//Token.xml");
+            root.Save("D://物联网//物联网实训一//电商项目//ECommerceMVC//ECommerceMVC//App_Data//Token.xml");
         }
     }
 }
