@@ -46,7 +46,7 @@ namespace MODEL
         /// <summary>
         /// 创建时间
         /// </summary>
-        public DateTime CeateTime    { get; set; }
+        public DateTime CreateTime { get; set; }
         /// <summary>
         /// 修改时间
         /// </summary>

@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace MODEL
 {
-
-    /// <summary>
-    ///促销活动显示
-    /// </summary>
-   public class ActivityPage
+   /// <summary>
+   /// 首页推荐显示
+   /// </summary>
+   public class RecommendPage
     {
         /// <summary>
         /// 数据集合

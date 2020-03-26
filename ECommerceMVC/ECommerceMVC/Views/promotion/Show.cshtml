@@ -3,8 +3,9 @@
     ViewBag.Title = "Show";
 }
 
-
-
+@using MODEL;
+@using Webdiyer.WebControls.Mvc;
+@model PagedList<Activity>
 <!DOCTYPE html>
 <!--
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.2
@@ -95,7 +96,6 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <!-- /.modal -->
                 <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-              
                 <!-- BEGIN PAGE CONTENT-->
                 <div class="row">
                     <div class="col-md-12">
@@ -106,7 +106,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     秒杀活动列表
                                 </div>
                                 <div class="tools">
-                                  
+
                                 </div>
                             </div>
                             <div class="portlet-body">
@@ -157,13 +157,30 @@ License: You must have a valid license purchased only from themeforest(the above
                                         </tr>
                                         @*显示数据*@
                                     </thead>
-                                    <tbody id="ActivityShow">
-                                        
-                                    </tbody>
+                                    <tbody id="ActivityShow"></tbody>
                                 </table>
                             </div>
                         </div>
                         <!-- END EXAMPLE TABLE PORTLET-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5 col-sm-12">
+                        <div class="dataTables_info" id="sample_editable_1_info" role="status" aria-live="polite">
+
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-12">
+                        <div class="dataTables_paginate paging_simple_numbers" id="sample_editable_1_paginate">
+                            <ul class="pagination">
+                                <li class="paginate_button previous disabled" aria-controls="sample_editable_1" tabindex="0" id="sample_editable_1_previous">
+
+                                </li>
+                                <li class="paginate_button next disabled" aria-controls="sample_editable_1" tabindex="0" id="sample_editable_1_next">
+
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <!-- END PAGE CONTENT -->
@@ -171,11 +188,9 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <!-- END CONTENT -->
         <!-- BEGIN QUICK SIDEBAR -->
- 
         <!-- END QUICK SIDEBAR -->
     </div>
     <!-- END CONTAINER -->
-   
     <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
     <!-- BEGIN CORE PLUGINS -->
     <!--[if lt IE 9]>
@@ -207,13 +222,115 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="~/IndexStyle/admin/pages/scripts/table-editable.js"></script>
     <script>
         jQuery(document).ready(function () {
-           
-            alert(123);
+            var PageIndex = 1;
+            $.ajax({
+                url: "PageActivityShow",
+                type: "POST",
+                data: { PageIndex: 1, PageSize: 2, ActivityTitle: "" },
+                dateType: "json",
+                success: function (ser) {
+                    console.log(ser);
+                    $(ser.DateList).each(function myfunction() {
+                        var tr = '<tr>'
+                            + '<th>' + this.ActivityId + '</th>'
+                            + '<th>' + this.ActivityTitle + '</th>'
+                            + '<th>' + this.ActivityStatel + ' </th>'
+                            + '<th>' + this.AStartTime + '</th>'
+                            + '<th>' + this.AEenTime + ' </th>'
+                            + '</tr>'
+                        $("#ActivityShow").append(tr);
+
+                    })
+                    var count = '<h5> 共显示显示' + ser.TotaCount + '条数据</h5>';
+                    $("#sample_editable_1_info").append(count)
+                    var UpPage = '<input id = "Button1" class="btn green" type = "button" value = "上一页" onclick = "UpPage(' + PageIndex + ')" />';
+                    $("#sample_editable_1_previous").append(UpPage);
+                    var Nextpage = ' <input id="Button2" class="btn green" type="button" value="下一页" onclick="NextPage(' + PageIndex + ',' + ser.TotaCount + ')"/>';
+                    $("#sample_editable_1_next").append(Nextpage);
+                    ;
+                }
+            });
+
         });
+        function UpPage(index) {
+            var Index = index - 1;
+            if (index >= 0) {
+                
+                $.ajax({
+                    url: "PageActivityShow",
+                    type: "POST",
+                    data: { PageIndex: Index, PageSize: 2, ActivityTitle: "" },
+                    dateType: "json",
+                    success: function (ser) {
+                        console.log(ser);
+                        $(ser.DateList).each(function myfunction() {
+                            var tr = '<tr>'
+                                + '<th>' + this.ActivityId + '</th>'
+                                + '<th>' + this.ActivityTitle + '</th>'
+                                + '<th>' + this.ActivityStatel + ' </th>'
+                                + '<th>' + this.AStartTime + '</th>'
+                                + '<th>' + this.AEenTime + ' </th>'
+                                + '</tr>'
+                            $("#ActivityShow").append(tr);
+
+                        })
+                        var count = '<h5> 共显示显示' + ser.TotaCount + '条数据</h5>';
+                        $("#sample_editable_1_info").append(count)
+                        var UpPage = '<input id = "Button1" class="btn green" type = "button" value = "上一页" onclick = "UpPage(' + PageIndex + ')" />';
+                        $("#sample_editable_1_previous").append(UpPage);
+                        var Nextpage = ' <input id="Button2" class="btn green" type="button" value="下一页" onclick="NextPage(' + PageIndex + ',' + ser.TotaCount + ')"/>';
+                        $("#sample_editable_1_next").append(Nextpage);
+                        ;
+                    }
+                });
+            }
+            else {
+                alert("已经是首页了");
+                return;
+            }
+
+        }
+        function NextPage(index, PageCount) {
+            var Index = index + 1;
+            if (index <=PageCount) {
+                
+                $.ajax({
+                    url: "PageActivityShow",
+                    type: "POST",
+                    data: { PageIndex: Index, PageSize: 2, ActivityTitle: "" },
+                    dateType: "json",
+                    success: function (ser) {
+                        console.log(ser);
+                        $(ser.DateList).each(function myfunction() {
+                            var tr = '<tr>'
+                                + '<th>' + this.ActivityId + '</th>'
+                                + '<th>' + this.ActivityTitle + '</th>'
+                                + '<th>' + this.ActivityStatel + ' </th>'
+                                + '<th>' + this.AStartTime + '</th>'
+                                + '<th>' + this.AEenTime + ' </th>'
+                                + '</tr>'
+                            $("#ActivityShow").append(tr);
+
+                        })
+                        var count = '<h5> 共显示显示' + ser.TotaCount + '条数据</h5>';
+                        $("#sample_editable_1_info").append(count)
+                        var UpPage = '<input id = "Button1" class="btn green" type = "button" value = "上一页" onclick = "UpPage(' + PageIndex + ')" />';
+                        $("#sample_editable_1_previous").append(UpPage);
+                        var Nextpage = ' <input id="Button2" class="btn green" type="button" value="下一页" onclick="NextPage(' + PageIndex + ',' + ser.TotaCount + ')"/>';
+                        $("#sample_editable_1_next").append(Nextpage);
+                        ;
+                    }
+                });
+            }
+            else {
+                alert("已经是尾页了");
+                return
+            }
+        }
     </script>
 </body>
 <!-- END BODY -->
-</html>  
+</html>
 <script>
 
 </script>

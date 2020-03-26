@@ -23,17 +23,5 @@ namespace Dal
             return db.ExecuteNonQuery(sql);
         }
 
-        /// <summary>
-        /// 商品显示
-        /// </summary>
-        /// <returns></returns>
-        public List<GoodsModel> GoodsShow()
-        {
-            string sql = "select * from GoodsInfo";
-            return db.GetToList<GoodsModel>(sql);
-        }
-
-        
-
     }
 }
