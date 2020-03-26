@@ -9,32 +9,32 @@ namespace MODEL.XuYaDon
     /// <summary>
     /// 订单表
     /// </summary>
-  public  class OrderModel
+    public class OrderModel
     {
         /// <summary>
         /// 订单Id
         /// </summary>
-        public int OrderId       { get; set; }
+        public long OrderId { get; set; }
         /// <summary>
         /// 订单编号
         /// </summary>
-        public string OrderNumber   { get; set; }
+        public string OrderNumber { get; set; }
         /// <summary>
         /// 用户id
         /// </summary>
-        public int FrontUserid   { get; set; }
+        public long FrontUserid { get; set; }
         /// <summary>
         /// 发票信息Id
         /// </summary>
-        public int invoice       { get; set; }
+        public int invoice { get; set; }
         /// <summary>
         /// 支付方式
         /// </summary>
-        public string payment       { get; set; }
+        public string payment { get; set; }
         /// <summary>
         /// 订单来源
         /// </summary>
-        public string Ordersource   { get; set; }
+        public string Ordersource { get; set; }
         /// <summary>
         /// 订单类型
         /// </summary>
@@ -42,51 +42,51 @@ namespace MODEL.XuYaDon
         /// <summary>
         /// 物流信息Id
         /// </summary>
-        public int expressId     { get; set; }
+        public int expressId { get; set; }
         /// <summary>
         /// 物流单号
         /// </summary>
-        public int expressNumber { get; set; }
+        public string expressNumber { get; set; }
         /// <summary>
         /// 订单可得成长值
         /// </summary>
-        public int Growthvalue   { get; set; }
+        public int Growthvalue { get; set; }
         /// <summary>
         /// 自动确定收货时
         /// </summary>
-        public int TakeGoods     { get; set; }
+        public int TakeGoods { get; set; }
         /// <summary>
         /// 活动信息
         /// </summary>
-        public int Activity      { get; set; }
+        public string Activity { get; set; }
         /// <summary>
         /// 商品Id信息
         /// </summary>
-        public int GoodId        { get; set; }
+        public int GoodId { get; set; }
         /// <summary>
         /// 费用信息Id
         /// </summary>
-        public int MoneyId       { get; set; }
+        public int MoneyId { get; set; }
         /// <summary>
         /// 订单状态
         /// </summary>
-        public int Oderstate     { get; set; }
+        public int Oderstate { get; set; }
         /// <summary>
         /// 提交时间
         /// </summary>
-        public DateTime SubmitTime    { get; set; }
-        /// <summary>
+        public DateTime SubmitTime { get; set; }
+        public string SubmitTimeST { get { return SubmitTime.ToString(); } }
         /// 修改时间
         /// </summary>
         public DateTime EditTime      { get; set; }
         /// <summary>
         /// 提交人
         /// </summary>
-        public int CreatId { get; set; }
+        public long CreatId { get; set; }
         /// <summary>
         /// 修改人
         /// </summary>
-        public int EditId { get; set; }
+        public long EditId { get; set; }
         /// <summary>
         /// 商品名称
         /// </summary>
@@ -139,5 +139,9 @@ namespace MODEL.XuYaDon
         /// 发票内容
         /// </summary>
         public string Invoicecontent { get; set; }
+        /// <summary>
+        /// 快递名称
+        /// </summary>
+        public string expressName { get; set; }
     }                     
 }

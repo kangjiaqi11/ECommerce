@@ -23,7 +23,6 @@ namespace Dal.WangZhiHao
             return db.ExecuteNonQuery(sql);
         }
 
-        //显示
-        public
+        
     }
 }
