@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MODEL.WangZhiHao;
+using MODEL;
 
-namespace Dal.WangZhiHao
+namespace Dal
 {
     public class GoodsDal
     {
