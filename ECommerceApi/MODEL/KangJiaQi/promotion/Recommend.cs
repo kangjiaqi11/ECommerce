@@ -30,7 +30,7 @@ namespace MODEL
         /// <summary>
         /// 创建时间
         /// </summary>
-        public DateTime CeateTime { get; set; }
+        public DateTime CreateTime { get; set; }
         /// <summary>
         /// 修改时间
         /// </summary>
@@ -43,5 +43,14 @@ namespace MODEL
         /// 修改人
         /// </summary>
         public long UpdateId { get; set; }
+        /// <summary>
+        /// 商品名称
+        /// </summary>
+        public string GoodsName { get; set; }
+        /// <summary>
+        /// 商品介绍
+        /// 
+        /// </summary>
+        public string GoodsIntro { get; set; }
     }
 }
