@@ -34,7 +34,7 @@ namespace Dal
         }
 
         /// <summary>
-        /// 删除
+        /// 删除 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
