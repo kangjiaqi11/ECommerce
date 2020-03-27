@@ -24,5 +24,14 @@ namespace Dal.WangZhiHao
             return db.ExecuteNonQuery(sql);
         }
 
+        /// <summary>
+        /// 部门表显示
+        /// </summary>
+        /// <returns></returns>
+        public List<GoodsModel> DepartmentShow()
+        {
+            string sql = "select * from GoodsInfo";
+            return db.GetToList<GoodsModel>(sql);
+        }
     }
 }
