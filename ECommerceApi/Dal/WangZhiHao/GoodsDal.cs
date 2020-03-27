@@ -28,7 +28,7 @@ namespace Dal.WangZhiHao
         /// 部门表显示
         /// </summary>
         /// <returns></returns>
-        public List<GoodsModel> DepartmentShow()
+        public List<GoodsModel> GoodsShow()
         {
             string sql = "select * from GoodsInfo";
             return db.GetToList<GoodsModel>(sql);
