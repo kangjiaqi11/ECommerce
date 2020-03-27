@@ -59,6 +59,7 @@
     <Compile Include="KangJiaQi\Response\RecommendResponse.cs" />
     <Compile Include="KangJiaQi\Response\TimeQShowResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WangZhiHao\Request\GoodsAddRequest.cs" />
     <Compile Include="XuYaDon\Request\OrderShowrequeset.cs" />
     <Compile Include="XuYaDon\Response\OrderShowResponse.cs" />
     <Compile Include="ZhangYang\Request\StoreroomAddreq.cs" />
@@ -72,7 +73,6 @@
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="obj\Release\" />
-    <Folder Include="WangZhiHao\Request\" />
     <Folder Include="WangZhiHao\Response\" />
   </ItemGroup>
   <ItemGroup>
