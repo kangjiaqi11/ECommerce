@@ -1,0 +1,288 @@
+﻿@{
+    ViewBag.Title = "ActivityShow";
+}
+
+<!DOCTYPE html>
+<!--
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.2
+Version: 3.7.0
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+	<meta charset="utf-8" />
+	<title>Metronic | Data Tables - Editable Datatables</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
+	<link href="~/IndexStyle/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+	<link href="~/IndexStyle/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="~/IndexStyle/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+	<link href="~/IndexStyle/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="~/IndexStyle/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+	<link href="~/IndexStyle/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+	<!-- END GLOBAL MANDATORY STYLES -->
+	<!-- BEGIN PAGE LEVEL STYLES -->
+	<link rel="stylesheet" type="text/css" href="~/IndexStyle/global/plugins/select2/select2.css" />
+	<link rel="stylesheet" type="text/css" href="~/IndexStyle/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" />
+	<!-- END PAGE LEVEL STYLES -->
+	<!-- BEGIN THEME STYLES -->
+	<link href="~/IndexStyle/global/css/components.css" id="style_components" rel="stylesheet" type="text/css" />
+	<link href="~/IndexStyle/global/css/plugins.css" rel="stylesheet" type="text/css" />
+	<link href="~/IndexStyle/admin/layout/css/layout.css" rel="stylesheet" type="text/css" />
+	<link id="style_color" href="~/IndexStyle/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" />
+	<link href="~/IndexStyle/admin/layout/css/custom.css" rel="stylesheet" type="text/css" />
+	<!-- END THEME STYLES -->
+	<link rel="shortcut icon" href="favicon.ico" />
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed header or footer in mobile devices -->
+<!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu element to hide the sidebar by default -->
+<!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
+<!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
+<!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
+<!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
+<!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
+<body class="page-header-fixed page-quick-sidebar-over-content ">
+
+	<!-- BEGIN CONTAINER -->
+	<div class="page-container">
+		<!-- BEGIN SIDEBAR -->
+		<!-- END SIDEBAR -->
+		<!-- BEGIN CONTENT -->
+		<div class="page-content-wrapper">
+			<div class="page-content">
+				<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+				<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+								<h4 class="modal-title">Modal title</h4>
+							</div>
+							<div class="modal-body">
+								Widget settings form goes here
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn blue">Save changes</button>
+								<button type="button" class="btn default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal-dialog -->
+				</div>
+				<!-- /.modal -->
+				<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+				<!-- BEGIN PAGE CONTENT-->
+				<div class="row">
+					<div class="col-md-12" id="Show">
+						<!-- BEGIN EXAMPLE TABLE PORTLET-->
+						<div class="portlet box blue">
+							<div class="portlet-title">
+								<div class="caption">
+									<h2>秒杀活动列表</h2>
+								</div>
+								<div class="tools">
+
+								</div>
+							</div>
+							<div class="portlet-body">
+								<div class="table-toolbar">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="btn-group">
+												<button id="sample_editable_1_new" class="btn green">
+													添加<i class="fa fa-plus"></i>
+												</button>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="btn-group pull-right">
+											
+												<input id="ActivityTitle" type="text" /><input id="Button1" type="button" value="查询" />
+											</div>
+										</div>
+									</div>
+								</div>
+								<table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+									<thead>
+										<tr>
+											<th>
+												编号
+											</th>
+											<th>
+												活动标题
+											</th>
+											<th>
+												活动状态
+											</th>
+											<th>
+												开始时间
+											</th>
+											<th>
+												结束时间
+											</th>
+											<th>
+												操作
+											</th>
+											<th>
+												操作
+											</th>
+											<th>
+												操作
+											</th>
+										</tr>
+										@*显示数据*@
+									</thead>
+									<tbody id="ActivityShow"></tbody>
+								</table>
+							</div>
+						</div>
+						<!-- END EXAMPLE TABLE PORTLET-->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-5 col-sm-12">
+						<div class="dataTables_info" id="sample_editable_1_info" role="status" aria-live="polite">
+
+						</div>
+					</div>
+					<div class="col-md-7 col-sm-12">
+						<div class="dataTables_paginate paging_simple_numbers" id="sample_editable_1_paginate">
+							<ul class="pagination">
+								<li class="paginate_button previous disabled" aria-controls="sample_editable_1" tabindex="0" id="sample_editable_1_previous">
+									<input type="hidden" name="name" value="" id="index" />
+									<input type="hidden" name="name" value="" id="tocount" />
+									<input id="Button1" class="btn green" type="button" value="上一页" onclick="UpPage()" />
+								</li>
+								<li class="paginate_button next disabled" aria-controls="sample_editable_1" tabindex="0" id="sample_editable_1_next">
+									<input id="Button2" class="btn green" type="button" value="下一页" onclick="NextPage()" />
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- END PAGE CONTENT -->
+			</div>
+		</div>
+		<!-- END CONTENT -->
+		<!-- BEGIN QUICK SIDEBAR -->
+		<!-- END QUICK SIDEBAR -->
+	</div>
+	<!-- END CONTAINER -->
+	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+	<!-- BEGIN CORE PLUGINS -->
+	<!--[if lt IE 9]>
+	<script src="~/IndexStyle/global/plugins/respond.min.js"></script>
+	<script src="~/IndexStyle/global/plugins/excanvas.min.js"></script>
+	<![endif]-->
+	<script src="~/IndexStyle/global/plugins/jquery.min.js" type="text/javascript"></script>
+	<script src="~/IndexStyle/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+	<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+	<script src="~/IndexStyle/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="~/IndexStyle/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="~/IndexStyle/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+	<script src="~/IndexStyle/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+	<script src="~/IndexStyle/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+	<script src="~/IndexStyle/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+	<script src="~/IndexStyle/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+	<script src="~/IndexStyle/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+	<!-- END CORE PLUGINS -->
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+	<script type="text/javascript" src="~/IndexStyle/global/plugins/select2/select2.min.js"></script>
+	<script type="text/javascript" src="~/IndexStyle/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="~/IndexStyle/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+	<!-- END PAGE LEVEL PLUGINS -->
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+	<script src="~/IndexStyle/global/scripts/metronic.js" type="text/javascript"></script>
+	<script src="~/IndexStyle/admin/layout/scripts/layout.js" type="text/javascript"></script>
+	<script src="~/IndexStyle/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+	<script src="~/IndexStyle/admin/layout/scripts/demo.js" type="text/javascript"></script>
+	<script src="~/IndexStyle/admin/pages/scripts/table-editable.js"></script>
+	<script>
+		jQuery(document).ready(function () {
+
+			Query(1);
+
+		});
+		function UpPage() {
+			var index = $("#index").val();
+
+
+			index = index - 1;
+			alert(index);
+			if (index >= 0) {
+
+				Query(Index);
+			}
+			else {
+				alert("已经是首页了");
+				return;
+			}
+
+		}
+		function NextPage() {
+			var index = $("#index").val();
+			index = index + 1;
+			alert(PageCount);
+			alert(1);
+			if (index <= count) {
+				Query(index);
+			}
+			else {
+				alert("已经是尾页了");
+				return;
+			}
+		}
+
+		//第一这里加载查询的方法
+		function Query(pageindex) {
+			var ActivityTitle = $("#ActivityTitle").val();
+			$.ajax({
+				url: "PageActivityShow",
+				type: "POST",
+				data: { PageIndex: pageindex, PageSize: 2, ActivityTitle: ActivityTitle },
+				dateType: "json",
+				success: function (ser) {
+					console.log(ser);
+					$(ser.DateList).each(function myfunction() {
+						var tr = '<tr>'
+							+ '<th>' + this.ActivityId + '</th>'
+							+ '<th>' + this.ActivityTitle + '</th>'
+							+ '<th>' + this.ActivityStatel + ' </th>'
+							+ '<th>' + this.AStartTimeStr + '</th>'
+							+ '<th>' + this.AEenTimeStr + ' </th>'
+							+ '</tr>'
+						$("#ActivityShow").append(tr);
+					})
+					var count = '<h5> 共显示显示' + ser.TotaCount + '条数据</h5>';
+					$("#sample_editable_1_info").append(count);
+					$("#index").val(pageindex);
+					$("#tocount").val(ser.TotaCount);
+				}
+			});
+		}
+		//第二写两个方法
+	</script>
+</body>
+<!-- END BODY -->
+</html>
