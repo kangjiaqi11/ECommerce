@@ -25,7 +25,7 @@ namespace BLL
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //string token = GetToken();
-                //client.DefaultRequestHeaders.Add("token", token);
+               ///* client.DefaultRequestHeaders.Add("token", token)*/;
 
                 //设置消息体
                 HttpContent content = new StringContent(JsonConvert.SerializeObject(t));
@@ -65,7 +65,7 @@ namespace BLL
         public static string GetToken()
         {
             //将XML文件加载进来
-            XDocument document = XDocument.Load("1");
+            XDocument document = XDocument.Load("D://物联网//物联网实训一//电商项目//ECommerceMVC//ECommerceMVC//App_Data//Token.xml");
             //获取到XML的根元素进行操作
             XElement root = document.Root;
             XElement ele = root.Element("Tokne");

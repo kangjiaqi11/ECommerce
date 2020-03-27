@@ -17,5 +17,9 @@ namespace ECommerceApi.Controllers.ZhangYang
         {
             return bll.StoreroomFenye(Ssrq);
         }
+        public StoreroomShowResp StoreroomRu(StoreroomShowReq Ssrq)
+        {
+            return bll.StoreroomFenye(Ssrq);
+        }
     }
 }
