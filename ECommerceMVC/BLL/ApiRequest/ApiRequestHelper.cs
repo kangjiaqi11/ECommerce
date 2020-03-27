@@ -6,7 +6,6 @@ using SDCKClient;
 using System.Xml.Linq;
 using Newtonsoft.Json;
 using System.Configuration;
-
 namespace BLL
 {
     public static class ApiRequestHelper
@@ -60,12 +59,14 @@ namespace BLL
 
         /// <summary>
         /// 读取xlm文件
-        /// </summary>
+        /// </summary><img src="file:///C:\Users\lenovo\Documents\Tencent Files\1965623798\Image\Group2\8P\6U\8P6UAPFL$]8[Y}I6Z][S92X.png">
         /// <returns></returns>
         public static string GetToken()
         {
+       
             //将XML文件加载进来
-            XDocument document = XDocument.Load("1");
+            XDocument document = XDocument.Load("Token.xml");
+            XDocument document = XDocument.Load("D://物联网//物联网实训一//电商项目//ECommerceMVC//ECommerceMVC//App_Data//Token.xml");
             //获取到XML的根元素进行操作
             XElement root = document.Root;
             XElement ele = root.Element("Tokne");

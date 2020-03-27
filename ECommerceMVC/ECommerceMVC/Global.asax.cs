@@ -38,7 +38,7 @@ namespace ECommerceMVC
         /// <summary>
         /// 写入xlm文件
         /// </summary>
-        /// <param name="token"></param>
+        /// <param name = "token" ></ param >
         private void SetToken(string token)
         {    //获取根节点对象
             XDocument document = new XDocument();
