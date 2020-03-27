@@ -7,13 +7,13 @@ using MODEL;
 namespace SDCKClient
 {
     /// <summary>
-    ///部门显示返回值
+    /// 时间段的时间的返回值
     /// </summary>
-   public class DepartmentResponse:BaseResponse
+   public class TimeQShowResponse:BaseResponse
     {
         /// <summary>
-        /// 返回一个集合 
+        /// 时间段集合
         /// </summary>
-        public List<Department> DateList { get; set; }
+        public List<TimeQ> DateList { get; set; }
     }
 }

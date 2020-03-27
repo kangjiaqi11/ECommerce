@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MODEL
+namespace SDCKClient.WangZhiHao.Request
 {
-    /// <summary>
-    /// 商品信息表
-    /// </summary>
-    public class GoodsModel
+    public class GoodsAddRequest
     {
         /// <summary>
         /// 商品编号
@@ -19,10 +16,6 @@ namespace MODEL
         /// 品牌编号
         /// </summary>
         public int BrandId { get; set; }
-        /// <summary>
-        /// 分类Id
-        /// </summary>
-        public int CategoryId { get; set; }
         /// <summary>
         /// 商品类型 1赠品 2电商销售 3专柜销售 4活动售卖 5正常售卖
         /// </summary>

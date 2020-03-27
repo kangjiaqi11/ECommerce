@@ -46,6 +46,7 @@
     <Compile Include="KangJiaQi\BUserBll.cs" />
     <Compile Include="KangJiaQi\promotionBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WangZhiHao\GoodsBll.cs" />
     <Compile Include="XuYaDon\OrderBll.cs" />
     <Compile Include="ZhangYang\StoreroomBLL.cs" />
   </ItemGroup>

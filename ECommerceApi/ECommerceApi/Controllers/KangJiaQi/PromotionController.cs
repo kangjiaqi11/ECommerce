@@ -20,5 +20,22 @@ namespace ECommerceApi.Controllers.KangJiaQi
         {
             return promotionBll.ActivityShow(activityShowRequst);
         }
+        /// <summary>
+        /// 推荐首页的物品
+        /// </summary>
+        /// <param name="recommendRequst"></param>
+        /// <returns></returns>
+        public RecommendResponse RecommendShow(RecommendRequst recommendRequst)
+        {
+            return promotionBll.RecommendShow(recommendRequst);
+        }
+        /// <summary>
+        /// 时间段的显示
+        /// </summary>
+        /// <returns></returns>
+        public TimeQShowResponse TimeQShow(TimeQShowRequest timeQShowRequest)
+        {
+            return promotionBll.TimeQShow(timeQShowRequest);
+        }
     }
 }

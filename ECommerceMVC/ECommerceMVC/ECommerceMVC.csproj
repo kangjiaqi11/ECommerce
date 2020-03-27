@@ -4698,8 +4698,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\BUser\UserLogin.cshtml" />
     <Content Include="Views\BUser\Index.cshtml" />
-    <Content Include="Views\promotion\Show.cshtml" />
+    <None Include="Views\promotion\ActivityShow.cshtml" />
     <Content Include="Views\Sto\StoreroomFenye.cshtml" />
+    <Content Include="Views\promotion\RecommendShow.cshtml" />
+    <Content Include="Views\promotion\TimeShow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="IndexStyle\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />

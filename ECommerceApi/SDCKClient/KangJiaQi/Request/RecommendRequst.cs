@@ -6,20 +6,23 @@ using System.Threading.Tasks;
 
 namespace SDCKClient
 {
-    /// <summary>
-    /// 秒杀活动的参数
-    /// </summary>
-   public class ActivityShowRequst:BaseRequest
+   /// <summary>
+   /// 首页推荐的参数
+   /// </summary>
+  public  class RecommendRequst:BaseRequest
     {
-       
         /// <summary>
-        /// 活动标题
+        /// 商品名称
         /// </summary>
-        public string ActivityTitle { get; set; }
+        public string GoodsName { get; set; }
+        /// <summary>
+        /// 是否推荐
+        /// </summary>
+        public int IsRecommend { get; set; }
         /// <summary>
         /// 页数
         /// </summary>
-        public int PageIndex     { get; set; }
+        public int PageIndex { get; set; }
         /// <summary>
         /// 每页多少条
         /// </summary>
