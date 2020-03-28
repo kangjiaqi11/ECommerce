@@ -21,5 +21,16 @@ namespace Dal
             string sql = $"select* from Jurisdiction as j join Department as d on  j.DepartmentId=d.DepartmentId  join MenusInfo as m on j.MenusId = m.MenusId join UserInfo as u  on u.DepartmentId=d.DepartmentId where u.UserId={UserId}";
             return OrmDbHelper.GetList<Jurisdiction>(sql);
         }
+        /// <summary>
+        /// 子级菜单的显示
+        /// </summary>
+        /// <param name="MenusId"></param>
+        /// <returns></returns>
+        public List<MenusInfo> MenusSublevel(int MenusId)
+        {
+            string sql = "";
+            return OrmDbHelper.GetList<MenusInfo>(sql);
+        }
     }
+     
 }
