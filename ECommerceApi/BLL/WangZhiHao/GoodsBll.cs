@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using MODEL;
 using Dal;
+using Dal.WangZhiHao;
+
 namespace BLL.WangZhiHao
 {
     
@@ -24,7 +26,6 @@ namespace BLL.WangZhiHao
         {
             return dal.GoodsAdd(good);
         }
-
         /// <summary>
         /// 商品显示
         /// </summary>

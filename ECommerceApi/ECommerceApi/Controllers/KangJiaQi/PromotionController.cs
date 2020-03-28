@@ -29,6 +29,7 @@ namespace ECommerceApi.Controllers.KangJiaQi
         {
             return promotionBll.RecommendShow(recommendRequst);
         }
+        #region 时间段相关
         /// <summary>
         /// 时间段的显示
         /// </summary>
@@ -37,5 +38,34 @@ namespace ECommerceApi.Controllers.KangJiaQi
         {
             return promotionBll.TimeQShow(timeQShowRequest);
         }
+        /// <summary>
+        /// 删除时间段状态
+        /// </summary>
+        /// <param name="Tid"></param>
+        /// <returns></returns>
+        public TimeQDeleteResponse TimeQdelete(TimeQDeleteRequest timeQDeleteRequest)
+        {
+            return promotionBll.TimeQdelete(timeQDeleteRequest);
+        }
+        /// <summary>
+        /// 未启用时间段状态
+        /// </summary>
+        /// <param name="Tid"></param>
+        /// <returns></returns>
+        public TimeQUpdate3Response TimeQUpdate3(TimeQUpdate3Request timeQUpdate3Request)
+        {
+            return promotionBll.TimeQUpdate3(timeQUpdate3Request);
+        }
+        /// <summary>
+        /// 已启用经时间段状态
+        /// </summary>
+        /// <param name="Tid"></param>
+        /// <returns></returns>
+        public TimeQUpdate2Response TimeQUpdate2(TimeQUpdate2Request timeQUpdate2Request)
+        {
+
+            return promotionBll.TimeQUpdate2(timeQUpdate2Request); ;
+        } 
+        #endregion
     }
 }

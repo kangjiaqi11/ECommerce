@@ -135,6 +135,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KangJiaQi\BUserController.cs" />
+    <Compile Include="Controllers\KangJiaQi\MenusController.cs" />
     <Compile Include="Controllers\KangJiaQi\promotionController.cs" />
     <Compile Include="Controllers\XuYaDon\OrderController.cs" />
     <Compile Include="Controllers\ZhangYang\StoController.cs" />
@@ -4702,11 +4703,13 @@
     <Content Include="Views\Sto\StoreroomFenye.cshtml" />
     <Content Include="Views\promotion\RecommendShow.cshtml" />
     <Content Include="Views\promotion\TimeShow.cshtml" />
+    <Content Include="Views\promotion\dsf.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="IndexStyle\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
     <Folder Include="Models\" />
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="Views\Menus\" />
     <Folder Include="Views\Order\" />
   </ItemGroup>
   <ItemGroup>
