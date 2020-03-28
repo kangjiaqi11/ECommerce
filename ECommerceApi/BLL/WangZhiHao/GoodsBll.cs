@@ -34,5 +34,15 @@ namespace BLL.WangZhiHao
         {
             return dal.GoodsShow();
         }
+
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int GoodsDelete(int id)
+        {
+            return dal.GoodsDelete(id);
+        }
     }
 }

@@ -33,5 +33,16 @@ namespace Dal.WangZhiHao
             string sql = "select * from GoodsInfo";
             return db.GetToList<GoodsModel>(sql);
         }
+
+        /// <summary>
+        /// 删除 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int GoodsDelete(int id)
+        {
+            string sql = $"update GoodsInfo set Status=0 where GoodId={id}";
+            return db.ExecuteNonQuery(sql);
+        }
     }
 }
