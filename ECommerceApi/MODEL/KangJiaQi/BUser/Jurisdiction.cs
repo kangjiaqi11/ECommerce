@@ -24,6 +24,14 @@ namespace MODEL
         /// </summary>
         public long MenusId         { get; set; }
         /// <summary>
+        /// 菜单名称
+        /// </summary>
+        public string MenusName { get; set; }
+        /// <summary>
+        /// 菜单Url
+        /// </summary>
+        public string MenusUrl { get; set; }
+        /// <summary>
         /// 数据状态
         /// </summary>
         public int Statel { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SDCKClient;
 using Dal;
 using MODEL;
-namespace BLL.KangJiaQi
+namespace BLL
 {
     /// <summary>
     /// 菜单bll'
@@ -35,6 +35,28 @@ namespace BLL.KangJiaQi
             }
             return menusResponse;
 
+        }
+        /// <summary>
+        /// 菜单子级的显示
+        /// </summary>
+        /// <param name="menusRequest"></param>
+        /// <returns></returns>
+        public MenusSublevelResponse MenusSublevel(MenusSublevelRequest menusSublevelRequest )
+        {
+            MenusSublevelResponse menusSublevelResponse = new MenusSublevelResponse();
+            var ser = MenusDal.MenusSublevel(menusSublevelRequest.FatherUrl);
+            if (ser != null)
+            {
+                menusSublevelResponse.DateList = ser;
+                menusSublevelResponse.IsSuccess = true;
+            }
+            else
+            {
+                menusSublevelResponse.Status = -1;
+                menusSublevelResponse.Msg = "显示失败";
+                return menusSublevelResponse;
+            }
+            return menusSublevelResponse;
         }
     }
 }

@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace SDCKClient
 {
-   public class MenusRequest:BaseRequest
+    /// <summary>
+    /// 菜单子级显示
+    /// </summary>
+   public class MenusSublevelRequest:BaseRequest
     {
         /// <summary>
-        /// 用户id
+        /// 父级id
         /// </summary>
-        public int Userid  { get; set; }
+        public int FatherUrl { get; set; }
     }
 }

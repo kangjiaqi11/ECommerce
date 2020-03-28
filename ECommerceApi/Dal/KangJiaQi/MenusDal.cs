@@ -18,7 +18,7 @@ namespace Dal
         /// <returns></returns>
         public List<Jurisdiction> MenusShow(int UserId)
         {
-            string sql = $"select* from Jurisdiction as j join Department as d on  j.DepartmentId=d.DepartmentId  join MenusInfo as m on j.MenusId = m.MenusId join UserInfo as u  on u.DepartmentId=d.DepartmentId where u.UserId={UserId}";
+            string sql = $"select * from Jurisdiction as j join Department as d on  j.DepartmentId=d.DepartmentId  join MenusInfo as m on j.MenusId = m.MenusId join UserInfo as u  on u.DepartmentId=d.DepartmentId where u.UserId={UserId}";
             return OrmDbHelper.GetList<Jurisdiction>(sql);
         }
         /// <summary>
@@ -26,9 +26,9 @@ namespace Dal
         /// </summary>
         /// <param name="MenusId"></param>
         /// <returns></returns>
-        public List<MenusInfo> MenusSublevel(int MenusId)
+        public List<MenusInfo> MenusSublevel(int FatherUrl)
         {
-            string sql = "";
+            string sql = $"select * from MenusInfo where FatherUrl={FatherUrl}";
             return OrmDbHelper.GetList<MenusInfo>(sql);
         }
     }

@@ -171,10 +171,11 @@ License: You must have a valid license purchased only from themeforest(the above
                             <ul class="pagination">
                                 <li class="paginate_button previous disabled" aria-controls="sample_editable_1" tabindex="0" id="sample_editable_1_previous">
                                     <input type="hidden" name="name" value="" id="index" />
-                                    <input type="hidden" name="name" value="" id="tocount" />
+
                                     <input id="Button1" class="btn green" type="button" value="上一页" onclick="UpPage()" />
                                 </li>
                                 <li class="paginate_button next disabled" aria-controls="sample_editable_1" tabindex="0" id="sample_editable_1_next">
+                                    <input type="hidden" name="name111" value="" id="tocount" />
                                     <input id="Button2" class="btn green" type="button" value="下一页" onclick="NextPage()" />
                                 </li>
                             </ul>
@@ -209,14 +210,14 @@ License: You must have a valid license purchased only from themeforest(the above
             }
         }
         function NextPage() {
-            var ToCount = $("#tocount").val();
             var index = $("#index").val();
+            var ToCount = $("#tocount").val();
             index = index + 1;
             alert(ToCount);
             alert(index);
             if (index <= ToCount) {
                 Query(index);
-            }
+            } 
             else {
                 alert("已经是尾页了");
                 return;

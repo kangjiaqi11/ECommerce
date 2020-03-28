@@ -20,7 +20,7 @@
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
     <link href="~/IndexStyle/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
-  
+
     <link href="~/IndexStyle/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGIN STYLES -->
     <!-- BEGIN PAGE STYLES -->
@@ -484,42 +484,13 @@
                         </form>
                         <!-- END RESPONSIVE QUICK SEARCH FORM -->
                     </li>
-                    <li>
-                        <a href="javascript:;">
-                            <i class="icon-basket"></i>
-                            <span class="title">eCommerce</span>
-                            <span class="arrow "></span>
-                        </a>
+                    @*菜单*@
+                    <li id="MenusShow">
+                        <input type="hidden" name="name" id="Userid" value="@Session["BUserId"]" />
+                       
                         <ul class="sub-menu">
-                            <li>
-                                <a href="ecommerce_index.html">
-                                    <i class="icon-home"></i>
-                                    Dashboard
-                                </a>
-                            </li>
-                            <li>
-                                <a href="ecommerce_orders.html">
-                                    <i class="icon-basket"></i>
-                                    Orders
-                                </a>
-                            </li>
-                            <li>
-                                <a href="ecommerce_orders_view.html">
-                                    <i class="icon-tag"></i>
-                                    Order View
-                                </a>
-                            </li>
-                            <li>
-                                <a href="ecommerce_products.html">
-                                    <i class="icon-handbag"></i>
-                                    Products
-                                </a>
-                            </li>
-                            <li>
-                                <a href="ecommerce_products_edit.html">
-                                    <i class="icon-pencil"></i>
-                                    Product Edit
-                                </a>
+                            <li id="MenusSublevel">
+
                             </li>
                         </ul>
                     </li>
@@ -1261,11 +1232,38 @@
             Layout.init(); // init layout
             QuickSidebar.init(); // init quick sidebar
             Demo.init(); // init demo features
+            var UserId = $("#Userid").val();
+            $.ajax({
+                url: "http://localhost:56593/api/Menus/MenusShow",
+                type: "POST",
+                data: {UserId:7},
+                dateType: "json",
+                success: function (ser) {
+                    console.log(ser);
+                    $(ser.DateList).each(function myfunction() {
+                        var tr = '<a  onclick="MenusSublevel(' + this.MenusId + ')">' + this.MenusName + '</a>';
+                        $("#MenusShow").append(tr);
+                    })
+                }
+            });
 
         });
-    function up() {
-        alert(123);
-    }
+        function MenusSublevel(MenusId) {
+            $.ajax({
+                url: "http://localhost:56593/api/Menus/MenusSublevel",
+                type: "POST",
+                data: {FatherUrl:MenusId},
+                dateType: "json",
+                success: function (ser) {
+
+                    console.log(ser);
+                    $(ser.DateList).each(function myfunction() {
+                        var tr =  '<a  href="' + this.MenusUrl + '" >' + this.MenusName + '</a>';
+                        $("#MenusSublevel").append(tr);
+                    })
+                }
+            });
+        }
     </script>
     <!-- END JAVASCRIPTS -->
 </body>

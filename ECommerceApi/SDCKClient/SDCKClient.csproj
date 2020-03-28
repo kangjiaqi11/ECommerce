@@ -50,6 +50,7 @@
     <Compile Include="KangJiaQi\Request\BUserUpdateRequst.cs" />
     <Compile Include="KangJiaQi\Request\DepartmentRequst.cs" />
     <Compile Include="KangJiaQi\Request\MenusRequest.cs" />
+    <Compile Include="KangJiaQi\Request\MenusSublevelRequest.cs" />
     <Compile Include="KangJiaQi\Request\RecommendRequst.cs" />
     <Compile Include="KangJiaQi\Request\TimeQDeleteRequest.cs" />
     <Compile Include="KangJiaQi\Request\TimeQShowRequest.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="KangJiaQi\Response\BUserUpdateResponse.cs" />
     <Compile Include="KangJiaQi\Response\DepartmentResponse.cs" />
     <Compile Include="KangJiaQi\Response\MenusResponse.cs" />
+    <Compile Include="KangJiaQi\Response\MenusSublevelResponse.cs" />
     <Compile Include="KangJiaQi\Response\RecommendResponse.cs" />
     <Compile Include="KangJiaQi\Response\TimeQDeleteResponse.cs" />
     <Compile Include="KangJiaQi\Response\TimeQShowResponse.cs" />
