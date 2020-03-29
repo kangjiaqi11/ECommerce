@@ -54,6 +54,35 @@ namespace Dal
             string sql = "select * from Department";
             return OrmDbHelper.GetList<Department>(sql);
         }
+        /// <summary>
+        /// 获取用户名
+        /// </summary>
+        /// <returns></returns>
+        public UserInfo GetUserName(int UserId)
+        {
+            string sql = $"select UserName,Salt from UserInfo where UserId={UserId}";
+            return OrmDbHelper.GetInfo<UserInfo>(sql);
+        }
+        /// <summary>
+        /// 锁屏解锁
+        /// </summary>
+        /// <param name="UserName"></param>
+        /// <param name="Userpwd"></param>
+        /// <returns></returns>
+        public int Locked(string UserName,string Userpwd)
+        {
+            string sql = $"select Count(1) from UserInfo where UserName='{UserName}' and UserPwd='{Userpwd}'";
+            return Convert.ToInt32( DBHelper.ExecuteScalar(sql));
+        }
+        /// <summary>
+        /// 个人信息
+        /// </summary>
+        /// <returns></returns>
+        public UserInfo personage(int UserId)
+        {
+            string sql = $"select * from UserInfo as u join Department as d on u.DepartmentId=d.DepartmentId join Role as r on r.RoleId=u.RoleId where UserId={UserId}";
+            return OrmDbHelper.GetInfo<UserInfo>(sql);
+        }
         #endregion
 
     }

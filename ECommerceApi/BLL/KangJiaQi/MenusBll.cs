@@ -13,6 +13,7 @@ namespace BLL
     /// </summary>
    public class MenusBll
     {
+        #region 菜单相关显示
         MenusDal MenusDal = new MenusDal();
         /// <summary>
         /// 菜单显示
@@ -22,7 +23,7 @@ namespace BLL
         {
             MenusResponse menusResponse = new MenusResponse();
             var ser = MenusDal.MenusShow(menusRequest.Userid);
-            if (ser!=null)
+            if (ser != null)
             {
                 menusResponse.DateList = ser;
                 menusResponse.IsSuccess = true;
@@ -41,7 +42,7 @@ namespace BLL
         /// </summary>
         /// <param name="menusRequest"></param>
         /// <returns></returns>
-        public MenusSublevelResponse MenusSublevel(MenusSublevelRequest menusSublevelRequest )
+        public MenusSublevelResponse MenusSublevel(MenusSublevelRequest menusSublevelRequest)
         {
             MenusSublevelResponse menusSublevelResponse = new MenusSublevelResponse();
             var ser = MenusDal.MenusSublevel(menusSublevelRequest.FatherUrl);
@@ -57,6 +58,7 @@ namespace BLL
                 return menusSublevelResponse;
             }
             return menusSublevelResponse;
-        }
+        } 
+        #endregion
     }
 }

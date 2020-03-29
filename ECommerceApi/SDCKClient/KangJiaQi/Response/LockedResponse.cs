@@ -7,9 +7,13 @@ using System.Threading.Tasks;
 namespace SDCKClient
 {
     /// <summary>
-    /// 添加好物推荐返回值
+    /// 锁屏返回值
     /// </summary>
-   public class RecommendDeleteResponse:BaseResponse
+   public class LockedResponse:BaseResponse
     {
+        /// <summary>
+        ///登录成功
+        /// </summary>
+        public int GetLockedrow { get; set; }
     }
 }

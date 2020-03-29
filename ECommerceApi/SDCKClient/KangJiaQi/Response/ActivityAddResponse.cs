@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace SDCKClient
 {
     /// <summary>
-    /// 添加好物推荐返回值
+    /// 添加秒删活动返回值
     /// </summary>
-   public class RecommendDeleteResponse:BaseResponse
+   public class ActivityAddResponse : BaseResponse
     {
     }
 }

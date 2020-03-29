@@ -11,6 +11,7 @@ namespace BLL
    public class promotionBll
     {
         DBHelper DBHelper=new  DBHelper();
+        #region 秒删活动相关
         promotionDal promotionDal = new promotionDal();
         /// <summary>
         /// 秒杀活动显示
@@ -21,12 +22,12 @@ namespace BLL
         {
             ActivityShowRespnse activityShowRespnse = new ActivityShowRespnse();
             var ser = promotionDal.ActivityShow(activityShowRequst.ActivityTitle, activityShowRequst.PageIndex, activityShowRequst.PageSize);
-            if (ser!=null)
+            if (ser != null)
             {
                 activityShowRespnse.DateList = ser.DateList;
                 activityShowRespnse.TotaCount = ser.TotaCount;
                 activityShowRespnse.IsSuccess = true;
-                
+
             }
             else
             {
@@ -35,6 +36,56 @@ namespace BLL
             }
             return activityShowRespnse;
         }
+
+        /// <summary>
+        /// 添加秒杀
+        /// </summary>
+        /// <returns></returns>
+        public ActivityAddResponse  ActivityAdd(ActivityAddRequest activityAddRequest)
+        {
+            ActivityAddResponse activityAddResponse = new ActivityAddResponse();
+            if (string.IsNullOrEmpty( activityAddRequest.ActivityTitle))
+            {
+                activityAddResponse.Status = -1;
+                activityAddResponse.Msg = "标题不能为空";
+                return activityAddResponse;
+            }
+            if (activityAddRequest.AStartTime==null)
+            {
+                activityAddResponse.Status = -1;
+                activityAddResponse.Msg = "开始时间不能为空";
+                return activityAddResponse;
+            }
+            if (activityAddRequest.AEenTime==null)
+            {
+                activityAddResponse.Status = -1;
+                activityAddResponse.Msg = "结束时间不能为空";
+                return activityAddResponse;
+            }
+            Activity activity = new Activity();
+            activity.ActivityTitle = activityAddRequest.ActivityTitle;
+            activity.ActivityStatel = activityAddRequest.ActivityStatel;
+            activity.Statel = 1;
+            activity.AStartTime = activityAddRequest.AStartTime;
+            activity.CreateTime = DateTime.Now;
+            activity.UpdateTime = DateTime.Now;
+            activity.CreateId = activityAddRequest.CreateId;
+            activity.UpdateId = activityAddRequest.UpdateId;
+            var ser = promotionDal.ActivityAdd(activity);
+            if (ser>0)
+            {
+                activityAddResponse.IsSuccess = true;
+            }
+            else
+            {
+                activityAddResponse.Status = -1;
+                activityAddResponse.Msg = "添加失败";
+                return activityAddResponse;
+            }
+           return activityAddResponse;
+        }
+
+        #endregion
         #region 好物推荐相关
         /// <summary>
         /// 推荐首页的物品

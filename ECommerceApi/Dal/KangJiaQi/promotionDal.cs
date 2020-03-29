@@ -65,6 +65,16 @@ namespace Dal
             }
             return activityPage;
         }
+
+        /// <summary>
+        /// 添加秒杀
+        /// </summary>
+        /// <returns></returns>
+        public int ActivityAdd(Activity activity)
+        {
+            string sql= $"insert into Activity( ActivityTitle ,ActivityStatel, Statel ,AStartTime ,AEenTime ,CreateTime, UpdateTime , CreateId  ,UpdateId) values ('{activity.ActivityTitle}',{activity.ActivityStatel},{activity.Statel},'{activity.AStartTime}','{activity.AEenTime}','{activity.CreateTime}','{activity.UpdateTime}','{activity.CreateId}','{activity.UpdateId}') ";
+            return OrmDbHelper.ExecuteSql(sql); 
+        }
         #region 好物推荐
         /// <summary>
         /// 推荐好的物品

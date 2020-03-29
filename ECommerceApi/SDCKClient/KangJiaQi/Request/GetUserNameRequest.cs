@@ -7,9 +7,13 @@ using System.Threading.Tasks;
 namespace SDCKClient
 {
     /// <summary>
-    /// 添加好物推荐返回值
+    /// 获取用户名参数
     /// </summary>
-   public class RecommendDeleteResponse:BaseResponse
+   public class GetUserNameRequest:BaseRequest
     {
+        /// <summary>
+        /// 用户id
+        /// </summary>
+        public int UserId { get; set; }
     }
 }
