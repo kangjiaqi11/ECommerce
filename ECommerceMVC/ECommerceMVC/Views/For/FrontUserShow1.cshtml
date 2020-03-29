@@ -1,9 +1,13 @@
 ﻿
 @{
-    ViewBag.Title = "StoreroomFenye";
+    ViewBag.Title = "FrontUserShow1";
 }
+
+<h2>FrontUserShow1</h2>
+
 @using MODEL.ZhangYang
-@model Fenye
+@model List<FrontUser>
+
 
 <!DOCTYPE html>
 
@@ -60,47 +64,49 @@
                             </div>
                             <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                 <thead>
-                                    <input id="ShoopName" type="text" /> 商品名称
-                                    <input id="Submit1" type="submit" value="查询" />
-
-
                                     <table class="table">
                                         <tr>
-                                            <td>编号</td>
-                                            <td>商品名称</td>
-                                            <td>货号</td>
-                                            <td>订单号</td>
-                                            <td>库存信息</td>
-                                            <td>库存类型</td>
+                                            <td>用户ID</td>
+                                            <td>用户昵称</td>
+                                            <td>生日</td>
+                                            <td>个性签名</td>
+                                            <td>用户职业</td>
+                                            <td>用户性别</td>
                                         </tr>
-                                        @foreach (var item in Model.Storerooms)
+                                        @foreach (var item in Model)
                                         {
                                             <tr>
-                                                <td>@item.CkId</td>
-                                                <td>@item.ShoopName</td>
-                                                <td>@item.Hhsx</td>
-                                                <td>@item.Ddh</td>
-                                                <td>@item.Kcsl</td>
-                                                <td>@item.Kclx</td>
+                                                <td>@item.FrontUserid</td>
+                                                <td>@item.UserName</td>
+                                                <td>@item.Baddy</td>
+                                                <td>@item.Grqm</td>
+                                                <td>@item.professional</td>
+                                                <td>@item.Age</td>
                                             </tr>
                                         }
                                     </table>
-
-                                    <table>
+                                    显示数据
+                                    <table class="table">
                                         <tr>
-                                            @for (int i = 1; i <= (Model.Count / 2) + (Model.Count % 2 == 0 ? 0 : 1); i++)
-                                            {
-                                                <td><input type="button" value="@i" onclick="jump(@i)" /></td>
-                                            }
+                                            <td>用户ID</td>
+                                            <td>消费金额</td>
+                                            <td>订单数量</td>
+                                            <td>成长值</td>
+                                            <td>优惠卷</td>
+                                            <td>收藏话题</td>
                                         </tr>
-                                    </table>
-                                    <script>
-                                        function jump(i) {
-                                            location.href = "/Sto/StoreroomFenye?PageSize=2&PageIndex=" + i;
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.FrontUserid</td>
+                                                <td>@item.Consumption</td>
+                                                <td>@item.Number</td>
+                                                <td>@item.Czz</td>
+                                                <td>@item.Yhj</td>
+                                                <td>@item.Scht</td>
+                                            </tr>
                                         }
-                                    </script>
-
-                                    @*显示数据*@
+                                    </table>
                                 </thead>
                                 <tbody id="ActivityShow"></tbody>
                             </table>
@@ -112,7 +118,6 @@
             <div class="row">
                 <div class="col-md-5 col-sm-12">
                     <div class="dataTables_info" id="sample_editable_1_info" role="status" aria-live="polite">
-
                     </div>
                 </div>
                 <div class="col-md-7 col-sm-12">
@@ -133,6 +138,33 @@
         <!-- END QUICK SIDEBAR -->
     </div>
     <!-- END CONTAINER -->
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script>
+        //第一这里加载查询的方法
+        function Query() {
+            $("#ActivityShow").html("");
+            $.ajax({
+                url: "show2",
+                type: "POST",
+                dateType: "json",
+                success: function (serr) {
+                    console.log(serr);
+                    $(serr.).each(function myfunction() {
+                        var tr = '<tr>'
+                            + '<th>' + this.FrontUserid + '</th>'
+                            + '<th>' + this.Consumption + '</th>'
+                            + '<th>' + this.Number + ' </th>'
+                            + '<th>' + this.Czz + '</th>'
+                            + '<th>' + this.Yhj + ' </th>'
+                            + '<th>' + this.Scht + '</th>'
+                            + '</tr>'
+                        $("#ActivityShow").append(tr);
+                    })
+                }
+            });
+        }
+    </script>
 </body>
 <!-- END BODY -->
 </html>
+
