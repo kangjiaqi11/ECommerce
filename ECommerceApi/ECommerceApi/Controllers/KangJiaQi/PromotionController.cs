@@ -20,6 +20,7 @@ namespace ECommerceApi.Controllers.KangJiaQi
         {
             return promotionBll.ActivityShow(activityShowRequst);
         }
+        #region 好物推荐相关
         /// <summary>
         /// 推荐首页的物品
         /// </summary>
@@ -29,6 +30,31 @@ namespace ECommerceApi.Controllers.KangJiaQi
         {
             return promotionBll.RecommendShow(recommendRequst);
         }
+        /// <summary>
+        ///好物推荐 状态
+        /// </summary>
+        /// <returns></returns>
+        public RecommendIsResponse RecommendIs(RecommendIsRequest recommendIsRequest)
+        {
+            return promotionBll.RecommendIs(recommendIsRequest);
+        }
+        /// <summary>
+        ///好物推荐下架
+        /// </summary>
+        /// <returns></returns>
+        public RecommenNodRequest RecommendNO(RecommendNoRequest recommendNoRequest)
+        {
+            return promotionBll.RecommendNO(recommendNoRequest);
+        }
+        /// <summary>
+        /// 好物推荐删除
+        /// </summary>
+        /// <returns></returns>
+        public RecommendDeleteResponse RecommendDelete(RecommendDeleteRequest recommendDeleteRequest)
+        {
+            return promotionBll.RecommendDelete(recommendDeleteRequest);
+        } 
+        #endregion
         #region 时间段相关
         /// <summary>
         /// 时间段的显示

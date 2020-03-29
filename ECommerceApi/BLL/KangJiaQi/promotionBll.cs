@@ -35,15 +35,16 @@ namespace BLL
             }
             return activityShowRespnse;
         }
+        #region 好物推荐相关
         /// <summary>
         /// 推荐首页的物品
         /// </summary>
         /// <param name="recommendRequst"></param>
         /// <returns></returns>
-        public RecommendResponse  RecommendShow(RecommendRequst recommendRequst)
+        public RecommendResponse RecommendShow(RecommendRequst recommendRequst)
         {
             RecommendResponse recommendResponse = new RecommendResponse();
-             var ser = promotionDal.RecommendShow(recommendRequst.GoodsName, recommendRequst.IsRecommend, recommendRequst.PageIndex, recommendRequst.PageSize);
+            var ser = promotionDal.RecommendShow(recommendRequst.GoodsName, recommendRequst.IsRecommend, recommendRequst.PageIndex, recommendRequst.PageSize);
             if (ser != null)
             {
                 recommendResponse.DateList = ser.DateList;
@@ -58,6 +59,85 @@ namespace BLL
             }
             return recommendResponse;
         }
+        /// <summary>
+        ///好物推荐 状态
+        /// </summary>
+        /// <returns></returns>
+        public RecommendIsResponse RecommendIs(RecommendIsRequest recommendIsRequest)
+        {
+            RecommendIsResponse recommendIsResponse = new RecommendIsResponse();
+            if (recommendIsRequest.RecommendId == 0)
+            {
+                recommendIsResponse.Status = -1;
+                recommendIsResponse.Msg = "id为空";
+                return recommendIsResponse;
+            }
+            var ser = promotionDal.RecommendIs(recommendIsRequest.RecommendId);
+            if (ser > 0)
+            {
+                recommendIsResponse.IsSuccess = true;
+
+            }
+            else
+            {
+                recommendIsResponse.Status = -1;
+                recommendIsResponse.Msg = "修改失败";
+            }
+            return recommendIsResponse;
+        }
+        /// <summary>
+        ///好物推荐下架
+        /// </summary>
+        /// <returns></returns>
+        public RecommenNodRequest RecommendNO(RecommendNoRequest recommendNoRequest)
+        {
+            RecommenNodRequest recommenNodRequest = new RecommenNodRequest();
+            if (recommendNoRequest.RecommendId == 0)
+            {
+                recommenNodRequest.Status = -1;
+                recommenNodRequest.Msg = "id为空";
+                return recommenNodRequest;
+            }
+            var ser = promotionDal.RecommendNO(recommendNoRequest.RecommendId);
+            if (ser > 0)
+            {
+                recommenNodRequest.IsSuccess = true;
+
+            }
+            else
+            {
+                recommenNodRequest.Status = -1;
+                recommenNodRequest.Msg = "修改失败";
+            }
+            return recommenNodRequest;
+        }
+        /// <summary>
+        /// 好物推荐删除
+        /// </summary>
+        /// <returns></returns>
+        public RecommendDeleteResponse RecommendDelete(RecommendDeleteRequest recommendDeleteRequest)
+        {
+            RecommendDeleteResponse recommendDeleteResponse = new RecommendDeleteResponse();
+            if (recommendDeleteRequest.RecommendId == 0)
+            {
+                recommendDeleteResponse.Status = -1;
+                recommendDeleteResponse.Msg = "id为空";
+                return recommendDeleteResponse;
+            }
+            var ser = promotionDal.RecommendDelete(recommendDeleteRequest.RecommendId);
+            if (ser > 0)
+            {
+                recommendDeleteResponse.IsSuccess = true;
+
+            }
+            else
+            {
+                recommendDeleteResponse.Status = -1;
+                recommendDeleteResponse.Msg = "修改失败";
+            }
+            return recommendDeleteResponse;
+        } 
+        #endregion
         #region 时间段相关
         /// <summary>
         /// 时间段的显示

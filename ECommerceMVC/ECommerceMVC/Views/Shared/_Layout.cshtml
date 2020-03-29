@@ -457,7 +457,7 @@
                 <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
                 <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
                 <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
-                <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" id="MenusParent" data-slide-speed="200">
                     <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
                     <li class="sidebar-toggler-wrapper">
                         <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
@@ -480,20 +480,11 @@
                                     <a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
                                 </span>
                             </div>
-
+                            <input type="hidden" name="name" id="Userid" value="@Session["BUserId"]" />
                         </form>
                         <!-- END RESPONSIVE QUICK SEARCH FORM -->
                     </li>
                     @*菜单*@
-                    <li id="MenusShow">
-                        <input type="hidden" name="name" id="Userid" value="@Session["BUserId"]" />
-                       
-                        <ul class="sub-menu">
-                            <li id="MenusSublevel">
-
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
                 <!-- END SIDEBAR MENU -->
             </div>
@@ -1233,7 +1224,9 @@
             QuickSidebar.init(); // init quick sidebar
             Demo.init(); // init demo features
             var UserId = $("#Userid").val();
+          
             $.ajax({
+                
                 url: "http://localhost:56593/api/Menus/MenusShow",
                 type: "POST",
                 data: {UserId:7},
@@ -1241,14 +1234,20 @@
                 success: function (ser) {
                     console.log(ser);
                     $(ser.DateList).each(function myfunction() {
-                        var tr = '<a  onclick="MenusSublevel(' + this.MenusId + ')">' + this.MenusName + '</a>';
-                        $("#MenusShow").append(tr);
+                        var tr ='<li>'
+					+'<a onclick="MenusSublevel11(' + this.MenusId + ')">'
+					+'<span class="title">'+this.MenusName +'</span>'
+                                + '</a>'
+                                + '<ul class="sub-menu" id="MenusChildren">'
+                                + '</ul>'
+                                + '</li>';
+                        $("#MenusParent").append(tr);
                     })
                 }
             });
-
         });
-        function MenusSublevel(MenusId) {
+        function MenusSublevel11(MenusId) {
+             $("#MenusChildren").html("");
             $.ajax({
                 url: "http://localhost:56593/api/Menus/MenusSublevel",
                 type: "POST",
@@ -1258,8 +1257,10 @@
 
                     console.log(ser);
                     $(ser.DateList).each(function myfunction() {
-                        var tr =  '<a  href="' + this.MenusUrl + '" >' + this.MenusName + '</a>';
-                        $("#MenusSublevel").append(tr);
+                        var tr = '<li>'
+                            + '<a href="' + this.MenusUrl + '">' + this.MenusName + '</a>'
+                            + '</li>';
+                        $("#MenusChildren").append(tr);  
                     })
                 }
             });

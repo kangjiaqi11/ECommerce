@@ -65,6 +65,7 @@ namespace Dal
             }
             return activityPage;
         }
+        #region 好物推荐
         /// <summary>
         /// 推荐好的物品
         /// </summary>
@@ -122,7 +123,34 @@ namespace Dal
             }
 
         }
-
+        /// <summary>
+        ///好物推荐 状态
+        /// </summary>
+        /// <returns></returns>
+        public int RecommendIs(int RecommendId)
+        {
+            string sql = $"update Recommend  set IsRecommend=1 where  RecommendId={RecommendId}";
+            return OrmDbHelper.ExecuteSql(sql);
+        }
+        /// <summary>
+        ///好物推荐下架
+        /// </summary>
+        /// <returns></returns>
+        public int RecommendNO(int RecommendId)
+        {
+            string sql = $"update Recommend  set IsRecommend=2 where  RecommendId={RecommendId}";
+            return OrmDbHelper.ExecuteSql(sql);
+        }
+        /// <summary>
+        /// 好物推荐删除
+        /// </summary>
+        /// <returns></returns>
+        public int RecommendDelete(int RecommendId)
+        {
+            string sql = $"update Recommend  set State=0 where  RecommendId={RecommendId}";
+            return OrmDbHelper.ExecuteSql(sql);
+        } 
+        #endregion
         #region 时间段相关 
         /// <summary>
         /// 时间段的显示

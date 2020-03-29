@@ -139,10 +139,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 商品名称
                                             </th>
                                             <th>
-                                                是否推荐
+                                                商品介绍
                                             </th>
                                             <th>
-                                                状态
+                                                是否推荐
                                             </th>
                                             <th>
                                                 操作
@@ -170,12 +170,12 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div class="dataTables_paginate paging_simple_numbers" id="sample_editable_1_paginate">
                             <ul class="pagination">
                                 <li class="paginate_button previous disabled" aria-controls="sample_editable_1" tabindex="0" id="sample_editable_1_previous">
-                                    <input type="hidden" name="name" value="" id="index" />
+                                    <input type="hidden" name="Index11" value="" id="ascascasc" />
 
                                     <input id="Button1" class="btn green" type="button" value="上一页" onclick="UpPage()" />
                                 </li>
                                 <li class="paginate_button next disabled" aria-controls="sample_editable_1" tabindex="0" id="sample_editable_1_next">
-                                    <input type="hidden" name="name111" value="" id="tocount" />
+                                    <input type="hidden" name="Count11" value="" id="tocount" />
                                     <input id="Button2" class="btn green" type="button" value="下一页" onclick="NextPage()" />
                                 </li>
                             </ul>
@@ -194,10 +194,11 @@ License: You must have a valid license purchased only from themeforest(the above
         jQuery(document).ready(function () {
 
             Query(2);
-
+            var index = $("#ascascasc").val();
+            alert(index);
         });
         function UpPage() {
-            var index = $("#index").val();
+            var index = $("#ascascasc").val();
             index = index - 1;
             alert(index);
             if (index > 0) {
@@ -210,14 +211,15 @@ License: You must have a valid license purchased only from themeforest(the above
             }
         }
         function NextPage() {
-            var index = $("#index").val();
+
             var ToCount = $("#tocount").val();
+            var index = $("#index").val();
             index = index + 1;
             alert(ToCount);
             alert(index);
-            if (index <= ToCount) {
+            if (index < ToCount) {
                 Query(index);
-            } 
+            }
             else {
                 alert("已经是尾页了");
                 return;
@@ -240,19 +242,68 @@ License: You must have a valid license purchased only from themeforest(the above
                             + '<th>' + this.RecommendId + '</th>'
                             + '<th>' + this.GoodsName + '</th>'
                             + '<th>' + this.GoodsIntro + ' </th>'
-                            + '<th>' + this.IsRecommend + '</th>'
-                            + '<th>' + this.Statel + ' </th>'
+                            + '<th>' + (this.IsRecommend == 1 ? "已推荐" : "未推荐") + '</th>'
+                            + '<th>' + (this.IsRecommend == 2 ? '<input id="DeleteStatel" class="btn green" type="button" value="推荐" onclick="UpdateIs(' + this.RecommendId + ')" />' : '<input id="DeleteState2" class="btn green" type="button" value="下架" onclick="UpdateNo(' + this.RecommendId + ')" />') + '</th>'
+                            + '<th>' + '<input id="DeleteIsRecommend" class="btn green" type="button" value="删除" onclick="DeleteStatel(' + this.RecommendId + ')" />' + '</th>'
                             + '</tr>'
                         $("#ActivityShow").append(tr);
                     })
-
-                    var count = '<h5> 共显示显示' + ser.TotaCount + '条数据</h5>';
-                    $("#sample_editable_1_info").append(count);
                     $("#tocount").val(ser.TotaCount);
-                    $("#index").val(pageindex);
+                    $("#ascascasc").val(pageindex);
                 }
             });
 
+        }
+    function UpdateIs(RecommendId) {
+        alert(RecommendId);
+                $.ajax({
+                url: "RecommendIs",
+                type: "POST",
+                data: { RecommendId: RecommendId },
+                dateType: "json",
+                success: function (ser) {
+                    if (ser) {
+                        Query(2);
+                    }
+                    else {
+                        alert("修改失败");
+                    }
+                }
+            });
+        }
+    function UpdateNo(RecommendId) {
+            alert(RecommendId);
+                $.ajax({
+                url: "RecommendNO",
+                type: "POST",
+                data: { RecommendId: RecommendId },
+                dateType: "json",
+                success: function (ser) {
+                    if (ser) {
+                        Query(2);
+                    }
+                    else {
+                        alert("修改失败");
+                    }
+                }
+            });
+        }
+    function DeleteStatel(RecommendId) {
+            alert(RecommendId);
+                $.ajax({
+                url: "RecommendDelete",
+                type: "POST",
+                data: { RecommendId: iRecommendIdd },
+                dateType: "json",
+                success: function (ser) {
+                    if (ser) {
+                        Query(2);
+                    }
+                    else {
+                        alert("删除失败");
+                    }
+                }
+            });
         }
                     //第二写两个方法
     </script>

@@ -71,6 +71,42 @@ namespace ECommerceMVC
             var list = promotionBll.PageRecommendShow(recommendRequst, "api/Promotion/RecommendShow");
             return Json(list);
         }
+        /// <summary>
+        ///好物推荐 状态
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult RecommendIs(int RecommendId)
+        {
+            RecommendIsRequest recommendIsRequest = new RecommendIsRequest();
+            recommendIsRequest.RecommendId = RecommendId;
+            var ser = promotionBll.RecommendIs(recommendIsRequest, "api/Promotion/RecommendIs");
+            return Json(ser.IsSuccess);
+        }
+        /// <summary>
+        ///好物推荐下架
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult RecommendNO(int RecommendId)
+        {
+            RecommendNoRequest recommendNoRequest = new RecommendNoRequest();
+            recommendNoRequest.RecommendId = RecommendId;
+            var ser = promotionBll.RecommendNO(recommendNoRequest, "api/Promotion/RecommendNO");
+            return Json(ser.IsSuccess);
+        }
+        /// <summary>
+        /// 好物推荐删除
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult RecommendDelete(int RecommendId)
+        {
+            RecommendDeleteRequest recommendDeleteRequest = new RecommendDeleteRequest();
+            recommendDeleteRequest.RecommendId = RecommendId;
+            var ser = promotionBll.RecommendDelete(recommendDeleteRequest, "api/Promotion/RecommendDelete");
+            return Json(ser.IsSuccess);
+        }
         #region 时间段相关信息
         /// <summary>
         /// 时间段的显示

@@ -28,6 +28,30 @@ namespace BLL
         {
             return ApiRequestHelper.Post<RecommendRequst, RecommendResponse>(recommendRequst, GetApiName);
         }
+        /// <summary>
+        ///好物推荐 状态
+        /// </summary>
+        /// <returns></returns>
+        public RecommendIsResponse RecommendIs(RecommendIsRequest recommendIsRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<RecommendIsRequest, RecommendIsResponse>(recommendIsRequest, GetApiName);
+        }
+        /// <summary>
+        ///好物推荐下架
+        /// </summary>
+        /// <returns></returns>
+        public RecommenNodRequest RecommendNO(RecommendNoRequest recommendNoRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<RecommendNoRequest, RecommenNodRequest>(recommendNoRequest, GetApiName);
+        }
+        /// <summary>
+        /// 好物推荐删除
+        /// </summary>
+        /// <returns></returns>
+        public RecommendDeleteResponse RecommendDelete(RecommendDeleteRequest recommendDeleteRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<RecommendDeleteRequest, RecommendDeleteResponse>(recommendDeleteRequest, GetApiName);
+        }
         #region 时间段相关
         /// <summary>
         /// 时间段的显示
