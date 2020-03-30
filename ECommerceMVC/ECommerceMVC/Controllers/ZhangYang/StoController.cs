@@ -27,7 +27,17 @@ namespace ECommerceMVC.Controllers.ZhangYang
             var ser = bll.StoreroomFenye(Ssr, "api/Sto/StoreroomFenye");
             return View(ser.StoList);
         }
-    }.
+    }
+    public class ForController : Controller
+    {
+        FrontUserBLL bll = new FrontUserBLL();
 
+        public ActionResult FrontUserFenye(int PageIndex = 1, int PageSize = 2, string UserName = null)
+        {
+            FrontUserShowReq Ssr = new FrontUserShowReq();
 
+            var ser = bll.FrontUserFenye(Ssr, "api/Sto/StoreroomFenye");
+            return View(ser.Frolist);
+        }
+    }
 }

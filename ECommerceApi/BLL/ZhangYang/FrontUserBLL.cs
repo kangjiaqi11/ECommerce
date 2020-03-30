@@ -11,7 +11,7 @@ namespace BLL.ZhangYang
 {
     public class FrontUserBLL
     {
-        public FrontUserShowResp StoreroomFenye(FrontUserShowReq Ssrq)
+        public FrontUserShowResp FrontUserFenye(FrontUserShowReq Ssrq)
         {
             FrontUserDAL dal = new FrontUserDAL();
             FrontUserShowResp Ssr = new FrontUserShowResp();

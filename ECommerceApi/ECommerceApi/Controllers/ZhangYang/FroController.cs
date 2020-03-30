@@ -13,9 +13,9 @@ namespace ECommerceApi.Controllers.ZhangYang
     public class FroController : ApiController
     {
         FrontUserBLL bll = new FrontUserBLL();
-        public FrontUserShowResp StoreroomFenye(FrontUserShowReq Ssrq)
+        public FrontUserShowResp FrontUserFenye(FrontUserShowReq Ssrq)
         {
-            return bll.StoreroomFenye(Ssrq);
+            return bll.FrontUserFenye(Ssrq);
         }
     }
 }
