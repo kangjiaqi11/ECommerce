@@ -15,7 +15,7 @@ namespace BLL.ZhangYang
         {
             FrontUserDAL dal = new FrontUserDAL();
             FrontUserShowResp Ssr = new FrontUserShowResp();
-            var ser = dal.FrontUserFenye(Ssrq.PageIndex, Ssrq.PageSize, Ssrq.ShoopName);
+            var ser = dal.FrontUserFenye(Ssrq.PageIndex, Ssrq.PageSize, Ssrq.UserName);
 
             if (ser != null)
             {
