@@ -131,14 +131,13 @@ License: You must have a valid license purchased only from themeforest(the above
                 data: { UserName:UserName, UserPwd:pwd,salt:Salt },
                 dateType: "json",
                 success: function (ser) {
-                    if (ser.Status > 0) {
-                        if (ser.IsSuccess) {
-                            location.href("");
+                    if (ser) {
+                        alert("解锁成功");
+                            location.href="/BUser/Index";
                         }
                         else {
                             alert("解锁失败");
                         }
-                    }
                 }
             });
         }

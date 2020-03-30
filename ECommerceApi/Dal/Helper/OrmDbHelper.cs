@@ -12,11 +12,7 @@ namespace Dal
 {
     public static class OrmDbHelper
     {
-        /// <summary>
-        /// 此处是连接字符串
-        /// </summary>
-        private const string ConnStr = "Data Source=.;Initial Catalog=ECommerce;Integrated Security=True";
-
+     
         /// <summary>
         /// 获取集合
         /// </summary>
