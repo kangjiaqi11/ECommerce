@@ -79,10 +79,9 @@
     <Compile Include="WangZhiHao\Response\GoodsAddResponse.cs" />
     <Compile Include="XuYaDon\Request\OrderShowrequeset.cs" />
     <Compile Include="XuYaDon\Response\OrderShowResponse.cs" />
-    <Compile Include="ZhangYang\Request\StoreroomAddreq.cs" />
+    <Compile Include="ZhangYang\Request\FrontUserShowReq.cs" />
     <Compile Include="ZhangYang\Request\StoreroomShowReq.cs" />
-    <Compile Include="ZhangYang\Response\StoreroomAddResp.cs" />
-    <Compile Include="ZhangYang\Response\StoreroomPutReq.cs" />
+    <Compile Include="ZhangYang\Response\FrontUserShowResp.cs" />
     <Compile Include="ZhangYang\Response\StoreroomShowResp.cs" />
   </ItemGroup>
   <ItemGroup>

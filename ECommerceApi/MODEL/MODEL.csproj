@@ -67,6 +67,7 @@
     <Compile Include="XuYaDon\RetutnType.cs" />
     <Compile Include="XuYaDon\SalesReturn.cs" />
     <Compile Include="ZhangYang\Fenye.cs" />
+    <Compile Include="ZhangYang\Fenye1.cs" />
     <Compile Include="ZhangYang\FrontUser.cs" />
     <Compile Include="ZhangYang\Member.cs" />
     <Compile Include="ZhangYang\Provinces.cs" />

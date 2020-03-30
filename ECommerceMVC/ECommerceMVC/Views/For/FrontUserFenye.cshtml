@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "FrontUserFenye";
+}
+
+<h2>FrontUserFenye</h2>
+
+@using MODEL.ZhangYang
+@model Fenye1
+<h2>StoreroomFenye</h2>
+
+<input id="UserName" type="text" /> 用户昵称
+<input id="Submit1" type="submit" value="查询" />
+
+
+<table class="table">
+    <tr>
+        <td>用户ID</td>
+        <td>用户账号</td>
+        <td>用户昵称</td>
+        <td>会员等级</td>
+        <td>消费金额</td>
+        <td>订单数量</td>
+    </tr>
+    @foreach (var item in Model.FrontUsers)
+    {
+        <tr>
+            <td>@item.FrontUserid</td>
+            <td>@item.Account</td>
+            <td>@item.UserName</td>
+            <td>@item.MembersId</td>
+            <td>@item.Consumption</td>
+            <td>@item.Number</td>
+        </tr>
+    }
+</table>
+
+<table>
+    <tr>
+        @for (int i = 1; i <= (Model.Count / 2) + (Model.Count % 2 == 0 ? 0 : 1); i++)
+        {
+            <td><input type="button" value="@i" onclick="jump(@i)" /></td>
+        }
+    </tr>
+</table>
+<script>
+    function jump(i) {
+        location.href = "/Fro/FrontUsersFenye?PageSize=2&PageIndex=" + i;
+    }
+</script>
