@@ -20,5 +20,14 @@ namespace ECommerceMVC.Controllers.ZhangYang
             var ser = bll.StoreroomFenye(Ssr, "api/Sto/StoreroomFenye");
             return View(ser.StoList);
         }
-    }
+        public ActionResult StoreroomRu(int PageIndex = 1, int PageSize = 2, string ShoopName = null)
+        {
+            StoreroomShowReq Ssr = new StoreroomShowReq();
+
+            var ser = bll.StoreroomFenye(Ssr, "api/Sto/StoreroomFenye");
+            return View(ser.StoList);
+        }
+    }.
+
+
 }

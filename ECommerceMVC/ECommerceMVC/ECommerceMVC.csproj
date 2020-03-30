@@ -4702,6 +4702,7 @@
     <Content Include="Views\Sto\StoreroomFenye.cshtml" />
     <Content Include="Views\promotion\RecommendShow.cshtml" />
     <Content Include="Views\promotion\TimeShow.cshtml" />
+    <Content Include="Views\Sto\StoreroomRu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="IndexStyle\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />

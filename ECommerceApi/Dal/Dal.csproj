@@ -50,6 +50,7 @@
     <Compile Include="WangZhiHao\GoodsDal.cs" />
     <Compile Include="XuYaDon\DataReadHelp.cs" />
     <Compile Include="XuYaDon\OrderDal.cs" />
+    <Compile Include="ZhangYang\FrontUserDAL.cs" />
     <Compile Include="ZhangYang\StoreroomDal.cs" />
   </ItemGroup>
   <ItemGroup>
