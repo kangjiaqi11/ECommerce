@@ -125,12 +125,8 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label visible-ie8 visible-ie9">部门</label>
-                    <select name="Department" class="form-control">
-                        @foreach (var item in Model)
-                        {
-                            <option value="@item.DepartmentId">@item.DepartmentName</option >
-                        }
-
+                    <select name="Department" id="Department1" class="form-control">
+                      <option>请选择部门</option>
                 </select>
             </div>
             <p class="hint">
@@ -201,7 +197,19 @@
             Layout.init(); // init current layout
             Login.init();
             Demo.init();
-
+            $.ajax({
+				url: "DepartmentShow",
+				type: "POST",
+				dateType: "json",
+				success: function (ser) {
+					console.log(ser);
+                    $(ser).each(function myfunction() {
+                        var tr = '<option value="'+ this.DepartmentId+'">' + this.DepartmentName + '</option>';
+						$("#Department1").append(tr);
+					})
+                }
+            });
+          
         });
 
        

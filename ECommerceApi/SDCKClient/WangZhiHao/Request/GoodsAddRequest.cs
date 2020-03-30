@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SDCKClient.WangZhiHao.Request
 {
-    public class GoodsAddRequest
+    public class GoodsAddRequest:BaseRequest
     {
         /// <summary>
         /// 商品编号

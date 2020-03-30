@@ -49,17 +49,34 @@
     <Compile Include="KangJiaQi\Request\BUserLoginRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserUpdateRequst.cs" />
     <Compile Include="KangJiaQi\Request\DepartmentRequst.cs" />
+    <Compile Include="KangJiaQi\Request\MenusRequest.cs" />
+    <Compile Include="KangJiaQi\Request\MenusSublevelRequest.cs" />
+    <Compile Include="KangJiaQi\Request\RecommendDeleteRequest.cs" />
+    <Compile Include="KangJiaQi\Request\RecommendNoRequest.cs" />
+    <Compile Include="KangJiaQi\Request\RecommendIsRequest.cs" />
     <Compile Include="KangJiaQi\Request\RecommendRequst.cs" />
+    <Compile Include="KangJiaQi\Request\TimeQDeleteRequest.cs" />
     <Compile Include="KangJiaQi\Request\TimeQShowRequest.cs" />
+    <Compile Include="KangJiaQi\Request\TimeQUpdate2Request.cs" />
+    <Compile Include="KangJiaQi\Request\TimeQUpdate3Request.cs" />
     <Compile Include="KangJiaQi\Response\ActivityShowRespnse.cs" />
     <Compile Include="KangJiaQi\Response\BUserAddResponse.cs" />
     <Compile Include="KangJiaQi\Response\BUserLoginResponse.cs" />
     <Compile Include="KangJiaQi\Response\BUserUpdateResponse.cs" />
     <Compile Include="KangJiaQi\Response\DepartmentResponse.cs" />
+    <Compile Include="KangJiaQi\Response\MenusResponse.cs" />
+    <Compile Include="KangJiaQi\Response\MenusSublevelResponse.cs" />
+    <Compile Include="KangJiaQi\Response\RecommendDeleteResponse.cs" />
+    <Compile Include="KangJiaQi\Response\RecommendNoResponse.cs" />
+    <Compile Include="KangJiaQi\Response\RecommendIsResponse.cs" />
     <Compile Include="KangJiaQi\Response\RecommendResponse.cs" />
+    <Compile Include="KangJiaQi\Response\TimeQDeleteResponse.cs" />
     <Compile Include="KangJiaQi\Response\TimeQShowResponse.cs" />
+    <Compile Include="KangJiaQi\Response\TimeQUpdate2Response.cs" />
+    <Compile Include="KangJiaQi\Response\TimeQUpdate3Response.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WangZhiHao\Request\GoodsAddRequest.cs" />
+    <Compile Include="WangZhiHao\Response\GoodsAddResponse.cs" />
     <Compile Include="XuYaDon\Request\OrderShowrequeset.cs" />
     <Compile Include="XuYaDon\Response\OrderShowResponse.cs" />
     <Compile Include="ZhangYang\Request\FrontUserShowReq.cs" />
@@ -72,7 +89,6 @@
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="obj\Release\" />
-    <Folder Include="WangZhiHao\Response\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MODEL\MODEL.csproj">

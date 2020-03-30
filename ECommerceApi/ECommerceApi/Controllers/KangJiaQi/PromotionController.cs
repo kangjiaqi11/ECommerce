@@ -20,6 +20,7 @@ namespace ECommerceApi.Controllers.KangJiaQi
         {
             return promotionBll.ActivityShow(activityShowRequst);
         }
+        #region 好物推荐相关
         /// <summary>
         /// 推荐首页的物品
         /// </summary>
@@ -30,6 +31,32 @@ namespace ECommerceApi.Controllers.KangJiaQi
             return promotionBll.RecommendShow(recommendRequst);
         }
         /// <summary>
+        ///好物推荐 状态
+        /// </summary>
+        /// <returns></returns>
+        public RecommendIsResponse RecommendIs(RecommendIsRequest recommendIsRequest)
+        {
+            return promotionBll.RecommendIs(recommendIsRequest);
+        }
+        /// <summary>
+        ///好物推荐下架
+        /// </summary>
+        /// <returns></returns>
+        public RecommenNodRequest RecommendNO(RecommendNoRequest recommendNoRequest)
+        {
+            return promotionBll.RecommendNO(recommendNoRequest);
+        }
+        /// <summary>
+        /// 好物推荐删除
+        /// </summary>
+        /// <returns></returns>
+        public RecommendDeleteResponse RecommendDelete(RecommendDeleteRequest recommendDeleteRequest)
+        {
+            return promotionBll.RecommendDelete(recommendDeleteRequest);
+        } 
+        #endregion
+        #region 时间段相关
+        /// <summary>
         /// 时间段的显示
         /// </summary>
         /// <returns></returns>
@@ -37,5 +64,34 @@ namespace ECommerceApi.Controllers.KangJiaQi
         {
             return promotionBll.TimeQShow(timeQShowRequest);
         }
+        /// <summary>
+        /// 删除时间段状态
+        /// </summary>
+        /// <param name="Tid"></param>
+        /// <returns></returns>
+        public TimeQDeleteResponse TimeQdelete(TimeQDeleteRequest timeQDeleteRequest)
+        {
+            return promotionBll.TimeQdelete(timeQDeleteRequest);
+        }
+        /// <summary>
+        /// 未启用时间段状态
+        /// </summary>
+        /// <param name="Tid"></param>
+        /// <returns></returns>
+        public TimeQUpdate3Response TimeQUpdate3(TimeQUpdate3Request timeQUpdate3Request)
+        {
+            return promotionBll.TimeQUpdate3(timeQUpdate3Request);
+        }
+        /// <summary>
+        /// 已启用经时间段状态
+        /// </summary>
+        /// <param name="Tid"></param>
+        /// <returns></returns>
+        public TimeQUpdate2Response TimeQUpdate2(TimeQUpdate2Request timeQUpdate2Request)
+        {
+
+            return promotionBll.TimeQUpdate2(timeQUpdate2Request); ;
+        } 
+        #endregion
     }
 }

@@ -5,8 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MODEL;
+using MODEL.WangZhiHao;
 
-namespace Dal
+namespace Dal.WangZhiHao
 {
     public class GoodsDal
     {
@@ -34,7 +35,7 @@ namespace Dal
         }
 
         /// <summary>
-        /// 删除
+        /// 删除 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

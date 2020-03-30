@@ -19,7 +19,7 @@ namespace ECommerceMVC.Controllers.KangJiaQi
         // GET: BUser
         public ActionResult Index()
         {
-           
+
             return View();
         }
         /// <summary>
@@ -28,10 +28,19 @@ namespace ECommerceMVC.Controllers.KangJiaQi
         /// <returns></returns>
         public ActionResult UserLogin()
         {
+
+            return View();
+        }
+        /// <summary>
+        /// 显示部门
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult DepartmentShow()
+        {
             DepartmentRequst departmentRequst = new DepartmentRequst();
             var list = BUserBll.DepartmentShow(departmentRequst, "api/BUser/DepartmentShow");
-
-            return View(list.DateList);
+            return Json(list.DateList);
         }
         /// <summary>
         /// 登录方法
@@ -66,19 +75,19 @@ namespace ECommerceMVC.Controllers.KangJiaQi
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public void UserRegista(string UserName, string UserAccount ,string UsrPwd,string UserConPwd ,int Department,string UserPhoto,string UserEmil)
+        public void UserRegista(string UserName, string UserAccount, string UsrPwd, string UserConPwd, int Department, string UserPhoto, string UserEmil)
         {
-            if (UsrPwd==UserConPwd)
+            if (UsrPwd == UserConPwd)
             {
-            BUserAddRequst bUserAddRequst = new BUserAddRequst();
-            bUserAddRequst.UserName = UserName;
-            bUserAddRequst.UserAccount = UserAccount;
-            bUserAddRequst.UserPwd = UsrPwd;
-            bUserAddRequst.DepartmentId = Department;
-            bUserAddRequst.UserPhoto = UserPhoto;
-            bUserAddRequst.UserEmil = UserEmil;
+                BUserAddRequst bUserAddRequst = new BUserAddRequst();
+                bUserAddRequst.UserName = UserName;
+                bUserAddRequst.UserAccount = UserAccount;
+                bUserAddRequst.UserPwd = UsrPwd;
+                bUserAddRequst.DepartmentId = Department;
+                bUserAddRequst.UserPhoto = UserPhoto;
+                bUserAddRequst.UserEmil = UserEmil;
                 var ser = BUserBll.BUseradd(bUserAddRequst, "api/BUser/UserAdd");
-                if (ser.Status>0)
+                if (ser.Status > 0)
                 {
                     if (ser.IsSuccess)
                     {

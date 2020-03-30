@@ -52,7 +52,7 @@ namespace Dal
         public List<Department> DepartmentShow()
         {
             string sql = "select * from Department";
-            return DBHelper.GetToList<Department>(sql);
+            return OrmDbHelper.GetList<Department>(sql);
         }
         #endregion
 
