@@ -108,7 +108,7 @@
 							<ul class="pagination">
 								<li class="paginate_button previous disabled" aria-controls="sample_editable_1" tabindex="0" id="sample_editable_1_previous">
 									<input type="hidden" name="name" value="" id="index11" />
-									<input type="hidden" name="name" value="" id="tocount11" />
+									<input type="hidden" name="name11" value="" id="tocount11" />
 									<input id="Button1" class="btn green" type="button" value="上一页" onclick="UpPage()" />
 								</li>
 								<li class="paginate_button next disabled" aria-controls="sample_editable_1" tabindex="0" id="sample_editable_1_next">
@@ -128,13 +128,13 @@
 			Query(1);
 		});
 		function UpPage() {
-            var index = $("#index").val();
-            var count=$("#tocount11").val();
+            var index = $("#index11").val();
+            index = index - 1;
             alert(index);
 			alert(count);
-			if (index >= 0) {
+			if (index>0) {
 
-				Query(Index);
+				Query(index);
 			}
 			else {
 				alert("已经是首页了");
@@ -143,11 +143,12 @@
 
 		}
 		function NextPage() {
-			var index = $("#index").val();
+            var index = $("#index11").val();
+              var PageCount=$("#tocount11").val();
 			index = index + 1;
 			alert(PageCount);
-			alert(1);
-			if (index <= count) {
+			alert(index);
+			if (index < count) {
 				Query(index);
 			}
 			else {
@@ -180,7 +181,7 @@
                     $("#sample_editable_1_info").append(count);
                     $("#index11").val(pageindex);
                     $("#tocount11").val(ser.TotaCount);
-                }
+                }       
                 
             });
 		}

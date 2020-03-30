@@ -119,12 +119,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <div class="col-md-6">
                                         <div class="btn-group pull-right">
                                             @*查询*@
-                                            <input id="GoodName" type="text" placeholder="商品名称" /> <input id="Button1" type="button" value="查询" class="btn green" />
+                                            <input id="GoodName" type="text" placeholder="商品名称" /> 
                                             <select id="IsRecommend">
                                                 <option value="0">请选择要是否推荐</option>
                                                 <option value="1">已推荐</option>
                                                 <option value="2">未推荐</option>
                                             </select>
+                                            <input id="Cha" type="button" value="查询" onclick="Cha()" class="btn green" />
                                         </div>
                                     </div>
 
@@ -197,6 +198,10 @@ License: You must have a valid license purchased only from themeforest(the above
             var index = $("#ascascasc").val();
             alert(index);
         });
+    function Cha() {
+        var index = $("#ascascasc").val();
+        Query(index);
+    }
         function UpPage() {
             var index = $("#ascascasc").val();
             index = index - 1;
@@ -213,12 +218,13 @@ License: You must have a valid license purchased only from themeforest(the above
         function NextPage() {
 
             var ToCount = $("#tocount").val();
-            var index = $("#index").val();
-            index = index + 1;
-            alert(ToCount);
+               var index = $("#ascascasc").val();
             alert(index);
-            if (index < ToCount) {
-                Query(index);
+            alert(index+1);
+            alert(ToCount);
+      
+            if (index+1 < ToCount) {
+                Query(index+1);
             }
             else {
                 alert("已经是尾页了");
@@ -254,16 +260,17 @@ License: You must have a valid license purchased only from themeforest(the above
             });
 
         }
-    function UpdateIs(RecommendId) {
-        alert(RecommendId);
-                $.ajax({
+        function UpdateIs(RecommendId) {
+            var index = $("#ascascasc").val();
+            alert(index);
+            $.ajax({
                 url: "RecommendIs",
                 type: "POST",
                 data: { RecommendId: RecommendId },
                 dateType: "json",
                 success: function (ser) {
                     if (ser) {
-                        Query(2);
+                        Query(index);
                     }
                     else {
                         alert("修改失败");
@@ -271,16 +278,17 @@ License: You must have a valid license purchased only from themeforest(the above
                 }
             });
         }
-    function UpdateNo(RecommendId) {
-            alert(RecommendId);
-                $.ajax({
+        function UpdateNo(RecommendId) {
+            var index = $("#ascascasc").val();
+            alert(index);
+            $.ajax({
                 url: "RecommendNO",
                 type: "POST",
                 data: { RecommendId: RecommendId },
                 dateType: "json",
                 success: function (ser) {
                     if (ser) {
-                        Query(2);
+                        Query(index);
                     }
                     else {
                         alert("修改失败");
@@ -288,16 +296,17 @@ License: You must have a valid license purchased only from themeforest(the above
                 }
             });
         }
-    function DeleteStatel(RecommendId) {
-            alert(RecommendId);
-                $.ajax({
+        function DeleteStatel(RecommendId) {
+            var index = $("#ascascasc").val();
+            alert(index);
+            $.ajax({
                 url: "RecommendDelete",
                 type: "POST",
                 data: { RecommendId: iRecommendIdd },
                 dateType: "json",
                 success: function (ser) {
                     if (ser) {
-                        Query(2);
+                        Query(index);
                     }
                     else {
                         alert("删除失败");
