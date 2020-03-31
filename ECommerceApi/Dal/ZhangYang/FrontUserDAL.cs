@@ -45,5 +45,59 @@ namespace Dal.ZhangYang
             f.Count = result;
             return f;
         }
+        //详情1
+        public List<FrontUser> FrontUserShow1()
+        {
+            List<FrontUser> list = new List<FrontUser>();
+            string sql = "select FrontUserid,UserName,Baddy,Grqm,professional,Age from FrontUser";
+            SqlConnection scon = new SqlConnection("server=.;uid=sa;pwd=1234;database=ECommerce");
+            SqlCommand scom = new SqlCommand("sql", scon);
+
+            scon.Open();
+            SqlDataReader reader = scom.ExecuteReader();
+            FrontUser f = new FrontUser();
+            while (reader.Read())
+            {
+                f.FrontUserid = (int)reader["FrontUserid"];
+                f.UserName = (string)reader["UserName"];
+                f.Baddy = (string)reader["Baddy"];
+                f.Grqm = (string)reader["Grqm"];
+                f.professional = (string)reader["professional"];
+                f.Age = (string)reader["Age"];
+
+                list.Add(f);
+            }
+            reader.Close();
+            scon.Close();
+
+            return list;
+        }
+        //详情2
+        public List<FrontUser> FrontUserShow2()
+        {
+            List<FrontUser> list = new List<FrontUser>();
+            string sql = "select FrontUserid,Consumption,Number,Czz,Yhj,Scht from FrontUser";
+            SqlConnection scon = new SqlConnection("server=.;uid=sa;pwd=1234;database=ECommerce");
+            SqlCommand scom = new SqlCommand("sql", scon);
+
+            scon.Open();
+            SqlDataReader reader = scom.ExecuteReader();
+            FrontUser f = new FrontUser();
+            while (reader.Read())
+            {
+                f.FrontUserid = (int)reader["FrontUserid"];       
+                f.Consumption = (string)reader["Consumption"];
+                f.Number = (int)reader["Number"];
+                f.Czz = (int)reader["Czz"];
+                f.Yhj = (string)reader["Yhj"];
+                f.Scht = (string)reader["Scht"];
+
+                list.Add(f);
+            }
+            reader.Close();
+            scon.Close();
+
+            return list;
+        }
     }
 }
