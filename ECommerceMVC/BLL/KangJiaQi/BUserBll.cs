@@ -39,7 +39,31 @@ namespace BLL
         {
             return ApiRequestHelper.Post<DepartmentRequst, DepartmentResponse>(departmentRequst,GetApiName);
         }
-      
-
+        /// <summary>
+        /// 获取用户名 随机数
+        /// </summary>
+        /// <returns></returns>
+        public GetUserNameResponse GetUserName(GetUserNameRequest getUserNameRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<GetUserNameRequest, GetUserNameResponse>(getUserNameRequest, GetApiName);
+        }
+        /// <summary>
+        /// 锁屏解锁
+        /// </summary>
+        /// <param name="UserName"></param>
+        /// <param name="Userpwd"></param>
+        /// <returns></returns>
+        public LockedResponse Locked(LockedRequest lockedRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<LockedRequest, LockedResponse>(lockedRequest, GetApiName);
+        }
+        /// <summary>
+        /// 个人信息
+        /// </summary>
+        /// <returns></returns>
+        public personageResponse personage(personageRequest personageRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<personageRequest, personageResponse>(personageRequest, GetApiName)
+        }
     }
 }

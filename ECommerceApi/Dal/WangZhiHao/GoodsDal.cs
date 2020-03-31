@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MODEL;
 using MODEL.WangZhiHao;
 
 namespace Dal.WangZhiHao
@@ -23,6 +24,25 @@ namespace Dal.WangZhiHao
             return db.ExecuteNonQuery(sql);
         }
 
-        
+        /// <summary>
+        /// 显示
+        /// </summary>
+        /// <returns></returns>
+        public List<GoodsModel> GoodsShow()
+        {
+            string sql = "select * from GoodsInfo";
+            return db.GetToList<GoodsModel>(sql);
+        }
+
+        /// <summary>
+        /// 删除 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int GoodsDelete(int id)
+        {
+            string sql = $"update GoodsInfo set Status=0 where GoodId={id}";
+            return db.ExecuteNonQuery(sql);
+        }
     }
 }

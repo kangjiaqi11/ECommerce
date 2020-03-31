@@ -17,9 +17,6 @@ namespace ECommerceMVC
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            //调用TokenValues
-            //string token = TokenValues();
-            //SetToken(token);
         }
         /// <summary>
         /// 获取token值方法
@@ -30,7 +27,7 @@ namespace ECommerceMVC
             var name = "老头";
             var pwd = "123";
             HttpClientHelper httpClientHelper = new HttpClientHelper("http://localhost:56593/");
-            string json = httpClientHelper.Get($"api/Token?name={name}&pwd={pwd}");
+            string json = httpClientHelper.Get($"api/Token/GetAuthToken?name={name}&pwd={pwd}");
             json = json.Trim('"');
             return json;
 
@@ -46,7 +43,7 @@ namespace ECommerceMVC
             XElement book = new XElement("Tokne");
             book.SetElementValue("name", token);
             root.Add(book);
-            root.Save("D://物联网//物联网实训一//电商项目//ECommerceMVC//ECommerceMVC//App_Data//Token.xml");
+            root.Save(Server.MapPath("Token.xml"));
         }
     }
 }

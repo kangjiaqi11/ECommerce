@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 using MODEL;
 namespace SDCKClient
 {
+    /// <summary>
+    ///部门显示返回值
+    /// </summary>
    public class DepartmentResponse:BaseResponse
     {
         /// <summary>
-        /// 返回一个集合 比如下课绑定
+        /// 返回一个集合 
         /// </summary>
         public List<Department> DateList { get; set; }
     }

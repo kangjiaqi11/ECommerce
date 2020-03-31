@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SDCKClient.KangJiaQi.Response
 {
+
    public class BUserUpdateResponse:BaseResponse
     {
     }

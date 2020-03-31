@@ -385,4 +385,48 @@ create table EstimateInfo (
 go
 
 --------------------------------------------------------------------------------------
-  
+
+declare @count int;
+exec P_good 0,'',1,5,@count out
+select @count;
+
+create proc P_good
+@id int,
+@goodsrname varchar(100),
+@pageindex int,
+@pagesize int,
+@totalcount int out
+as
+begin
+	declare @start int;
+	declare @end int;
+
+	set @start=(@pageindex-1)*@pagesize;
+	set @end=@start+@pagesize;
+	set @start=@start+1;
+
+	declare @wheresql nvarchar(500);
+	set @wheresql='where 1=1';
+
+	if @id>0
+	begin
+		set @wheresql=@wheresql+'and id='+CONVERT(nvarchar,@id);
+	end
+
+	if LEN(@goodsrname)>0
+	begin
+		set @wheresql=@wheresql+'and name like ''%'+@goodsrname+'%''';
+	end
+
+	declare @selectsql nvarchar(500);
+	set @selectsql='select * from (
+	select ROW_NUMBER() over (order by id)as rowid,*from GoodsInfo'+@wheresql+'
+	) as t where t.rowid between'+CONVERT(nvarchar,@start)+' and '+CONVERT(nvarchar,@end);
+
+	declare @countsql nvarchar(500);
+	set @countsql='select @totalcount=count(1) from GoodsInfo'+@wheresql;
+
+	--÷¥––≤È—Ø”Ôæ‰
+exec (@selectsql);
+ exec sp_executesql @countsql,N' @totalcount int out ',@totalcount out;
+end

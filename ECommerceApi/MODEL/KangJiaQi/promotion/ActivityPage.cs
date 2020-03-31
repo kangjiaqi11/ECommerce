@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace MODEL
 {
+
+    /// <summary>
+    ///促销活动显示
+    /// </summary>
    public class ActivityPage
     {
         /// <summary>

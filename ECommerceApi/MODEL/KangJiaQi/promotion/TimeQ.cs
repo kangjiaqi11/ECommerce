@@ -23,10 +23,12 @@ namespace MODEL
         /// 每日开始时间
         /// </summary>
         public DateTime StartTime  { get; set; }
+        public string StartTimeStr { get { return StartTime.ToString(); } }
         /// <summary>
         /// 每日结束时间
         /// </summary>
         public DateTime EenTime    { get; set; }
+        public string EenTimeeStr { get { return EenTime.ToString(); } }
         /// <summary>
         /// 数据状态
         /// </summary>
@@ -34,7 +36,7 @@ namespace MODEL
         /// <summary>
         /// 创建时间
         /// </summary>
-        public DateTime CeateTime { get; set; }
+        public DateTime CreateTime { get; set; }
         /// <summary>
         /// 修改时间
         /// </summary>

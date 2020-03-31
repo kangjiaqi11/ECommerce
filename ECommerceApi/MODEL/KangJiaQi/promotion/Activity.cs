@@ -36,9 +36,17 @@ namespace MODEL
         /// </summary>
         public DateTime AStartTime	 { get; set; }
         /// <summary>
+        /// 显示开始时间
+        /// </summary>
+        public string AStartTimeStr { get { return AStartTime.ToString(); } }
+        /// <summary>
         /// 活动结束时间
         /// </summary>
         public DateTime AEenTime { get; set; }
+        /// <summary>
+        /// 结束显示时间
+        /// </summary>
+        public string AEenTimeStr { get { return AEenTime.ToString(); } }
         /// <summary>
         /// 数据状态
         /// </summary>
@@ -46,7 +54,7 @@ namespace MODEL
         /// <summary>
         /// 创建时间
         /// </summary>
-        public DateTime CeateTime { get; set; }
+        public DateTime CreateTime { get; set; }
         /// <summary>
         /// 修改时间
         /// </summary>

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SDCKClient
 {
+    /// <summary>
+    /// 秒杀活动的参数
+    /// </summary>
    public class ActivityShowRequst:BaseRequest
     {
        

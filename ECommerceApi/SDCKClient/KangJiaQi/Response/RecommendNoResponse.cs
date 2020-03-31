@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SDCKClient.ZhangYang.Response
+namespace SDCKClient
 {
-    public class StoreroomAddResp : BaseResponse
+   public class RecommenNodRequest:BaseResponse
     {
     }
 }

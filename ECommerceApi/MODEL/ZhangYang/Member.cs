@@ -9,7 +9,7 @@ namespace MODEL.ZhangYang
     public class Member //会员
     {
         //会员id
-        public int MembersId  { get; set; }
+        public long MembersId  { get; set; }
         //会员名称
         public string members    { get; set; }
         //成长值满电
@@ -27,8 +27,8 @@ namespace MODEL.ZhangYang
         //修改时间
         public string XTime      { get; set; }
         //创建人
-        public int Founder    { get; set; }
+        public long Founder    { get; set; }
         //修改人
-        public int UpdateId   { get; set; }
+        public long UpdateId   { get; set; }
     }
 }

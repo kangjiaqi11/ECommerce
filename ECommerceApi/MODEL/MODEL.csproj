@@ -49,6 +49,7 @@
     <Compile Include="KangJiaQi\BUser\Jurisdiction.cs" />
     <Compile Include="KangJiaQi\BUser\MenusInfo.cs" />
     <Compile Include="KangJiaQi\BUser\RoleInfo.cs" />
+    <Compile Include="KangJiaQi\promotion\RecommendPage.cs" />
     <Compile Include="KangJiaQi\promotion\TimeQ.cs" />
     <Compile Include="KangJiaQi\BUser\UserInfo.cs" />
     <Compile Include="KangJiaQi\promotion\Recommend.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="XuYaDon\SalesReturn.cs" />
     <Compile Include="XuYaDon\TakeGood.cs" />
     <Compile Include="ZhangYang\Fenye.cs" />
+    <Compile Include="ZhangYang\Fenye1.cs" />
     <Compile Include="ZhangYang\FrontUser.cs" />
     <Compile Include="ZhangYang\Member.cs" />
     <Compile Include="ZhangYang\Provinces.cs" />
