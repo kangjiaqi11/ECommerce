@@ -74,5 +74,7 @@ namespace BLL
             string Token = shuxing.Value;
             return Token;
         }
+
+       
     }
 }

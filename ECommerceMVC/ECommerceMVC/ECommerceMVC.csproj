@@ -63,6 +63,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\SDCKClient.dll</HintPath>
     </Reference>
+    <Reference Include="SDCKClient.Fakes">
+      <HintPath>FakesAssemblies\SDCKClient.Fakes.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -4617,6 +4620,7 @@
     <Content Include="layuistyle\static\admin\lib\ueditor\third-party\video-js\font\vjs.ttf" />
     <Content Include="layuistyle\static\admin\lib\ueditor\third-party\video-js\font\vjs.woff" />
     <Fakes Include="Fakes\MODEL.fakes" />
+    <Fakes Include="Fakes\SDCKClient.fakes" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -4645,12 +4649,17 @@
     <Content Include="Views\BUser\UserLogin.cshtml" />
     <Content Include="Views\BUser\Index.cshtml" />
     <Content Include="Views\promotion\Show.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\expressShow.cshtml" />
+    <Content Include="Views\Order\ShowOrderALL.cshtml" />
+    <Content Include="Views\Order\TakeGood.cshtml" />
+    <Content Include="Views\Order\ReturnGoods.cshtml" />
+    <Content Include="Views\Order\shenReturns.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
     <Folder Include="IndexStyle\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Order\" />
     <Folder Include="Views\Sto\" />
   </ItemGroup>
   <ItemGroup>
