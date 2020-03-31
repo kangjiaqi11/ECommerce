@@ -22,7 +22,7 @@ namespace Dal.ZhangYang
             Member f = new Member();
             while (reader.Read())
             {
-                f.MembersId = (int)reader["MembersId"];
+                f.MembersId = (long)reader["MembersId"];
                 f.members = (string)reader["members"];
                 f.Growth = (string)reader["Growth"];
                 f.Evaluation = (string)reader["Evaluation"];

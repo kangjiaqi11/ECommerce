@@ -50,8 +50,15 @@ namespace ECommerceMVC.Controllers.ZhangYang
             var ser = bll.FrontUserShow1(Ssr, "api/Fro/FrontUserShow1");
             var serr = bll.FrontUserShow2(Ssrr, "api/Fro/FrontUserShow2");
             
-            return View(ser.FrontUser1);
-            
+            return View(ser.FrontUser1);  
+        }
+        public JsonResult show2()
+        {
+            FrontUserShow2Req Ssrr = new FrontUserShow2Req();
+
+
+            var serr = bll.FrontUserShow2(Ssrr, "api/Fro/FrontUserShow2");
+            return Json(serr.FrontUser2);
         }
     }
     public class MemController : Controller
@@ -62,7 +69,7 @@ namespace ECommerceMVC.Controllers.ZhangYang
         {
             MemberShowReq Ssr = new MemberShowReq();
 
-            var ser = bll.MemberShow(Ssr, "api/Mem/MemberShow");
+            var ser = bll.MemberShow(Ssr, "api/Fro/MemberShow");
             return View(ser.Members);
         }
     }
