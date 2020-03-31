@@ -4,7 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BLL;
-using SDCKClient;
+using SDCKClient.WangZhiHao.Request;
+using SDCKClient.XuYaDon;
 
 namespace ECommerceMVC
 {
@@ -16,10 +17,11 @@ namespace ECommerceMVC
         {
             return View();
         }
-        public ActionResult Goods()
+        [HttpPost]
+        public JsonResult GoodsShow(GoodsAddRequest goods)
         {
-            return View();
+            var res = goodsBll.GoodsAdd(goods,"api/Goods/GoodsShow");
+            return Json(res.goods);
         }
-        
     }
 }

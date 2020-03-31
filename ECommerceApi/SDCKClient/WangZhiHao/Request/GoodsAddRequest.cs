@@ -17,6 +17,10 @@ namespace SDCKClient.WangZhiHao.Request
         /// </summary>
         public int BrandId { get; set; }
         /// <summary>
+        /// 分类Id
+        /// </summary>
+        public int CategoryId { get; set; }
+        /// <summary>
         /// 商品类型 1赠品 2电商销售 3专柜销售 4活动售卖 5正常售卖
         /// </summary>
         public int GoodsType { get; set; }
