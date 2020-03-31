@@ -22,9 +22,9 @@ namespace ECommerceMVC
            
             return View();
         }
-        public ActionResult dsf()
-        {
 
+        public ActionResult ActivityAdd()
+        {
             return View();
         }
         /// <summary>

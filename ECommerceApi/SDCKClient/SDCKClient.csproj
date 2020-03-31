@@ -32,7 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,13 +51,17 @@
   <ItemGroup>
     <Compile Include="BaseRequest.cs" />
     <Compile Include="BaseResponse.cs" />
+    <Compile Include="KangJiaQi\Request\ActivityAddRequest.cs" />
     <Compile Include="KangJiaQi\Request\ActivityShowRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserAddRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserLoginRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserUpdateRequst.cs" />
     <Compile Include="KangJiaQi\Request\DepartmentRequst.cs" />
+    <Compile Include="KangJiaQi\Request\GetUserNameRequest.cs" />
+    <Compile Include="KangJiaQi\Request\LockedRequest.cs" />
     <Compile Include="KangJiaQi\Request\MenusRequest.cs" />
     <Compile Include="KangJiaQi\Request\MenusSublevelRequest.cs" />
+    <Compile Include="KangJiaQi\Request\personageRequest.cs" />
     <Compile Include="KangJiaQi\Request\RecommendDeleteRequest.cs" />
     <Compile Include="KangJiaQi\Request\RecommendNoRequest.cs" />
     <Compile Include="KangJiaQi\Request\RecommendIsRequest.cs" />
@@ -59,13 +70,17 @@
     <Compile Include="KangJiaQi\Request\TimeQShowRequest.cs" />
     <Compile Include="KangJiaQi\Request\TimeQUpdate2Request.cs" />
     <Compile Include="KangJiaQi\Request\TimeQUpdate3Request.cs" />
+    <Compile Include="KangJiaQi\Response\ActivityAddResponse.cs" />
     <Compile Include="KangJiaQi\Response\ActivityShowRespnse.cs" />
     <Compile Include="KangJiaQi\Response\BUserAddResponse.cs" />
     <Compile Include="KangJiaQi\Response\BUserLoginResponse.cs" />
     <Compile Include="KangJiaQi\Response\BUserUpdateResponse.cs" />
     <Compile Include="KangJiaQi\Response\DepartmentResponse.cs" />
+    <Compile Include="KangJiaQi\Response\GetUserNameResponse.cs" />
+    <Compile Include="KangJiaQi\Response\LockedResponse.cs" />
     <Compile Include="KangJiaQi\Response\MenusResponse.cs" />
     <Compile Include="KangJiaQi\Response\MenusSublevelResponse.cs" />
+    <Compile Include="KangJiaQi\Response\personageResponse.cs" />
     <Compile Include="KangJiaQi\Response\RecommendDeleteResponse.cs" />
     <Compile Include="KangJiaQi\Response\RecommendNoResponse.cs" />
     <Compile Include="KangJiaQi\Response\RecommendIsResponse.cs" />
@@ -75,10 +90,29 @@
     <Compile Include="KangJiaQi\Response\TimeQUpdate2Response.cs" />
     <Compile Include="KangJiaQi\Response\TimeQUpdate3Response.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XuYaDon\Request\ExperBindrequeset.cs" />
+    <Compile Include="XuYaDon\Request\ExperShowrequeset.cs" />
     <Compile Include="WangZhiHao\Request\GoodsAddRequest.cs" />
     <Compile Include="WangZhiHao\Response\GoodsAddResponse.cs" />
     <Compile Include="XuYaDon\Request\OrderShowrequeset.cs" />
+    <Compile Include="XuYaDon\Request\OrderStaterequest.cs" />
+    <Compile Include="XuYaDon\Request\ReturnGoodsRequest.cs" />
+    <Compile Include="XuYaDon\Request\ReturnShenReuqest.cs" />
+    <Compile Include="XuYaDon\Request\ShowOrderALLrequest.cs" />
+    <Compile Include="XuYaDon\Request\TakeGoodRequest.cs" />
+    <Compile Include="XuYaDon\Request\UpdateReturnRequest.cs" />
+    <Compile Include="XuYaDon\Request\UpdateStateExperrequest.cs" />
+    <Compile Include="XuYaDon\Response\ExperBindresponse.cs" />
+    <Compile Include="XuYaDon\Response\ExperShowresponse.cs" />
     <Compile Include="XuYaDon\Response\OrderShowResponse.cs" />
+    <Compile Include="XuYaDon\Response\OrderStateresponse.cs" />
+    <Compile Include="XuYaDon\Response\ReturnGoodsResponse.cs" />
+    <Compile Include="XuYaDon\Response\ReturnShenresponse.cs" />
+    <Compile Include="XuYaDon\Response\ShowOrderALLresponse.cs" />
+    <Compile Include="XuYaDon\Response\TakeGoodrespnse.cs" />
+    <Compile Include="XuYaDon\Response\UpdateReturnResponse.cs" />
+    <Compile Include="XuYaDon\Response\UpdateStateExperresponse.cs" />
+    <Compile Include="ZhangYang\Request\StoreroomAddreq.cs" />
     <Compile Include="ZhangYang\Request\FrontUserShow1Req.cs" />
     <Compile Include="ZhangYang\Request\FrontUserShow2Req.cs" />
     <Compile Include="ZhangYang\Request\FrontUserShowReq.cs" />
@@ -103,14 +137,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="obj\Debug\SDCKClient.csproj.CopyComplete" />
     <None Include="obj\Debug\SDCKClient.csprojAssemblyReference.cache" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="obj\Debug\SDCKClient.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\SDCKClient.dll" />
     <Content Include="obj\Debug\SDCKClient.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

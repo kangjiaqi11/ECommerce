@@ -8,23 +8,34 @@ namespace BLL
 {
     public class promotionBll
     {
+        #region 秒杀相关
         /// <summary>
         /// 秒杀活动
         /// </summary>
         /// <param name="activityShowRequst"></param>
         /// <param name="GetApiName"></param>
         /// <returns></returns>
-        public ActivityShowRespnse ActivityShow(ActivityShowRequst activityShowRequst,string GetApiName)
+        public ActivityShowRespnse ActivityShow(ActivityShowRequst activityShowRequst, string GetApiName)
         {
             return ApiRequestHelper.Post<ActivityShowRequst, ActivityShowRespnse>(activityShowRequst, GetApiName);
         }
+        /// <summary>
+        /// 添加秒杀
+        /// </summary>
+        /// <returns></returns>
+        public ActivityAddResponse ActivityAdd(ActivityAddRequest activityAddRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<ActivityAddRequest, ActivityAddResponse>(activityAddRequest, GetApiName);
+        }
+        #endregion
+        #region 好物推荐相关
         /// <summary>
         /// 首页推荐显示
         /// </summary>
         /// <param name="recommendRequst"></param>
         /// <param name="GetApiName"></param>
         /// <returns></returns>
-        public RecommendResponse PageRecommendShow(RecommendRequst recommendRequst,string GetApiName)
+        public RecommendResponse PageRecommendShow(RecommendRequst recommendRequst, string GetApiName)
         {
             return ApiRequestHelper.Post<RecommendRequst, RecommendResponse>(recommendRequst, GetApiName);
         }
@@ -51,7 +62,8 @@ namespace BLL
         public RecommendDeleteResponse RecommendDelete(RecommendDeleteRequest recommendDeleteRequest, string GetApiName)
         {
             return ApiRequestHelper.Post<RecommendDeleteRequest, RecommendDeleteResponse>(recommendDeleteRequest, GetApiName);
-        }
+        } 
+        #endregion
         #region 时间段相关
         /// <summary>
         /// 时间段的显示

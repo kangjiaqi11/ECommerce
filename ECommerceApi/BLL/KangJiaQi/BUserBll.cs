@@ -13,12 +13,13 @@ namespace BLL
     public class BUserBll
     {
         BUserDal BUserDal = new BUserDal();
+        #region 用户登录
         /// <summary>
         /// 用户登录
         /// </summary>
         /// <param name="bUserLoginRequst"></param>
         /// <returns></returns>
-       public BUserLoginResponse UserLogin(BUserLoginRequst bUserLoginRequst)
+        public BUserLoginResponse UserLogin(BUserLoginRequst bUserLoginRequst)
         {
             BUserLoginResponse bUserLoginResponse = new BUserLoginResponse();
             if (string.IsNullOrEmpty(bUserLoginRequst.Register) && string.IsNullOrEmpty(bUserLoginRequst.Register) && string.IsNullOrEmpty(bUserLoginRequst.Register) && string.IsNullOrEmpty(bUserLoginRequst.UserPwd))
@@ -44,6 +45,8 @@ namespace BLL
             }
             return bUserLoginResponse;
         }
+        #endregion
+        #region 用户相关
         /// <summary>
         /// 用户注册
         /// </summary>
@@ -145,5 +148,88 @@ namespace BLL
             }
             return departmentResponse;
         }
+        /// <summary>
+        /// 获取用户名
+        /// </summary>
+        /// <returns></returns>
+        public GetUserNameResponse GetUserName(GetUserNameRequest getUserNameRequest)
+        {
+            GetUserNameResponse getUserNameResponse = new GetUserNameResponse();
+            if (getUserNameRequest.UserId == 0)
+            {
+                getUserNameResponse.Status = -1;
+                getUserNameResponse.Msg = "数据又为空项";
+                return getUserNameResponse;
+            }
+            var ser = BUserDal.GetUserName(getUserNameRequest.UserId);
+            if (ser != null)
+            {
+                getUserNameResponse.info = ser;
+                getUserNameResponse.IsSuccess = true;
+            }
+            else
+            {
+                getUserNameResponse.Status = -1;
+                getUserNameResponse.Msg = "获取失败";
+            }
+            return getUserNameResponse;
+        }
+
+        /// <summary>
+        /// 锁屏解锁
+        /// </summary>
+        /// <param name="UserName"></param>
+        /// <param name="Userpwd"></param>
+        /// <returns></returns>
+        public LockedResponse Locked(LockedRequest lockedRequest)
+        {
+            LockedResponse lockedResponse = new LockedResponse();
+            if (string.IsNullOrEmpty(lockedRequest.Salt) && string.IsNullOrEmpty(lockedRequest.UserPwd) && string.IsNullOrEmpty(lockedRequest.UserName))
+            {
+                lockedResponse.Status = -1;
+                lockedResponse.Msg = "数据又为空项";
+                return lockedResponse;
+            }
+            //给密码加密
+            var Pwd = MD5Encrypt.MD5Encrypt32(lockedRequest.UserPwd + lockedRequest.Salt);
+            var ser = BUserDal.Locked(lockedRequest.UserName, Pwd);
+            if (ser > 0)
+            {
+                lockedResponse.IsSuccess = true;
+            }
+            else
+            {
+                lockedResponse.Status = -1;
+                lockedResponse.Msg = "登录失败";
+            }
+            return lockedResponse;
+        }
+        /// <summary>
+        /// 个人信息
+        /// </summary>
+        /// <returns></returns>
+        public personageResponse personage(personageRequest personageRequest)
+        {
+            personageResponse personageResponse = new personageResponse();
+            if (personageRequest.UserId == 0)
+            {
+                personageResponse.Status = -1;
+                personageResponse.Msg = "显示失败";
+            }
+            var ser = BUserDal.personage(personageRequest.UserId);
+            if (ser != null)
+            {
+                personageResponse.info = ser;
+                personageResponse.IsSuccess = true;
+            }
+            else
+            {
+                personageResponse.Status = -1;
+                personageResponse.Msg = "显示失败";
+            }
+            return personageResponse;
+        } 
+        #endregion
+
     }
 }

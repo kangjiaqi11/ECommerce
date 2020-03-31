@@ -109,12 +109,67 @@ namespace ECommerceMVC.Controllers.KangJiaQi
             }
         }
         /// <summary>
-        /// 注册页面
+        /// 锁屏
         /// </summary>
         /// <returns></returns>
-        //public ActionResult UserRegist()
-        //{
-        //    return View();
-        //}
+        public ActionResult Lock()
+        {
+            return View();
+        }
+        /// <summary>
+        /// 获取用户名 随机数
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult GetUserName(int UserId)
+        {
+            GetUserNameRequest getUserNameRequest = new GetUserNameRequest();
+            getUserNameRequest.UserId = UserId;
+            var list = BUserBll.GetUserName(getUserNameRequest, "api/BUser/GetUserName");
+            return Json(list.info);
+        }
+        /// <summary>
+        /// 锁屏解锁
+        /// </summary>
+        /// <param name="UserName"></param>
+        /// <param name="Userpwd"></param>
+        /// <returns></returns>
+        public JsonResult Lockedshow(string UserName,string UserPwd,string salt)
+        {
+            LockedRequest lockedRequest = new LockedRequest();
+            lockedRequest.UserName = UserName;
+            lockedRequest.UserPwd = UserPwd;
+            lockedRequest.Salt = salt;
+            var ser = BUserBll.Locked(lockedRequest, "api/BUser/Locked");
+            return Json(ser);
+        }
+        /// <summary>
+        /// 个人信息
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult personage()
+        {
+
+            return View();
+        }
+        /// <summary>
+        /// 个人信息显示
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult PesonageShow(int UserId)
+        {
+            personageRequest personageRequest = new personageRequest();
+            personageRequest.UserId = UserId;
+            var ser = BUserBll.personage(personageRequest, "api/BUser/personage");
+            return Json(ser.info);
+        }
+        /// <summary>
+        /// 首页
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult HomePage()
+        {
+            return View();
+        }
+
     }
 }

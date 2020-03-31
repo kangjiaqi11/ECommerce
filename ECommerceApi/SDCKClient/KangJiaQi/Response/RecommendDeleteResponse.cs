@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SDCKClient
 {
+    /// <summary>
+    /// 添加好物推荐返回值
+    /// </summary>
    public class RecommendDeleteResponse:BaseResponse
     {
     }

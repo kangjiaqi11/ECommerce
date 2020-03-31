@@ -380,9 +380,9 @@
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
                     <li class="dropdown dropdown-user">
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                            <img alt="" class="img-circle" src="~/IndexStyle/admin/layout/img/avatar3_small.jpg" />
+
                             <span class="username username-hide-on-mobile">
-                                Nick
+                                我的
                             </span>
                             <i class="fa fa-angle-down"></i>
                         </a>
@@ -419,7 +419,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="login.html">
+                                <a href="/BUser/UserLogin">
                                     <i class="icon-key"></i> Log Out
                                 </a>
                             </li>
@@ -1224,7 +1224,6 @@
             QuickSidebar.init(); // init quick sidebar
             Demo.init(); // init demo features
             var UserId = $("#Userid").val();
-          
             $.ajax({
                 
                 url: "http://localhost:56593/api/Menus/MenusShow",
@@ -1238,7 +1237,7 @@
 					+'<a onclick="MenusSublevel11(' + this.MenusId + ')">'
 					+'<span class="title">'+this.MenusName +'</span>'
                                 + '</a>'
-                                + '<ul class="sub-menu" id="MenusChildren">'
+                                + '<ul class="sub-menu" id="MenusChildren'+this.MenusId+'">'
                                 + '</ul>'
                                 + '</li>';
                         $("#MenusParent").append(tr);
@@ -1247,7 +1246,7 @@
             });
         });
         function MenusSublevel11(MenusId) {
-             $("#MenusChildren").html("");
+             $("#MenusChildren"+MenusId).html("");
             $.ajax({
                 url: "http://localhost:56593/api/Menus/MenusSublevel",
                 type: "POST",
@@ -1260,7 +1259,7 @@
                         var tr = '<li>'
                             + '<a href="' + this.MenusUrl + '">' + this.MenusName + '</a>'
                             + '</li>';
-                        $("#MenusChildren").append(tr);  
+                        $("#MenusChildren"+MenusId).append(tr);  
                     })
                 }
             });

@@ -11,10 +11,8 @@ namespace SDCKClient.XuYaDon
     /// </summary>
    public class OrderShowrequeset:BaseRequest
     {
-        public string OrderNumber { get; set; }
-        public string GoodsName { get; set; }
-        public string AddrName { get; set; }
-        public string AddrPhone { get; set; }
+        public string OrderNumberGoodsName { get; set; }
+        public string AddrNameAddrPhone { get; set; }
         public int State { get; set; }
         public string puttime { get; set; }
         public int pageindex { get; set; }

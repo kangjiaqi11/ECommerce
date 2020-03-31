@@ -2,7 +2,6 @@
     ViewBag.Title = "ActivityShow";
 }
 
-<!DOCTYPE html>
 <html lang="en">
 <body class="page-header-fixed page-quick-sidebar-over-content ">
 		<div class="page-content-wrapper">
@@ -124,14 +123,11 @@
         <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 	<script>
 		jQuery(document).ready(function () {
-           
 			Query(1);
 		});
-		function UpPage() {
-            var index = $("#index11").val();
+    function UpPage() {
+        var index = parseInt( $("#index11").val());
             index = index - 1;
-            alert(index);
-			alert(count);
 			if (index>0) {
 
 				Query(index);
@@ -142,13 +138,10 @@
 			}
 
 		}
-		function NextPage() {
-            var index = $("#index11").val();
+    function NextPage() {
+        var index = parseInt( $("#index11").val());
               var PageCount=$("#tocount11").val();
-			index = index + 1;
-			alert(PageCount);
-			alert(index);
-			if (index < count) {
+			if (index < PageCount) {
 				Query(index);
 			}
 			else {
