@@ -9,7 +9,7 @@ namespace MODEL.ZhangYang
     public class Shipping   //收货地址
     {
         //收货地址id
-        public int ShippingId { get; set; }
+        public long ShippingId { get; set; }
         //手机号
         public string Photo { get; set; }
         //收货人姓名
@@ -19,16 +19,16 @@ namespace MODEL.ZhangYang
         //详细地址
         public string Address { get; set; }
         //数据状态
-        public int State { get; set; }
+        public long State { get; set; }
         public DateTime UpdateTime { get; set; }
         public DateTime CreateTime { get; set; }
-        public int CreateId { get; set; }
-        public int UpdateId { get; set; }
+        public long CreateId { get; set; }
+        public long UpdateId { get; set; }
         //省
-        public int province { get; set; }
+        public long province { get; set; }
         //市
-        public int City { get; set; }
+        public long City { get; set; }
         //区
-        public int District { get; set; }
+        public long District { get; set; }
     }
 }

@@ -81,6 +81,7 @@
     <Compile Include="WangZhiHao\BGoodsBll.cs" />
     <Compile Include="XuYaDon\OrderShowBll.cs" />
     <Compile Include="ZhangYang\FrontUserBLL.cs" />
+    <Compile Include="ZhangYang\MemberBLL.cs" />
     <Compile Include="ZhangYang\StoreroomBLL.cs" />
   </ItemGroup>
   <ItemGroup>

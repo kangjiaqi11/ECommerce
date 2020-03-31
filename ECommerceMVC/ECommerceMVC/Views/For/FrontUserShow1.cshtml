@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "FrontUserShow1";
+}
+
+<h2>FrontUserShow1</h2>
+
+@using MODEL.ZhangYang
+@model List<FrontUser>
+
+<table class="table">
+    <tr>
+        <td>用户ID</td>
+        <td>用户昵称</td>
+        <td>生日</td>
+        <td>个性签名</td>
+        <td>用户职业</td>
+        <td>用户性别</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FrontUserid</td>
+            <td>@item.UserName</td>
+            <td>@item.Baddy</td>
+            <td>@item.Grqm</td>
+            <td>@item.professional</td>
+            <td>@item.Age</td>
+        </tr>
+    }
+</table>

@@ -9,10 +9,10 @@ namespace MODEL.ZhangYang
     public class Provinces //省市区
     {
         //省市区id
-        public int ProvincesId { get; set; }
+        public long ProvincesId { get; set; }
         //名称
         public string ProvincesName { get; set; }
         //上级id
-        public int ProvincesUpOne { get; set; }
+        public long ProvincesUpOne { get; set; }
 }
 }

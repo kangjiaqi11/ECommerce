@@ -9,7 +9,7 @@ namespace MODEL.ZhangYang
     public class FrontUser //用户表
     {
         //用户id
-        public int FrontUserid { get; set; }
+        public long FrontUserid { get; set; }
         //用户账户
         public string Account        { get; set; }
         //用户密码
@@ -21,7 +21,7 @@ namespace MODEL.ZhangYang
         //消费金额
         public string Consumption    { get; set; }
         //订单数量
-        public int Number         { get; set; }
+        public long Number         { get; set; }
         //用户职业
         public string professional   { get; set; }
         //用户性别
@@ -46,19 +46,19 @@ namespace MODEL.ZhangYang
         //退货记录
         public string Thjl           { get; set; }
         //成长值
-        public int Czz            { get; set; }
+        public long Czz            { get; set; }
         //优惠卷
         public string Yhj            { get; set; }
         //收藏话题
         public string Scht           { get; set; }
         //订单id
-        public int Ddid           { get; set; }
+        public long Ddid           { get; set; }
         //收货地址id
-        public int ShdzId         { get; set; }
-        public int State          { get; set; }
+        public long ShdzId         { get; set; }
+        public long State          { get; set; }
         public DateTime CTime          { get; set; }
         public DateTime XTime          { get; set; }
-        public int Modifier       { get; set; }
-        public int Founder        { get; set; }
+        public long Modifier       { get; set; }
+        public long Founder        { get; set; }
     }
 }
