@@ -36,8 +36,34 @@ namespace ECommerceMVC.Controllers.ZhangYang
         {
             FrontUserShowReq Ssr = new FrontUserShowReq();
 
-            var ser = bll.FrontUserFenye(Ssr, "api/Sto/StoreroomFenye");
+            var ser = bll.FrontUserFenye(Ssr, "api/Fro/FrontUserFenye");
             return View(ser.Frolist);
+        }
+
+        //详情1//详情2
+        public ActionResult FrontUserShow1()
+        {
+
+            FrontUserShow1Req Ssr = new FrontUserShow1Req();
+            FrontUserShow2Req Ssrr = new FrontUserShow2Req();
+
+            var ser = bll.FrontUserShow1(Ssr, "api/Fro/FrontUserShow1");
+            var serr = bll.FrontUserShow2(Ssrr, "api/Fro/FrontUserShow2");
+            
+            return View(ser.FrontUser1);
+            
+        }
+    }
+    public class MemController : Controller
+    {
+        MemberBLL bll = new MemberBLL();
+
+        public ActionResult MemberShow()
+        {
+            MemberShowReq Ssr = new MemberShowReq();
+
+            var ser = bll.MemberShow(Ssr, "api/Mem/MemberShow");
+            return View(ser.Members);
         }
     }
 }

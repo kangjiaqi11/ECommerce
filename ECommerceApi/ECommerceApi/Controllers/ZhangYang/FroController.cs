@@ -13,6 +13,7 @@ namespace ECommerceApi.Controllers.ZhangYang
     public class FroController : ApiController
     {
         FrontUserBLL bll = new FrontUserBLL();
+        MemberBLL blll = new MemberBLL();
         public FrontUserShowResp FrontUserFenye(FrontUserShowReq Ssrq)
         {
             return bll.FrontUserFenye(Ssrq);
@@ -26,6 +27,11 @@ namespace ECommerceApi.Controllers.ZhangYang
         public FrontUserShow2Resp FrontUserShow2()
         {
             return bll.FrontUserShow2();
+        }
+        //会员
+        public MemberShowResp MemberShow()
+        {
+            return blll.MemberShow();
         }
     }
 }

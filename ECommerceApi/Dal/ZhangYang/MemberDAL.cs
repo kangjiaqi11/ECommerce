@@ -10,24 +10,24 @@ namespace Dal.ZhangYang
 {
     public class MemberDAL
     {
-        public List<FrontUser> FrontUserShow()
+        public List<Member> MemberShow()
         {
-            List<FrontUser> list = new List<FrontUser>();
-            string sql = "select FrontUserid,Consumption,Number,Czz,Yhj,Scht from FrontUser";
+            List<Member> list = new List<Member>();
+            string sql = "select MembersId,members,Growth,Evaluation,Freight,Note from Member";
             SqlConnection scon = new SqlConnection("server=.;uid=sa;pwd=1234;database=ECommerce");
-            SqlCommand scom = new SqlCommand("sql", scon);
+            SqlCommand scom = new SqlCommand(sql, scon);
 
             scon.Open();
             SqlDataReader reader = scom.ExecuteReader();
-            FrontUser f = new FrontUser();
+            Member f = new Member();
             while (reader.Read())
             {
-                f.FrontUserid = (int)reader["FrontUserid"];
-                f.Consumption = (string)reader["Consumption"];
-                f.Number = (int)reader["Number"];
-                f.Czz = (int)reader["Czz"];
-                f.Yhj = (string)reader["Yhj"];
-                f.Scht = (string)reader["Scht"];
+                f.MembersId = (int)reader["MembersId"];
+                f.members = (string)reader["members"];
+                f.Growth = (string)reader["Growth"];
+                f.Evaluation = (string)reader["Evaluation"];
+                f.Freight = (string)reader["Freight"];
+                f.Note = (string)reader["Note"];
 
                 list.Add(f);
             }

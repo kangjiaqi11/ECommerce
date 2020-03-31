@@ -50,6 +50,7 @@
     <Compile Include="WangZhiHao\GoodsBll.cs" />
     <Compile Include="XuYaDon\OrderBll.cs" />
     <Compile Include="ZhangYang\FrontUserBLL.cs" />
+    <Compile Include="ZhangYang\MemberBLL.cs" />
     <Compile Include="ZhangYang\StoreroomBLL.cs" />
   </ItemGroup>
   <ItemGroup>

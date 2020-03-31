@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "MemberShow";
+}
+
+<h2>MemberShow</h2>
+
+@using MODEL.ZhangYang
+@model List<Member>
+<h2>StoreroomFenye</h2>
+
+<table class="table">
+    <tr>
+        <td>会员id</td>
+        <td>会员名称</td>
+        <td>成长值满电</td>
+        <td>评价奖励</td>
+        <td>免运费标准</td>
+        <td>备注</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MembersId</td>
+            <td>@item.members</td>
+            <td>@item.Growth</td>
+            <td>@item.Evaluation</td>
+            <td>@item.Freight</td>
+            <td>@item.Note</td>
+        </tr>
+    }
+</table>

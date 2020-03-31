@@ -14,7 +14,7 @@ namespace Dal.ZhangYang
         {
             List<FrontUser> list = new List<FrontUser>();
             SqlConnection scon = new SqlConnection("server=.;uid=sa;pwd=1234;database=ECommerce");
-            SqlCommand scom = new SqlCommand("Fenye1", scon);
+            SqlCommand scom = new SqlCommand("Fenye2", scon);
 
             scom.CommandType = System.Data.CommandType.StoredProcedure;
             scom.Parameters.Add(new SqlParameter("@PageIndex", PageIndex));
@@ -51,14 +51,14 @@ namespace Dal.ZhangYang
             List<FrontUser> list = new List<FrontUser>();
             string sql = "select FrontUserid,UserName,Baddy,Grqm,professional,Age from FrontUser";
             SqlConnection scon = new SqlConnection("server=.;uid=sa;pwd=1234;database=ECommerce");
-            SqlCommand scom = new SqlCommand("sql", scon);
+            SqlCommand scom = new SqlCommand(sql, scon);
 
             scon.Open();
             SqlDataReader reader = scom.ExecuteReader();
             FrontUser f = new FrontUser();
             while (reader.Read())
             {
-                f.FrontUserid = (int)reader["FrontUserid"];
+                f.FrontUserid = (long)reader["FrontUserid"];
                 f.UserName = (string)reader["UserName"];
                 f.Baddy = (string)reader["Baddy"];
                 f.Grqm = (string)reader["Grqm"];
@@ -78,17 +78,17 @@ namespace Dal.ZhangYang
             List<FrontUser> list = new List<FrontUser>();
             string sql = "select FrontUserid,Consumption,Number,Czz,Yhj,Scht from FrontUser";
             SqlConnection scon = new SqlConnection("server=.;uid=sa;pwd=1234;database=ECommerce");
-            SqlCommand scom = new SqlCommand("sql", scon);
+            SqlCommand scom = new SqlCommand(sql, scon);
 
             scon.Open();
             SqlDataReader reader = scom.ExecuteReader();
             FrontUser f = new FrontUser();
             while (reader.Read())
             {
-                f.FrontUserid = (int)reader["FrontUserid"];       
+                f.FrontUserid = (long)reader["FrontUserid"];       
                 f.Consumption = (string)reader["Consumption"];
-                f.Number = (int)reader["Number"];
-                f.Czz = (int)reader["Czz"];
+                f.Number = (long)reader["Number"];
+                f.Czz = (long)reader["Czz"];
                 f.Yhj = (string)reader["Yhj"];
                 f.Scht = (string)reader["Scht"];
 
