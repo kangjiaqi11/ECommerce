@@ -25,7 +25,7 @@ namespace Dal.WangZhiHao
         }
 
         /// <summary>
-        /// 部门表显示
+        /// 显示
         /// </summary>
         /// <returns></returns>
         public List<GoodsModel> GoodsShow()

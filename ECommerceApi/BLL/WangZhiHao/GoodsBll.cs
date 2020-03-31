@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MODEL;
-using Dal;
 using Dal.WangZhiHao;
+using SDCKClient.WangZhiHao.Request;
+using SDCKClient.WangZhiHao.Response;
+using Common;
 
 namespace BLL.WangZhiHao
 {
@@ -26,13 +28,26 @@ namespace BLL.WangZhiHao
         {
             return dal.GoodsAdd(good);
         }
+        
         /// <summary>
         /// 商品显示
         /// </summary>
         /// <returns></returns>
-        public List<GoodsModel> GoodsShow()
+        public GoodsAddResponse GoodsShow(GoodsAddRequest goodsAddRequest)
         {
-            return dal.GoodsShow();
+            GoodsAddResponse goodsAddResponse = new GoodsAddResponse();
+            var ser = dal.GoodsShow();
+            if (ser!=null)
+            {
+                goodsAddResponse.goods = ser;
+                goodsAddResponse.IsSuccess = true;
+            }
+            else
+            {
+                goodsAddResponse.Status = -1;
+                goodsAddResponse.Msg = "显示失败";
+            }
+            return goodsAddResponse;
         }
 
         /// <summary>
