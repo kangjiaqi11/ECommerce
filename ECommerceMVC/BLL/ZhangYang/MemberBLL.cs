@@ -1,5 +1,4 @@
 ﻿using SDCKClient.ZhangYang.Request;
-using SDCKClient.ZhangYang.Request;
 using SDCKClient.ZhangYang.Response;
 using System;
 using System.Collections.Generic;
