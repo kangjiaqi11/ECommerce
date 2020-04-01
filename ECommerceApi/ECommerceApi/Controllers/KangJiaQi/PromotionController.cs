@@ -25,11 +25,11 @@ namespace ECommerceApi.Controllers.KangJiaQi
         /// 添加秒杀
         /// </summary>
         /// <returns></returns>
-        [HttpPost]
-        public ActivityAddResponse ActivityAdd(ActivityAddRequest activityAddRequest)
-        {
-            return promotionBll.ActivityAdd(activityAddRequest);
-        }
+        //[HttpPost]
+        //public ActivityAddResponse ActivityAdd(ActivityAddRequest activityAddRequest)
+        //{
+        //    return promotionBll.ActivityAdd(activityAddRequest);
+        //}
         #region 好物推荐相关
         /// <summary>
         /// 推荐首页的物品
