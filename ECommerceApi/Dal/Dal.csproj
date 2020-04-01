@@ -54,6 +54,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WangZhiHao\GoodsDal.cs" />
     <Compile Include="XuYaDon\DataReadHelp.cs" />
+    <Compile Include="XuYaDon\DB\SDBHelper.cs" />
+    <Compile Include="XuYaDon\DB\xDBHelper.cs" />
     <Compile Include="XuYaDon\OrderDal.cs" />
     <Compile Include="ZhangYang\FrontUserDAL.cs" />
     <Compile Include="ZhangYang\MemberDAL.cs" />
