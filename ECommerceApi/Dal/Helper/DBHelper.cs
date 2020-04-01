@@ -8,6 +8,7 @@ using System.Data;
 using System.Reflection;
 using System.Net;
 using System.Net.Sockets;
+using System.Configuration;
 
 namespace Dal
 {
@@ -21,7 +22,8 @@ namespace Dal
         {
             if (conn == null)
             {
-                conn = new SqlConnection("Data Source=.;Initial Catalog=ECommerce;Integrated Security=True");
+                string token = ConfigurationManager.AppSettings["sql"];
+                conn = new SqlConnection(token);
             } 
         }
         /// <summary>
