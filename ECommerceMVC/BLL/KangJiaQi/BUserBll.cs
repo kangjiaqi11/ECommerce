@@ -63,7 +63,7 @@ namespace BLL
         /// <returns></returns>
         public personageResponse personage(personageRequest personageRequest, string GetApiName)
         {
-            return ApiRequestHelper.Post<personageRequest, personageResponse>(personageRequest, GetApiName)
+            return ApiRequestHelper.Post<personageRequest, personageResponse>(personageRequest, GetApiName);
         }
     }
 }

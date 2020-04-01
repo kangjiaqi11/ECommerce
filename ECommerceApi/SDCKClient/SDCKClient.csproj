@@ -112,7 +112,6 @@
     <Compile Include="XuYaDon\Response\TakeGoodrespnse.cs" />
     <Compile Include="XuYaDon\Response\UpdateReturnResponse.cs" />
     <Compile Include="XuYaDon\Response\UpdateStateExperresponse.cs" />
-    <Compile Include="ZhangYang\Request\StoreroomAddreq.cs" />
     <Compile Include="ZhangYang\Request\FrontUserShow1Req.cs" />
     <Compile Include="ZhangYang\Request\FrontUserShow2Req.cs" />
     <Compile Include="ZhangYang\Request\FrontUserShowReq.cs" />
