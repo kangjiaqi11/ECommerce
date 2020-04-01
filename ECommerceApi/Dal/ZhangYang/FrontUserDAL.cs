@@ -13,7 +13,7 @@ namespace Dal.ZhangYang
         public Fenye1 FrontUserFenye(int PageIndex, int PageSize, string UserName)
         {
             List<FrontUser> list = new List<FrontUser>();
-            SqlConnection scon = new SqlConnection("Data Source=.;Initial Catalog=ECommerce;Integrated Security=True");
+            SqlConnection scon = new SqlConnection("Data Source=.;Initial Catalog=ECommerce;Interated Security=True");
             SqlCommand scom = new SqlCommand("Fenye2", scon);
 
             scom.CommandType = System.Data.CommandType.StoredProcedure;
@@ -50,7 +50,7 @@ namespace Dal.ZhangYang
         {
             List<FrontUser> list = new List<FrontUser>();
             string sql = "select FrontUserid,UserName,Baddy,Grqm,professional,Age from FrontUser";
-            SqlConnection scon = new SqlConnection("Data Source=.;Initial Catalog=ECommerce;Integrated Security=True");
+            SqlConnection scon = new SqlConnection("Data Source=.;Initial Catalog=ECommerce;Interated Security=True");
             SqlCommand scom = new SqlCommand(sql, scon);
 
             scon.Open();
@@ -77,7 +77,7 @@ namespace Dal.ZhangYang
         {
             List<FrontUser> list = new List<FrontUser>();
             string sql = "select FrontUserid,Consumption,Number,Czz,Yhj,Scht from FrontUser";
-            SqlConnection scon = new SqlConnection("Data Source=.;Initial Catalog=ECommerce;Integrated Security=True");
+            SqlConnection scon = new SqlConnection("Data Source=.;Initial Catalog=ECommerce;Interated Security=True");
             SqlCommand scom = new SqlCommand(sql, scon);
 
             scon.Open();

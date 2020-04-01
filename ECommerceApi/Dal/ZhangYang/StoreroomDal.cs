@@ -13,7 +13,7 @@ namespace Dal
         public Fenye StoreroomFenye(int PageIndex,int PageSize, string ShoopName)
         {
             List<Storeroom> list = new List<Storeroom>();
-            SqlConnection scon = new SqlConnection("ata Source=.;Initial Catalog=ECommerce;Integrated Security=True");
+            SqlConnection scon = new SqlConnection("Data Source=.;Initial Catalog=ECommerce;Interated Security=True");
             SqlCommand scom = new SqlCommand("Fenye1", scon);
             
             scom.CommandType = System.Data.CommandType.StoredProcedure;
