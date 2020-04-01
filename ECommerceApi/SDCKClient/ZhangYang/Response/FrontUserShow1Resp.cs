@@ -9,6 +9,7 @@ namespace SDCKClient.ZhangYang.Response
 {
     public class FrontUserShow1Resp : BaseResponse
     {
+        //12
         public List<FrontUser> FrontUser1 { get; set; }
     }
 }
