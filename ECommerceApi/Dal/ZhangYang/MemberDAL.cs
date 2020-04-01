@@ -14,7 +14,7 @@ namespace Dal.ZhangYang
         {
             List<Member> list = new List<Member>();
             string sql = "select MembersId,members,Growth,Evaluation,Freight,Note from Member";
-            SqlConnection scon = new SqlConnection("server=.;uid=sa;pwd=1234;database=ECommerce");
+            SqlConnection scon = new SqlConnection("ata Source=.;Initial Catalog=ECommerce;Integrated Security=True");
             SqlCommand scom = new SqlCommand(sql, scon);
 
             scon.Open();

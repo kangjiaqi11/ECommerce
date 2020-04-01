@@ -50,8 +50,9 @@
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="MODEL">
-      <HintPath>..\..\ECommerceApi\MODEL\bin\Debug\MODEL.dll</HintPath>
+    <Reference Include="MODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\MODEL.dll</HintPath>
     </Reference>
     <Reference Include="MODEL.1.0.0.0.Fakes">
       <HintPath>FakesAssemblies\MODEL.1.0.0.0.Fakes.dll</HintPath>
@@ -4750,8 +4751,6 @@
     <Content Include="Views\BUser\personage.cshtml" />
     <Content Include="Views\promotion\ActivityAdd.cshtml" />
     <Content Include="Views\BUser\HomePage.cshtml" />
-    <Content Include="Views\BUser\Index.cshtml" />
-    <Content Include="Views\promotion\Show.cshtml" />
     <Content Include="Views\Sto\StoreroomFenye.cshtml" />
     <Content Include="Views\GoodsShow\GoodsShow.cshtml" />
     <Content Include="Views\For\FrontUserFenye.cshtml" />
@@ -4763,6 +4762,7 @@
     <Content Include="Views\Order\shenReturns.cshtml" />
     <Content Include="Views\Order\ShowOrderALL.cshtml" />
     <Content Include="Views\Order\TakeGood.cshtml" />
+    <Content Include="Views\BUser\Index.cshtml" />
     <None Include="Views\promotion\ActivityShow.cshtml" />
     <Content Include="Views\Sto\StoreroomFenye.cshtml" />
     <Content Include="Views\promotion\RecommendShow.cshtml" />
@@ -4772,8 +4772,6 @@
   <ItemGroup>
     <Folder Include="IndexStyle\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
     <Folder Include="Models\" />
-    <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="Views\Order\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>

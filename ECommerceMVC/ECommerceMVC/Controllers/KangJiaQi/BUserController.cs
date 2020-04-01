@@ -161,14 +161,6 @@ namespace ECommerceMVC.Controllers.KangJiaQi
             var ser = BUserBll.personage(personageRequest, "api/BUser/personage");
             return Json(ser.info);
         }
-        /// <summary>
-        /// 首页
-        /// </summary>
-        /// <returns></returns>
-        public ActionResult HomePage()
-        {
-            return View();
-        }
 
     }
 }

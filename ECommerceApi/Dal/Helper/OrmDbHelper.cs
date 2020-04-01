@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Dapper;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace Dal
 {
@@ -24,8 +25,9 @@ namespace Dal
         /// <returns></returns>
         public static List<T> GetList<T>(string sql) where T : class, new()
         {
+            string token = ConfigurationManager.AppSettings["sql"];
             List<T> list = new List<T>();
-            using (IDbConnection connection = new SqlConnection(ConnStr))
+            using (IDbConnection connection = new SqlConnection(token))
             {
                 list = connection.Query<T>(sql).ToList();
             }
@@ -41,8 +43,9 @@ namespace Dal
         /// <returns></returns>
         public static T GetInfo<T>(string sql) where T : class, new()
         {
+            string token = ConfigurationManager.AppSettings["sql"];
             T info = new T();
-            using (IDbConnection connection = new SqlConnection(ConnStr))
+            using (IDbConnection connection = new SqlConnection(token))
             {
                 info = connection.QueryFirstOrDefault<T>(sql);
             }
@@ -57,8 +60,9 @@ namespace Dal
         /// <returns></returns>
         public static int ExecuteSql(string sql)
         {
+            string token = ConfigurationManager.AppSettings["sql"];
             int res = 0;
-            using (IDbConnection connection = new SqlConnection(ConnStr))
+            using (IDbConnection connection = new SqlConnection(token))
             {
                 res = connection.Execute(sql);
             }
