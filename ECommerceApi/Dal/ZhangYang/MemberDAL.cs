@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Dal.ZhangYang
 {
-    public class MemberDAL
+    public class MemberDAL    
     {
         public List<Member> MemberShow()
         {
             List<Member> list = new List<Member>();
             string sql = "select MembersId,members,Growth,Evaluation,Freight,Note from Member";
-            SqlConnection scon = new SqlConnection("server=.;uid=sa;pwd=1234;database=ECommerce");
+            SqlConnection scon = new SqlConnection("Data Source=.;Initial Catalog=ECommerce;Interated Security=True");
             SqlCommand scom = new SqlCommand(sql, scon);
 
             scon.Open();
