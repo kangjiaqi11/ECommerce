@@ -51,7 +51,7 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="MODEL">
-      <HintPath>..\..\ECommerceApi\MODEL\bin\Debug\MODEL.dll</HintPath>
+      <HintPath>..\..\lib\MODEL.dll</HintPath>
     </Reference>
     <Reference Include="MODEL.1.0.0.0.Fakes">
       <HintPath>FakesAssemblies\MODEL.1.0.0.0.Fakes.dll</HintPath>
@@ -62,9 +62,6 @@
     </Reference>
     <Reference Include="SDCKClient">
       <HintPath>..\..\lib\SDCKClient.dll</HintPath>
-    </Reference>
-    <Reference Include="SDCKClient.Fakes">
-      <HintPath>FakesAssemblies\SDCKClient.Fakes.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -4748,6 +4745,7 @@
     <Content Include="Views\Order\shenReturns.cshtml" />
     <Content Include="Views\Order\ShowOrderALL.cshtml" />
     <Content Include="Views\Order\TakeGood.cshtml" />
+    <Content Include="Views\Sto\StoreroomRu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="IndexStyle\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
