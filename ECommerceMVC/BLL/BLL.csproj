@@ -33,11 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="SDCKClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\你爹\Desktop\heip\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SDCKClient">
       <HintPath>..\..\lib\SDCKClient.dll</HintPath>
     </Reference>
     <Reference Include="SDCKClient.Fakes">
@@ -83,14 +86,27 @@
   </ItemGroup>
   <ItemGroup>
     <Fakes Include="Fakes\SDCKClient.fakes" />
+    <Fakes Include="Fakes\Newtonsoft.Json.fakes" />
+    <None Include="FakesAssemblies\Newtonsoft.Json.Fakes.fakesconfig" />
+    <None Include="FakesAssemblies\Newtonsoft.Json.Fakes.messages" />
+    <None Include="FakesAssemblies\SDCKClient.Fakes.fakesconfig" />
     <None Include="obj\Debug\BLL.csprojAssemblyReference.cache" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Debug\zh-Hans\" />
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FakesAssemblies\Newtonsoft.Json.Fakes.dll" />
+    <Content Include="FakesAssemblies\Newtonsoft.Json.Fakes.xml" />
+    <Content Include="FakesAssemblies\SDCKClient.Fakes.dll" />
+    <Content Include="FakesAssemblies\SDCKClient.Fakes.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Grpc.Core.2.27.0\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.2.27.0\build\net45\Grpc.Core.targets')" />

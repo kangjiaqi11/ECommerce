@@ -53,6 +53,7 @@
     <Compile Include="BaseResponse.cs" />
     <Compile Include="KangJiaQi\Request\ActivityAddRequest.cs" />
     <Compile Include="KangJiaQi\Request\ActivityShowRequst.cs" />
+    <Compile Include="KangJiaQi\Request\Add.cs" />
     <Compile Include="KangJiaQi\Request\BUserAddRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserLoginRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserUpdateRequst.cs" />
@@ -112,7 +113,6 @@
     <Compile Include="XuYaDon\Response\TakeGoodrespnse.cs" />
     <Compile Include="XuYaDon\Response\UpdateReturnResponse.cs" />
     <Compile Include="XuYaDon\Response\UpdateStateExperresponse.cs" />
-    <Compile Include="ZhangYang\Request\StoreroomAddreq.cs" />
     <Compile Include="ZhangYang\Request\FrontUserShow1Req.cs" />
     <Compile Include="ZhangYang\Request\FrontUserShow2Req.cs" />
     <Compile Include="ZhangYang\Request\FrontUserShowReq.cs" />
@@ -125,7 +125,6 @@
     <Compile Include="ZhangYang\Response\StoreroomShowResp.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="obj\Release\" />
@@ -144,6 +143,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\SDCKClient.dll" />
+    <Content Include="bin\Debug\SDCKClient.pdb" />
     <Content Include="obj\Debug\SDCKClient.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\SDCKClient.dll" />
     <Content Include="obj\Debug\SDCKClient.pdb" />
