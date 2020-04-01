@@ -4697,21 +4697,6 @@
     <Content Include="layuistyle\static\admin\lib\ueditor\third-party\video-js\font\vjs.ttf" />
     <Content Include="layuistyle\static\admin\lib\ueditor\third-party\video-js\font\vjs.woff" />
     <Fakes Include="Fakes\MODEL.fakes" />
-    <Fakes Include="Fakes\SDCKClient.fakes" />
-    <Content Include="bin\roslyn\csc.exe.config" />
-    <Content Include="bin\roslyn\csc.rsp" />
-    <Content Include="bin\roslyn\csi.exe.config" />
-    <Content Include="bin\roslyn\csi.rsp" />
-    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
-    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
-    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
-    <Content Include="bin\roslyn\vbc.exe.config" />
-    <Content Include="bin\roslyn\vbc.rsp" />
-    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
-    <Content Include="bin\libgrpc_csharp_ext.x64.so" />
-    <Content Include="bin\libgrpc_csharp_ext.x64.dylib" />
-    <Content Include="bin\ECommerceMVC.dll.config" />
-    <Content Include="bin\libgrpc_csharp_ext.x86.dylib" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -4743,22 +4728,8 @@
     <Content Include="Views\promotion\ActivityAdd.cshtml" />
     <Content Include="Views\BUser\HomePage.cshtml" />
     <Content Include="Views\BUser\Index.cshtml" />
-    <Content Include="Views\For\FrontUserFenye.cshtml" />
-    <Content Include="Views\For\FrontUserShow1.cshtml" />
-    <Content Include="Views\GoodsShow\GoodsShow.cshtml" />
-    <Content Include="Views\Mem\MemberShow.cshtml" />
-    <None Include="Views\promotion\ActivityShow.cshtml" />
-    <Content Include="Views\Sto\StoreroomFenye.cshtml" />
-    <Content Include="Views\promotion\RecommendShow.cshtml" />
-    <Content Include="Views\promotion\TimeShow.cshtml" />
-    <Content Include="Views\Sto\StoreroomRu.cshtml" />
     <Content Include="Views\promotion\Show.cshtml" />
-    <Content Include="Views\Order\Index.cshtml" />
-    <Content Include="Views\Order\expressShow.cshtml" />
-    <Content Include="Views\Order\ShowOrderALL.cshtml" />
-    <Content Include="Views\Order\TakeGood.cshtml" />
-    <Content Include="Views\Order\ReturnGoods.cshtml" />
-    <Content Include="Views\Order\shenReturns.cshtml" />
+    <Content Include="Views\Sto\StoreroomFenye.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="IndexStyle\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
