@@ -51,7 +51,7 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="MODEL">
-      <HintPath>..\..\ECommerceApi\MODEL\bin\Debug\MODEL.dll</HintPath>
+      <HintPath>..\..\lib\MODEL.dll</HintPath>
     </Reference>
     <Reference Include="MODEL.1.0.0.0.Fakes">
       <HintPath>FakesAssemblies\MODEL.1.0.0.0.Fakes.dll</HintPath>
@@ -59,8 +59,7 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="SDCKClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="SDCKClient">
       <HintPath>..\..\lib\SDCKClient.dll</HintPath>
     </Reference>
     <Reference Include="SDCKClient.Fakes">
@@ -4763,7 +4762,6 @@
   <ItemGroup>
     <Folder Include="IndexStyle\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Sto\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
