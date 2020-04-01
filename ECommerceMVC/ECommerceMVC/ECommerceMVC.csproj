@@ -57,7 +57,8 @@
       <HintPath>FakesAssemblies\MODEL.1.0.0.0.Fakes.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\你爹\Desktop\heip\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SDCKClient">
       <HintPath>..\..\lib\SDCKClient.dll</HintPath>
@@ -225,6 +226,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="FakesAssemblies\MODEL.1.0.0.0.Fakes.dll" />
+    <Content Include="FakesAssemblies\MODEL.1.0.0.0.Fakes.xml" />
+    <Content Include="FakesAssemblies\SDCKClient.Fakes.dll" />
+    <Content Include="FakesAssemblies\SDCKClient.Fakes.xml" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -4707,6 +4712,9 @@
     <Content Include="bin\libgrpc_csharp_ext.x64.dylib" />
     <Content Include="bin\ECommerceMVC.dll.config" />
     <Content Include="bin\libgrpc_csharp_ext.x86.dylib" />
+    <Content Include="Fakes\SDCKClient.fakes" />
+    <Content Include="FakesAssemblies\MODEL.1.0.0.0.Fakes.fakesconfig" />
+    <Content Include="FakesAssemblies\SDCKClient.Fakes.fakesconfig" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -4718,6 +4726,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Token.xml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -4741,6 +4750,19 @@
     <Content Include="Views\BUser\personage.cshtml" />
     <Content Include="Views\promotion\ActivityAdd.cshtml" />
     <Content Include="Views\BUser\HomePage.cshtml" />
+    <Content Include="Views\BUser\Index.cshtml" />
+    <Content Include="Views\promotion\Show.cshtml" />
+    <Content Include="Views\Sto\StoreroomFenye.cshtml" />
+    <Content Include="Views\GoodsShow\GoodsShow.cshtml" />
+    <Content Include="Views\For\FrontUserFenye.cshtml" />
+    <Content Include="Views\For\FrontUserShow1.cshtml" />
+    <Content Include="Views\Mem\MemberShow.cshtml" />
+    <Content Include="Views\Order\expressShow.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\ReturnGoods.cshtml" />
+    <Content Include="Views\Order\shenReturns.cshtml" />
+    <Content Include="Views\Order\ShowOrderALL.cshtml" />
+    <Content Include="Views\Order\TakeGood.cshtml" />
     <None Include="Views\promotion\ActivityShow.cshtml" />
     <Content Include="Views\Sto\StoreroomFenye.cshtml" />
     <Content Include="Views\promotion\RecommendShow.cshtml" />
@@ -4752,6 +4774,7 @@
     <Folder Include="Models\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="Views\Order\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
