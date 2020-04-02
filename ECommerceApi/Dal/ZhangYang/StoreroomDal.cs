@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MODEL.ZhangYang;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Dal
 {
@@ -12,8 +13,9 @@ namespace Dal
     {
         public Fenye StoreroomFenye(int PageIndex,int PageSize, string ShoopName)
         {
+            string token = ConfigurationManager.AppSettings["sql"];
             List<Storeroom> list = new List<Storeroom>();
-            SqlConnection scon = new SqlConnection("Data Source=.;Initial Catalog=ECommerce;Interated Security=True");
+            SqlConnection scon = new SqlConnection(token);
             SqlCommand scom = new SqlCommand("Fenye1", scon);
             
             scom.CommandType = System.Data.CommandType.StoredProcedure;
