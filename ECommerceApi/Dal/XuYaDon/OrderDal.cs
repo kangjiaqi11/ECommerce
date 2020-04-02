@@ -17,7 +17,7 @@ namespace Dal
   public  class OrderDal
     {
         SDBHelper DBHelper = new SDBHelper();
-       SqlConnection connetion = new SqlConnection("Data Source=.;Initial Catalog=ECommerce1;Integrated Security=True");
+       SqlConnection connetion = new SqlConnection("Data Source=.;Initial Catalog=ECommerce;Integrated Security=True");
         public PageModel OrderShow(string OrderNumberGoodsName="", string AddrNameAddrPhone="",int State=0,string puttime="",int pageindex=1,int pagesize=8)
         {
             if (string.IsNullOrEmpty(OrderNumberGoodsName))
