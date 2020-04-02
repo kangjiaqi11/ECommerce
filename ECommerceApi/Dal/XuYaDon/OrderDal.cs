@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MODEL.XuYaDon;
 using System.Data.SqlClient;
 using DAL.XuYaDon.DB;
-
+using System.Configuration;
 using Dal.XuyaDon;
 
 namespace Dal
@@ -16,8 +16,9 @@ namespace Dal
     /// </summary>
   public  class OrderDal
     {
+
         SDBHelper DBHelper = new SDBHelper();
-       SqlConnection connetion = new SqlConnection("Data Source=.;Initial Catalog=ECommerce1;Integrated Security=True");
+       SqlConnection connetion = new SqlConnection("Data Source=.;Initial Catalog=ECommerce;Integrated Security=True");
         public PageModel OrderShow(string OrderNumberGoodsName="", string AddrNameAddrPhone="",int State=0,string puttime="",int pageindex=1,int pagesize=8)
         {
             if (string.IsNullOrEmpty(OrderNumberGoodsName))
@@ -172,6 +173,7 @@ namespace Dal
             {
                 connetion.Open();
             }
+
 
             var sql = "exec MakeGodd @OrderNumberGoodsName,@AddrNameAddrPhone,@puttime,@pageindex,@pagesize,@totalcount out";
             SqlCommand cmd = new SqlCommand();

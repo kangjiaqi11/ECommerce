@@ -21,7 +21,7 @@ namespace Dal.XuyaDon
         {
             if (conn == null)
             {
-                conn = new SqlConnection("Data Source=.;Initial Catalog=ECommerce1;Integrated Security=True");
+                conn = new SqlConnection("Data Source=.;Initial Catalog=ECommerce;Integrated Security=True");
             } 
         }
         /// <summary>

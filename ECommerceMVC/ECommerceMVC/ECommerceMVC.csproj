@@ -4427,6 +4427,7 @@
     <Content Include="layuistyle\static\admin\lib\ueditor\ueditor.config.js" />
     <Content Include="layuistyle\static\admin\lib\ueditor\ueditor.parse.js" />
     <Content Include="layuistyle\static\admin\lib\ueditor\ueditor.parse.min.js" />
+    <Content Include="obj\Debug\ECommerceMVC.csproj.FileListAbsolute.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="IndexStyle\global\img\social\Thumbs.db" />
@@ -4705,6 +4706,9 @@
     <Content Include="Fakes\SDCKClient.fakes" />
     <Content Include="FakesAssemblies\MODEL.1.0.0.0.Fakes.fakesconfig" />
     <Content Include="FakesAssemblies\SDCKClient.Fakes.fakesconfig" />
+    <Content Include="obj\Debug\ECommerceMVC.csprojFakesResolveAssemblyReference.cache" />
+    <Content Include="obj\Debug\ECommerceMVC.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
