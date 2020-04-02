@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -12,8 +13,9 @@ namespace Dal.ZhangYang
     {
         public Fenye1 FrontUserFenye(int PageIndex, int PageSize, string UserName)
         {
+            string token = ConfigurationManager.AppSettings["sql"];
             List<FrontUser> list = new List<FrontUser>();
-            SqlConnection scon = new SqlConnection("server=.;uid=sa;pwd=1234;database=ECommerce");
+            SqlConnection scon = new SqlConnection(token);
             SqlCommand scom = new SqlCommand("Fenye2", scon);
 
             scom.CommandType = System.Data.CommandType.StoredProcedure;
@@ -48,9 +50,10 @@ namespace Dal.ZhangYang
         //详情1
         public List<FrontUser> FrontUserShow1()
         {
+            string token = ConfigurationManager.AppSettings["sql"];
             List<FrontUser> list = new List<FrontUser>();
             string sql = "select FrontUserid,UserName,Baddy,Grqm,professional,Age from FrontUser";
-            SqlConnection scon = new SqlConnection("server=.;uid=sa;pwd=1234;database=ECommerce");
+            SqlConnection scon = new SqlConnection(token);
             SqlCommand scom = new SqlCommand(sql, scon);
 
             scon.Open();
@@ -75,9 +78,10 @@ namespace Dal.ZhangYang
         //详情2
         public List<FrontUser> FrontUserShow2()
         {
+            string token = ConfigurationManager.AppSettings["sql"];
             List<FrontUser> list = new List<FrontUser>();
             string sql = "select FrontUserid,Consumption,Number,Czz,Yhj,Scht from FrontUser";
-            SqlConnection scon = new SqlConnection("server=.;uid=sa;pwd=1234;database=ECommerce");
+            SqlConnection scon = new SqlConnection(token);
             SqlCommand scom = new SqlCommand(sql, scon);
 
             scon.Open();

@@ -1,6 +1,7 @@
 ﻿using MODEL.ZhangYang;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -8,13 +9,14 @@ using System.Threading.Tasks;
 
 namespace Dal.ZhangYang
 {
-    public class MemberDAL
+    public class MemberDAL    
     {
         public List<Member> MemberShow()
         {
+            string token = ConfigurationManager.AppSettings["sql"];
             List<Member> list = new List<Member>();
             string sql = "select MembersId,members,Growth,Evaluation,Freight,Note from Member";
-            SqlConnection scon = new SqlConnection("server=.;uid=sa;pwd=1234;database=ECommerce");
+            SqlConnection scon = new SqlConnection(token);
             SqlCommand scom = new SqlCommand(sql, scon);
 
             scon.Open();

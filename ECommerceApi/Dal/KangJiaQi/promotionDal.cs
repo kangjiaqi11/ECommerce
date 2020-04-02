@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using MODEL;
 using System.Data.SqlClient;
+using System.Configuration;
+
 namespace Dal
 {
     public class promotionDal
     {
         DBHelper DBHelper = new DBHelper();
-        SqlConnection SqlConnection = new SqlConnection("Data Source=.;Initial Catalog=ECommerce;Integrated Security=True");
+     
         /// <summary>
         /// 秒杀活动
         /// </summary>
@@ -20,6 +22,8 @@ namespace Dal
         /// <returns></returns>
         public ActivityPage ActivityShow(string ActivityTitle, int PageIndex, int PageSize)
         {
+            string token = ConfigurationManager.AppSettings["sql"];
+        SqlConnection SqlConnection = new SqlConnection(token);
             List<Activity> list = new List<Activity>();
             ActivityPage activityPage = new ActivityPage();
 
@@ -86,6 +90,8 @@ namespace Dal
         /// <returns></returns>
         public RecommendPage RecommendShow(string GoodsName, int IsRecommend, int PageIndex, int PageSize)
         {
+            string token = ConfigurationManager.AppSettings["sql"];
+            SqlConnection SqlConnection = new SqlConnection(token);
             List<Recommend> list = new List<Recommend>();
             RecommendPage recommendPage = new RecommendPage();
             try

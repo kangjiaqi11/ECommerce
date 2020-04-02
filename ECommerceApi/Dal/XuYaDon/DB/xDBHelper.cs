@@ -6,13 +6,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 using System.Data;
+using System.Configuration;
 
 namespace DAL.XuYaDon.DB
 {
     public class xDBHelper
     {
+        static string  token = ConfigurationManager.AppSettings["sql"];
         //连接数据库
-        static SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=ECommerce;Integrated Security=True");
+        static SqlConnection conn = new SqlConnection(token);
         static SqlDataReader sdr;
         /// <summary>
         /// 获取数据流  查询、显示、绑定下拉

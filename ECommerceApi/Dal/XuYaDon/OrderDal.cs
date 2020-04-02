@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using DAL.XuYaDon.DB;
 using System.Configuration;
 using Dal.XuyaDon;
+using System.Configuration;
 
 namespace Dal
 {
@@ -16,9 +17,9 @@ namespace Dal
     /// </summary>
   public  class OrderDal
     {
-
+       static  string token = ConfigurationManager.AppSettings["sql"];
         SDBHelper DBHelper = new SDBHelper();
-       SqlConnection connetion = new SqlConnection("Data Source=.;Initial Catalog=ECommerce;Integrated Security=True");
+       SqlConnection connetion = new SqlConnection(token);
         public PageModel OrderShow(string OrderNumberGoodsName="", string AddrNameAddrPhone="",int State=0,string puttime="",int pageindex=1,int pagesize=8)
         {
             if (string.IsNullOrEmpty(OrderNumberGoodsName))
