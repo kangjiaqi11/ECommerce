@@ -8,11 +8,6 @@
 @using MODEL.ZhangYang
 @model Fenye1
 
-
-
-
-
-
 <!DOCTYPE html>
 
 <html lang="en">
@@ -55,20 +50,9 @@
                             </div>
                         </div>
                         <div class="portlet-body">
-                            <div class="table-toolbar">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="btn-group">
-                                            <button id="sample_editable_1_new" class="btn green">
-                                                添加<i class="fa fa-plus"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                 <thead>
-                                    <input id="UserName" type="text" /> 用户昵称
+                                    <input id="UserName" type="text" placeholder="用户昵称" />
                                     <input id="Submit1" type="submit" value="查询" />
 
 
@@ -80,6 +64,7 @@
                                             <td>会员等级</td>
                                             <td>消费金额</td>
                                             <td>订单数量</td>
+                                            <td>用户详情</td>
                                         </tr>
                                         @foreach (var item in Model.FrontUsers)
                                         {
@@ -90,6 +75,7 @@
                                                 <td>@item.MembersId</td>
                                                 <td>@item.Consumption</td>
                                                 <td>@item.Number</td>
+                                                <td><a href="Sto\FrontUserShow1"></a></td>
                                             </tr>
                                         }
                                     </table>
