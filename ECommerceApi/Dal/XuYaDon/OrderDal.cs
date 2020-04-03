@@ -8,7 +8,6 @@ using System.Data.SqlClient;
 using DAL.XuYaDon.DB;
 using System.Configuration;
 using Dal.XuyaDon;
-using System.Configuration;
 
 namespace Dal
 {
