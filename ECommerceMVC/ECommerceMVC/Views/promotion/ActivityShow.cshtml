@@ -151,8 +151,9 @@
 		}
 
 		//第一这里加载查询的方法
-		function Query(pageindex) {
-			var ActivityTitle = $("#ActivityTitle").val();
+    function Query(pageindex) {
+        $("#ActivityShow").html("");
+			var ActivityTitle = $("#ActivityShow").val();
 			$.ajax({
 				url: "PageActivityShow",
 				type: "POST",
@@ -170,8 +171,6 @@
 							+ '</tr>'
 						$("#ActivityShow").append(tr);
 					})
-					var count = '<h5> 共显示显示' + ser.TotaCount + '条数据</h5>';
-                    $("#sample_editable_1_info").append(count);
                     $("#index11").val(pageindex);
                     $("#tocount11").val(ser.TotaCount);
                 }       

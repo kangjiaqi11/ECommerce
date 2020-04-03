@@ -10,7 +10,6 @@ namespace BLL
 {
    public class promotionBll
     {
-        DBHelper DBHelper=new  DBHelper();
         #region 秒删活动相关
         promotionDal promotionDal = new promotionDal();
         /// <summary>

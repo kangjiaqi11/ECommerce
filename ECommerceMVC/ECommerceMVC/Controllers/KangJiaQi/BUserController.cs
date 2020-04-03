@@ -56,7 +56,7 @@ namespace ECommerceMVC.Controllers.KangJiaQi
             {
                 if (ser.IsSuccess)
                 {
-                    Response.Write("<script>alert('登录成功');location.href='/BUser/Index'</script>");
+                    Response.Write("<script>alert('登录成功');location.href='\BUser\Index'</script>");
                     Session["BUserId"] = ser.Info;
                 }
                 else
@@ -139,7 +139,7 @@ namespace ECommerceMVC.Controllers.KangJiaQi
             lockedRequest.UserPwd = UserPwd;
             lockedRequest.Salt = salt;
             var ser = BUserBll.Locked(lockedRequest, "api/BUser/Locked");
-            return Json(ser);
+            return Json(ser.IsSuccess);
         }
         /// <summary>
         /// 个人信息
