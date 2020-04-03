@@ -52,11 +52,16 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\MODEL.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\你爹\Desktop\heip\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="SDCKClient">
+    <Reference Include="SDCKClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\SDCKClient.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -338,10 +343,6 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{76d9cec7-6b07-4544-a083-d5fa152d1a43}</Project>
       <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MODEL\MODEL.csproj">
-      <Project>{2cd1adc8-95b3-4145-b620-86e5e7f14e3f}</Project>
-      <Name>MODEL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
