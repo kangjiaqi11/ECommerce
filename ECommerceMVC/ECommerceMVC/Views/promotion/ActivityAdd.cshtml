@@ -13,7 +13,7 @@
     <div class="page-content">
         <!-- BEGIN PAGE HEADER-->
         <h3 class="page-title">
-            用户个人信息<small>用户帐户页面示例 </small>
+            添加<small>秒杀活动</small>
         </h3>
         <!-- END PAGE HEADER-->
         <!-- BEGIN PAGE CONTENT-->
@@ -25,42 +25,23 @@
                         <div class="col-md-12">
                             <div class="portlet light">
                                 <div class="portlet-title tabbable-line">
-                                    <div class="caption caption-md">
-                                        <i class="icon-globe theme-font hide"></i>
-                                        <span class="caption-subject font-blue-madison bold uppercase">我的信息</span>
-                                    </div>
-                                    <ul class="nav nav-tabs">
-                                        <li class="active">
-                                            <a href="#tab_1_1" data-toggle="tab">个人信息</a>
-                                        </li>
-                                    </ul>
+                                    
                                 </div>
                                 <div class="portlet-body">
                                     <div class="tab-content">
                                         <!-- 用户信息 -->
-                                            <div class="form-group">
-                                                <input type="hidden" name="name" id="userid" value="@Session["BUserId"]" />
-                                                <label class="control-label">秒杀标题</label>
-                                                <input type="text" placeholder="秒杀标题" id="UserName" class="form-control" />
-                                            </div>
-
-                                            <div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
-                                                <label class="control-label">开始时间</label>
-                                                <input type="text" class="form-control form-filter input-sm" readonly="" name="order_date_from" placeholder="开始时间">
-                                                <span class="input-group-btn">
-                                                    <button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
-                                                </span>
-                                            </div>
-                                            <div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
-                                                <label class="control-label">结束时间</label>
-                                                <input type="text" class="form-control form-filter input-sm" readonly="" name="order_date_from" placeholder="开始时间">
-                                                <span class="input-group-btn">
-                                                    <button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
-                                                </span>
-                                            </div>
-                                            <div class="margiv-top-10">
-                                                <input id="Button1" type="button" value="添加" onclick="" />
-                                            </div>
+                                        <div class="form-group">
+                                            <input type="hidden" name="name" id="userid" value="@Session["BUserId"]" />
+                                            <label class="control-label">秒杀标题</label>
+                                            <input type="text" placeholder="秒杀标题" id="UserName" class="form-control" />
+                                        </div>
+                                        <div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
+                                            <label class="control-label">结束时间</label>
+                                            <input type="text" placeholder="请选择日期" class="form-control" id="test1" lay-key="1">
+                                        </div>
+                                        <div class="margiv-top-10">
+                                            <input id="Button1" type="button" class="btn blue" value="添加" onclick="ActiviryAdd()" />
+                                        </div>
 
                                         <!--结束用户信息 -->
                                     </div>
@@ -75,18 +56,41 @@
         <!-- END PAGE CONTENT-->
     </div>
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/layuistyle/DateTimeText/laydate/laydate.js"></script>
+
     <script>
         jQuery(document).ready(function () {
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#test1'
+            });
+
+        });
+        function ActiviryAdd() {
+            var name = $("#UserName").val();
+            var entime = $("#test1").val();
             var userid = $("#userid").val();
             $.ajax({
-                url: "PesonageShow",
+                url: "/promotion/ActiviryAdd",
                 type: "POST",
-                data: { UserId: userid },
+                data: { ActiviryName: name, AEenTime: entime, userid: userid },
                 dateType: "json",
                 success: function (ser) {
-                   
+                    if (ser.Status > 0) {
+                        if (ser.IsSuccess) {
+                            alert("添加成功");
+                            location.href = "/promotion/ActivityShow";
+                        }
+                        else {
+                            alert("添加失败");
+                        }
+                    }
+                    else {
+                        alert(ser.Msg);
+                    }
                 }
             });
-        });
+        }
     </script>
 </body>
+

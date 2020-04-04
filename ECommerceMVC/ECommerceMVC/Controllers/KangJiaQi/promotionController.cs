@@ -81,9 +81,24 @@ namespace ECommerceMVC
             var ser = promotionBll.ActivityDelete(activityDeleteRequest, "api/Promotion/ActivityDelete");
             return Json(ser.IsSuccess);
         }
-        public JsonResult ActivityAdd(int ,DateTime,DateTime)
+        /// <summary>
+        /// 添加活动
+        /// </summary>
+        /// <param name="ActiviryName"></param>
+        /// <param name="AEenTime"></param>
+        /// <param name="AStartTime"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult ActiviryAdd(string ActiviryName,string AEenTime,string userid)
         {
-
+            ActivityAddRequest activityAddRequest = new ActivityAddRequest();
+            activityAddRequest.ActivityTitle = ActiviryName;
+            activityAddRequest.AEenTime =Convert.ToDateTime(  AEenTime) ;
+            activityAddRequest.AStartTime = DateTime.Now;
+            activityAddRequest.UpdateId =Convert.ToInt32( userid);
+            activityAddRequest.CreateId = Convert.ToInt32(userid);
+            var ser = promotionBll.ActivityAdd(activityAddRequest, "api/Promotion/ActivityAdd");
+            return Json(ser);
         }
         #endregion
         #region 首页图推荐相关

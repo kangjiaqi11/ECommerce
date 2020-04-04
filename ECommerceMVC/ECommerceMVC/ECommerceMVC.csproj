@@ -4007,6 +4007,9 @@
     <Content Include="IndexStyle\global\plugins\zoom\jquery.zoom.min.js" />
     <Content Include="IndexStyle\global\scripts\datatable.js" />
     <Content Include="IndexStyle\global\scripts\metronic.js" />
+    <Content Include="layuistyle\DateTimeText\laydate\laydate.js" />
+    <Content Include="layuistyle\DateTimeText\laydate\theme\default\font\iconfont.svg" />
+    <Content Include="layuistyle\DateTimeText\laydate\theme\default\laydate.css" />
     <Content Include="layuistyle\static\admin\css\admin.css" />
     <Content Include="layuistyle\static\admin\css\avatar.css" />
     <Content Include="layuistyle\static\admin\css\column.css" />
@@ -4726,6 +4729,9 @@
     <Content Include="obj\Debug\ECommerceMVC.csprojFakesResolveAssemblyReference.cache" />
     <Content Include="obj\Debug\ECommerceMVC.csproj.CoreCompileInputs.cache" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="layuistyle\DateTimeText\laydate\theme\default\font\iconfont.eot" />
+    <Content Include="layuistyle\DateTimeText\laydate\theme\default\font\iconfont.ttf" />
+    <Content Include="layuistyle\DateTimeText\laydate\theme\default\font\iconfont.woff" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

@@ -78,9 +78,8 @@ namespace BLL
                     {
                         MenusId = 20004,
                         MenusName = "系统首页",
-                        MenusUrl = "",
+                        MenusUrl = "/BUser/Index",
                         FatherUrl = "20002",
-
                     };
                     MenusInfo menus3= new MenusInfo()
                     {
@@ -227,7 +226,14 @@ namespace BLL
                         FatherUrl = "20024",
 
                     };
+                    MenusInfo menus21 = new MenusInfo()
+                    {
+                        MenusId = 30002,
+                        MenusName = "退货原因设置",
+                        MenusUrl = "/Order/returnType",
+                        FatherUrl = "20024",
 
+                    };
                     List<MenusInfo> MenusToStore = new List<MenusInfo> { menus1, menus2, menus4, menus3, menus5, menus6, menus7, menus8, menus9, menus10, menus11, menus12, menus13, menus14, menus15, menus16, menus17, menus18, menus19, menus20 };
                     // 存放所有记录
                     Menus.StoreAll(MenusToStore);

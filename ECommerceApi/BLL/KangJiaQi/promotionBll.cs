@@ -66,6 +66,7 @@ namespace BLL
             activity.ActivityStatel = activityAddRequest.ActivityStatel;
             activity.Statel = 1;
             activity.AStartTime = activityAddRequest.AStartTime;
+            activity.AEenTime = activityAddRequest.AEenTime;
             activity.CreateTime = DateTime.Now;
             activity.UpdateTime = DateTime.Now;
             activity.CreateId = activityAddRequest.CreateId;
@@ -74,7 +75,7 @@ namespace BLL
             if (ser>0)
             {
                 activityAddResponse.IsSuccess = true;
-            }
+            } 
             else
             {
                 activityAddResponse.Status = -1;
