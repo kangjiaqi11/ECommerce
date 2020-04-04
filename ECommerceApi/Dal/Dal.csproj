@@ -35,6 +35,9 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.0.30\lib\net461\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="MODEL">
+      <HintPath>..\..\lib\MODEL.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -69,10 +72,6 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{76d9cec7-6b07-4544-a083-d5fa152d1a43}</Project>
       <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MODEL\MODEL.csproj">
-      <Project>{2cd1adc8-95b3-4145-b620-86e5e7f14e3f}</Project>
-      <Name>MODEL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

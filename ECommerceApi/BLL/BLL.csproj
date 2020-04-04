@@ -32,12 +32,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MODEL">
+    <Reference Include="MODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\MODEL.dll</HintPath>
     </Reference>
     <Reference Include="SDCKClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\SDCKClient.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\..\..\..\每月技能题\redisDemo\Day19Demo\bin\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces">
+      <HintPath>..\..\..\..\每月技能题\redisDemo\Day19Demo\bin\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Redis">
+      <HintPath>..\..\..\..\每月技能题\redisDemo\Day19Demo\bin\ServiceStack.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text">
+      <HintPath>..\..\..\..\每月技能题\redisDemo\Day19Demo\bin\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,6 +67,7 @@
     <Compile Include="KangJiaQi\MenusBll.cs" />
     <Compile Include="KangJiaQi\promotionBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Redis\RedisManager.cs" />
     <Compile Include="WangZhiHao\GoodsBll.cs" />
     <Compile Include="XuYaDon\OrderBll.cs" />
     <Compile Include="ZhangYang\FrontUserBLL.cs" />
