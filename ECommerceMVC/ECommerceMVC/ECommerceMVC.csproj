@@ -4433,7 +4433,6 @@
     <Content Include="layuistyle\static\admin\lib\ueditor\ueditor.config.js" />
     <Content Include="layuistyle\static\admin\lib\ueditor\ueditor.parse.js" />
     <Content Include="layuistyle\static\admin\lib\ueditor\ueditor.parse.min.js" />
-    <Content Include="obj\Debug\ECommerceMVC.csproj.FileListAbsolute.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="IndexStyle\global\img\social\Thumbs.db" />
@@ -4761,14 +4760,12 @@
     <Content Include="Views\BUser\UserLogin.cshtml" />
     <Content Include="Views\For\FrontUserFenye.cshtml" />
     <Content Include="Views\For\FrontUserShow1.cshtml" />
-    <Content Include="Views\GoodsShow\GoodsShow.cshtml" />
     <Content Include="Views\Mem\MemberShow.cshtml" />
     <Content Include="Views\BUser\Lock.cshtml" />
     <Content Include="Views\BUser\personage.cshtml" />
     <Content Include="Views\promotion\ActivityAdd.cshtml" />
     <Content Include="Views\BUser\HomePage.cshtml" />
     <Content Include="Views\Sto\StoreroomFenye.cshtml" />
-    <Content Include="Views\GoodsShow\GoodsShow.cshtml" />
     <Content Include="Views\For\FrontUserFenye.cshtml" />
     <Content Include="Views\For\FrontUserShow1.cshtml" />
     <Content Include="Views\Mem\MemberShow.cshtml" />
@@ -4779,6 +4776,9 @@
     <Content Include="Views\Order\ShowOrderALL.cshtml" />
     <Content Include="Views\Order\TakeGood.cshtml" />
     <Content Include="Views\BUser\Index.cshtml" />
+    <Content Include="Views\GoodsShow\GoodsAdd.cshtml" />
+    <Content Include="Views\GoodsShow\GoodsShow.cshtml" />
+    <Content Include="Views\Order\returnType.cshtml" />
     <None Include="Views\promotion\ActivityShow.cshtml" />
     <Content Include="Views\Sto\StoreroomFenye.cshtml" />
     <Content Include="Views\promotion\RecommendShow.cshtml" />

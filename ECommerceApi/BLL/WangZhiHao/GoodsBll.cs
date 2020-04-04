@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MODEL;
+﻿using MODEL;
 using Dal.WangZhiHao;
-using SDCKClient.WangZhiHao.Request;
-using SDCKClient.WangZhiHao.Response;
-using Common;
+using SDCKClient;
 
 namespace BLL.WangZhiHao
 {
-    
+
     public class GoodsBll
     {
         /// <summary>
@@ -24,9 +17,55 @@ namespace BLL.WangZhiHao
         /// </summary>
         /// <param name="good"></param>
         /// <returns></returns>
-        public int GoodsAdd(GoodsModel good)
+        public AddGoodResponse GoodAdd(AddGoodRequest addGoodRequest)
         {
-            return dal.GoodsAdd(good);
+            AddGoodResponse addGoodResponse = new AddGoodResponse();
+            if (string.IsNullOrEmpty(addGoodRequest.GoodsName))
+            {
+                addGoodResponse.Status = -1;
+                addGoodResponse.Msg = "名称不能为空";
+                return addGoodResponse;
+            }
+            if (addGoodRequest.PutawayTime==null)
+            {
+                addGoodResponse.Status = -1;
+                addGoodResponse.Msg = "上架时间不能为空";
+                return addGoodResponse;
+            }
+            GoodsModel goodsModel = new GoodsModel();
+            goodsModel.GoodId = addGoodRequest.GoodId;
+            goodsModel.BrandId = addGoodRequest.BrandId;
+            goodsModel.CategoryId = addGoodRequest.CategoryId;
+            goodsModel.GoodsType = addGoodRequest.GoodsType;
+            goodsModel.GoodsName = addGoodRequest.GoodsName;
+            goodsModel.GoodsBrief = addGoodRequest.GoodsBrief;
+            goodsModel.GoodsIntro = addGoodRequest.GoodsIntro;
+            goodsModel.MarketPrice = addGoodRequest.MarketPrice;
+            goodsModel.SalePrice = addGoodRequest.SalePrice;
+            goodsModel.CostPrice = addGoodRequest.CostPrice;
+            goodsModel.BrowseCount = addGoodRequest.BrowseCount;
+            goodsModel.CommentCount = addGoodRequest.CommentCount;
+            goodsModel.CollectCount = addGoodRequest.CollectCount;
+            goodsModel.ShareCount = addGoodRequest.ShareCount;
+            goodsModel.PutawayTime = addGoodRequest.PutawayTime;
+            goodsModel.GoodsState = addGoodRequest.GoodsState;
+            goodsModel.Status = 1;
+            goodsModel.CreateTime = addGoodRequest.CreateTime;
+            goodsModel.UpdateTime = addGoodRequest.UpdateTime;
+            goodsModel.CreaterId = addGoodRequest.CreaterId;
+            goodsModel.UpdaterId = addGoodRequest.UpdaterId;
+            var ser = dal.GoodAdd(goodsModel);
+            if (ser>0)
+            {
+                addGoodResponse.IsSuccess = true;
+            }
+            else
+            {
+                addGoodResponse.Status = -1;
+                addGoodResponse.Msg = "添加失败";
+                return addGoodResponse;
+            }
+            return addGoodResponse;
         }
         
         /// <summary>

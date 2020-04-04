@@ -421,7 +421,7 @@ begin
 	declare @selectsql nvarchar(500);
 	set @selectsql='select * from (
 	select ROW_NUMBER() over (order by id)as rowid,*from GoodsInfo'+@wheresql+'
-	) as t where t.rowid between'+CONVERT(nvarchar,@start)+' and '+CONVERT(nvarchar,@end);
+	) as t where t.rowid between'+CONVERT(nvarchar,@start)+' and '+CONVERT(nv/8archar,@end);
 
 	declare @countsql nvarchar(500);
 	set @countsql='select @totalcount=count(1) from GoodsInfo'+@wheresql;
@@ -430,3 +430,6 @@ begin
 exec (@selectsql);
  exec sp_executesql @countsql,N' @totalcount int out ',@totalcount out;
 end
+
+.
+select * from GoodsInfo

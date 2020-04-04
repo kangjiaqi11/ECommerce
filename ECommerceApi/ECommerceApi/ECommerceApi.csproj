@@ -52,6 +52,9 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="MODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\MODEL.dll</HintPath>
@@ -187,13 +190,22 @@
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\BLL.dll" />
+    <Content Include="bin\BLL.pdb" />
     <Content Include="bin\Common.dll" />
+    <Content Include="bin\Common.pdb" />
+    <Content Include="bin\Dal.dll" />
+    <Content Include="bin\Dal.pdb" />
+    <Content Include="bin\Dapper.dll" />
+    <Content Include="bin\Dapper.xml" />
     <Content Include="bin\ECommerceApi.dll" />
     <Content Include="bin\ECommerceApi.pdb" />
     <Content Include="bin\JWT.dll" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
     <Content Include="bin\MODEL.dll" />
+    <Content Include="bin\MODEL.pdb" />
     <Content Include="bin\Newtonsoft.Json.dll" />
     <Content Include="bin\roslyn\csc.exe" />
     <Content Include="bin\roslyn\csi.exe" />
@@ -285,6 +297,8 @@
     <Content Include="bin\roslyn\vbc.exe.config" />
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Fakes Include="Fakes\Microsoft.Web.Infrastructure.fakes" />
+    <Content Include="bin\ECommerceApi.dll.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -309,6 +323,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="bin\zh-Hans\" />
     <Folder Include="Models\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="ZhangYang\" />
@@ -350,6 +365,10 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{76d9cec7-6b07-4544-a083-d5fa152d1a43}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SDCKClient\SDCKClient.csproj">
+      <Project>{06c62adc-577b-459e-9bad-824700a2d627}</Project>
+      <Name>SDCKClient</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
