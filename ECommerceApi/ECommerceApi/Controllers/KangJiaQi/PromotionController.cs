@@ -11,6 +11,7 @@ namespace ECommerceApi.Controllers.KangJiaQi
     public class PromotionController : ApiController
     {
         promotionBll promotionBll = new promotionBll();
+        #region 活动秒杀相关
         /// <summary>
         /// 秒杀活动显示
         /// </summary>
@@ -25,11 +26,39 @@ namespace ECommerceApi.Controllers.KangJiaQi
         /// 添加秒杀
         /// </summary>
         /// <returns></returns>
-        //[HttpPost]
-        //public ActivityAddResponse ActivityAdd(ActivityAddRequest activityAddRequest)
-        //{
-        //    return promotionBll.ActivityAdd(activityAddRequest);
-        //}
+        [HttpPost]
+        public ActivityAddResponse ActivityAdd(ActivityAddRequest activityAddRequest)
+        {
+            return promotionBll.ActivityAdd(activityAddRequest);
+        }
+        /// <summary>
+        ///活动秒杀 上架
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public ActivityPutawayResponse ActivityPutaway(ActivityPutawayRequest activityPutawayRequest)
+        {
+            return promotionBll.ActivityPutaway(activityPutawayRequest);
+        }
+        /// <summary>
+        ///活动秒杀下架
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public ActivitySoldOutResponse ActivitySoldOut(ActivitySoldOutRequest activitySoldOutRequest)
+        {
+            return promotionBll.ActivitySoldOut(activitySoldOutRequest);
+        }
+        /// <summary>
+        /// 活动秒杀删除
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public ActivityDeleteResponse ActivityDelete(ActivityDeleteRequest activityDeleteRequest)
+        {
+            return promotionBll.ActivityDelete(activityDeleteRequest);
+        } 
+        #endregion
         #region 好物推荐相关
         /// <summary>
         /// 推荐首页的物品

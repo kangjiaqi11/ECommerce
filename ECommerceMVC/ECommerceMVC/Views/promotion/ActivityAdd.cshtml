@@ -3,5 +3,90 @@
     ViewBag.Title = "ActivityAdd";
 }
 
-<h2>ActivityAdd</h2>
+<!DOCTYPE html>
 
+<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-closed page-sidebar-closed-hide-logo page-container-bg-solid">
+
+
+    <!-- BEGIN CONTAINER -->
+    <!-- BEGIN CONTENT -->
+    <div class="page-content">
+        <!-- BEGIN PAGE HEADER-->
+        <h3 class="page-title">
+            用户个人信息<small>用户帐户页面示例 </small>
+        </h3>
+        <!-- END PAGE HEADER-->
+        <!-- BEGIN PAGE CONTENT-->
+        <div class="row margin-top-20">
+            <div class="col-md-12">
+                <!-- BEGIN PROFILE CONTENT -->
+                <div class="profile-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="portlet light">
+                                <div class="portlet-title tabbable-line">
+                                    <div class="caption caption-md">
+                                        <i class="icon-globe theme-font hide"></i>
+                                        <span class="caption-subject font-blue-madison bold uppercase">我的信息</span>
+                                    </div>
+                                    <ul class="nav nav-tabs">
+                                        <li class="active">
+                                            <a href="#tab_1_1" data-toggle="tab">个人信息</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="tab-content">
+                                        <!-- 用户信息 -->
+                                            <div class="form-group">
+                                                <input type="hidden" name="name" id="userid" value="@Session["BUserId"]" />
+                                                <label class="control-label">秒杀标题</label>
+                                                <input type="text" placeholder="秒杀标题" id="UserName" class="form-control" />
+                                            </div>
+
+                                            <div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
+                                                <label class="control-label">开始时间</label>
+                                                <input type="text" class="form-control form-filter input-sm" readonly="" name="order_date_from" placeholder="开始时间">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
+                                                </span>
+                                            </div>
+                                            <div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
+                                                <label class="control-label">结束时间</label>
+                                                <input type="text" class="form-control form-filter input-sm" readonly="" name="order_date_from" placeholder="开始时间">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-sm default" type="button"><i class="fa fa-calendar"></i></button>
+                                                </span>
+                                            </div>
+                                            <div class="margiv-top-10">
+                                                <input id="Button1" type="button" value="添加" onclick="" />
+                                            </div>
+
+                                        <!--结束用户信息 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END PROFILE CONTENT -->
+            </div>
+        </div>
+        <!-- END PAGE CONTENT-->
+    </div>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            var userid = $("#userid").val();
+            $.ajax({
+                url: "PesonageShow",
+                type: "POST",
+                data: { UserId: userid },
+                dateType: "json",
+                success: function (ser) {
+                   
+                }
+            });
+        });
+    </script>
+</body>

@@ -5,9 +5,6 @@
 
 
 
-@{
-    ViewBag.Title = "ActivityShow";
-}
 
 <!DOCTYPE html>
 <!--
@@ -119,7 +116,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <div class="col-md-6">
                                         <div class="btn-group pull-right">
                                             @*查询*@
-                                            <input id="GoodName" type="text" placeholder="商品名称" /> 
+                                            <input id="GoodName" type="text" placeholder="商品名称" />
                                             <select id="IsRecommend">
                                                 <option value="0">请选择要是否推荐</option>
                                                 <option value="1">已推荐</option>
@@ -133,7 +130,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                     <thead>
                                         <tr>
-                                            <th>
+                                            <th>a
                                                 编号
                                             </th>
                                             <th>
@@ -192,20 +189,17 @@ License: You must have a valid license purchased only from themeforest(the above
     </div>
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script>
-        jQuery(document).ready(function () {
-
-            Query(2);
-            var index = $("#ascascasc").val();
-            alert(index);
+    jQuery(document).ready(function () {
+        alert(1);
+            Query(1);
         });
-    function Cha() {
-        var index = $("#ascascasc").val();
-        Query(index);
-    }
+        function Cha() {
+            var index = $("#ascascasc").val();
+            Query(index);
+        }
         function UpPage() {
             var index = $("#ascascasc").val();
             index = index - 1;
-            alert(index);
             if (index > 0) {
 
                 Query(index);
@@ -218,13 +212,10 @@ License: You must have a valid license purchased only from themeforest(the above
         function NextPage() {
 
             var ToCount = $("#tocount").val();
-            var index = parseInt( $("#ascascasc").val());
-            alert(index);
-            alert(index+1);
-            alert(ToCount);
-      
-            if (index+1 < ToCount) {
-                Query(index+1);
+            var index = parseInt($("#ascascasc").val());
+            index = index + 1
+            if (index < ToCount) {
+                Query(index);
             }
             else {
                 alert("已经是尾页了");
@@ -233,14 +224,15 @@ License: You must have a valid license purchased only from themeforest(the above
         }
 
         //第一这里加载查询的方法
-        function Query(pageindex) {
+    function Query(pageindex) {
+
             $("#ActivityShow").html("");
             var GoodName = $("#GoodName").val();
             var IsRecommend = $("#IsRecommend").val();
             $.ajax({
                 url: "PageRecommendShow",
                 type: "POST",
-                data: { PageIndex: pageindex, PageSize: 2, GoodName: GoodName, IsRecommend: IsRecommend },
+                data: { PageIndex: pageindex, PageSize: 15, GoodName: GoodName, IsRecommend: IsRecommend },
                 dateType: "json",
                 success: function (ser) {
                     $(ser.DateList).each(function myfunction() {
@@ -262,7 +254,6 @@ License: You must have a valid license purchased only from themeforest(the above
         }
         function UpdateIs(RecommendId) {
             var index = $("#ascascasc").val();
-            alert(index);
             $.ajax({
                 url: "RecommendIs",
                 type: "POST",
@@ -280,7 +271,6 @@ License: You must have a valid license purchased only from themeforest(the above
         }
         function UpdateNo(RecommendId) {
             var index = $("#ascascasc").val();
-            alert(index);
             $.ajax({
                 url: "RecommendNO",
                 type: "POST",
@@ -298,7 +288,6 @@ License: You must have a valid license purchased only from themeforest(the above
         }
         function DeleteStatel(RecommendId) {
             var index = $("#ascascasc").val();
-            alert(index);
             $.ajax({
                 url: "RecommendDelete",
                 type: "POST",

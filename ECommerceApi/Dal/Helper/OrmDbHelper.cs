@@ -47,7 +47,7 @@ namespace Dal
             }
             return info;
         }
-
+     
         /// <summary>
         /// 执行sql语句
         /// 添加、删除、修改

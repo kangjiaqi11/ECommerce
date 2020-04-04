@@ -43,7 +43,7 @@ namespace Dal
         public int UserAdd(UserInfo info)
         {
             string sql = $"insert into UserInfo (UserName,UserAccount ,Salt,UserPhoto,DepartmentId,state,CreateTime,UpdateTime,CreateId,UpdateId,UserPwd,UserEmil,RoleId) values('{info.UserName}','{info.UserAccount}','{info.Salt}','{info.UserPhoto}',{info.DepartmentId},{info.state},'{info.CreateTime}','{info.UpdateTime}',{info.CreateId},{info.UpdateId},'{info.UserPwd}','{info.UserEmil}',{info.RoleId})";
-            return DBHelper.ExecuteNonQuery(sql);
+            return OrmDbHelper.ExecuteSql(sql);
         }
         /// <summary>
         /// 部门表显示

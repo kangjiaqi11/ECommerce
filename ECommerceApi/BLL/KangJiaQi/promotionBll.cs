@@ -83,7 +83,84 @@ namespace BLL
             }
            return activityAddResponse;
         }
+        /// <summary>
+        ///活动秒杀 上架
+        /// </summary>
+        /// <returns></returns>
+        public ActivityPutawayResponse ActivityPutaway(ActivityPutawayRequest activityPutawayRequest)
+        {
+            ActivityPutawayResponse activityPutawayResponse = new ActivityPutawayResponse();
+            if (activityPutawayRequest.ActivityId == 0)
+            {
+                activityPutawayResponse.Status = -1;
+                activityPutawayResponse.Msg = "id为空";
+                return activityPutawayResponse;
+            }
+            var ser = promotionDal.ActivityPutaway(activityPutawayRequest.ActivityId);
+            if (ser > 0)
+            {
+                activityPutawayResponse.IsSuccess = true;
 
+            }
+            else
+            {
+                activityPutawayResponse.Status = -1;
+                activityPutawayResponse.Msg = "修改失败";
+            }
+            return activityPutawayResponse;
+        }
+        /// <summary>
+        ///活动秒杀下架
+        /// </summary>
+        /// <returns></returns>
+        public ActivitySoldOutResponse  ActivitySoldOut(ActivitySoldOutRequest activitySoldOutRequest)
+        {
+            ActivitySoldOutResponse activitySoldOutResponse = new ActivitySoldOutResponse();
+            if (activitySoldOutRequest.ActivityId == 0)
+            {
+                activitySoldOutResponse.Status = -1;
+                activitySoldOutResponse.Msg = "id为空";
+                return activitySoldOutResponse;
+            }
+            var ser = promotionDal.ActivitySoldOut(activitySoldOutRequest.ActivityId);
+            if (ser > 0)
+            {
+                activitySoldOutResponse.IsSuccess = true;
+
+            }
+            else
+            {
+                activitySoldOutResponse.Status = -1;
+                activitySoldOutResponse.Msg = "修改失败";
+            }
+            return activitySoldOutResponse;
+        }
+        /// <summary>
+        /// 活动秒杀删除
+        /// </summary>
+        /// <returns></returns>
+        public ActivityDeleteResponse ActivityDelete(ActivityDeleteRequest activityDeleteRequest)
+        {
+            ActivityDeleteResponse activityDeleteResponse = new ActivityDeleteResponse();
+            if (activityDeleteRequest.ActivityId == 0)
+            {
+                activityDeleteResponse.Status = -1;
+                activityDeleteResponse.Msg = "id为空";
+                return activityDeleteResponse;
+            }
+            var ser = promotionDal.ActivityDelete(activityDeleteRequest.ActivityId);
+            if (ser > 0)
+            {
+                activityDeleteResponse.IsSuccess = true;
+
+            }
+            else
+            {
+                activityDeleteResponse.Status = -1;
+                activityDeleteResponse.Msg = "修改失败";
+            }
+            return activityDeleteResponse;
+        }
         #endregion
         #region 好物推荐相关
         /// <summary>
