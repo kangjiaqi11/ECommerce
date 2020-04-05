@@ -11,7 +11,7 @@ namespace Dal
 {
     public class StoreroomDal
     {
-        public Fenye StoreroomFenye(int PageIndex,int PageSize, string ShoopName)
+        public Fenye StoreroomFenye(int PageIndex=1,int PageSize=2, string ShoopName=null)
         {
             string token = ConfigurationManager.AppSettings["sql"];
             List<Storeroom> list = new List<Storeroom>();
@@ -29,15 +29,15 @@ namespace Dal
             while (reader.Read())
             {
                 Storeroom s = new Storeroom();
-                s.CkId = (int)reader["CkId"];
+                s.CkId = (long)reader["CkId"];
                 s.ShoopName = (string)reader["ShoopName"];
                 s.Hhsx = (string)reader["Hhsx"];
-                s.Ddh = (int)reader["Ddh"];
+                s.Ddh = (long)reader["Ddh"];
                 s.Kcsl = (string)reader["Kcsl"];
                 s.Kclx = (string)reader["Kclx"];
-                s.State = (int)reader["State"];
-                s.CreateId = (int)reader["CreateId"];
-                s.UpdateId = (int)reader["UpdateId"];
+                s.State = (long)reader["State"];
+                s.CreateId = (long)reader["CreateId"];
+                s.UpdateId = (long)reader["UpdateId"];
                 s.CreateTime = (DateTime)reader["CreateTime"];
                 s.UpdateTime = (DateTime)reader["UpdateTime"];
 
