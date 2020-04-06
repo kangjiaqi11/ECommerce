@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 using MODEL.XuYaDon;
 using System.Data.SqlClient;
 using DAL.XuYaDon.DB;
-
-using Dal.XuyaDon;
 using System.Configuration;
+using Dal.XuyaDon;
 
 namespace Dal
 {
@@ -174,6 +173,7 @@ namespace Dal
             {
                 connetion.Open();
             }
+
 
             var sql = "exec MakeGodd @OrderNumberGoodsName,@AddrNameAddrPhone,@puttime,@pageindex,@pagesize,@totalcount out";
             SqlCommand cmd = new SqlCommand();

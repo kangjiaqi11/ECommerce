@@ -21,6 +21,9 @@ namespace BLL.XuYaDon
         /// <returns></returns>
         public OrderShowResponse OrderShow(OrderShowrequeset order)
         {
+
+
+
             OrderShowResponse orderShowResponse = new OrderShowResponse();
             var res = dal.OrderShow(order.OrderNumberGoodsName, order.AddrNameAddrPhone, order.State, order.puttime, order.pageindex, order.pagesize);
 

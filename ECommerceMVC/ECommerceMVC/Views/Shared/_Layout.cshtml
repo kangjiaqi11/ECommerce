@@ -414,7 +414,7 @@
                             <li class="divider">
                             </li>
                             <li>
-                                <a href="extra_lock.html">
+                                <a href="/BUser/Lock">
                                     <i class="icon-lock"></i> Lock Screen
                                 </a>
                             </li>
@@ -1228,7 +1228,7 @@
                 
                 url: "http://localhost:56593/api/Menus/MenusShow",
                 type: "POST",
-                data: {UserId:7},
+                data: {UserId:UserId},
                 dateType: "json",
                 success: function (ser) {
                     console.log(ser);
