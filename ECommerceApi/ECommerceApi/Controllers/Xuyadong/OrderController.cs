@@ -88,5 +88,14 @@ namespace ECommerceApi.Controllers.Xuyadong
         {
             return bll.UpdateRetutn(updateReturn);
         }
+        /// <summary>
+        /// 退货设置显示
+        /// </summary>
+        /// <param name="typeRequest"></param>
+        /// <returns></returns>
+        public ReturnTypeResponse returnType()
+        {
+            return bll.returnType();
+        }
     }
 }

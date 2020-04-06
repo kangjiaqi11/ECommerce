@@ -4766,6 +4766,7 @@
     <Content Include="Views\BUser\Index.cshtml" />
     <Content Include="Views\GoodsShow\GoodsAdd.cshtml" />
     <Content Include="Views\GoodsShow\GoodsShow.cshtml" />
+    <Content Include="Views\Order\returnType.cshtml" />
     <None Include="Views\promotion\ActivityShow.cshtml" />
     <Content Include="Views\Sto\StoreroomFenye.cshtml" />
     <Content Include="Views\promotion\RecommendShow.cshtml" />

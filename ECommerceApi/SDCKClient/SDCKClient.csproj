@@ -100,9 +100,11 @@
     <Compile Include="XuYaDon\Request\OrderShowrequeset.cs" />
     <Compile Include="XuYaDon\Request\OrderStaterequest.cs" />
     <Compile Include="XuYaDon\Request\ReturnGoodsRequest.cs" />
+    <Compile Include="XuYaDon\Request\ReturnTypeRequest.cs" />
     <Compile Include="XuYaDon\Request\ReturnShenReuqest.cs" />
     <Compile Include="XuYaDon\Request\ShowOrderALLrequest.cs" />
     <Compile Include="XuYaDon\Request\TakeGoodRequest.cs" />
+    <Compile Include="XuYaDon\Request\UpadteReturnTypeRequest.cs" />
     <Compile Include="XuYaDon\Request\UpdateReturnRequest.cs" />
     <Compile Include="XuYaDon\Request\UpdateStateExperrequest.cs" />
     <Compile Include="XuYaDon\Response\ExperBindresponse.cs" />
@@ -110,9 +112,11 @@
     <Compile Include="XuYaDon\Response\OrderShowResponse.cs" />
     <Compile Include="XuYaDon\Response\OrderStateresponse.cs" />
     <Compile Include="XuYaDon\Response\ReturnGoodsResponse.cs" />
+    <Compile Include="XuYaDon\Response\ReturnTypeResponse.cs" />
     <Compile Include="XuYaDon\Response\ReturnShenresponse.cs" />
     <Compile Include="XuYaDon\Response\ShowOrderALLresponse.cs" />
     <Compile Include="XuYaDon\Response\TakeGoodrespnse.cs" />
+    <Compile Include="XuYaDon\Response\UpdateReturnRespnse.cs" />
     <Compile Include="XuYaDon\Response\UpdateReturnResponse.cs" />
     <Compile Include="XuYaDon\Response\UpdateStateExperresponse.cs" />
     <Compile Include="ZhangYang\Request\FrontUserShow1Req.cs" />
