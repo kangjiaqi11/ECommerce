@@ -61,10 +61,6 @@
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SDCKClient">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\你爹\Desktop\heip\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="SDCKClient">
       <HintPath>..\..\lib\SDCKClient.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -4770,6 +4766,7 @@
     <Content Include="Views\Order\ShowOrderALL.cshtml" />
     <Content Include="Views\Order\TakeGood.cshtml" />
     <Content Include="Views\BUser\Index.cshtml" />
+    <Content Include="Views\Order\returnType.cshtml" />
     <None Include="Views\promotion\ActivityShow.cshtml" />
     <Content Include="Views\Sto\StoreroomFenye.cshtml" />
     <Content Include="Views\promotion\RecommendShow.cshtml" />
