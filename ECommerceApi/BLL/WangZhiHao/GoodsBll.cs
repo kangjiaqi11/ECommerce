@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MODEL;
+﻿using MODEL;
 using Dal.WangZhiHao;
 using SDCKClient;
-using Common;
-using SDCKClient.WangZhiHao.Response;
-using SDCKClient.WangZhiHao.Request;
 
 namespace BLL.WangZhiHao
 {
-    
+
     public class GoodsBll
     {
         /// <summary>

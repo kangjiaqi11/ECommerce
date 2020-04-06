@@ -32,7 +32,7 @@ namespace ECommerceMVC
         [HttpPost]
         public JsonResult GoodsAdd(GoodsAddRequest goodsAdd)
         {
-            var res = goodsBll.GoodsAdd(goodsAdd, "api/Goods/GoodsShow");
+            var res = goodsBll.GoodsAdd(goodsAdd, "api/Goods/GoodAdd");
             return Json(res.goods);
         }
     }
