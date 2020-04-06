@@ -63,7 +63,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\你爹\Desktop\heip\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="SDCKClient">
+    <Reference Include="SDCKClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\SDCKClient.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Interfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=02c12cbda47e6587, processorArchitecture=MSIL">
