@@ -1,6 +1,8 @@
 ﻿using MODEL;
 using Dal.WangZhiHao;
 using SDCKClient;
+using SDCKClient.WangZhiHao.Response;
+using SDCKClient.WangZhiHao.Request;
 
 namespace BLL.WangZhiHao
 {

@@ -38,6 +38,10 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="MODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\MODEL.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -140,12 +144,6 @@
     <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
     <Folder Include="obj\Release\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MODEL\MODEL.csproj">
-      <Project>{2cd1adc8-95b3-4145-b620-86e5e7f14e3f}</Project>
-      <Name>MODEL</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
