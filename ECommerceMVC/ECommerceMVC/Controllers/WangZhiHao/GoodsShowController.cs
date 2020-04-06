@@ -23,5 +23,17 @@ namespace ECommerceMVC
             var res = goodsBll.GoodsAdd(goods,"api/Goods/GoodsShow");
             return Json(res.goods);
         }
+
+        //添加
+        public ActionResult GoodsAdd()
+        {
+            return View();
+        }
+        [HttpPost]
+        public JsonResult GoodsAdd(GoodsAddRequest goodsAdd)
+        {
+            var res = goodsBll.GoodsAdd(goodsAdd, "api/Goods/GoodsShow");
+            return Json(res.goods);
+        }
     }
 }

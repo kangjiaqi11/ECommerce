@@ -21,10 +21,10 @@ namespace ECommerceApi.Controllers.KangJiaQi
         {
             return promotionBll.ActivityShow(activityShowRequst);
         }
-        /// <summary>
-        /// 添加秒杀
-        /// </summary>
-        /// <returns></returns>
+        //// <summary>
+        //// 添加秒杀
+        //// </summary>
+        //// <returns></returns>
         //[HttpPost]
         //public ActivityAddResponse ActivityAdd(ActivityAddRequest activityAddRequest)
         //{

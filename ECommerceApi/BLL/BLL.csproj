@@ -32,7 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SDCKClient">
+    <Reference Include="MODEL">
+      <HintPath>..\..\lib\MODEL.dll</HintPath>
+    </Reference>
+    <Reference Include="SDCKClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\SDCKClient.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -69,10 +73,6 @@
     <ProjectReference Include="..\Dal\Dal.csproj">
       <Project>{05fd8d4f-5b0c-40a7-9091-a339723840fa}</Project>
       <Name>Dal</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MODEL\MODEL.csproj">
-      <Project>{2cd1adc8-95b3-4145-b620-86e5e7f14e3f}</Project>
-      <Name>MODEL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

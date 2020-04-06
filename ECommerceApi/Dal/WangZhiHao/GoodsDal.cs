@@ -18,7 +18,7 @@ namespace Dal.WangZhiHao
         /// </summary>
         /// <param name="good"></param>
         /// <returns></returns>
-        public int GoodsAdd(GoodsModel good)
+        public int GoodAdd(GoodsModel good)
         {
             string sql = $"insert into GoodsModel (GoodId,BrandId,CategoryId,GoodsType,GoodsName,GoodsBinef,GoodsIntro,MarketPrice,SalePrice,CostPrice,CreateTime,UpdateTime,CreateId,UpdaterId) values('{good.GoodId}''{good.BrandId}','{good.CategoryId}','{good.GoodsType}','{good.GoodsName}','{good.GoodsBrief}','{good.GoodsIntro}','{good.MarketPrice}','{good.SalePrice}','{good.CostPrice}','{good.CreateTime}','{good.UpdateTime}','{good.CreaterId}','{good.UpdaterId}')";
             return db.ExecuteNonQuery(sql);
