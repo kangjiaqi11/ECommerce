@@ -7,7 +7,6 @@ using System.Web.Http;
 using BLL;
 using BLL.WangZhiHao;
 using MODEL;
-using SDCKClient;
 using SDCKClient.WangZhiHao.Request;
 using SDCKClient.WangZhiHao.Response;
 
@@ -26,6 +25,11 @@ namespace ECommerceApi.Controllers.WangZhiHao
         public AddGoodResponse GoodAdd( AddGoodRequest addGoodRequest)
         {
             return goodsBll.GoodAdd(addGoodRequest);
+        }
+        [HttpPost]
+        public UpdateGoodsResponse GoodsDelete(UpdateGoodsRequest updateGoodsRequest)
+        {
+            return goodsBll.GoodsDelete(updateGoodsRequest);
         }
     }
 }

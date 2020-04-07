@@ -20,7 +20,7 @@ namespace ECommerceMVC
         [HttpPost]
         public JsonResult GoodsShow(GoodsAddRequest goods)
         {
-            var res = goodsBll.GoodsAdd(goods,"api/Goods/GoodsShow");
+            var res = goodsBll.GoodsShow(goods,"api/Goods/GoodsShow");
             return Json(res.goods);
         }
 
@@ -33,7 +33,18 @@ namespace ECommerceMVC
         public JsonResult GoodsAdd(GoodsAddRequest goodsAdd)
         {
             var res = goodsBll.GoodsAdd(goodsAdd, "api/Goods/GoodAdd");
-            return Json(res.goods);
+            return Json(res.goodsAdd);
+        }
+
+        public ActionResult GoodsAdd()
+        {
+            return View();
+        }
+        [HttpPost]
+        public JsonResult GoodsAdd(GoodsAddRequest goodsAdd)
+        {
+            var res = goodsBll.GoodsAdd(goodsAdd, "api/Goods/GoodAdd");
+            return Json(res.goodsAdd);
         }
     }
 }

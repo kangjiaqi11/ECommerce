@@ -96,9 +96,51 @@ namespace BLL.WangZhiHao
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public int GoodsDelete(int id)
+        public UpdateGoodsResponse GoodsDelete(UpdateGoodsRequest updateGoodsRequest)
         {
-            return dal.GoodsDelete(id);
+            UpdateGoodsResponse updateGoodsResponse = new UpdateGoodsResponse();
+            if (updateGoodsRequest.GoodId==1)
+            {
+                updateGoodsResponse.Status = -1;
+                updateGoodsResponse.Msg = "名称不能为空";
+                return updateGoodsResponse;
+            }
+            if (updateGoodsRequest.GoodsState ==1 )
+            {
+                updateGoodsResponse.Status = 2;
+                updateGoodsResponse.Msg = "审核不通过";
+                return updateGoodsResponse;
+            }
+            if (updateGoodsRequest.PutawayTime == null)
+            {
+                updateGoodsResponse.Status = -1;
+                updateGoodsResponse.Msg = "上架时间不能为空";
+                return updateGoodsResponse;
+            }
+            GoodsModel goodsModel = new GoodsModel();
+            goodsModel.GoodId = updateGoodsRequest.GoodId;
+            goodsModel.BrandId = updateGoodsRequest.BrandId;
+            goodsModel.CategoryId = updateGoodsRequest.CategoryId;
+            goodsModel.GoodsType = updateGoodsRequest.GoodsType;
+            goodsModel.GoodsName = updateGoodsRequest.GoodsName;
+            goodsModel.GoodsBrief = updateGoodsRequest.GoodsBrief;
+            goodsModel.GoodsIntro = updateGoodsRequest.GoodsIntro;
+            goodsModel.MarketPrice = updateGoodsRequest.MarketPrice;
+            goodsModel.SalePrice = updateGoodsRequest.SalePrice;
+            goodsModel.CostPrice = updateGoodsRequest.CostPrice;
+            goodsModel.BrowseCount = updateGoodsRequest.BrowseCount;
+            goodsModel.CommentCount = updateGoodsRequest.CommentCount;
+            goodsModel.CollectCount = updateGoodsRequest.CollectCount;
+            goodsModel.ShareCount = updateGoodsRequest.ShareCount;
+            goodsModel.PutawayTime = updateGoodsRequest.PutawayTime;
+            goodsModel.GoodsState = updateGoodsRequest.GoodsState;
+            goodsModel.Status = 1;
+            goodsModel.CreateTime = updateGoodsRequest.CreateTime;
+            goodsModel.UpdateTime = updateGoodsRequest.UpdateTime;
+            goodsModel.CreaterId = updateGoodsRequest.CreaterId;
+            goodsModel.UpdaterId = updateGoodsRequest.UpdaterId;
+            
+            return updateGoodsResponse;
         }
     }
 }

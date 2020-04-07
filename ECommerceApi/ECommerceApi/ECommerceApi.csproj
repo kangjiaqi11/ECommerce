@@ -363,10 +363,6 @@
       <Project>{7e806aa4-6a3e-47fe-85bd-8baae094f016}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{76d9cec7-6b07-4544-a083-d5fa152d1a43}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SDCKClient\SDCKClient.csproj">
       <Project>{06c62adc-577b-459e-9bad-824700a2d627}</Project>
       <Name>SDCKClient</Name>
