@@ -153,5 +153,22 @@ namespace ECommerceMVC.Controllers.XuYaDon
             var res= bll.UpdateRetutn(updateReturn, "api/Order/UpdateRetutn");
             return Json(res);
         }
+        public ActionResult returnType()
+        {
+         
+            return View();
+
+        }
+        [HttpPost]
+        /// <summary>
+        /// 退货设置显示
+        /// </summary>
+        /// <param name="typeRequest"></param>
+        /// <returns></returns>
+        public JsonResult returnType(ReturnTypeRequest returnType, string UrlName)
+        {
+            var res = bll.returnType(returnType, "api/Order/returnType");
+            return Json(res.list);
+        }
     }
 }

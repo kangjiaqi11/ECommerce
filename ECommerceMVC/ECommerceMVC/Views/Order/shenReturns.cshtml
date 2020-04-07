@@ -272,11 +272,10 @@ License: You must have a valid license purchased only from themeforest(the above
             })
          
             function update(ReturnId, state) {
-                if (state==1) {
-                        state = state + 1;
-                }
-                if (state==2) {
-                     state = state + 2;
+                switch (state) {
+                    case 1: { state = state + 1 } break;
+                    case 2: { state = state + 2 } break;
+
                 }
                 
              
@@ -287,10 +286,11 @@ License: You must have a valid license purchased only from themeforest(the above
                         data: { Id: ReturnId, state: state },
                         dataType: "json",
                         success: function (res) {
-                            if (res.Status == 1) {
+                            if (res.Status == 1 ) {
                                 alert(res.Msg)
                                 location.href = '/Order/ReturnGoods';
                             }
+                          
                             else {
                                 alert('拒绝成功')
                                   location.href = '/Order/ReturnGoods';

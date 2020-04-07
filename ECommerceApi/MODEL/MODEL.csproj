@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SDCKClient">
+      <HintPath>..\..\lib\SDCKClient.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -79,6 +82,17 @@
     <Compile Include="ZhangYang\Shipping.cs" />
     <Compile Include="ZhangYang\Storeroom.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="bin\Debug\MODEL.dll" />
+    <Content Include="bin\Debug\MODEL.pdb" />
+    <Content Include="bin\Debug\SDCKClient.dll" />
+    <Content Include="bin\Debug\SDCKClient.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\SDCKClient.dll.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

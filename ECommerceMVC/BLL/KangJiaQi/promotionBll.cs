@@ -27,6 +27,31 @@ namespace BLL
         {
             return ApiRequestHelper.Post<ActivityAddRequest, ActivityAddResponse>(activityAddRequest, GetApiName);
         }
+
+        /// <summary>
+        ///活动秒杀 上架
+        /// </summary>
+        /// <returns></returns>
+        public ActivityPutawayResponse ActivityPutaway(ActivityPutawayRequest activityPutawayRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<ActivityPutawayRequest, ActivityPutawayResponse>(activityPutawayRequest, GetApiName);
+        }
+        /// <summary>
+        ///活动秒杀下架
+        /// </summary>
+        /// <returns></returns>
+        public ActivitySoldOutResponse ActivitySoldOut(ActivitySoldOutRequest activitySoldOutRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<ActivitySoldOutRequest, ActivitySoldOutResponse>(activitySoldOutRequest, GetApiName);
+        }
+        /// <summary>
+        /// 活动秒杀删除
+        /// </summary>
+        /// <returns></returns>
+        public ActivityDeleteResponse ActivityDelete(ActivityDeleteRequest activityDeleteRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<ActivityDeleteRequest, ActivityDeleteResponse>(activityDeleteRequest, GetApiName);
+        }
         #endregion
         #region 好物推荐相关
         /// <summary>

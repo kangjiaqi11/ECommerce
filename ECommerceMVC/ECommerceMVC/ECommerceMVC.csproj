@@ -46,6 +46,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\每月技能题\redisDemo\Day19Demo\bin\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -61,10 +64,10 @@
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SDCKClient">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\你爹\Desktop\heip\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\lib\SDCKClient.dll</HintPath>
     </Reference>
-    <Reference Include="SDCKClient">
+    <Reference Include="SDCKClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\SDCKClient.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -4004,6 +4007,9 @@
     <Content Include="IndexStyle\global\plugins\zoom\jquery.zoom.min.js" />
     <Content Include="IndexStyle\global\scripts\datatable.js" />
     <Content Include="IndexStyle\global\scripts\metronic.js" />
+    <Content Include="layuistyle\DateTimeText\laydate\laydate.js" />
+    <Content Include="layuistyle\DateTimeText\laydate\theme\default\font\iconfont.svg" />
+    <Content Include="layuistyle\DateTimeText\laydate\theme\default\laydate.css" />
     <Content Include="layuistyle\static\admin\css\admin.css" />
     <Content Include="layuistyle\static\admin\css\avatar.css" />
     <Content Include="layuistyle\static\admin\css\column.css" />
@@ -4719,6 +4725,12 @@
     <Content Include="Fakes\SDCKClient.fakes" />
     <Content Include="FakesAssemblies\MODEL.1.0.0.0.Fakes.fakesconfig" />
     <Content Include="FakesAssemblies\SDCKClient.Fakes.fakesconfig" />
+    <Content Include="obj\Debug\ECommerceMVC.csprojFakesResolveAssemblyReference.cache" />
+    <Content Include="obj\Debug\ECommerceMVC.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="layuistyle\DateTimeText\laydate\theme\default\font\iconfont.eot" />
+    <Content Include="layuistyle\DateTimeText\laydate\theme\default\font\iconfont.ttf" />
+    <Content Include="layuistyle\DateTimeText\laydate\theme\default\font\iconfont.woff" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -4748,13 +4760,13 @@
     <Content Include="Views\BUser\UserLogin.cshtml" />
     <Content Include="Views\For\FrontUserFenye.cshtml" />
     <Content Include="Views\For\FrontUserShow1.cshtml" />
-    <Content Include="Views\GoodsShow\GoodsShow.cshtml" />
     <Content Include="Views\Mem\MemberShow.cshtml" />
     <Content Include="Views\BUser\Lock.cshtml" />
     <Content Include="Views\BUser\personage.cshtml" />
     <Content Include="Views\promotion\ActivityAdd.cshtml" />
     <Content Include="Views\BUser\HomePage.cshtml" />
     <Content Include="Views\GoodsShow\GoodsShow.cshtml" />
+    <Content Include="Views\Sto\StoreroomFenye.cshtml" />
     <Content Include="Views\For\FrontUserFenye.cshtml" />
     <Content Include="Views\For\FrontUserShow1.cshtml" />
     <Content Include="Views\Mem\MemberShow.cshtml" />
@@ -4765,6 +4777,9 @@
     <Content Include="Views\Order\ShowOrderALL.cshtml" />
     <Content Include="Views\Order\TakeGood.cshtml" />
     <Content Include="Views\BUser\Index.cshtml" />
+    <Content Include="Views\GoodsShow\GoodsAdd.cshtml" />
+    <Content Include="Views\GoodsShow\GoodsShow.cshtml" />
+    <Content Include="Views\Order\returnType.cshtml" />
     <None Include="Views\promotion\ActivityShow.cshtml" />
     <Content Include="Views\promotion\RecommendShow.cshtml" />
     <Content Include="Views\promotion\TimeShow.cshtml" />

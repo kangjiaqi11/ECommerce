@@ -85,6 +85,15 @@ namespace BLL.XuYaDon
         {
              return ApiRequestHelper.Post<UpdateReturnRequest, UpdateReturnResponse>(updateReturn, UrlName);
         }
+        /// <summary>
+        /// 退货设置显示
+        /// </summary>
+        /// <param name="typeRequest"></param>
+        /// <returns></returns>
+        public ReturnTypeResponse returnType(ReturnTypeRequest request,string UrlName)
+        {
+            return ApiRequestHelper.Post<ReturnTypeRequest, ReturnTypeResponse>(request, UrlName);
+        }
 
     }
 }

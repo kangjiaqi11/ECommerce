@@ -7,6 +7,7 @@ using System.Xml.Linq;
 using Newtonsoft.Json;
 using System.Configuration;
 using System.Web;
+
 namespace BLL
 {
     public static class ApiRequestHelper
@@ -53,6 +54,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
+                LogHelper.Default.WriteInfo(ex.Message);
                 return new TResponse() { Status = -1, Msg = ex.Message };
             }
         }

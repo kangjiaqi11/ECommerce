@@ -79,6 +79,33 @@ namespace Dal
             string sql= $"insert into Activity( ActivityTitle ,ActivityStatel, Statel ,AStartTime ,AEenTime ,CreateTime, UpdateTime , CreateId  ,UpdateId) values ('{activity.ActivityTitle}',{activity.ActivityStatel},{activity.Statel},'{activity.AStartTime}','{activity.AEenTime}','{activity.CreateTime}','{activity.UpdateTime}','{activity.CreateId}','{activity.UpdateId}') ";
             return OrmDbHelper.ExecuteSql(sql); 
         }
+        /// <summary>
+        ///活动秒杀 上架
+        /// </summary>
+        /// <returns></returns>
+        public int ActivityPutaway(int ActivityId)
+        {
+            string sql = $"update Activity  set Statel=1 where  ActivityId={ActivityId}";
+            return OrmDbHelper.ExecuteSql(sql);
+        }
+        /// <summary>
+        ///活动秒杀下架
+        /// </summary>
+        /// <returns></returns>
+        public int ActivitySoldOut(int ActivityId)
+        {
+            string sql = $"update Activity  set Statel=2 where  ActivityId={ActivityId}";
+            return OrmDbHelper.ExecuteSql(sql);
+        }
+        /// <summary>
+        /// 活动秒杀删除
+        /// </summary>
+        /// <returns></returns>
+        public int ActivityDelete(int ActivityId)
+        {
+            string sql = $"update Activity  set Statel=0 where  ActivityId={ActivityId}";
+            return OrmDbHelper.ExecuteSql(sql);
+        }
         #region 好物推荐
         /// <summary>
         /// 推荐好的物品

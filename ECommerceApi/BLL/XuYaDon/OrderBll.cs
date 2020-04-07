@@ -224,10 +224,11 @@ namespace BLL.XuYaDon
         {
             UpdateReturnResponse update = new UpdateReturnResponse();
             var res = dal.UpdateRetutn(updateReturn.state, updateReturn.Id);
-            if (res>0)
+            if (updateReturn.state<4)
             {
                 update.Status = 1;
                 update.Msg = "收货成功";
+                update.IsSuccess = true;
             }
             else
             {
@@ -235,6 +236,49 @@ namespace BLL.XuYaDon
                 update.Msg = "拒绝成功";
             }
             return update;
+        }
+        /// <summary>
+        /// 退货设置显示
+        /// </summary>
+        /// <param name="typeRequest"></param>
+        /// <returns></returns>
+        public ReturnTypeResponse returnType()
+        {
+            ReturnTypeResponse Type = new ReturnTypeResponse();
+            var res = dal.retutnTypes();
+            if (res != null)
+            {
+                Type.list = res;
+                Type.Status = 1;
+                Type.Msg = "显示成功";
+                Type.IsSuccess = true;
+            }
+            else
+            {
+                Type.Status = -1;
+                Type.Msg = "显示失败";
+            }
+            return Type;
+        }
+        /// <summary>
+        /// 退货原因设置
+        /// </summary>
+        /// <returns></returns>
+        public ReturnTypeResponse Updatereturntype(UpadteReturnTypeRequest request)
+        {
+            ReturnTypeResponse returnType = new ReturnTypeResponse();
+            var res = dal.Updatereturntype(request.Id,request.State);
+            if (res>0)
+            {
+                returnType.IsSuccess = true;
+                returnType.Msg = "修改成功";
+            }
+            else
+            {
+                returnType.IsSuccess = false;
+                returnType.Msg = "修改失败";
+            }
+            return returnType;
         }
 
     }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL
+namespace SDCKClient.XuYaDon
 {
-    public class Class1
+   public class UpdateReturnRespnse:BaseResponse
     {
     }
 }

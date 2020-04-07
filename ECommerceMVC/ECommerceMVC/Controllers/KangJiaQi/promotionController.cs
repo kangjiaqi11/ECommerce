@@ -12,6 +12,7 @@ namespace ECommerceMVC
     public class promotionController : Controller
     {
         promotionBll promotionBll = new promotionBll();
+        #region 秒杀相关
         // GET: promotion
         /// <summary>
         /// 秒删活动页面
@@ -19,7 +20,7 @@ namespace ECommerceMVC
         /// <returns></returns>
         public ActionResult ActivityShow()
         {
-           
+
             return View();
         }
 
@@ -35,19 +36,76 @@ namespace ECommerceMVC
         /// <param name="ActivityTitle"></param>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult PageActivityShow(int PageIndex,int PageSize,string ActivityTitle)
+        public JsonResult PageActivityShow(int PageIndex, int PageSize, string ActivityTitle)
         {
-         ActivityShowRequst activityShowRequst = new ActivityShowRequst();
+            ActivityShowRequst activityShowRequst = new ActivityShowRequst();
             activityShowRequst.PageIndex = PageIndex;
             activityShowRequst.PageSize = PageSize;
             activityShowRequst.ActivityTitle = ActivityTitle;
-          var list= promotionBll.ActivityShow(activityShowRequst, "api/Promotion/ActivityShow");
-            return Json( list);
+            var list = promotionBll.ActivityShow(activityShowRequst, "api/Promotion/ActivityShow");
+            return Json(list);
         }
-       /// <summary>
-       /// 首页推荐页面
-       /// </summary>
-       /// <returns></returns>
+        /// <summary>
+        ///秒杀活动 状态
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult ActivityPutaway(int ActivityId)
+        {
+            ActivityPutawayRequest activityPutawayRequest = new ActivityPutawayRequest();
+            activityPutawayRequest.ActivityId = ActivityId;
+            var ser = promotionBll.ActivityPutaway(activityPutawayRequest, "api/Promotion/ActivityPutaway");
+            return Json(ser.IsSuccess);
+        }
+        /// <summary>
+        ///秒杀活动下架
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult ActivitySoldOut(int ActivityId)
+        {
+            ActivitySoldOutRequest activitySoldOutRequest = new ActivitySoldOutRequest();
+            activitySoldOutRequest.ActivityId = ActivityId;
+            var ser = promotionBll.ActivitySoldOut(activitySoldOutRequest, "api/Promotion/ActivitySoldOut");
+            return Json(ser.IsSuccess);
+        }
+        /// <summary>
+        /// 秒杀活动删除
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult ActivityDelete(int ActivityId)
+        {
+            ActivityDeleteRequest activityDeleteRequest = new ActivityDeleteRequest();
+            activityDeleteRequest.ActivityId = ActivityId;
+            var ser = promotionBll.ActivityDelete(activityDeleteRequest, "api/Promotion/ActivityDelete");
+            return Json(ser.IsSuccess);
+        }
+        /// <summary>
+        /// 添加活动
+        /// </summary>
+        /// <param name="ActiviryName"></param>
+        /// <param name="AEenTime"></param>
+        /// <param name="AStartTime"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult ActiviryAdd(string ActiviryName,string AEenTime,string userid)
+        {
+            ActivityAddRequest activityAddRequest = new ActivityAddRequest();
+            activityAddRequest.ActivityTitle = ActiviryName;
+            activityAddRequest.AEenTime =Convert.ToDateTime(  AEenTime) ;
+            activityAddRequest.AStartTime = DateTime.Now;
+            activityAddRequest.UpdateId =Convert.ToInt32( userid);
+            activityAddRequest.CreateId = Convert.ToInt32(userid);
+            var ser = promotionBll.ActivityAdd(activityAddRequest, "api/Promotion/ActivityAdd");
+            return Json(ser);
+        }
+        #endregion
+        #region 首页图推荐相关
+        /// <summary>
+        /// 首页推荐页面
+        /// </summary>
+        /// <returns></returns>
         public ActionResult RecommendShow()
         {
             return View();
@@ -61,7 +119,7 @@ namespace ECommerceMVC
         /// <param name="IsRecommend"></param>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult PageRecommendShow(int PageIndex, int PageSize, string GoodName,int IsRecommend)
+        public JsonResult PageRecommendShow(int PageIndex, int PageSize, string GoodName, int IsRecommend)
         {
             RecommendRequst recommendRequst = new RecommendRequst();
             recommendRequst.GoodsName = GoodName;
@@ -106,7 +164,8 @@ namespace ECommerceMVC
             recommendDeleteRequest.RecommendId = RecommendId;
             var ser = promotionBll.RecommendDelete(recommendDeleteRequest, "api/Promotion/RecommendDelete");
             return Json(ser.IsSuccess);
-        }
+        } 
+        #endregion
         #region 时间段相关信息
         /// <summary>
         /// 时间段的显示

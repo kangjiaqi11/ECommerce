@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 using MODEL.XuYaDon;
 using System.Data.SqlClient;
 using DAL.XuYaDon.DB;
-
-using Dal.XuyaDon;
 using System.Configuration;
+using Dal.XuyaDon;
 
 namespace Dal
 {
@@ -175,6 +174,7 @@ namespace Dal
                 connetion.Open();
             }
 
+
             var sql = "exec MakeGodd @OrderNumberGoodsName,@AddrNameAddrPhone,@puttime,@pageindex,@pagesize,@totalcount out";
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = sql;
@@ -277,6 +277,26 @@ namespace Dal
         {
             string sql = $"update SalesReturn  set ReturnState = {state} where ReturnId={Id}";
             return xDBHelper.ExecuteNonQuery(sql);
+        }
+        /// <summary>
+        /// 退货原因设置
+        /// </summary>
+        /// <returns></returns>
+        public List<RetutnType> retutnTypes()
+        {
+            string sql = "select * from RetutnType where State = 1";
+            return DBHelper.GetToList<RetutnType>(sql);
+        }
+        /// <summary>
+        /// 退货原因操作
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        public int Updatereturntype(int id,int state)
+        {
+            string sql =$"update RetutnType set State={state} where Id={id}";
+            return DBHelper.ExecuteNonQuery(sql);
         }
 
         
