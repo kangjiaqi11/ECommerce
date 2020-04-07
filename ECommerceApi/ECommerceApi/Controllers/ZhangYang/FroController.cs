@@ -18,7 +18,7 @@ namespace ECommerceApi.Controllers.ZhangYang
         {
             return bll.FrontUserFenye(Ssrq);
         }
-        //详情1 v     
+        //详情1
         public FrontUserShow1Resp FrontUserShow1()
         {
             return bll.FrontUserShow1();

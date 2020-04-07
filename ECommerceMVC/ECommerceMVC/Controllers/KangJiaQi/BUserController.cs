@@ -56,7 +56,7 @@ namespace ECommerceMVC.Controllers.KangJiaQi
             {
                 if (ser.IsSuccess)
                 {
-                    Response.Write("<script>alert('登录成功');location.href='\BUser\Index'</script>");
+                    Response.Write("<script>alert('登录成功');location.href='/BUser/Index'</script>");
                     Session["BUserId"] = ser.Info;
                 }
                 else

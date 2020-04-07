@@ -9,7 +9,7 @@
 @model Fenye1
 
 <!DOCTYPE html>
-
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <html lang="en">
 <body class="page-header-fixed page-quick-sidebar-over-content ">
     <div class="page-content-wrapper">
@@ -49,13 +49,12 @@
 
                             </div>
                         </div>
+                        <input id="UserName" type="text" placeholder="用户昵称" />
+                        <input id="Submit1" type="submit" value="查询" />
+
                         <div class="portlet-body">
                             <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                 <thead>
-                                    <input id="UserName" type="text" placeholder="用户昵称" />
-                                    <input id="Submit1" type="submit" value="查询" />
-
-
                                     <table class="table">
                                         <tr>
                                             <td>用户ID</td>
@@ -75,11 +74,11 @@
                                                 <td>@item.MembersId</td>
                                                 <td>@item.Consumption</td>
                                                 <td>@item.Number</td>
-                                                <td><a href="Sto\FrontUserShow1"></a></td>
+                                                <td><a href="FrontUserShow1">用户详情</a></td>
                                             </tr>
                                         }
                                     </table>
-                                    
+
                                     <table>
                                         <tr>
                                             @for (int i = 1; i <= (Model.Count / 2) + (Model.Count % 2 == 0 ? 0 : 1); i++)
@@ -90,7 +89,7 @@
                                     </table>
                                     <script>
                                         function jump(i) {
-                                            location.href = "/Fro/FrontUsersFenye?PageSize=2&PageIndex=" + i;
+                                            location.href = "/For/FrontUserFenye?PageSize=2&PageIndex=" + i;
                                         }
                                     </script>
                                     @*显示数据*@
