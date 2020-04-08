@@ -65,6 +65,8 @@ namespace BLL
             activity.ActivityTitle = activityAddRequest.ActivityTitle;
             activity.ActivityStatel = activityAddRequest.ActivityStatel;
             activity.Statel = 1;
+            activity.GoodId = 0;
+            activity.TimeQId = 0;
             activity.AStartTime = activityAddRequest.AStartTime;
             activity.AEenTime = activityAddRequest.AEenTime;
             activity.CreateTime = DateTime.Now;
@@ -161,6 +163,64 @@ namespace BLL
                 activityDeleteResponse.Msg = "修改失败";
             }
             return activityDeleteResponse;
+        }
+        /// <summary>
+        /// 显示要添加的商品
+        /// </summary>
+        /// <returns></returns>
+        public ActivityGoodShowResponse ActivityGoodShow(ActivityGoodShowRequest activityGoodShowRequest)
+        {
+            ActivityGoodShowResponse activityGoodShowResponse = new ActivityGoodShowResponse();
+            var ser = promotionDal.ActivityGoodShow();
+            if (ser != null)
+            {
+                activityGoodShowResponse.DateList = ser;
+                activityGoodShowResponse.IsSuccess = true;
+
+            }
+            else
+            {
+                activityGoodShowResponse.Status = -1;
+                activityGoodShowResponse.Msg = "显示失败";
+            }
+            return activityGoodShowResponse;
+        }
+        /// <summary>
+        /// 活动添加商品
+        /// </summary>
+        /// <returns></returns>
+        public ActivityGoodShowResponse ActivityGoodAdd(ActivityGoodAddRequest activityGoodAddRequest)
+        {
+            ActivityGoodShowResponse activityGoodShowResponse = new ActivityGoodShowResponse();
+            if (activityGoodAddRequest.ActivityId == 0)
+            {
+                activityGoodShowResponse.Status = -1;
+                activityGoodShowResponse.Msg = "活动id为空";
+                return activityGoodShowResponse;
+            }
+            if (activityGoodAddRequest.GoodId == 0)
+            {
+                activityGoodShowResponse.Status = -1;
+                activityGoodShowResponse.Msg = "商品id为空";
+                return activityGoodShowResponse;
+            }
+            if (activityGoodAddRequest.TimeQId == 0)
+            {
+                activityGoodShowResponse.Status = -1;
+                activityGoodShowResponse.Msg = "时间段为空";
+                return activityGoodShowResponse;
+            }
+            var ser = promotionDal.ActivityGoodAdd(activityGoodAddRequest.TimeQId, activityGoodAddRequest.GoodId, activityGoodAddRequest.ActivityId);
+            if (ser > 0)
+            {
+                activityGoodShowResponse.IsSuccess = true;
+            }
+            else
+            {
+                activityGoodShowResponse.Status = -1;
+                activityGoodShowResponse.Msg = "修改失败";
+            }
+            return activityGoodShowResponse;
         }
         #endregion
         #region 好物推荐相关

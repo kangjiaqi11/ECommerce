@@ -6,22 +6,24 @@ using System.Web.Mvc;
 using BLL;
 using SDCKClient.WangZhiHao.Request;
 using SDCKClient.XuYaDon;
-
+using SDCKClient;
 namespace ECommerceMVC
 {
     public class GoodsShowController : Controller
     {
         BGoodsBll goodsBll = new BGoodsBll();
+        promotionBll promotionBll = new promotionBll();
         // GET: GoodsShow
         public ActionResult GoodsShow()
         {
             return View();
         }
         [HttpPost]
-        public JsonResult GoodsShow(GoodsAddRequest goods)
+        public JsonResult ActiviryGoodShow()
         {
-            var res = goodsBll.GoodsAdd(goods,"api/Goods/GoodsShow");
-            return Json(res.goods);
+            ActivityGoodShowRequest activityGoodShowRequest = new ActivityGoodShowRequest();
+            var ser = promotionBll.ActivityGoodShow(activityGoodShowRequest, "api/Promotion/ActivityGoodShow");
+            return Json(ser.DateList);
         }
 
         //添加

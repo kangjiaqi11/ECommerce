@@ -23,9 +23,32 @@ namespace ECommerceMVC
 
             return View();
         }
-
+        /// <summary>
+        /// 添加活动页面
+        /// </summary>
+        /// <returns></returns>
         public ActionResult ActivityAdd()
         {
+            return View();
+        }
+        
+        /// <summary>
+        /// 为活动添加时间段页面
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ActivityTimeAdd(int ActivityId)
+        {
+           ViewBag.ActivityId = ActivityId;
+            return View();
+        }
+        /// <summary>
+        /// 为活动添加商品页面
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ActivityGoodAdd(int TimeQId,int ActivityId)
+        {
+            ViewBag.TimeQId= TimeQId;
+            ViewBag.ActivityId1 = ActivityId;
             return View();
         }
         /// <summary>
@@ -89,16 +112,42 @@ namespace ECommerceMVC
         /// <param name="AStartTime"></param>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult ActiviryAdd(string ActiviryName,string AEenTime,string userid)
+        public JsonResult ActiviryAdd(string ActiviryName,string AEenTime,string userid,string StarTime)
         {
             ActivityAddRequest activityAddRequest = new ActivityAddRequest();
             activityAddRequest.ActivityTitle = ActiviryName;
             activityAddRequest.AEenTime =Convert.ToDateTime(  AEenTime) ;
-            activityAddRequest.AStartTime = DateTime.Now;
+            activityAddRequest.AStartTime =Convert.ToDateTime( StarTime);
             activityAddRequest.UpdateId =Convert.ToInt32( userid);
             activityAddRequest.CreateId = Convert.ToInt32(userid);
             var ser = promotionBll.ActivityAdd(activityAddRequest, "api/Promotion/ActivityAdd");
             return Json(ser);
+        }
+        /// <summary>
+        /// 活动添加商品显示
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult ActiviryGoodShow()
+        {
+            ActivityGoodShowRequest activityGoodShowRequest = new ActivityGoodShowRequest();  
+            var ser = promotionBll.ActivityGoodShow(activityGoodShowRequest, "api/Promotion/ActivityGoodShow");
+            return Json(ser.DateList);
+        }
+        /// <summary>
+        /// 为活动添加商品
+        /// </summary>
+        /// <param name="TimeId"></param>
+        /// <param name="GoodId"></param>
+        /// <param name="Activiryid"></param>
+        /// <returns></returns>
+        public JsonResult ActiviryGoodAdd(int GoodId,int TimeQId,int ActivityId)
+        {
+            ActivityGoodAddRequest activityGoodAddRequest = new ActivityGoodAddRequest();
+            activityGoodAddRequest.TimeQId = TimeQId;
+            activityGoodAddRequest.GoodId = GoodId;
+            activityGoodAddRequest.ActivityId = ActivityId;
+            var ser = promotionBll.ActivityGoodAdd(activityGoodAddRequest, "api/Promotion/ActivityGoodAdd");
+            return Json(ser.IsSuccess);
         }
         #endregion
         #region 首页图推荐相关
@@ -128,6 +177,14 @@ namespace ECommerceMVC
             recommendRequst.PageSize = PageSize;
             var list = promotionBll.PageRecommendShow(recommendRequst, "api/Promotion/RecommendShow");
             return Json(list);
+        }
+        /// <summary>
+        /// 为活动添加商品
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult PageRecommendGoodAdd()
+        {
+            return View();
         }
         /// <summary>
         ///好物推荐 状态

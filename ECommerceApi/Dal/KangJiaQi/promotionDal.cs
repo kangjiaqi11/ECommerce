@@ -106,6 +106,25 @@ namespace Dal
             string sql = $"update Activity  set Statel=0 where  ActivityId={ActivityId}";
             return OrmDbHelper.ExecuteSql(sql);
         }
+        /// <summary>
+        /// 显示要添加的商品
+        /// </summary>
+        /// <returns></returns>
+        public List<GoodsModel> ActivityGoodShow()
+        {
+            string sql = "select * from GoodsInfo where Status=1";
+            return OrmDbHelper.GetList<GoodsModel>(sql);
+        }
+        /// <summary>
+        /// 活动添加商品
+        /// </summary>
+        /// <returns></returns>
+        public int ActivityGoodAdd(int Timeid,int goodid,int activityid)
+        {
+            string sql = $"update Activity set TimeQId={Timeid} , GoodId={goodid} where ActivityId={activityid}";
+            return OrmDbHelper.ExecuteSql(sql);
+        }
+
         #region 好物推荐
         /// <summary>
         /// 推荐好的物品

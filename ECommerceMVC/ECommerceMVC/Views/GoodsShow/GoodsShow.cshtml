@@ -74,6 +74,12 @@
                                         <th>
                                             操作
                                         </th>
+                                        <th>
+                                            操作
+                                        </th>
+                                        <th>
+                                            操作
+                                        </th>
 
                                     </tr>
                                     @*显示数据*@
@@ -119,14 +125,13 @@
         });
         //第一这里加载查询的方法
         function Query() {
-            $("#GoodShow").html("");
             $.ajax({
-                url: "GoodsShow",
+                url: "ActiviryGoodShow",
                 type: "POST",
                 dateType: "json",
                 success: function (ser) {
                     console.log(ser);
-                    $(ser.DateList).each(function myfunction() {
+                    $(ser).each(function () {
                         var tr = '<tr>'
                             + '<th>' + this.GoodId + '</th>'
                             + '<th>' + this.GoodsType + ' </th>'
@@ -135,7 +140,7 @@
                             + '<th>' + this.GoodsState + '</th>'
                             + '<th>' + (this.Statel == 1 ? "已启用" : "未启用") + ' </th>'
                             + '<th>' + (this.Statel == 2 ? '<input id="DeleteStatel" class="btn green" type="button" value="启用" onclick="UpdateState2(' + this.TimeQId + ')" />' : '<input id="DeleteStatel" class="btn green" type="button" value="不启用" onclick="UpdateState3(' + this.TimeQId + ')" />') + '</th>'
-                            + '<th>' + '<input id="DeleteStatel" class="btn green" type="button" value="删除" onclick="DeleteStatel(' + this.TimeQId + ')" />' + '</th>'
+                            + '<th>' + '<input id="DeleteStatel" class="btn green" type="button" value="删除" onclick="DeleteStatel(' + this.TimeQId + ',this)" />' + '</th>'
                             + '</tr>'
                         $("#GoodShow").append(tr);
                     })
@@ -143,7 +148,6 @@
             });
         }
         function UpdateState2(id) {
-            alert(1);
             $.ajax({
                 url: "TimeQUpdate2",
                 type: "POST",
@@ -160,7 +164,6 @@
             });
         }
         function UpdateState3(id) {
-            alert(2);
             $.ajax({
                 url: "TimeQUpdate3",
                 type: "POST",
@@ -176,7 +179,7 @@
                 }
             });
         }
-        function DeleteStatel(id) {
+        function DeleteStatel(id,obj) {
             $.ajax({
                 url: "TimeQDelete",
                 type: "POST",
@@ -184,7 +187,8 @@
                 dateType: "json",
                 success: function (ser) {
                     if (ser) {
-                        Query();
+                        alert("删除成功");
+                        $(obj), parent().parent().remove();
                     }
                     else {
                         alert("删除失败");

@@ -52,6 +52,22 @@ namespace BLL
         {
             return ApiRequestHelper.Post<ActivityDeleteRequest, ActivityDeleteResponse>(activityDeleteRequest, GetApiName);
         }
+        /// <summary>
+        /// 显示要添加的商品
+        /// </summary>
+        /// <returns></returns>
+        public ActivityGoodShowResponse ActivityGoodShow(ActivityGoodShowRequest activityGoodShowRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<ActivityGoodShowRequest, ActivityGoodShowResponse>(activityGoodShowRequest, GetApiName);
+        }
+        /// <summary>
+        /// 活动添加商品
+        /// </summary>
+        /// <returns></returns>
+        public ActivityGoodAddResponse ActivityGoodAdd(ActivityGoodAddRequest activityGoodAddRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<ActivityGoodAddRequest, ActivityGoodAddResponse>(activityGoodAddRequest, GetApiName);
+        }
         #endregion
         #region 好物推荐相关
         /// <summary>

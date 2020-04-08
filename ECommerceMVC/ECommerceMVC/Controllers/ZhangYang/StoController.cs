@@ -13,7 +13,7 @@ namespace ECommerceMVC.Controllers.ZhangYang
     {
         StoreroomBLL bll = new StoreroomBLL();
         // GET: Sto
-        public ActionResult StoreroomFenye(int PageIndex=1, int PageSize=2, string ShoopName=null)
+        public ActionResult StoreroomFenye(int PageIndex=1, int PageSize=20, string ShoopName=null)
         {
             StoreroomShowReq Ssr = new StoreroomShowReq();
             Ssr.PageIndex = PageIndex;
@@ -23,7 +23,7 @@ namespace ECommerceMVC.Controllers.ZhangYang
             var ser = bll.StoreroomFenye(Ssr, "api/Sto/StoreroomFenye");
             return View(ser.StoList);
         }
-        public ActionResult StoreroomRu(int PageIndex = 1, int PageSize = 2, string ShoopName = null)
+        public ActionResult StoreroomRu(int PageIndex = 1, int PageSize = 20, string ShoopName = null)
         {
             StoreroomShowReq Ssr = new StoreroomShowReq();
             Ssr.PageIndex = PageIndex;
@@ -38,7 +38,7 @@ namespace ECommerceMVC.Controllers.ZhangYang
     {
         FrontUserBLL bll = new FrontUserBLL();
 
-        public ActionResult FrontUserFenye(int PageIndex = 1, int PageSize = 2, string UserName = null)
+        public ActionResult FrontUserFenye(int PageIndex = 1, int PageSize = 20, string UserName = null)
         {
             FrontUserShowReq Ssr = new FrontUserShowReq();
             Ssr.PageIndex = PageIndex;

@@ -57,7 +57,23 @@ namespace ECommerceApi.Controllers.KangJiaQi
         public ActivityDeleteResponse ActivityDelete(ActivityDeleteRequest activityDeleteRequest)
         {
             return promotionBll.ActivityDelete(activityDeleteRequest);
-        } 
+        }
+        /// <summary>
+        /// 显示要添加的商品
+        /// </summary>
+        /// <returns></returns>
+        public ActivityGoodShowResponse ActivityGoodShow(ActivityGoodShowRequest activityGoodShowRequest)
+        {
+            return promotionBll.ActivityGoodShow(activityGoodShowRequest);
+        }
+        /// <summary>
+        /// 活动添加商品
+        /// </summary>
+        /// <returns></returns>
+        public ActivityGoodShowResponse ActivityGoodAdd(ActivityGoodAddRequest activityGoodAddRequest)
+        {
+            return promotionBll.ActivityGoodAdd(activityGoodAddRequest);
+        }
         #endregion
         #region 好物推荐相关
         /// <summary>

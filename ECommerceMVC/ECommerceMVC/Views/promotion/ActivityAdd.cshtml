@@ -36,8 +36,12 @@
                                             <input type="text" placeholder="秒杀标题" id="UserName" class="form-control" />
                                         </div>
                                         <div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
+                                            <label class="control-label">开始时间</label>
+                                            <input id="times" placeholder="请输入开始时间" onclick="WdatePicker()" class=" form-control" type="text" />
+                                        </div>
+                                        <div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
                                             <label class="control-label">结束时间</label>
-                                            <input type="text" placeholder="请选择日期" class="form-control" id="test1" lay-key="1">
+                                            <input id="times1" placeholder="请输入结束时间" onclick="WdatePicker()" class=" form-control" type="text" />
                                         </div>
                                         <div class="margiv-top-10">
                                             <input id="Button1" type="button" class="btn blue" value="添加" onclick="ActiviryAdd()" />
@@ -56,24 +60,19 @@
         <!-- END PAGE CONTENT-->
     </div>
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-    <script src="~/layuistyle/DateTimeText/laydate/laydate.js"></script>
-
+    <script src="~/Content/My97DatePicker/WdatePicker.js"></script>
     <script>
         jQuery(document).ready(function () {
-            //执行一个laydate实例
-            laydate.render({
-                elem: '#test1'
-            });
-
         });
-        function ActiviryAdd() {
+    function ActiviryAdd() {
             var name = $("#UserName").val();
-            var entime = $("#test1").val();
+        var startime = $("#times").val();
+        var endTime=$("#times1").val();
             var userid = $("#userid").val();
             $.ajax({
                 url: "/promotion/ActiviryAdd",
                 type: "POST",
-                data: { ActiviryName: name, AEenTime: entime, userid: userid },
+                data: { ActiviryName: name, AEenTime: endTime, userid: userid,StarTime:startime},
                 dateType: "json",
                 success: function (ser) {
                     if (ser.Status > 0) {

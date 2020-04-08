@@ -109,9 +109,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="btn-group">
-                                            <button id="sample_editable_1_new" class="btn green">
-                                                添加<i class="fa fa-plus"></i>
-                                            </button>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -192,7 +189,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script>
         jQuery(document).ready(function () {
-            alert(1);
+        
             Query(1);
         });
         function Cha() {
@@ -212,10 +209,9 @@ License: You must have a valid license purchased only from themeforest(the above
             }
         }
         function NextPage() {
-
-            var ToCount = $("#tocount").val();
+            var ToCount = parseInt( $("#tocount").val());
             var index = parseInt($("#ascascasc").val());
-            index = index + 1
+            alert(ToCount);
             if (index < ToCount) {
                 Query(index);
             }

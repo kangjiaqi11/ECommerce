@@ -57,6 +57,8 @@
     <Compile Include="BaseResponse.cs" />
     <Compile Include="KangJiaQi\Request\ActivityAddRequest.cs" />
     <Compile Include="KangJiaQi\Request\ActivityDeleteRequest.cs" />
+    <Compile Include="KangJiaQi\Request\ActivityGoodAddRequest.cs" />
+    <Compile Include="KangJiaQi\Request\ActivityGoodShowRequest.cs" />
     <Compile Include="KangJiaQi\Request\ActivitySoldOutRequest.cs" />
     <Compile Include="KangJiaQi\Request\ActivityPutawayRequest.cs" />
     <Compile Include="KangJiaQi\Request\ActivityShowRequst.cs" />
@@ -80,6 +82,8 @@
     <Compile Include="KangJiaQi\Request\TimeQUpdate3Request.cs" />
     <Compile Include="KangJiaQi\Response\ActivityAddResponse.cs" />
     <Compile Include="KangJiaQi\Response\ActivityDeleteResponse.cs" />
+    <Compile Include="KangJiaQi\Response\ActivityGoodAddResponse.cs" />
+    <Compile Include="KangJiaQi\Response\ActivityGoodShowResponse.cs" />
     <Compile Include="KangJiaQi\Response\ActivitySoldOutResponse.cs" />
     <Compile Include="KangJiaQi\Response\ActivityPutawayResponse.cs" />
     <Compile Include="KangJiaQi\Response\ActivityShowRespnse.cs" />

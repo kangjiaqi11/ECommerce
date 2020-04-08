@@ -46,9 +46,6 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="btn-group">
-                                            <button id="sample_editable_1_new" class="btn green">
-                                                添加<i class="fa fa-plus"></i>
-                                            </button>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -83,6 +80,10 @@
                                         <th>
                                             操作
                                         </th>
+                                        <th>
+                                            操作
+                                        </th>
+
                                     </tr>
                                     @*显示数据*@
                                 </thead>
@@ -124,6 +125,9 @@
             Query(1);
 
         });
+    function ActivityAdd() {
+         location.href = '/promotion/ActivityAdd';
+    }
         //上一页
         function UpPage() {
             var index = parseInt($("#index11").val());
@@ -195,17 +199,18 @@
     function ActivityDelete(ActivityId) {
         var index = $("#index11").val();
         $.ajax({
-            url: "RecommendDelete",
+            url: "ActivityDelete",
             type: "POST",
             data: { ActivityId: ActivityId },
             dateType: "json",
             success: function (ser) {
                 if (ser) {
-                    Query(index);
+                    alert("删除成功");
+                     $(obj), parent().parent().remove();
                 }
                 else {
                     alert("删除失败");
-                }
+                } 
             }
         });
     }
@@ -229,17 +234,22 @@
                             + '<th>' + this.AEenTimeStr + ' </th>'
                             + '<th>' + (this.Statel == 1 ? "上架" : "下架") + + ' </th>'
                             + '<th>' + (this.Statel == 2 ? '<input id="DeleteStatel" class="btn green" type="button" value="上架" onclick="ActivityPutaway(' + this.ActivityId + ')" />' : '<input id="DeleteState2" class="btn green" type="button" value="下架" onclick="ActivitySoldOut(' + this.ActivityId + ')" />') + '</th>'
-                            + '<th>' + '<input id="DeleteIsRecommend" class="btn green" type="button" value="删除" onclick="ActivityDelete(' + this.RecommendId + ')" />' + '</th>'
+                            + '<th>' + '<input id="DeleteIsRecommend" class="btn green" type="button" value="删除" onclick="ActivityDelete(' + this.RecommendId + ',this)" />' + '</th>'
+                            + '<th>' + (this.GoodId>0 ||this.Statel == 2  ? '<input id="DeleteStatel" class="btn green" value=设置商品 disabled type="button" value="设置商品" />' : '<input id="DeleteState2" class="btn green" type="button" value="设置商品" onclick="ActivityTimeadd(' + this.ActivityId + ')" />') + '</th>'
                             + '</tr>'
                         $("#ActivityShow").append(tr);
                     })
                     $("#index11").val(pageindex);
                     $("#tocount11").val(ser.TotaCount);
+                  
                 }
 
             });
         }
-        
+    function ActivityTimeadd(ActivityId) {
+        alert(ActivityId);
+        location.href = '/promotion/ActivityTimeAdd?ActivityId='+ActivityId;
+         }
     </script>
 </body>
 </html>
