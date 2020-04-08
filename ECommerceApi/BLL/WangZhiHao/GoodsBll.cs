@@ -3,6 +3,7 @@ using Dal.WangZhiHao;
 using SDCKClient;
 using SDCKClient.WangZhiHao.Response;
 using SDCKClient.WangZhiHao.Request;
+using System;
 
 namespace BLL.WangZhiHao
 {
@@ -33,11 +34,11 @@ namespace BLL.WangZhiHao
                 addGoodResponse.Status = -1;
                 addGoodResponse.Msg = "上架时间不能为空";
                 return addGoodResponse;
-            }
+            } 
+            
             GoodsModel goodsModel = new GoodsModel();
-            goodsModel.GoodId = addGoodRequest.GoodId;
             goodsModel.BrandId = addGoodRequest.BrandId;
-            goodsModel.CategoryId = addGoodRequest.CategoryId;
+            goodsModel.CategoryId = 1;
             goodsModel.GoodsType = addGoodRequest.GoodsType;
             goodsModel.GoodsName = addGoodRequest.GoodsName;
             goodsModel.GoodsBrief = addGoodRequest.GoodsBrief;
@@ -52,10 +53,10 @@ namespace BLL.WangZhiHao
             goodsModel.PutawayTime = addGoodRequest.PutawayTime;
             goodsModel.GoodsState = addGoodRequest.GoodsState;
             goodsModel.Status = 1;
-            goodsModel.CreateTime = addGoodRequest.CreateTime;
-            goodsModel.UpdateTime = addGoodRequest.UpdateTime;
-            goodsModel.CreaterId = addGoodRequest.CreaterId;
-            goodsModel.UpdaterId = addGoodRequest.UpdaterId;
+            goodsModel.CreateTime = DateTime.Now;
+            goodsModel.UpdateTime = DateTime.Now;
+            goodsModel.CreaterId = 0;
+            goodsModel.UpdaterId = 0;
             var ser = dal.GoodAdd(goodsModel);
             if (ser>0)
             {
@@ -96,9 +97,51 @@ namespace BLL.WangZhiHao
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public int GoodsDelete(int id)
+        public UpdateGoodsResponse GoodsDelete(UpdateGoodsRequest updateGoodsRequest)
         {
-            return dal.GoodsDelete(id);
+            UpdateGoodsResponse updateGoodsResponse = new UpdateGoodsResponse();
+            if (updateGoodsRequest.GoodId==1)
+            {
+                updateGoodsResponse.Status = -1;
+                updateGoodsResponse.Msg = "名称不能为空";
+                return updateGoodsResponse;
+            }
+            if (updateGoodsRequest.GoodsState ==1 )
+            {
+                updateGoodsResponse.Status = 2;
+                updateGoodsResponse.Msg = "审核不通过";
+                return updateGoodsResponse;
+            }
+            if (updateGoodsRequest.PutawayTime == null)
+            {
+                updateGoodsResponse.Status = -1;
+                updateGoodsResponse.Msg = "上架时间不能为空";
+                return updateGoodsResponse;
+            }
+            GoodsModel goodsModel = new GoodsModel();
+            goodsModel.GoodId = updateGoodsRequest.GoodId;
+            goodsModel.BrandId = updateGoodsRequest.BrandId;
+            goodsModel.CategoryId = updateGoodsRequest.CategoryId;
+            goodsModel.GoodsType = updateGoodsRequest.GoodsType;
+            goodsModel.GoodsName = updateGoodsRequest.GoodsName;
+            goodsModel.GoodsBrief = updateGoodsRequest.GoodsBrief;
+            goodsModel.GoodsIntro = updateGoodsRequest.GoodsIntro;
+            goodsModel.MarketPrice = updateGoodsRequest.MarketPrice;
+            goodsModel.SalePrice = updateGoodsRequest.SalePrice;
+            goodsModel.CostPrice = updateGoodsRequest.CostPrice;
+            goodsModel.BrowseCount = updateGoodsRequest.BrowseCount;
+            goodsModel.CommentCount = updateGoodsRequest.CommentCount;
+            goodsModel.CollectCount = updateGoodsRequest.CollectCount;
+            goodsModel.ShareCount = updateGoodsRequest.ShareCount;
+            goodsModel.PutawayTime = updateGoodsRequest.PutawayTime;
+            goodsModel.GoodsState = updateGoodsRequest.GoodsState;
+            goodsModel.Status = 1;
+            goodsModel.CreateTime = updateGoodsRequest.CreateTime;
+            goodsModel.UpdateTime = updateGoodsRequest.UpdateTime;
+            goodsModel.CreaterId = updateGoodsRequest.CreaterId;
+            goodsModel.UpdaterId = updateGoodsRequest.UpdaterId;
+            
+            return updateGoodsResponse;
         }
     }
 }

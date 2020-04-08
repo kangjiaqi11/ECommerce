@@ -40,7 +40,7 @@
       <HintPath>..\packages\Grpc.Core.Api.2.27.0\lib\net45\Grpc.Core.Api.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
-      <HintPath>..\..\..\..\每月技能题\redisDemo\Day19Demo\bin\log4net.dll</HintPath>
+      <HintPath>..\ECommerceMVC\bin\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

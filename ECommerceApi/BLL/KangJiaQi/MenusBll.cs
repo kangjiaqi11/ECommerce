@@ -9,7 +9,6 @@ using MODEL;
 using System.Diagnostics;
 using ServiceStack.Redis;
 using System.Threading;
-using ServiceStack.Messaging.Rcon;
 
 namespace BLL
 {

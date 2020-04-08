@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Common
 {
-   public class Generate
+    public class Generate
     {
         /// <summary>
         /// 生成盐 

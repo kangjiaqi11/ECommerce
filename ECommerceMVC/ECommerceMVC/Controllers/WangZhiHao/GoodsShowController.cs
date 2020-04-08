@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using BLL;
 using SDCKClient.WangZhiHao.Request;
+using MODEL;
+
 using SDCKClient.XuYaDon;
 using SDCKClient;
 namespace ECommerceMVC
@@ -32,10 +34,27 @@ namespace ECommerceMVC
             return View();
         }
         [HttpPost]
-        public JsonResult GoodsAdd(GoodsAddRequest goodsAdd)
+        public JsonResult GoodsAdd(GoodsModel goods)
         {
-            var res = goodsBll.GoodsAdd(goodsAdd, "api/Goods/GoodAdd");
-            return Json(res.goods);
+            AddGoodRequest goodAdd = new AddGoodRequest();
+            goodAdd.BrandId = goods.BrandId;
+            goodAdd.GoodsName = goods.GoodsName;
+            goodAdd.SalePrice = goods.SalePrice;
+            goodAdd.GoodsState = goods.GoodsState;
+            goodAdd.GoodsBrief = goods.GoodsBrief;
+            var res = goodsBll.GoodsAdd(goodAdd, "api/Goods/GoodAdd");
+            return Json(res);
+        }
+
+        public ActionResult GoodsDelete()
+        {
+            return View();
+        }
+        [HttpPost]
+        public JsonResult GoodsDelete(UpdateGoodsRequest goodsupdate)
+        {
+            var res = goodsBll.GoodsDelete(goodsupdate, "api/Goods/GoodsDelete");
+            return Json(res); 
         }
         /// <summary>
         /// 商品审核页面
