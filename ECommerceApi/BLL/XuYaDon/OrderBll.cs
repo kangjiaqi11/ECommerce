@@ -25,7 +25,7 @@ namespace BLL.XuYaDon
 
 
             OrderShowResponse orderShowResponse = new OrderShowResponse();
-            var res = dal.OrderShow(order.OrderNumberGoodsName, order.AddrNameAddrPhone, order.State, order.puttime, order.pageindex, order.pagesize);
+            var res = dal.OrderShow(order.OrderNumberGoodsName, order.AddrNameAddrPhone, order.State, order.puttime,order.Endtime,order.pageindex, order.pagesize);
 
             if (res != null)
             {
@@ -47,10 +47,10 @@ namespace BLL.XuYaDon
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public OrderShowResponse UpdateState(OrderStaterequest order)
+        public OrderStateresponse UpdateState(OrderStaterequest order)
         {
-            OrderShowResponse response = new OrderShowResponse();
-            var res = dal.UpdateState(order.id);
+            OrderStateresponse response = new OrderStateresponse();
+            var res = dal.UpdateState(order.id,order.State);
             if (res > 0)
             {
                 response.Msg = "修改成功";
@@ -113,8 +113,8 @@ namespace BLL.XuYaDon
         public UpdateStateExperresponse UpdateStateExper(UpdateStateExperrequest update)
         {
             UpdateStateExperresponse updateState = new UpdateStateExperresponse();
-            var res = dal.UpdateStateExper(update.OderNumber);
-            if (res != 0)
+            var res = dal.UpdateStateExper(update.OderNumber,update.experId);
+            if (res > 0)
             {
                 updateState.Msg = "发货成功!";
                 updateState.IsSuccess = true;
@@ -157,7 +157,7 @@ namespace BLL.XuYaDon
         public TakeGoodrespnse TakeGood(TakeGoodRequest take)
         {
             TakeGoodrespnse takeGoodrespnse = new TakeGoodrespnse();
-            var res = dal.TakeGood(take.OrderNumberGoodsName, take.AddrNameAddrPhone, take.puttime, take.pageindex, take.pagesize);
+            var res = dal.TakeGood(take.OrderNumberGoodsName, take.AddrNameAddrPhone, take.puttime, take.endtimes,take.pageindex, take.pagesize);
 
             if (res != null)
             {
@@ -182,7 +182,7 @@ namespace BLL.XuYaDon
         public ReturnGoodsResponse ReturnGoods(ReturnGoodsRequest returnGoods)
         {
             ReturnGoodsResponse returngoodsresponse = new ReturnGoodsResponse();
-            var res = dal.ReturnGoods(returnGoods.OrderNumber, returnGoods.AddrPhone, returnGoods.State,returnGoods.puttime,returnGoods.pageindex, returnGoods.pagesize);
+            var res = dal.ReturnGoods(returnGoods.OrderNumber, returnGoods.AddrPhone, returnGoods.State,returnGoods.puttime,returnGoods.endtimes,returnGoods.pageindex, returnGoods.pagesize);
 
             if (res != null)
             {
@@ -261,22 +261,22 @@ namespace BLL.XuYaDon
             return Type;
         }
         /// <summary>
-        /// 退货原因设置
+        /// 退货删除操作
         /// </summary>
         /// <returns></returns>
-        public ReturnTypeResponse Updatereturntype(UpadteReturnTypeRequest request)
+        public UpdateReturnRespnse Updatereturntype(UpadteReturnTypeRequest request)
         {
-            ReturnTypeResponse returnType = new ReturnTypeResponse();
-            var res = dal.Updatereturntype(request.Id,request.State);
+            UpdateReturnRespnse returnType = new UpdateReturnRespnse();
+            var res = dal.DeleteType(request.Id);
             if (res>0)
             {
                 returnType.IsSuccess = true;
-                returnType.Msg = "修改成功";
+                returnType.Msg = "删除成功";
             }
             else
             {
                 returnType.IsSuccess = false;
-                returnType.Msg = "修改失败";
+                returnType.Msg = "删除失败";
             }
             return returnType;
         }

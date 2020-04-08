@@ -104,7 +104,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </div>
                             </div>
                             <div class="portlet-body">
-                                <div class="table-toolbar">
+                                <div class="table-toolbar" style="width:1900px;">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="btn-group">
@@ -117,20 +117,27 @@ License: You must have a valid license purchased only from themeforest(the above
                                             </div>
                                             <div class="btn-group">
 
-                                                <h5>提交时间：<input id="times" placeholder="时间" class=" fa-fax" type="text" /></h5>
+                                                <h5>开始时间：<input id="times" placeholder="请输入开始时间" onclick="WdatePicker()" class=" fa-fax" type="text" /></h5>
+
+                                            </div>
+
+                                            <div class="btn-group" style="float:right">
+
+                                                <h5>结束时间：<input id="endtimes" placeholder="请输入结束时间" onclick="WdatePicker()" class=" fa-fax" type="text" /></h5>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
 
-                                            <div class="btn-group pull-right">
 
-                                                @*查询*@
-                                                <button id="sample_editable_1_new" onclick="Show()" class="btn green">
-                                                    查询
-                                                </button>
-                                            </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="btn-group pull-right">
+
+                                    @*查询*@
+                                    <button id="sample_editable_1_new" onclick="Show()" class="btn green">
+                                        查询
+                                    </button>
                                 </div>
                                 <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                     <thead>
@@ -207,18 +214,21 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="~/IndexStyle/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
     <script src="~/IndexStyle/admin/layout/scripts/demo.js" type="text/javascript"></script>
     <script src="~/IndexStyle/admin/pages/scripts/table-editable.js"></script>
+    <script src="~/Content/My97DatePicker/WdatePicker.js"></script>
     <script>
         Show();
     function Show() {
       
             var OrderNumberGoodsName = $("#OrderNumberGoodsName").val();
             var AddrNameAddrPhone = $("#AddrNameAddrPhone").val();
-             var times = $("#times").val();
-                $("#ActivityShow").html("");
+        var times = $("#times").val();
+            var endtime = $("#endtimes").val();
+        $("#ActivityShow").html("");
+     
                 $.ajax({
                 url: "TakeGood",
                     type: "POST",
-                    data: { OrderNumberGoodsName: OrderNumberGoodsName, AddrNameAddrPhone: AddrNameAddrPhone, puttime: times },
+                    data: { OrderNumberGoodsName: OrderNumberGoodsName, AddrNameAddrPhone: AddrNameAddrPhone, puttime: times,endtimes:endtime },
                     dataType: "json",
                     success: function (res) {
                                $(res).each(function () {

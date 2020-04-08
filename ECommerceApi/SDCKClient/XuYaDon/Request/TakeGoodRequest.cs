@@ -15,6 +15,7 @@ namespace SDCKClient.XuYaDon
         public string AddrNameAddrPhone { get; set; }
    
         public string puttime { get; set; }
+        public string endtimes { get; set; }
         public int pageindex { get; set; }
         public int pagesize { get; set; }
     }
