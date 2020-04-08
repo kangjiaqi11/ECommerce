@@ -59,9 +59,8 @@ namespace BLL
                 // GetAll()获取所有记录
                 if (Menus.GetAll().Count > 0)
                 {
-                    // 获取所有的记录   GetAll()
-                    List<MenusInfo> users = Menus.GetAll().ToList();
-                    return users;
+                    List<MenusInfo> Menuss = Menus.GetAll().ToList();
+                    return Menuss;
                 }
                 else
                 {
@@ -233,12 +232,29 @@ namespace BLL
                         FatherUrl = "20024",
 
                     };
-                    List<MenusInfo> MenusToStore = new List<MenusInfo> { menus1, menus2, menus4, menus3, menus5, menus6, menus7, menus8, menus9, menus10, menus11, menus12, menus13, menus14, menus15, menus16, menus17, menus18, menus19, menus20 };
+                    MenusInfo menus22 = new MenusInfo()
+                    {
+                        MenusId = 40002,
+                        MenusName = "添加商品",
+                        MenusUrl = "/GoodsShow/GoodsAdd",
+                        FatherUrl = "20022",
+
+                    };
+                    MenusInfo menus23 = new MenusInfo()
+                    {
+                        MenusId = 40003,
+                        MenusName = "商品审核",
+                        MenusUrl = "/GoodsShow/audit",
+                        FatherUrl = "20022",
+
+                    };
+                    List<MenusInfo> MenusToStore = new List<MenusInfo> { menus1, menus2, menus4, menus3, menus5, menus6, menus7, menus8, menus9, menus10, menus11, menus12, menus13, menus14, menus15, menus16, menus17, menus18, menus19, menus20 , menus21, menus22, menus23 };
                     // 存放所有记录
                     Menus.StoreAll(MenusToStore);
-
+                         
                     Thread.Sleep(3000);
                     return MenusToStore;
+             
                 }
             }
         }

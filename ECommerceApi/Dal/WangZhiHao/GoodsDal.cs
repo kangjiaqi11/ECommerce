@@ -31,7 +31,7 @@ namespace Dal.WangZhiHao
         public List<GoodsModel> GoodsShow()
         {
             string sql = "select * from GoodsInfo";
-            return db.GetToList<GoodsModel>(sql);
+            return  OrmDbHelper.GetList<GoodsModel>(sql);
         }
 
         /// <summary>

@@ -66,10 +66,6 @@
     <Reference Include="SDCKClient">
       <HintPath>..\..\lib\SDCKClient.dll</HintPath>
     </Reference>
-    <Reference Include="SDCKClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\SDCKClient.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -4765,6 +4761,7 @@
     <Content Include="Views\BUser\personage.cshtml" />
     <Content Include="Views\promotion\ActivityAdd.cshtml" />
     <Content Include="Views\BUser\HomePage.cshtml" />
+    <Content Include="Views\GoodsShow\GoodsShow.cshtml" />
     <Content Include="Views\Sto\StoreroomFenye.cshtml" />
     <Content Include="Views\For\FrontUserFenye.cshtml" />
     <Content Include="Views\For\FrontUserShow1.cshtml" />
@@ -4779,11 +4776,12 @@
     <Content Include="Views\GoodsShow\GoodsAdd.cshtml" />
     <Content Include="Views\GoodsShow\GoodsShow.cshtml" />
     <Content Include="Views\Order\returnType.cshtml" />
+    <Content Include="Views\GoodsShow\audit.cshtml" />
     <None Include="Views\promotion\ActivityShow.cshtml" />
-    <Content Include="Views\Sto\StoreroomFenye.cshtml" />
     <Content Include="Views\promotion\RecommendShow.cshtml" />
     <Content Include="Views\promotion\TimeShow.cshtml" />
     <Content Include="Views\Sto\StoreroomRu.cshtml" />
+    <Content Include="Views\Sto\StoreroomFenye.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="IndexStyle\global\plugins\angularjs\plugins\angular-file-upload\uploads\" />

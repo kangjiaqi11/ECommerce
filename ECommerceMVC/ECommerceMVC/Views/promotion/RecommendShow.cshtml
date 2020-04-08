@@ -12,6 +12,7 @@ Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter
 Version: 3.7.0
 Author: KeenThemes
 Website: http://www.keenthemes.com/
+<a href="~/Views/GoodsShow/GoodsShow.cshtml">~/Views/GoodsShow/GoodsShow.cshtml</a>
 Contact: support@keenthemes.com
 Follow: www.twitter.com/keenthemes
 Like: www.facebook.com/keenthemes
@@ -130,7 +131,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                     <thead>
                                         <tr>
-                                            <th>a
+                                            <th>
+                                                a
                                                 编号
                                             </th>
                                             <th>
@@ -189,8 +191,8 @@ License: You must have a valid license purchased only from themeforest(the above
     </div>
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script>
-    jQuery(document).ready(function () {
-        alert(1);
+        jQuery(document).ready(function () {
+            alert(1);
             Query(1);
         });
         function Cha() {
@@ -224,7 +226,7 @@ License: You must have a valid license purchased only from themeforest(the above
         }
 
         //第一这里加载查询的方法
-    function Query(pageindex) {
+        function Query(pageindex) {
 
             $("#ActivityShow").html("");
             var GoodName = $("#GoodName").val();
