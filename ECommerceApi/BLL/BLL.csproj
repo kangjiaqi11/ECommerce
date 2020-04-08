@@ -39,10 +39,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\MODEL.dll</HintPath>
     </Reference>
-    <Reference Include="SDCKClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\SDCKClient.dll</HintPath>
-    </Reference>
     <Reference Include="ServiceStack.Interfaces">
       <HintPath>Fakes\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
