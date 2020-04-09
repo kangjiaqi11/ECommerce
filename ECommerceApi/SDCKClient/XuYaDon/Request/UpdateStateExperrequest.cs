@@ -9,5 +9,6 @@ namespace SDCKClient.XuYaDon
   public  class UpdateStateExperrequest:BaseRequest
     {
         public string OderNumber { get; set; }
+        public int experId { get; set; }
     }
 }

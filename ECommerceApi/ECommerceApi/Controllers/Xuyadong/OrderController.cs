@@ -19,9 +19,9 @@ namespace ECommerceApi.Controllers.Xuyadong
         /// <summary>
         /// 修改订单状态
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id"></param>y
         /// <returns></returns>
-        public OrderShowResponse UpdateState(OrderStaterequest order)
+        public OrderStateresponse UpdateState(OrderStaterequest order)
         {
             return bll.UpdateState(order);
         }
@@ -96,6 +96,14 @@ namespace ECommerceApi.Controllers.Xuyadong
         public ReturnTypeResponse returnType()
         {
             return bll.returnType();
+        }
+        /// <summary>
+        /// 退货原因操作
+        /// </summary>
+        /// <returns></returns>
+        public UpdateReturnRespnse Updatereturntype(UpadteReturnTypeRequest request)
+        {
+            return bll.Updatereturntype(request);
         }
     }
 }

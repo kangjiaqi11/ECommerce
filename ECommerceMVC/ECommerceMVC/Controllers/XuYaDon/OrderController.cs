@@ -16,7 +16,7 @@ namespace ECommerceMVC.Controllers.XuYaDon
         // GET: Order
         public ActionResult Index()
         {
-     
+           
             return View();
              
         }
@@ -24,7 +24,9 @@ namespace ECommerceMVC.Controllers.XuYaDon
         public JsonResult Index(OrderShowrequeset order)
         {
             var res = bll.OrderShow(order,"api/Order/OrderShow");
-            return Json(res.Datalist);
+          var pagecount= res.totalcount / 2;
+
+            return Json(res);
 
         }
         public ActionResult ShowOrderALL(string OrderNumber)
@@ -128,7 +130,7 @@ namespace ECommerceMVC.Controllers.XuYaDon
         public JsonResult ReturnGoods(ReturnGoodsRequest returnGoods, string UrlName)
         {
             var res= bll.ReturnGoods(returnGoods, "api/Order/ReturnGoods");
-            return Json(res.Datalist);
+            return Json(res);
         }
         public ActionResult shenReturns(int id)
         {
@@ -169,6 +171,16 @@ namespace ECommerceMVC.Controllers.XuYaDon
         {
             var res = bll.returnType(returnType, "api/Order/returnType");
             return Json(res.list);
+        }
+        [HttpPost]
+        /// <summary>
+        /// 删除退货原因
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult Updatereturntype(UpadteReturnTypeRequest request, string UrlName)
+        {
+          var  res= bll.Updatereturntype(request, "api/Order/Updatereturntype");
+            return Json(res);
         }
     }
 }

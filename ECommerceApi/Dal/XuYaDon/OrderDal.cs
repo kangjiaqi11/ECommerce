@@ -8,6 +8,8 @@ using System.Data.SqlClient;
 using DAL.XuYaDon.DB;
 using System.Configuration;
 using Dal.XuyaDon;
+using Dapper;
+using System.Data;
 
 namespace Dal
 {
@@ -19,7 +21,7 @@ namespace Dal
        static  string token = ConfigurationManager.AppSettings["sql"];
         SDBHelper DBHelper = new SDBHelper();
        SqlConnection connetion = new SqlConnection(token);
-        public PageModel OrderShow(string OrderNumberGoodsName="", string AddrNameAddrPhone="",int State=0,string puttime="",int pageindex=1,int pagesize=8)
+        public PageModel OrderShow(string OrderNumberGoodsName="", string AddrNameAddrPhone="",int State=0,string puttime="",string endtime="", int pageindex=1,int pagesize=6)
         {
             if (string.IsNullOrEmpty(OrderNumberGoodsName))
             {
@@ -37,13 +39,17 @@ namespace Dal
             {
                 puttime = "";
             }
+            if (string.IsNullOrEmpty(endtime))
+            {
+                endtime = "";
+            }
             if (pageindex==0)
             {
                 pageindex = 1;
             }
             if (pagesize == 0)
             {
-                pagesize = 8;
+                pagesize = 6;
             }
 
 
@@ -53,7 +59,7 @@ namespace Dal
                 connetion.Open();
             }
            
-            var sql = "exec OrderShow22 @OrderNumberGoodsName,@AddrNameAddrPhone,@State,@puttime,@pageindex,@pagesize,@totalcount out";
+            var sql = "exec OrderShow22 @OrderNumberGoodsName,@AddrNameAddrPhone,@State,@puttime,@endtime,@pageindex,@pagesize,@totalcount out";
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = sql;
             cmd.Connection = connetion;
@@ -62,6 +68,7 @@ namespace Dal
                 new SqlParameter(){ ParameterName="@AddrNameAddrPhone",SqlDbType=System.Data.SqlDbType.VarChar,SqlValue=AddrNameAddrPhone},
                 new SqlParameter(){ ParameterName="@State",SqlDbType=System.Data.SqlDbType.Int,SqlValue=State},
                 new SqlParameter(){ ParameterName="@puttime",SqlDbType=System.Data.SqlDbType.VarChar,SqlValue=puttime},
+                new SqlParameter(){ ParameterName="@endtime",SqlDbType=System.Data.SqlDbType.VarChar,SqlValue=endtime},
                 new SqlParameter(){ ParameterName="@pageindex",SqlDbType=System.Data.SqlDbType.Int,SqlValue=pageindex},
                 new SqlParameter(){ ParameterName="@pagesize",SqlDbType=System.Data.SqlDbType.Int,SqlValue=pagesize},
                  new SqlParameter(){ ParameterName="@totalcount",SqlDbType=System.Data.SqlDbType.Int,Direction=System.Data.ParameterDirection.Output},
@@ -81,11 +88,12 @@ namespace Dal
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public int UpdateState(int id)
+        public int UpdateState(int id,int state)
         {
-            string sql = $"update OrderTable set Oderstate=5 where OrderId={id}";
+            string sql = $"update OrderTable set Oderstate={state} where OrderId={id}";
             return xDBHelper.ExecuteNonQuery(sql);
         }
+      
         /// <summary>
         /// 显示待发货信息
         /// </summary>
@@ -101,15 +109,19 @@ namespace Dal
         /// <returns></returns>
         public List<express> ExperBind()
         {
-            string sql = "select expressId,expressName from express where expressId>1";
-            return xDBHelper.GetToList<express>(sql);
+            List<express> list = new List<express>();
+            using (IDbConnection dbConnection=new SqlConnection(token))
+            {
+              list= dbConnection.Query<express>("select * from express where expressId > 1").ToList();
+            }
+            return list;
         }
         /// <summary>
         /// 修改状态发货
         /// </summary>
-        public int UpdateStateExper(string OderNumber)
+        public int UpdateStateExper(string OderNumber,int experId)
         {
-            string sql =$"update OrderTable  set  Oderstate=3 where OrderNumber='{OderNumber}'";
+            string sql =$"update OrderTable  set  Oderstate=3,expressId={experId} where OrderNumber='{OderNumber}'";
             return xDBHelper.ExecuteNonQuery(sql);
         }
         /// <summary>
@@ -144,7 +156,7 @@ namespace Dal
         /// <param name="pageindex"></param>
         /// <param name="pagesize"></param>
         /// <returns></returns>
-        public PageModel2 TakeGood(string OrderNumberGoodsName = "", string AddrNameAddrPhone = "", string puttime = "", int pageindex = 1, int pagesize = 8)
+        public PageModel2 TakeGood(string OrderNumberGoodsName = "", string AddrNameAddrPhone = "", string puttime = "", string endtimes="", int pageindex = 1, int pagesize = 50)
         {
             if (string.IsNullOrEmpty(OrderNumberGoodsName))
             {
@@ -158,13 +170,17 @@ namespace Dal
             {
                 puttime = "";
             }
+            if (string.IsNullOrEmpty(endtimes))
+            {
+                endtimes = "";
+            }
             if (pageindex == 0)
             {
                 pageindex = 1;
             }
             if (pagesize == 0)
             {
-                pagesize = 8;
+                pagesize = 50;
             }
 
 
@@ -175,7 +191,7 @@ namespace Dal
             }
 
 
-            var sql = "exec MakeGodd @OrderNumberGoodsName,@AddrNameAddrPhone,@puttime,@pageindex,@pagesize,@totalcount out";
+            var sql = "exec MakeGodd @OrderNumberGoodsName,@AddrNameAddrPhone,@puttime,@endtimes,@pageindex,@pagesize,@totalcount out";
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = sql;
             cmd.Connection = connetion;
@@ -183,6 +199,7 @@ namespace Dal
                 new SqlParameter(){ ParameterName="@OrderNumberGoodsName",SqlDbType=System.Data.SqlDbType.VarChar,SqlValue=OrderNumberGoodsName},
                 new SqlParameter(){ ParameterName="@AddrNameAddrPhone",SqlDbType=System.Data.SqlDbType.VarChar,SqlValue=AddrNameAddrPhone},
                 new SqlParameter(){ ParameterName="@puttime",SqlDbType=System.Data.SqlDbType.VarChar,SqlValue=puttime},
+                   new SqlParameter(){ ParameterName="@endtimes",SqlDbType=System.Data.SqlDbType.VarChar,SqlValue=endtimes},
                 new SqlParameter(){ ParameterName="@pageindex",SqlDbType=System.Data.SqlDbType.Int,SqlValue=pageindex},
                 new SqlParameter(){ ParameterName="@pagesize",SqlDbType=System.Data.SqlDbType.Int,SqlValue=pagesize},
                  new SqlParameter(){ ParameterName="@totalcount",SqlDbType=System.Data.SqlDbType.Int,Direction=System.Data.ParameterDirection.Output},
@@ -207,7 +224,7 @@ namespace Dal
         /// <param name="pageindex"></param>
         /// <param name="pagesize"></param>
         /// <returns></returns>
-        public PageModel3 ReturnGoods(string OrderName = "", string AddrPhone = "",int State = 0, string puttime = "", int pageindex = 1, int pagesize = 8)
+        public PageModel3 ReturnGoods(string OrderName = "", string AddrPhone = "",int State = 0, string puttime = "",string endtimes="", int pageindex = 1, int pagesize = 6)
         {
             if (string.IsNullOrEmpty(OrderName))
             {
@@ -225,13 +242,17 @@ namespace Dal
             {
                 puttime = "";
             }
+            if (string.IsNullOrEmpty(endtimes))
+            {
+                endtimes = "";
+            }
             if (pageindex == 0)
             {
                 pageindex = 1;
             }
             if (pagesize == 0)
             {
-                pagesize = 8;
+                pagesize = 6;
             }
 
 
@@ -241,7 +262,7 @@ namespace Dal
                 connetion.Open();
             }
 
-            var sql = "exec ReturnGoods @OrderNumber,@AddrPhone,@State,@puttime,@pageindex,@pagesize,@totalcount out";
+            var sql = "exec ReturnGoods @OrderNumber,@AddrPhone,@State,@puttime,@endtimes,@pageindex,@pagesize,@totalcount out";
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = sql;
             cmd.Connection = connetion;
@@ -250,6 +271,7 @@ namespace Dal
                 new SqlParameter(){ ParameterName="@AddrPhone",SqlDbType=System.Data.SqlDbType.VarChar,SqlValue=AddrPhone},
                    new SqlParameter(){ ParameterName="@State",SqlDbType=System.Data.SqlDbType.Int,SqlValue=State},
                 new SqlParameter(){ ParameterName="@puttime",SqlDbType=System.Data.SqlDbType.VarChar,SqlValue=puttime},
+                     new SqlParameter(){ ParameterName="@endtimes",SqlDbType=System.Data.SqlDbType.VarChar,SqlValue=endtimes},
                 new SqlParameter(){ ParameterName="@pageindex",SqlDbType=System.Data.SqlDbType.Int,SqlValue=pageindex},
                 new SqlParameter(){ ParameterName="@pagesize",SqlDbType=System.Data.SqlDbType.Int,SqlValue=pagesize},
                  new SqlParameter(){ ParameterName="@totalcount",SqlDbType=System.Data.SqlDbType.Int,Direction=System.Data.ParameterDirection.Output},
@@ -293,10 +315,10 @@ namespace Dal
         /// <param name="id"></param>
         /// <param name="state"></param>
         /// <returns></returns>
-        public int Updatereturntype(int id,int state)
+        public int DeleteType(string id)
         {
-            string sql =$"update RetutnType set State={state} where Id={id}";
-            return DBHelper.ExecuteNonQuery(sql);
+            string sql =$"update RetutnType set State=2 where Id in ({id})";
+            return xDBHelper.ExecuteNonQuery(sql);
         }
 
         
