@@ -5,9 +5,6 @@
 
 
 
-@{
-    ViewBag.Title = "ActivityShow";
-}
 
 <!DOCTYPE html>
 <!--
@@ -15,6 +12,7 @@ Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter
 Version: 3.7.0
 Author: KeenThemes
 Website: http://www.keenthemes.com/
+<a href="~/Views/GoodsShow/GoodsShow.cshtml">~/Views/GoodsShow/GoodsShow.cshtml</a>
 Contact: support@keenthemes.com
 Follow: www.twitter.com/keenthemes
 Like: www.facebook.com/keenthemes
@@ -111,15 +109,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="btn-group">
-                                            <button id="sample_editable_1_new" class="btn green">
-                                                添加<i class="fa fa-plus"></i>
-                                            </button>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="btn-group pull-right">
                                             @*查询*@
-                                            <input id="GoodName" type="text" placeholder="商品名称" /> 
+                                            <input id="GoodName" type="text" placeholder="商品名称" />
                                             <select id="IsRecommend">
                                                 <option value="0">请选择要是否推荐</option>
                                                 <option value="1">已推荐</option>
@@ -134,6 +129,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <thead>
                                         <tr>
                                             <th>
+                                                a
                                                 编号
                                             </th>
                                             <th>
@@ -193,19 +189,16 @@ License: You must have a valid license purchased only from themeforest(the above
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script>
         jQuery(document).ready(function () {
-
-            Query(2);
-            var index = $("#ascascasc").val();
-            alert(index);
+        
+            Query(1);
         });
-    function Cha() {
-        var index = $("#ascascasc").val();
-        Query(index);
-    }
+        function Cha() {
+            var index = $("#ascascasc").val();
+            Query(index);
+        }
         function UpPage() {
             var index = $("#ascascasc").val();
             index = index - 1;
-            alert(index);
             if (index > 0) {
 
                 Query(index);
@@ -216,15 +209,11 @@ License: You must have a valid license purchased only from themeforest(the above
             }
         }
         function NextPage() {
-
-            var ToCount = $("#tocount").val();
-            var index = parseInt( $("#ascascasc").val());
-            alert(index);
-            alert(index+1);
+            var ToCount = parseInt( $("#tocount").val());
+            var index = parseInt($("#ascascasc").val());
             alert(ToCount);
-      
-            if (index+1 < ToCount) {
-                Query(index+1);
+            if (index < ToCount) {
+                Query(index);
             }
             else {
                 alert("已经是尾页了");
@@ -234,13 +223,14 @@ License: You must have a valid license purchased only from themeforest(the above
 
         //第一这里加载查询的方法
         function Query(pageindex) {
+
             $("#ActivityShow").html("");
             var GoodName = $("#GoodName").val();
             var IsRecommend = $("#IsRecommend").val();
             $.ajax({
                 url: "PageRecommendShow",
                 type: "POST",
-                data: { PageIndex: pageindex, PageSize: 2, GoodName: GoodName, IsRecommend: IsRecommend },
+                data: { PageIndex: pageindex, PageSize: 15, GoodName: GoodName, IsRecommend: IsRecommend },
                 dateType: "json",
                 success: function (ser) {
                     $(ser.DateList).each(function myfunction() {
@@ -262,7 +252,6 @@ License: You must have a valid license purchased only from themeforest(the above
         }
         function UpdateIs(RecommendId) {
             var index = $("#ascascasc").val();
-            alert(index);
             $.ajax({
                 url: "RecommendIs",
                 type: "POST",
@@ -280,7 +269,6 @@ License: You must have a valid license purchased only from themeforest(the above
         }
         function UpdateNo(RecommendId) {
             var index = $("#ascascasc").val();
-            alert(index);
             $.ajax({
                 url: "RecommendNO",
                 type: "POST",
@@ -298,7 +286,6 @@ License: You must have a valid license purchased only from themeforest(the above
         }
         function DeleteStatel(RecommendId) {
             var index = $("#ascascasc").val();
-            alert(index);
             $.ajax({
                 url: "RecommendDelete",
                 type: "POST",

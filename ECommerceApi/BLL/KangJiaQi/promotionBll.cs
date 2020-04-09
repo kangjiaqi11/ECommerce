@@ -65,7 +65,10 @@ namespace BLL
             activity.ActivityTitle = activityAddRequest.ActivityTitle;
             activity.ActivityStatel = activityAddRequest.ActivityStatel;
             activity.Statel = 1;
+            activity.GoodId = 0;
+            activity.TimeQId = 0;
             activity.AStartTime = activityAddRequest.AStartTime;
+            activity.AEenTime = activityAddRequest.AEenTime;
             activity.CreateTime = DateTime.Now;
             activity.UpdateTime = DateTime.Now;
             activity.CreateId = activityAddRequest.CreateId;
@@ -74,7 +77,7 @@ namespace BLL
             if (ser>0)
             {
                 activityAddResponse.IsSuccess = true;
-            }
+            } 
             else
             {
                 activityAddResponse.Status = -1;
@@ -83,7 +86,142 @@ namespace BLL
             }
            return activityAddResponse;
         }
+        /// <summary>
+        ///活动秒杀 上架
+        /// </summary>
+        /// <returns></returns>
+        public ActivityPutawayResponse ActivityPutaway(ActivityPutawayRequest activityPutawayRequest)
+        {
+            ActivityPutawayResponse activityPutawayResponse = new ActivityPutawayResponse();
+            if (activityPutawayRequest.ActivityId == 0)
+            {
+                activityPutawayResponse.Status = -1;
+                activityPutawayResponse.Msg = "id为空";
+                return activityPutawayResponse;
+            }
+            var ser = promotionDal.ActivityPutaway(activityPutawayRequest.ActivityId);
+            if (ser > 0)
+            {
+                activityPutawayResponse.IsSuccess = true;
 
+            }
+            else
+            {
+                activityPutawayResponse.Status = -1;
+                activityPutawayResponse.Msg = "修改失败";
+            }
+            return activityPutawayResponse;
+        }
+        /// <summary>
+        ///活动秒杀下架
+        /// </summary>
+        /// <returns></returns>
+        public ActivitySoldOutResponse  ActivitySoldOut(ActivitySoldOutRequest activitySoldOutRequest)
+        {
+            ActivitySoldOutResponse activitySoldOutResponse = new ActivitySoldOutResponse();
+            if (activitySoldOutRequest.ActivityId == 0)
+            {
+                activitySoldOutResponse.Status = -1;
+                activitySoldOutResponse.Msg = "id为空";
+                return activitySoldOutResponse;
+            }
+            var ser = promotionDal.ActivitySoldOut(activitySoldOutRequest.ActivityId);
+            if (ser > 0)
+            {
+                activitySoldOutResponse.IsSuccess = true;
+
+            }
+            else
+            {
+                activitySoldOutResponse.Status = -1;
+                activitySoldOutResponse.Msg = "修改失败";
+            }
+            return activitySoldOutResponse;
+        }
+        /// <summary>
+        /// 活动秒杀删除
+        /// </summary>
+        /// <returns></returns>
+        public ActivityDeleteResponse ActivityDelete(ActivityDeleteRequest activityDeleteRequest)
+        {
+            ActivityDeleteResponse activityDeleteResponse = new ActivityDeleteResponse();
+            if (activityDeleteRequest.ActivityId == 0)
+            {
+                activityDeleteResponse.Status = -1;
+                activityDeleteResponse.Msg = "id为空";
+                return activityDeleteResponse;
+            }
+            var ser = promotionDal.ActivityDelete(activityDeleteRequest.ActivityId);
+            if (ser > 0)
+            {
+                activityDeleteResponse.IsSuccess = true;
+
+            }
+            else
+            {
+                activityDeleteResponse.Status = -1;
+                activityDeleteResponse.Msg = "修改失败";
+            }
+            return activityDeleteResponse;
+        }
+        /// <summary>
+        /// 显示要添加的商品
+        /// </summary>
+        /// <returns></returns>
+        public ActivityGoodShowResponse ActivityGoodShow(ActivityGoodShowRequest activityGoodShowRequest)
+        {
+            ActivityGoodShowResponse activityGoodShowResponse = new ActivityGoodShowResponse();
+            var ser = promotionDal.ActivityGoodShow();
+            if (ser != null)
+            {
+                activityGoodShowResponse.DateList = ser;
+                activityGoodShowResponse.IsSuccess = true;
+
+            }
+            else
+            {
+                activityGoodShowResponse.Status = -1;
+                activityGoodShowResponse.Msg = "显示失败";
+            }
+            return activityGoodShowResponse;
+        }
+        /// <summary>
+        /// 活动添加商品
+        /// </summary>
+        /// <returns></returns>
+        public ActivityGoodShowResponse ActivityGoodAdd(ActivityGoodAddRequest activityGoodAddRequest)
+        {
+            ActivityGoodShowResponse activityGoodShowResponse = new ActivityGoodShowResponse();
+            if (activityGoodAddRequest.ActivityId == 0)
+            {
+                activityGoodShowResponse.Status = -1;
+                activityGoodShowResponse.Msg = "活动id为空";
+                return activityGoodShowResponse;
+            }
+            if (activityGoodAddRequest.GoodId == 0)
+            {
+                activityGoodShowResponse.Status = -1;
+                activityGoodShowResponse.Msg = "商品id为空";
+                return activityGoodShowResponse;
+            }
+            if (activityGoodAddRequest.TimeQId == 0)
+            {
+                activityGoodShowResponse.Status = -1;
+                activityGoodShowResponse.Msg = "时间段为空";
+                return activityGoodShowResponse;
+            }
+            var ser = promotionDal.ActivityGoodAdd(activityGoodAddRequest.TimeQId, activityGoodAddRequest.GoodId, activityGoodAddRequest.ActivityId);
+            if (ser > 0)
+            {
+                activityGoodShowResponse.IsSuccess = true;
+            }
+            else
+            {
+                activityGoodShowResponse.Status = -1;
+                activityGoodShowResponse.Msg = "修改失败";
+            }
+            return activityGoodShowResponse;
+        }
         #endregion
         #region 好物推荐相关
         /// <summary>

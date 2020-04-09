@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "personage";
 }
 
@@ -224,7 +223,6 @@
                 data: { UserId: userid },
                 dateType: "json",
                 success: function (ser) {
-                    alert(1);
                     $("#UserName").val(ser.UserName);
                     $("#UserAccount").val(ser.UserAccount);
                     $("#UserPhoto").val(ser.UserPhoto);

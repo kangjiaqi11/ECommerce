@@ -22,19 +22,19 @@ namespace Dal.ZhangYang
             scom.Parameters.Add(new SqlParameter("@PageIndex", PageIndex));
             scom.Parameters.Add(new SqlParameter("@PageSize", PageSize));
             scom.Parameters.Add(new SqlParameter("@UserName", UserName));
-            scom.Parameters.Add(new SqlParameter("@PageCount", 0));
+            scom.Parameters.Add(new SqlParameter("@PageCount",0));
             scom.Parameters[3].Direction = System.Data.ParameterDirection.Output;
             scon.Open();
             SqlDataReader reader = scom.ExecuteReader();
             while (reader.Read())
             {
                 FrontUser s = new FrontUser();
-                s.FrontUserid = (int)reader["FrontUserid"];
+                s.FrontUserid = (long)reader["FrontUserid"];
                 s.Account = (string)reader["Account"];
                 s.UserName = (string)reader["UserName"];
                 s.MembersId = (string)reader["MembersId"];
                 s.Consumption = (string)reader["Consumption"];
-                s.Number = (int)reader["Number"];
+                s.Number = (long)reader["Number"];
 
                 list.Add(s);
             }
@@ -52,7 +52,7 @@ namespace Dal.ZhangYang
         {
             string token = ConfigurationManager.AppSettings["sql"];
             List<FrontUser> list = new List<FrontUser>();
-            string sql = "select FrontUserid,UserName,Baddy,Grqm,professional,Age from FrontUser";
+            string sql = "select FrontUserid,UserName,Baddy,Grqm,professional,Age from FrontUser where FrontUserid = 1";
             SqlConnection scon = new SqlConnection(token);
             SqlCommand scom = new SqlCommand(sql, scon);
 
@@ -80,7 +80,7 @@ namespace Dal.ZhangYang
         {
             string token = ConfigurationManager.AppSettings["sql"];
             List<FrontUser> list = new List<FrontUser>();
-            string sql = "select FrontUserid,Consumption,Number,Czz,Yhj,Scht from FrontUser";
+            string sql = "select FrontUserid,Consumption,Number,Czz,Yhj,Scht from FrontUser where FrontUserid = 1";
             SqlConnection scon = new SqlConnection(token);
             SqlCommand scom = new SqlCommand(sql, scon);
 

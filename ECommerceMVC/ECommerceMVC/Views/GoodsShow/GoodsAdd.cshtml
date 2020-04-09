@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "GoodsAdd";
+}
+
+<!DOCTYPE html>
+
+<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-closed page-sidebar-closed-hide-logo page-container-bg-solid">
+
+
+    <!-- BEGIN CONTAINER -->
+    <!-- BEGIN CONTENT -->
+    <div class="page-content">
+        <!-- BEGIN PAGE HEADER-->
+        <h3 class="page-title">
+            添加<small></small>
+        </h3>
+        <!-- END PAGE HEADER-->
+        <!-- BEGIN PAGE CONTENT-->
+        <div class="row margin-top-20">
+            <div class="col-md-12">
+                <!-- BEGIN PROFILE CONTENT -->
+                <div class="profile-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="portlet light">
+                                <div class="portlet-title tabbable-line">
+
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="tab-content">
+                                        <!-- 用户信息 -->
+                                        <div class="form-group">
+                                            <input type="hidden" name="name" id="goodId" value="@Session["GoodId"]" />
+                                            <label class="control-label">商品品牌</label>
+                                            <input type="text" placeholder="商品品牌" id="BrandId" class="form-control" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">商品名称</label>
+                                            <input type="text" id="GoodsName" class="form-control" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">销售价</label>
+                                            <input type="text" id="SalePrice" class="form-control" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">商品状态</label>
+                                            <input type="text" id="GoodsState" class="form-control" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label">商品简介</label>
+                                            <input type="text" id="GoodsBrief" class="form-control" />
+                                        </div>
+                                        <div class="margiv-top-10">
+                                            <input id="Button1" type="button" class="btn blue" value="添加" onclick="GoodsAdd()" />
+                                        </div>
+
+                                        <!--结束用户信息 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END PROFILE CONTENT -->
+            </div>
+        </div>
+        <!-- END PAGE CONTENT-->
+    </div>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+
+        });
+        function GoodsAdd() {
+
+            var id = $("#BrandId").val();
+            var name = $("#GoodsName").val();
+            var pric = $("#SalePrice").val();
+            var state = $("#GoodsState").val();
+            var brief = $("#GoodsBrief").val();
+            var goods = {
+                BrandId: id,
+                GoodsName: name,
+                SalePrice: pric,
+                GoodsState: state,
+                GoodsBrief: brief,
+            }
+            $.ajax({
+                url: "/GoodsShow/GoodsAdd",
+                type: "POST",
+                data: { goods: goods },
+                dateType: "json",
+                success: function (ser) {
+                    if (state>0) {
+                        alert("添加成功");
+                        location.href = "/GoodsShow/GoodsShow";
+                    }
+                    else {
+                        alert("添加失败");
+                    }
+                }
+            });
+        }
+           
+
+    </script>
+</body>
+
+
+
+

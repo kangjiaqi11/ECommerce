@@ -27,6 +27,47 @@ namespace BLL
         {
             return ApiRequestHelper.Post<ActivityAddRequest, ActivityAddResponse>(activityAddRequest, GetApiName);
         }
+
+        /// <summary>
+        ///活动秒杀 上架
+        /// </summary>
+        /// <returns></returns>
+        public ActivityPutawayResponse ActivityPutaway(ActivityPutawayRequest activityPutawayRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<ActivityPutawayRequest, ActivityPutawayResponse>(activityPutawayRequest, GetApiName);
+        }
+        /// <summary>
+        ///活动秒杀下架
+        /// </summary>
+        /// <returns></returns>
+        public ActivitySoldOutResponse ActivitySoldOut(ActivitySoldOutRequest activitySoldOutRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<ActivitySoldOutRequest, ActivitySoldOutResponse>(activitySoldOutRequest, GetApiName);
+        }
+        /// <summary>
+        /// 活动秒杀删除
+        /// </summary>
+        /// <returns></returns>
+        public ActivityDeleteResponse ActivityDelete(ActivityDeleteRequest activityDeleteRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<ActivityDeleteRequest, ActivityDeleteResponse>(activityDeleteRequest, GetApiName);
+        }
+        /// <summary>
+        /// 显示要添加的商品
+        /// </summary>
+        /// <returns></returns>
+        public ActivityGoodShowResponse ActivityGoodShow(ActivityGoodShowRequest activityGoodShowRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<ActivityGoodShowRequest, ActivityGoodShowResponse>(activityGoodShowRequest, GetApiName);
+        }
+        /// <summary>
+        /// 活动添加商品
+        /// </summary>
+        /// <returns></returns>
+        public ActivityGoodAddResponse ActivityGoodAdd(ActivityGoodAddRequest activityGoodAddRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<ActivityGoodAddRequest, ActivityGoodAddResponse>(activityGoodAddRequest, GetApiName);
+        }
         #endregion
         #region 好物推荐相关
         /// <summary>

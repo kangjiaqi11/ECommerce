@@ -3,5 +3,93 @@
     ViewBag.Title = "ActivityAdd";
 }
 
-<h2>ActivityAdd</h2>
+<!DOCTYPE html>
+
+<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-closed page-sidebar-closed-hide-logo page-container-bg-solid">
+
+
+    <!-- BEGIN CONTAINER -->
+    <!-- BEGIN CONTENT -->
+    <div class="page-content">
+        <!-- BEGIN PAGE HEADER-->
+        <h3 class="page-title">
+            添加<small>秒杀活动</small>
+        </h3>
+        <!-- END PAGE HEADER-->
+        <!-- BEGIN PAGE CONTENT-->
+        <div class="row margin-top-20">
+            <div class="col-md-12">
+                <!-- BEGIN PROFILE CONTENT -->
+                <div class="profile-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="portlet light">
+                                <div class="portlet-title tabbable-line">
+                                    
+                                </div>
+                                <div class="portlet-body">
+                                    <div class="tab-content">
+                                        <!-- 用户信息 -->
+                                        <div class="form-group">
+                                            <input type="hidden" name="name" id="userid" value="@Session["BUserId"]" />
+                                            <label class="control-label">秒杀标题</label>
+                                            <input type="text" placeholder="秒杀标题" id="UserName" class="form-control" />
+                                        </div>
+                                        <div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
+                                            <label class="control-label">开始时间</label>
+                                            <input id="times" placeholder="请输入开始时间" onclick="WdatePicker()" class=" form-control" type="text" />
+                                        </div>
+                                        <div class="input-group date date-picker margin-bottom-5" data-date-format="dd/mm/yyyy">
+                                            <label class="control-label">结束时间</label>
+                                            <input id="times1" placeholder="请输入结束时间" onclick="WdatePicker()" class=" form-control" type="text" />
+                                        </div>
+                                        <div class="margiv-top-10">
+                                            <input id="Button1" type="button" class="btn blue" value="添加" onclick="ActiviryAdd()" />
+                                        </div>
+
+                                        <!--结束用户信息 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END PROFILE CONTENT -->
+            </div>
+        </div>
+        <!-- END PAGE CONTENT-->
+    </div>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Content/My97DatePicker/WdatePicker.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+        });
+    function ActiviryAdd() {
+            var name = $("#UserName").val();
+        var startime = $("#times").val();
+        var endTime=$("#times1").val();
+            var userid = $("#userid").val();
+            $.ajax({
+                url: "/promotion/ActiviryAdd",
+                type: "POST",
+                data: { ActiviryName: name, AEenTime: endTime, userid: userid,StarTime:startime},
+                dateType: "json",
+                success: function (ser) {
+                    if (ser.Status > 0) {
+                        if (ser.IsSuccess) {
+                            alert("添加成功");
+                            location.href = "/promotion/ActivityShow";
+                        }
+                        else {
+                            alert("添加失败");
+                        }
+                    }
+                    else {
+                        alert(ser.Msg);
+                    }
+                }
+            });
+        }
+    </script>
+</body>
 

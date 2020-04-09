@@ -42,6 +42,14 @@ namespace ECommerceMVC.Controllers.KangJiaQi
             return Json(list.DateList);
         }
         /// <summary>
+        ///测试 
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult aaa()
+        {
+            return View();
+        }
+        /// <summary>
         /// 登录方法
         /// </summary>
         /// <returns></returns>

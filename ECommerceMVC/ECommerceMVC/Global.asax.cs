@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -7,6 +8,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Xml.Linq;
 using BLL;
+using log4net.Config;
+
 namespace ECommerceMVC
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -17,6 +20,10 @@ namespace ECommerceMVC
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            // 添加这句
+            log4net.Config.XmlConfigurator.Configure(new FileInfo(Server.MapPath("~/log4net.config")));
+
         }
         /// <summary>
         /// 获取token值方法

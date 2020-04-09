@@ -60,64 +60,19 @@
                                             商品编号
                                         </th>
                                         <th>
-                                            品牌编号
-                                        </th>
-                                        <th>
-                                            分类Id
-                                        </th>
-                                        <th>
-                                            商品类型
+                                            商品品牌
                                         </th>
                                         <th>
                                             商品名称
                                         </th>
                                         <th>
-                                            商品简介
-                                        </th>
-                                        <th>
-                                            商品介绍
-                                        </th>
-                                        <th>
-                                            市场价格
-                                        </th>
-                                        <th>
                                             销售价
-                                        </th>
-                                        <th>
-                                            成本价
-                                        </th>
-                                        <th>
-                                            浏览数
-                                        </th>
-                                        <th>
-                                            评论数
-                                        </th>
-                                        <th>
-                                            收藏数
-                                        </th>
-                                        <th>
-                                            分享数量
-                                        </th>
-                                        <th>
-                                            上架时间
                                         </th>
                                         <th>
                                             商品状态
                                         </th>
                                         <th>
-                                            数据状态
-                                        </th>
-                                        <th>
-                                            创建时间
-                                        </th>
-                                        <th>
-                                            修改时间
-                                        </th>
-                                        <th>
-                                            创建人
-                                        </th>
-                                        <th>
-                                            修改人
+                                            操作
                                         </th>
                                         <th>
                                             操作
@@ -170,39 +125,22 @@
         });
         //第一这里加载查询的方法
         function Query() {
-            $("#GoodShow").html("");
             $.ajax({
-                url: "GoodsShow",
+                url: "ActiviryGoodShow",
                 type: "POST",
                 dateType: "json",
                 success: function (ser) {
                     console.log(ser);
-                    $(ser.DateList).each(function myfunction() {
+                    $(ser).each(function () {
                         var tr = '<tr>'
                             + '<th>' + this.GoodId + '</th>'
-                            + '<th>' + this.BrandId + '</th>'
-                            + '<th>' + this.CategoryId + '</th>'
                             + '<th>' + this.GoodsType + ' </th>'
                             + '<th>' + this.GoodsName + '</th>'
-                            + '<th>' + this.GoodsBrief + '</th>'
-                            + '<th>' + this.GoodsIntro + '</th>'
-                            + '<th>' + this.MarketPrice + '</th>'
-                            + '<th>' + this.SalePrice + ' </th>'
-                            + '<th>' + this.CostPrice + '</th>'
-                            + '<th>' + this.BrowseCount + '</th>'
-                            + '<th>' + this.CommentCount + '</th>'
-                            + '<th>' + this.CollectCount + ' </th>'
-                            + '<th>' + this.ShareCount + '</th>'
-                            + '<th>' + this.PutawayTime + '</th>'
+                            + '<th>' + this.SalePrice + '</th>'
                             + '<th>' + this.GoodsState + '</th>'
-                            + '<th>' + this.Status + '</th>'
-                            + '<th>' + this.CreateTime + ' </th>'
-                            + '<th>' + this.UpdateTime + '</th>'
-                            + '<th>' + this.CreaterId + '</th>'
-                            + '<th>' + this.UpdaterId + '</th>'
                             + '<th>' + (this.Statel == 1 ? "已启用" : "未启用") + ' </th>'
                             + '<th>' + (this.Statel == 2 ? '<input id="DeleteStatel" class="btn green" type="button" value="启用" onclick="UpdateState2(' + this.TimeQId + ')" />' : '<input id="DeleteStatel" class="btn green" type="button" value="不启用" onclick="UpdateState3(' + this.TimeQId + ')" />') + '</th>'
-                            + '<th>' + '<input id="DeleteStatel" class="btn green" type="button" value="删除" onclick="DeleteStatel(' + this.TimeQId + ')" />' + '</th>'
+                            + '<th>' + '<input id="DeleteStatel" class="btn green" type="button" value="删除" onclick="DeleteStatel(' + this.TimeQId + ',this)" />' + '</th>'
                             + '</tr>'
                         $("#GoodShow").append(tr);
                     })
@@ -210,7 +148,6 @@
             });
         }
         function UpdateState2(id) {
-            alert(1);
             $.ajax({
                 url: "TimeQUpdate2",
                 type: "POST",
@@ -227,7 +164,6 @@
             });
         }
         function UpdateState3(id) {
-            alert(2);
             $.ajax({
                 url: "TimeQUpdate3",
                 type: "POST",
@@ -243,7 +179,7 @@
                 }
             });
         }
-        function DeleteStatel(id) {
+        function DeleteStatel(id,obj) {
             $.ajax({
                 url: "TimeQDelete",
                 type: "POST",
@@ -251,7 +187,8 @@
                 dateType: "json",
                 success: function (ser) {
                     if (ser) {
-                        Query();
+                        alert("删除成功");
+                        $(obj), parent().parent().remove();
                     }
                     else {
                         alert("删除失败");
