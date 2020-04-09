@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace BLL
 {
     public class BGoodsBll
@@ -40,9 +39,9 @@ namespace BLL
         /// <param name="goodsAddRequest"></param>
         /// <param name="GetApiName"></param>
         /// <returns></returns>
-        public UpdateGoodsResponse GoodsDelete(UpdateGoodsRequest addGoodRequest, string GetApiName)
+        public UpdateGoodsResponse GoodsDelete(UpdateGoodsRequest updateGoodsRequest, string GetApiName)
         {
-            return ApiRequestHelper.Post<UpdateGoodsRequest, UpdateGoodsResponse>(addGoodRequest, GetApiName);
+            return ApiRequestHelper.Post<UpdateGoodsRequest, UpdateGoodsResponse>(updateGoodsRequest, GetApiName);
         }
     }
 }

@@ -1,7 +1,7 @@
 create database ECommerce
 use ECommerce
 -----------------------------------¿µ¼ÒÆë-------------------------------------------
-create table "User" (
+create table UserInfo (
    UserId               bigint               identity,
    UserName             varchar(50)          null,
    UserAccount          varbinary(50)        null,
@@ -42,7 +42,7 @@ create table Role (
    constraint PK_ROLE primary key (RoleId)
 )
 go
-create table Menus (
+create table MenusInfo (
    MenusId              bigint               identity,
    MenusName            varchar(50)          null,
    MenusUrl             varbinary(100)       null,
@@ -322,7 +322,7 @@ go
 
 -----------------------------------------------ÍôÖ¾ê»------------------------------------
 
-create table GoodsInfo (
+create table GoodsModel (
    GoodId               int                  identity,
    BrandId              int                  null,
    CategoryId           int                  null,
@@ -431,5 +431,5 @@ exec (@selectsql);
  exec sp_executesql @countsql,N' @totalcount int out ',@totalcount out;
 end
 
-.
-select * from GoodsInfo
+
+insert into GoodsModel (BrandId,GoodsName,SalePrice,GoodsState,GoodsBrief) values(1,'Æ»¹ûÊÖ»ú',100,1,'À²À²À²À²À²',1,'2020-4-7','2020-4-7',0,0)

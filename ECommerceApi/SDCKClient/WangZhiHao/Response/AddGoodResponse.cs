@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace SDCKClient.WangZhiHao.Response
 {
-    public class AddGoodResponse
+    public class AddGoodResponse:BaseResponse
     {
+       
         public List<GoodsModel> goodAdd { get; set; }
         /// <summary>
         /// 状态
@@ -28,5 +29,6 @@ namespace SDCKClient.WangZhiHao.Response
         /// 比如 ，添加是否成功，删除是否成功
         /// </summary>
         public bool IsSuccess { get; set; }
+  
     }
 }

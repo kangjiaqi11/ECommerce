@@ -3,6 +3,7 @@ using Dal.WangZhiHao;
 using SDCKClient;
 using SDCKClient.WangZhiHao.Response;
 using SDCKClient.WangZhiHao.Request;
+using System;
 
 namespace BLL.WangZhiHao
 {
@@ -33,11 +34,11 @@ namespace BLL.WangZhiHao
                 addGoodResponse.Status = -1;
                 addGoodResponse.Msg = "上架时间不能为空";
                 return addGoodResponse;
-            }
+            } 
+            
             GoodsModel goodsModel = new GoodsModel();
-            goodsModel.GoodId = addGoodRequest.GoodId;
             goodsModel.BrandId = addGoodRequest.BrandId;
-            goodsModel.CategoryId = addGoodRequest.CategoryId;
+            goodsModel.CategoryId = 1;
             goodsModel.GoodsType = addGoodRequest.GoodsType;
             goodsModel.GoodsName = addGoodRequest.GoodsName;
             goodsModel.GoodsBrief = addGoodRequest.GoodsBrief;
@@ -52,10 +53,10 @@ namespace BLL.WangZhiHao
             goodsModel.PutawayTime = addGoodRequest.PutawayTime;
             goodsModel.GoodsState = addGoodRequest.GoodsState;
             goodsModel.Status = 1;
-            goodsModel.CreateTime = addGoodRequest.CreateTime;
-            goodsModel.UpdateTime = addGoodRequest.UpdateTime;
-            goodsModel.CreaterId = addGoodRequest.CreaterId;
-            goodsModel.UpdaterId = addGoodRequest.UpdaterId;
+            goodsModel.CreateTime = DateTime.Now;
+            goodsModel.UpdateTime = DateTime.Now;
+            goodsModel.CreaterId = 0;
+            goodsModel.UpdaterId = 0;
             var ser = dal.GoodAdd(goodsModel);
             if (ser>0)
             {

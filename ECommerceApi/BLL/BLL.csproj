@@ -46,6 +46,9 @@
     <Reference Include="ServiceStack.Interfaces">
       <HintPath>Fakes\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
+    <Reference Include="ServiceStack.Interfaces.Fakes">
+      <HintPath>FakesAssemblies\ServiceStack.Interfaces.Fakes.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack.Redis">
       <HintPath>Fakes\ServiceStack.Redis.dll</HintPath>
     </Reference>

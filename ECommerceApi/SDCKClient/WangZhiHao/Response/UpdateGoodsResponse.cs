@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MODEL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace SDCKClient.WangZhiHao.Response
 {
-    public class UpdateGoodsResponse
+    public class UpdateGoodsResponse:BaseResponse
     {
+        public List<GoodsModel> goodsupdate { get; set; }
         /// <summary>
         /// 状态
         /// 表示请求状态
@@ -21,5 +23,6 @@ namespace SDCKClient.WangZhiHao.Response
         /// </summary>
         public string Msg { get; set; }
         public bool IsSuccess { get; set; }
+       
     }
 }
