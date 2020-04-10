@@ -100,7 +100,7 @@ namespace BLL.WangZhiHao
         public UpdateGoodsResponse GoodsDelete(UpdateGoodsRequest updateGoodsRequest)
         {
             UpdateGoodsResponse updateGoodsResponse = new UpdateGoodsResponse();
-            if (updateGoodsRequest.GoodId==1)
+            if (updateGoodsRequest.GoodId==0)
             {
                 updateGoodsResponse.Status = -1;
                 updateGoodsResponse.Msg = "id为空";

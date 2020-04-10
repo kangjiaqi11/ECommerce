@@ -134,7 +134,8 @@
                 dateType: "json",
                 success: function (ser) {
                     if (ser) {
-                        GoodsAudit(index);
+                        alert("审核成功");
+                         GoodsAudit();
                     }
                     else {
                         alert("修改失败");
@@ -152,7 +153,7 @@
                 dateType: "json",
                 success: function (ser) {
                     if (ser) {
-                        GoodsAudit(index);
+                         GoodsAudit();
                     }
                     else {
                         alert("修改失败");
@@ -170,6 +171,7 @@
             success: function (ser) {
                 if (ser) {
                     alert("删除成功");
+                    GoodsAudit();
                 }
                 else {
                     alert("删除失败");
@@ -193,8 +195,8 @@
                             + '<th>' + this.GoodsName + '</th>'
                             + '<th>' + this.SalePrice + ' </th>'
                             + '<th>' + this.GoodsState + '</th>'
-                            + '<th>' + (this.GoodsState == 1 ? "审核通过" : "审核未通过") + + ' </th>'
-                            + '<th>' + (this.GoodsState == 2 ? '<input id="DeleteStatel" class="btn green" type="button" value="审核通过" onclick="GoodsPutaway(' + this.GoodId + ')" />' : '<input id="DeleteState2" class="btn green" type="button" value="审核未通过" onclick="GoodsSoldOut(' + this.GoodId + ')" />') + '</th>'
+                            + '<th>' + (this.GoodsState == 3 ? "未通过" : "通过") + + ' </th>'
+                            + '<th>' + (this.GoodsState == 3 ? '<input id="DeleteStatel" class="btn green" type="button" value="通过" onclick="GoodsPutaway(' + this.GoodId + ')" />' : '<input id="DeleteState2" class="btn green" type="button" value="不通过" onclick="GoodsSoldOut(' + this.GoodId + ')" />') + '</th>'
                             + '<th>' + '<input id="DeleteIsRecommend" class="btn green" type="button" value="删除" onclick="GoodsDelete(' + this.GoodId + ',this)" />' + '</th>'
                             + '</tr>'
                         $("#audit").append(tr);
