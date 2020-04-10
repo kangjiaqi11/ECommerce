@@ -62,7 +62,6 @@
     <Compile Include="KangJiaQi\Request\ActivitySoldOutRequest.cs" />
     <Compile Include="KangJiaQi\Request\ActivityPutawayRequest.cs" />
     <Compile Include="KangJiaQi\Request\ActivityShowRequst.cs" />
-    <Compile Include="KangJiaQi\Request\Add.cs" />
     <Compile Include="KangJiaQi\Request\BUserAddRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserLoginRequst.cs" />
     <Compile Include="KangJiaQi\Request\BUserUpdateRequst.cs" />

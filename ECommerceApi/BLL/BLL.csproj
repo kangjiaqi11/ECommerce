@@ -35,21 +35,17 @@
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="MODEL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\MODEL.dll</HintPath>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\..\..\..\每月技能题\redisDemo\Day19Demo\bin\ServiceStack.Common.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Interfaces">
-      <HintPath>Fakes\ServiceStack.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.Interfaces.Fakes">
-      <HintPath>FakesAssemblies\ServiceStack.Interfaces.Fakes.dll</HintPath>
+      <HintPath>..\..\..\..\每月技能题\redisDemo\Day19Demo\bin\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Redis">
-      <HintPath>Fakes\ServiceStack.Redis.dll</HintPath>
+      <HintPath>..\..\..\..\每月技能题\redisDemo\Day19Demo\bin\ServiceStack.Redis.dll</HintPath>
     </Reference>
     <Reference Include="ServiceStack.Text">
-      <HintPath>Fakes\ServiceStack.Text.dll</HintPath>
+      <HintPath>..\..\..\..\每月技能题\redisDemo\Day19Demo\bin\ServiceStack.Text.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -74,7 +70,6 @@
     <Compile Include="ZhangYang\StoreroomBLL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
@@ -90,28 +85,19 @@
       <Project>{2cd1adc8-95b3-4145-b620-86e5e7f14e3f}</Project>
       <Name>MODEL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MODEL\MODEL.csproj">
+      <Project>{2cd1adc8-95b3-4145-b620-86e5e7f14e3f}</Project>
+      <Name>MODEL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SDCKClient\SDCKClient.csproj">
       <Project>{06c62adc-577b-459e-9bad-824700a2d627}</Project>
       <Name>SDCKClient</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\BLL.dll" />
-    <Content Include="bin\Debug\BLL.pdb" />
-    <Content Include="bin\Debug\Common.dll" />
-    <Content Include="bin\Debug\Common.pdb" />
-    <Content Include="bin\Debug\Dal.dll" />
-    <Content Include="bin\Debug\Dal.pdb" />
-    <Content Include="bin\Debug\Dapper.dll" />
-    <Content Include="bin\Debug\Dapper.xml" />
-    <Content Include="bin\Debug\MODEL.dll" />
-    <Content Include="bin\Debug\MODEL.pdb" />
-    <Content Include="bin\Debug\SDCKClient.dll" />
-    <Content Include="bin\Debug\SDCKClient.pdb" />
     <Content Include="obj\Debug\BLL.csproj.FileListAbsolute.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\SDCKClient.dll.config" />
     <Fakes Include="Fakes\ServiceStack.Common.fakes" />
     <Fakes Include="Fakes\ServiceStack.Interfaces01.fakes" />
     <None Include="obj\Debug\BLL.csprojAssemblyReference.cache" />
