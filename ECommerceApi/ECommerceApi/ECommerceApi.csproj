@@ -66,10 +66,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\你爹\Desktop\heip\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="SDCKClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\SDCKClient.dll</HintPath>
-    </Reference>
     <Reference Include="ServiceStack.Interfaces">
       <HintPath>..\BLL\Fakes\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
@@ -372,6 +368,10 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{76d9cec7-6b07-4544-a083-d5fa152d1a43}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SDCKClient\SDCKClient.csproj">
+      <Project>{06c62adc-577b-459e-9bad-824700a2d627}</Project>
+      <Name>SDCKClient</Name>
     </ProjectReference>
     <ProjectReference Include="..\SDCKClient\SDCKClient.csproj">
       <Project>{06c62adc-577b-459e-9bad-824700a2d627}</Project>

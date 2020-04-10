@@ -20,7 +20,7 @@ namespace Dal.WangZhiHao
         /// <returns></returns>
         public int GoodAdd(GoodsModel good)
         {
-            string sql = $"insert into GoodsModel (BrandId,GoodsName,SalePrice,GoodsState,GoodsBrief,Status,CreateTime,UpdateTime,CreaterId,UpdaterId) values({good.BrandId},'{good.GoodsName}',{good.SalePrice},{good.GoodsState},'{good.GoodsBrief}',{good.Status},'{good.CreateTime}','{good.UpdateTime}',{good.CreaterId},{good.UpdaterId})";
+            string sql = $"insert into GoodsInfo (BrandId,GoodsName,SalePrice,GoodsState,GoodsBrief,Status,CreateTime,UpdateTime,CreaterId,UpdaterId) values({good.BrandId},'{good.GoodsName}',{good.SalePrice},{good.GoodsState},'{good.GoodsBrief}',{good.Status},'{good.CreateTime}','{good.UpdateTime}',{good.CreaterId},{good.UpdaterId})";
             return OrmDbHelper.ExecuteSql(sql);
         }
 
@@ -39,10 +39,37 @@ namespace Dal.WangZhiHao
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public int GoodsDelete(int id)
+        public int GoodsDelete(int GoodId)
         {
-            string sql = $"update GoodsInfo set Status=0 where GoodId={id}";
-            return db.ExecuteNonQuery(sql);
+            string sql = $"update GoodsInfo set Status=0 where GoodId={GoodId}";
+            return OrmDbHelper.ExecuteSql(sql);
+        }
+        /// <summary>
+        ///审核通过
+        /// </summary>
+        /// <returns></returns>
+        public int GoodsPutaway(int GoodId)
+        {
+            string sql = $"update GoodsInfo set GoodsState=1 where  GoodId={GoodId}";
+            return OrmDbHelper.ExecuteSql(sql);
+        }
+        /// <summary>
+        ///审核未通过
+        /// </summary>
+        /// <returns></returns>
+        public int GoodsSoldOut(int GoodId)
+        {
+            string sql = $"update GoodsInfo set GoodsState=2 where  GoodId={GoodId}";
+            return OrmDbHelper.ExecuteSql(sql);
+        }
+        /// <summary>
+        /// 显示
+        /// </summary>
+        /// <returns></returns>
+        public List<GoodsModel> GoodsAudit()
+        {
+            string sql = "select * from GoodsInfo where GoodsState=3";
+            return OrmDbHelper.GetList<GoodsModel>(sql);
         }
     }
 }

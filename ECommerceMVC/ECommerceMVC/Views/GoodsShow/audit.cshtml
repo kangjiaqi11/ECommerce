@@ -1,6 +1,207 @@
-﻿
-@{
-    ViewBag.Title = "audit";
+﻿@{
+     ViewBag.Title = "ActivityShow";
 }
 
-<h2>audit</h2>
+<html lang="en">
+<body class="page-header-fixed page-quick-sidebar-over-content ">
+    <div class="page-content-wrapper">
+        <div class="page-content">
+            <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+            <div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                            <h4 class="modal-title">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            Widget settings form goes here
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn blue">Save changes</button>
+                            <button type="button" class="btn default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
+            <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+            <!-- BEGIN PAGE CONTENT-->
+            <div class="row">
+                <div class="col-md-12" id="Show">
+                    <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                    <div class="portlet box blue">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <h2>商品审核</h2>
+                            </div>
+                            <div class="tools">
+
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="table-toolbar">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="btn-group">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="btn-group pull-right">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            商品编号
+                                        </th>
+                                        <th>
+                                            商品品牌
+                                        </th>
+                                        <th>
+                                            商品名称
+                                        </th>
+                                        <th>
+                                            销售价
+                                        </th>
+                                        <th>
+                                            商品状态
+                                        </th>
+                                        <th>
+                                            操作
+                                        </th>
+                                        <th>
+                                            操作
+                                        </th>
+                                        <th>
+                                            操作
+                                        </th>
+
+                                    </tr>
+                                    @*显示数据*@
+                                </thead>
+                                <tbody id="audit"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- END EXAMPLE TABLE PORTLET-->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 col-sm-12">
+                    <div class="dataTables_info" id="sample_editable_1_info" role="status" aria-live="polite">
+
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12">
+                    <div class="dataTables_paginate paging_simple_numbers" id="sample_editable_1_paginate">
+                        <ul class="pagination">
+                           
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- END PAGE CONTENT -->
+        </div>
+    </div>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script>
+         //页面加载
+        jQuery(document).ready(function () {
+            GoodsAudit();
+
+        });
+    
+        //查询
+        function cha() {
+            $("#ActivityTitle").val();
+            var index = $("#index11").val();
+            GoodsAudit(index);
+        }
+        //审核通过
+        function GoodsPutaway(GoodId) {
+            var index = $("#index11").val();
+            $.ajax({
+                url: "GoodsPutaway",
+                type: "POST",
+                data: { GoodId: GoodId },
+                dateType: "json",
+                success: function (ser) {
+                    if (ser) {
+                        GoodsAudit(index);
+                    }
+                    else {
+                        alert("修改失败");
+                    }
+                }
+            });
+        }
+        //未通过
+        function GoodsSoldOut(GoodId) {
+            var index = $("#index11").val();
+            $.ajax({
+                url: "GoodsSoldOut",
+                type: "POST",
+                data: { GoodId: GoodId },
+                dateType: "json",
+                success: function (ser) {
+                    if (ser) {
+                        GoodsAudit(index);
+                    }
+                    else {
+                        alert("修改失败");
+                    }
+                }
+            });
+        }
+        //删除
+        function GoodsDelete(GoodId) {
+        $.ajax({
+            url: "GoodsDelete",
+            type: "POST",
+            data: { GoodId: GoodId },
+            dateType: "json",
+            success: function (ser) {
+                if (ser) {
+                    alert("删除成功");
+                }
+                else {
+                    alert("删除失败");
+                }
+            }
+        });
+    }
+        //第一这里加载查询的方法
+        function GoodsAudit() {
+            $("#audit").html("");
+            $.ajax({
+                url: "GoodsAudit",
+                type: "POST",
+                dateType: "json",
+                success: function (ser) {
+                    console.log(ser);
+                    $(ser).each(function GoodsAudit() {
+                        var tr = '<tr>'
+                            + '<th>' + this.GoodId + '</th>'
+                            + '<th>' + this.GoodsType + '</th>'
+                            + '<th>' + this.GoodsName + '</th>'
+                            + '<th>' + this.SalePrice + ' </th>'
+                            + '<th>' + this.GoodsState + '</th>'
+                            + '<th>' + (this.GoodsState == 1 ? "审核通过" : "审核未通过") + + ' </th>'
+                            + '<th>' + (this.GoodsState == 2 ? '<input id="DeleteStatel" class="btn green" type="button" value="审核通过" onclick="GoodsPutaway(' + this.GoodId + ')" />' : '<input id="DeleteState2" class="btn green" type="button" value="审核未通过" onclick="GoodsSoldOut(' + this.GoodId + ')" />') + '</th>'
+                            + '<th>' + '<input id="DeleteIsRecommend" class="btn green" type="button" value="删除" onclick="GoodsDelete(' + this.GoodId + ',this)" />' + '</th>'
+                            + '</tr>'
+                        $("#audit").append(tr);
+                    })
+                }
+            });
+        }
+    </script>
+</body>
+</html>
