@@ -109,8 +109,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div class="portlet-body">
                         <div class="table-toolbar">
                             <div class="row">
-                                
-                                <input style="margin-left:1550px" id="Del" class="btn red" type="button" value="批量删除" />
+                                <input style="margin-left:15px" id="Del" class="btn red" type="button" value="批量删除" />
                             </div>
                             <table class="table table-striped table-hover table-bordered" id="sample_editable_1">
                                 <thead>
@@ -219,7 +218,6 @@ License: You must have a valid license purchased only from themeforest(the above
         $("[name=quan]:checked").each(function () {
             ids.push(this.value);
         })
-        alert(ids);
         $.ajax({
           url: "Updatereturntype",
             type: "POST",

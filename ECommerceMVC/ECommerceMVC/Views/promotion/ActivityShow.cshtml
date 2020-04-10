@@ -45,7 +45,7 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="btn-group">
-                                            <input id="ActivityAdd" class="btn blue" type="button" value="添加" />
+                                            <input id="ActivityAdd" class="btn blue" onclick="ActivityAdd()" type="button" value="添加" />
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -125,6 +125,7 @@
             Query(1);
 
         });
+    //跳转添加
     function ActivityAdd() {
          location.href = '/promotion/ActivityAdd';
     }
@@ -145,6 +146,13 @@
         function NextPage() {
             var index = parseInt($("#index11").val());
             var PageCount = $("#tocount11").val();
+              if (PageCount % 10 == 0) {
+                PageCount = PageCount / 10;
+            }
+            else {
+                PageCount = (PageCount/10)+1
+            }
+
             index = index + 1;
             if (index < PageCount) {
                 Query(index);
@@ -222,7 +230,7 @@
             $.ajax({
                 url: "PageActivityShow",
                 type: "POST",
-                data: { PageIndex: pageindex, PageSize: 20, ActivityTitle: ActivityTitle },
+                data: { PageIndex: pageindex, PageSize: 10, ActivityTitle: ActivityTitle },
                 dateType: "json",
                 success: function (ser) {
                     console.log(ser);

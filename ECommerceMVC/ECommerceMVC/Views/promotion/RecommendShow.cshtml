@@ -211,9 +211,14 @@ License: You must have a valid license purchased only from themeforest(the above
         function NextPage() {
             var ToCount = parseInt( $("#tocount").val());
             var index = parseInt($("#ascascasc").val());
-            alert(ToCount);
-            if (index < ToCount) {
-                Query(index);
+             if (ToCount % 6 == 0) {
+                ToCount = ToCount / 6;
+            }
+            else {
+                ToCount = (ToCount/6)+1
+            }
+            if (index+1 < ToCount) {
+                Query(index+1);
             }
             else {
                 alert("已经是尾页了");
@@ -230,7 +235,7 @@ License: You must have a valid license purchased only from themeforest(the above
             $.ajax({
                 url: "PageRecommendShow",
                 type: "POST",
-                data: { PageIndex: pageindex, PageSize: 15, GoodName: GoodName, IsRecommend: IsRecommend },
+                data: { PageIndex: pageindex, PageSize: 10, GoodName: GoodName, IsRecommend: IsRecommend },
                 dateType: "json",
                 success: function (ser) {
                     $(ser.DateList).each(function myfunction() {

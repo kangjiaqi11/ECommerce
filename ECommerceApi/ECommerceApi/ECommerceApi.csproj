@@ -70,6 +70,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\SDCKClient.dll</HintPath>
     </Reference>
+    <Reference Include="ServiceStack.Common">
+      <HintPath>..\..\..\..\每月技能题\redisDemo\Day19Demo\bin\ServiceStack.Common.dll</HintPath>
+    </Reference>
     <Reference Include="ServiceStack.Interfaces">
       <HintPath>..\BLL\Fakes\ServiceStack.Interfaces.dll</HintPath>
     </Reference>

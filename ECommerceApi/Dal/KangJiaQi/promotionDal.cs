@@ -76,7 +76,7 @@ namespace Dal
         /// <returns></returns>
         public int ActivityAdd(Activity activity)
         {
-            string sql= $"insert into Activity( ActivityTitle ,ActivityStatel, Statel ,AStartTime ,AEenTime ,CreateTime, UpdateTime , CreateId  ,UpdateId) values ('{activity.ActivityTitle}',{activity.ActivityStatel},{activity.Statel},'{activity.AStartTime}','{activity.AEenTime}','{activity.CreateTime}','{activity.UpdateTime}','{activity.CreateId}','{activity.UpdateId}') ";
+            string sql= $"insert into Activity( ActivityTitle ,ActivityStatel,TimeQId,GoodId, Statel ,AStartTime ,AEenTime ,CreateTime, UpdateTime , CreateId  ,UpdateId) values ('{activity.ActivityTitle}',{activity.ActivityStatel},{activity.TimeQId},{activity.GoodId},{activity.Statel},'{activity.AStartTime}','{activity.AEenTime}','{activity.CreateTime}','{activity.UpdateTime}','{activity.CreateId}','{activity.UpdateId}') ";
             return OrmDbHelper.ExecuteSql(sql); 
         }
         /// <summary>
