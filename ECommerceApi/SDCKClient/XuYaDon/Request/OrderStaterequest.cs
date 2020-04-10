@@ -9,5 +9,6 @@ namespace SDCKClient.XuYaDon
   public  class OrderStaterequest:BaseRequest
     {
         public int id { get; set; }
+        public int State { get; set; }
     }
 }
