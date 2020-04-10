@@ -322,7 +322,7 @@ go
 
 -----------------------------------------------汪志昊------------------------------------
 
-create table GoodsModel (
+create table GoodsInfo (
    GoodId               int                  identity,
    BrandId              int                  null,
    CategoryId           int                  null,
@@ -432,4 +432,7 @@ exec (@selectsql);
 end
 
 
-insert into GoodsModel (BrandId,GoodsName,SalePrice,GoodsState,GoodsBrief) values(1,'苹果手机',100,1,'啦啦啦啦啦',1,'2020-4-7','2020-4-7',0,0)
+insert into GoodsModel (BrandId,GoodsName,SalePrice,GoodsState,GoodsBrief,Status,CreateTime,UpdateTime,CreaterId,UpdaterId) values(1,'苹果手机',100,1,'啦啦啦啦啦',1,'2020-4-7','2020-4-7',0,0)
+insert into GoodsModel (BrandId,GoodsName,SalePrice,GoodsState,GoodsBrief,Status,CreateTime,UpdateTime,CreaterId,UpdaterId) values(1,'大厦萨达大神',11.0,1,'采访稿电饭锅',1,'2020/4/8 20:06:23','2020/4/8 20:06:23',0,0)
+select * from GoodsInfo
+insert into GoodsInfo (BrandId,GoodsName,SalePrice,GoodsState,GoodsBrief,Status,CreateTime,UpdateTime,CreaterId,UpdaterId) values(1,'大厦萨达大神',11.0,1,'采访稿电饭锅',3,'2020/4/8 20:06:23','2020/4/8 20:06:23',0,0)

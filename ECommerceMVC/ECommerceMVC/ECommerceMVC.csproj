@@ -4759,10 +4759,10 @@
     <Content Include="Views\GoodsShow\GoodsAdd.cshtml" />
     <Content Include="Views\GoodsShow\GoodsShow.cshtml" />
     <Content Include="Views\Order\returnType.cshtml" />
-    <Content Include="Views\GoodsShow\audit.cshtml" />
     <Content Include="Views\promotion\ActivityGoodAdd.cshtml" />
     <Content Include="Views\BUser\aaa.cshtml" />
     <Content Include="Views\GoodsShow\GoodsDelete.cshtml" />
+    <Content Include="Views\GoodsShow\audit.cshtml" />
     <None Include="Views\promotion\ActivityShow.cshtml" />
     <Content Include="Views\promotion\RecommendShow.cshtml" />
     <Content Include="Views\promotion\TimeShow.cshtml" />

@@ -47,7 +47,7 @@
                                     <div class="col-md-6">
                                         <div class="btn-group">
                                             <button id="sample_editable_1_new" class="btn green">
-                                                添加<i class="fa fa-plus"></i>
+                                                添加<i class="fa fa-plus" location.href = "/GoodsShow/GoodsAdd"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -69,7 +69,7 @@
                                             销售价
                                         </th>
                                         <th>
-                                            商品状态
+                                            审核状态
                                         </th>
                                         <th>
                                             操作
@@ -104,6 +104,14 @@
                             </li>
                             <li class="paginate_button next disabled" aria-controls="sample_editable_1" tabindex="0" id="sample_editable_1_next">
                             </li>
+                            <li class="paginate_button previous disabled" aria-controls="sample_editable_1" tabindex="0" id="sample_editable_1_previous">
+                                <input type="hidden" name="name" value="" id="index11" />
+                                <input type="hidden" name="name11" value="" id="tocount11" />
+                                <input id="Button1" class="btn green" type="button" value="上一页" onclick="UpPage()" />
+                            </li>
+                            <li class="paginate_button next disabled" aria-controls="sample_editable_1" tabindex="0" id="sample_editable_1_next">
+                                <input id="Button2" class="btn green" type="button" value="下一页" onclick="NextPage()" />
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -123,6 +131,32 @@
             Query();
 
         });
+        //上一页
+        function UpPage() {
+            var index = parseInt($("#index11").val());
+            index = index - 1;
+            if (index > 0) {
+
+                Query(index);
+            }
+            else {
+                alert("已经是首页了");
+                return;
+            }
+        }
+        //下一页
+        function NextPage() {
+            var index = parseInt($("#index11").val());
+            var PageCount = $("#tocount11").val();
+            index = index + 1;
+            if (index < PageCount) {
+                Query(index);
+            }
+            else {
+                alert("已经是尾页了");
+                return;
+            }
+        }
         //第一这里加载查询的方法
         function Query() {
             $.ajax({
@@ -137,10 +171,10 @@
                             + '<th>' + this.GoodsType + ' </th>'
                             + '<th>' + this.GoodsName + '</th>'
                             + '<th>' + this.SalePrice + '</th>'
-                            + '<th>' + this.GoodsState + '</th>'
+                            + '<th>' + this.GoodsState+ '</th>'
                             + '<th>' + (this.Statel == 1 ? "已启用" : "未启用") + ' </th>'
-                            + '<th>' + (this.Statel == 2 ? '<input id="DeleteStatel" class="btn green" type="button" value="启用" onclick="UpdateState2(' + this.TimeQId + ')" />' : '<input id="DeleteStatel" class="btn green" type="button" value="不启用" onclick="UpdateState3(' + this.TimeQId + ')" />') + '</th>'
-                            + '<th>' + '<input id="DeleteStatel" class="btn green" type="button" value="删除" onclick="DeleteStatel(' + this.TimeQId + ',this)" />' + '</th>'
+                            + '<th>' + (this.Statel == 2 ? '<input id="DeleteStatel" class="btn green" type="button" value="启用" onclick="UpdateState2(' + this.GoodId + ')" />' : '<input id="DeleteStatel" class="btn green" type="button" value="不启用" onclick="UpdateState3(' + this.GoodId + ')" />') + '</th>'
+                            + '<th>' + '<input id="DeleteStatel" class="btn green" type="button" value="删除" onclick="DeleteStatel(' + this.GoodId + ',this)" />' + '</th>'
                             + '</tr>'
                         $("#GoodShow").append(tr);
                     })

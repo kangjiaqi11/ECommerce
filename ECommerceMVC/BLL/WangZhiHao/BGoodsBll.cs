@@ -34,7 +34,7 @@ namespace BLL
         }
 
         /// <summary>
-        /// 添加
+        /// 删除
         /// </summary>
         /// <param name="goodsAddRequest"></param>
         /// <param name="GetApiName"></param>
@@ -42,6 +42,38 @@ namespace BLL
         public UpdateGoodsResponse GoodsDelete(UpdateGoodsRequest updateGoodsRequest, string GetApiName)
         {
             return ApiRequestHelper.Post<UpdateGoodsRequest, UpdateGoodsResponse>(updateGoodsRequest, GetApiName);
+        }
+
+        /// <summary>
+        /// 商品审核通过
+        /// </summary>
+        /// <param name="goodsPutawayRequest"></param>
+        /// <param name="GetApiName"></param>
+        /// <returns></returns>
+        public GoodsPutawayResponse GoodsPutaway(GoodsPutawayRequest goodsPutawayRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<GoodsPutawayRequest, GoodsPutawayResponse>(goodsPutawayRequest, GetApiName);
+        }
+
+        /// <summary>
+        /// 商品未审核通过
+        /// </summary>
+        /// <param name="goodsPutawayRequest"></param>
+        /// <param name="GetApiName"></param>
+        /// <returns></returns>
+        public GoodsSoldOutResponse GoodsSold(GoodsSoldOutRequest goodsSoldOutRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<GoodsSoldOutRequest, GoodsSoldOutResponse>(goodsSoldOutRequest, GetApiName);
+        }
+
+        /// <summary>
+        /// 显示要添加的审核商品
+        /// </summary>
+        /// <param name="auditShowRequest"></param>
+        /// <returns></returns>
+        public AuditShowResponse GoodsAudit(AuditShowRequest auditShowRequest, string GetApiName)
+        {
+            return ApiRequestHelper.Post<AuditShowRequest, AuditShowResponse>(auditShowRequest, GetApiName);
         }
     }
 }

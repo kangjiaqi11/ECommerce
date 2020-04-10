@@ -104,9 +104,17 @@
     <Compile Include="KangJiaQi\Response\TimeQUpdate2Response.cs" />
     <Compile Include="KangJiaQi\Response\TimeQUpdate3Response.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WangZhiHao\Request\AuditShowRequest.cs" />
+    <Compile Include="WangZhiHao\Request\GoodsAuditRequest.cs" />
+    <Compile Include="WangZhiHao\Request\GoodsPutawayRequest.cs" />
+    <Compile Include="WangZhiHao\Request\GoodsSoldOutRequest.cs" />
     <Compile Include="WangZhiHao\Request\AddGoodRequest.cs" />
     <Compile Include="WangZhiHao\Request\UpdateGoodsRequest.cs" />
     <Compile Include="WangZhiHao\Response\AddGoodResponse.cs" />
+    <Compile Include="WangZhiHao\Response\AuditShowResponse.cs" />
+    <Compile Include="WangZhiHao\Response\GoodsAuditResponse.cs" />
+    <Compile Include="WangZhiHao\Response\GoodsPutawayResponse.cs" />
+    <Compile Include="WangZhiHao\Response\GoodsSoldOutResponse.cs" />
     <Compile Include="WangZhiHao\Response\UpdateGoodsResponse.cs" />
     <Compile Include="XuYaDon\Request\ExperBindrequeset.cs" />
     <Compile Include="XuYaDon\Request\ExperShowrequeset.cs" />

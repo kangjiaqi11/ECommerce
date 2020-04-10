@@ -70,6 +70,7 @@
     <Compile Include="ZhangYang\StoreroomBLL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Release\" />
     <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +89,14 @@
     <ProjectReference Include="..\MODEL\MODEL.csproj">
       <Project>{2cd1adc8-95b3-4145-b620-86e5e7f14e3f}</Project>
       <Name>MODEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MODEL\MODEL.csproj">
+      <Project>{2cd1adc8-95b3-4145-b620-86e5e7f14e3f}</Project>
+      <Name>MODEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SDCKClient\SDCKClient.csproj">
+      <Project>{06c62adc-577b-459e-9bad-824700a2d627}</Project>
+      <Name>SDCKClient</Name>
     </ProjectReference>
     <ProjectReference Include="..\SDCKClient\SDCKClient.csproj">
       <Project>{06c62adc-577b-459e-9bad-824700a2d627}</Project>

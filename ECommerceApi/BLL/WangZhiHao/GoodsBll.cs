@@ -103,45 +103,94 @@ namespace BLL.WangZhiHao
             if (updateGoodsRequest.GoodId==1)
             {
                 updateGoodsResponse.Status = -1;
-                updateGoodsResponse.Msg = "名称不能为空";
+                updateGoodsResponse.Msg = "id为空";
                 return updateGoodsResponse;
             }
-            if (updateGoodsRequest.GoodsState ==1 )
+            var ser = dal.GoodsDelete(updateGoodsRequest.GoodId);
+            if (ser>0)
             {
-                updateGoodsResponse.Status = 2;
-                updateGoodsResponse.Msg = "审核不通过";
-                return updateGoodsResponse;
+                updateGoodsResponse.IsSuccess = true;
             }
-            if (updateGoodsRequest.PutawayTime == null)
+            else
             {
                 updateGoodsResponse.Status = -1;
-                updateGoodsResponse.Msg = "上架时间不能为空";
-                return updateGoodsResponse;
+                updateGoodsResponse.Msg = "修改失败";
             }
-            GoodsModel goodsModel = new GoodsModel();
-            goodsModel.GoodId = updateGoodsRequest.GoodId;
-            goodsModel.BrandId = updateGoodsRequest.BrandId;
-            goodsModel.CategoryId = updateGoodsRequest.CategoryId;
-            goodsModel.GoodsType = updateGoodsRequest.GoodsType;
-            goodsModel.GoodsName = updateGoodsRequest.GoodsName;
-            goodsModel.GoodsBrief = updateGoodsRequest.GoodsBrief;
-            goodsModel.GoodsIntro = updateGoodsRequest.GoodsIntro;
-            goodsModel.MarketPrice = updateGoodsRequest.MarketPrice;
-            goodsModel.SalePrice = updateGoodsRequest.SalePrice;
-            goodsModel.CostPrice = updateGoodsRequest.CostPrice;
-            goodsModel.BrowseCount = updateGoodsRequest.BrowseCount;
-            goodsModel.CommentCount = updateGoodsRequest.CommentCount;
-            goodsModel.CollectCount = updateGoodsRequest.CollectCount;
-            goodsModel.ShareCount = updateGoodsRequest.ShareCount;
-            goodsModel.PutawayTime = updateGoodsRequest.PutawayTime;
-            goodsModel.GoodsState = updateGoodsRequest.GoodsState;
-            goodsModel.Status = 1;
-            goodsModel.CreateTime = updateGoodsRequest.CreateTime;
-            goodsModel.UpdateTime = updateGoodsRequest.UpdateTime;
-            goodsModel.CreaterId = updateGoodsRequest.CreaterId;
-            goodsModel.UpdaterId = updateGoodsRequest.UpdaterId;
-            
             return updateGoodsResponse;
+        }
+        /// <summary>
+        /// 商品审核通过
+        /// </summary>
+        /// <param name="goodsPutawayRequest"></param>
+        /// <returns></returns>
+        public GoodsPutawayResponse GoodsPutaway(GoodsPutawayRequest goodsPutawayRequest)
+        {
+            GoodsPutawayResponse goodsPutawayResponse = new GoodsPutawayResponse();
+            if (goodsPutawayRequest.GoodId==0)
+            {
+                goodsPutawayResponse.GoodsState = -1;
+                goodsPutawayResponse.Msg = "id为空";
+                return goodsPutawayResponse;
+            }
+            var ser = dal.GoodsPutaway(goodsPutawayRequest.GoodId);
+            if (ser>0)
+            {
+                goodsPutawayResponse.IsSuccess = true;
+            }
+            else
+            {
+                goodsPutawayResponse.GoodsState = -1;
+                goodsPutawayResponse.Msg = "修改失败";
+            }
+            return goodsPutawayResponse;
+        }
+        /// <summary>
+        /// 商品审核未通过
+        /// </summary>
+        /// <param name="goodsPutawayRequest"></param>
+        /// <returns></returns>
+        public GoodsSoldOutResponse GoodsSold(GoodsSoldOutRequest goodsSoldOutRequest)
+        {
+            GoodsSoldOutResponse goodsSoldOutResponse = new GoodsSoldOutResponse();
+            if (goodsSoldOutRequest.GoodId == 0)
+            {
+                goodsSoldOutResponse.GoodsState = -1;
+                goodsSoldOutResponse.Msg = "id为空";
+                return goodsSoldOutResponse;
+            }
+            var ser = dal.GoodsPutaway(goodsSoldOutRequest.GoodId);
+            if (ser > 0)
+            {
+                goodsSoldOutResponse.IsSuccess = true;
+            }
+            else
+            {
+                goodsSoldOutResponse.GoodsState = -1;
+                goodsSoldOutResponse.Msg = "修改失败";
+            }
+            return goodsSoldOutResponse;
+        }
+
+        /// <summary>
+        /// 显示要添加的审核商品
+        /// </summary>
+        /// <param name="auditShowRequest"></param>
+        /// <returns></returns>
+        public AuditShowResponse GoodsAudit(AuditShowRequest auditShowRequest)
+        {
+            AuditShowResponse auditShowResponse = new AuditShowResponse();
+            var ser = dal.GoodsAudit();
+            if (ser!=null)
+            {
+                auditShowResponse.DateList = ser;
+                auditShowResponse.IsSuccess = true;
+            }
+            else
+            {
+                auditShowResponse.Status = -1;
+                auditShowResponse.Msg = "显示失败";
+            }
+            return auditShowResponse;
         }
     }
 }

@@ -6,7 +6,6 @@ using System.Web.Mvc;
 using BLL;
 using SDCKClient.WangZhiHao.Request;
 using MODEL;
-
 using SDCKClient.XuYaDon;
 using SDCKClient;
 namespace ECommerceMVC
@@ -46,15 +45,18 @@ namespace ECommerceMVC
             return Json(res);
         }
 
-        public ActionResult GoodsDelete()
-        {
-            return View();
-        }
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="goodsupdate"></param>
+        /// <returns></returns>
         [HttpPost]
-        public JsonResult GoodsDelete(UpdateGoodsRequest goodsupdate)
+        public JsonResult GoodsDelete(int GoodId)
         {
-            var res = goodsBll.GoodsDelete(goodsupdate, "api/Goods/GoodsDelete");
-            return Json(res); 
+            UpdateGoodsRequest updateGoodsRequest = new UpdateGoodsRequest();
+            updateGoodsRequest.GoodId = GoodId;
+            var ser = goodsBll.GoodsDelete(updateGoodsRequest, "api/Goods/GoodsDelete");
+            return Json(ser.IsSuccess);
         }
         /// <summary>
         /// 商品审核页面
@@ -64,5 +66,46 @@ namespace ECommerceMVC
         {
             return View();
         }
+
+        /// <summary>
+        /// 商品审核通过
+        /// </summary>
+        /// <param name="GoodId"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult GoodsPutaway(int GoodId)
+        {
+            GoodsPutawayRequest goodsPutawayRequest = new GoodsPutawayRequest();
+            goodsPutawayRequest.GoodId = GoodId;
+            var ser = goodsBll.GoodsPutaway(goodsPutawayRequest, "api/Goods/GoodsPutaway");
+            return Json(ser.IsSuccess);
+        }
+
+        /// <summary>
+        /// 商品审核未通过
+        /// </summary>
+        /// <param name="GoodId"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult GoodsSold(int GoodId)
+        {
+            GoodsSoldOutRequest goodsSoldOutRequest = new GoodsSoldOutRequest();
+            goodsSoldOutRequest.GoodId = GoodId;
+            var ser = goodsBll.GoodsSold(goodsSoldOutRequest, "api/Goods/GoodsSold");
+            return Json(ser.IsSuccess);
+        }
+
+        /// <summary>
+        /// 显示要添加的审核商品
+        /// </summary>
+        /// <param name="auditShowRequest"></param>
+        /// <returns></returns>
+        public JsonResult GoodsAudit()
+        {
+            AuditShowRequest auditShowRequest = new AuditShowRequest();
+            var ser = goodsBll.GoodsAudit(auditShowRequest, "api/Goods/GoodsAudit");
+            return Json(ser.DateList);
+        }
+
     }
 }
